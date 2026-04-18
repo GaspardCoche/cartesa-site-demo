@@ -2502,21 +2502,32 @@ img { max-width: 100%; height: auto; display: block; }
   padding: 20px 24px;
   background: var(--white);
   border: 1px solid rgba(9,41,51,0.06);
-  border-left: 4px solid transparent;
   border-radius: 16px;
   box-shadow: var(--shadow-sm);
-  transition: border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cal-session::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
 }
 
 .cal-session:hover {
-  border-color: var(--teal-100);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(9,41,51,0.08);
 }
 
-.cal-session[data-cat="management"] { border-left-color: #3b6fc2; }
-.cal-session[data-cat="droit"] { border-left-color: #b87d20; }
-.cal-session[data-cat="rh"] { border-left-color: #2e7d32; }
-.cal-session[data-cat="rse"] { border-left-color: #7b1fa2; }
-.cal-session[data-cat="recrutement"] { border-left-color: #e65100; }
+.cal-session[data-cat="management"]::before { background: linear-gradient(90deg, #3b6fc2 0%, #6b9cee 60%, transparent 100%); }
+.cal-session[data-cat="droit"]::before { background: linear-gradient(90deg, #b87d20 0%, #d4a84a 60%, transparent 100%); }
+.cal-session[data-cat="rh"]::before { background: linear-gradient(90deg, #2e7d32 0%, #66bb6a 60%, transparent 100%); }
+.cal-session[data-cat="rse"]::before { background: linear-gradient(90deg, #7b1fa2 0%, #ab47bc 60%, transparent 100%); }
+.cal-session[data-cat="recrutement"]::before { background: linear-gradient(90deg, #e65100 0%, #ff8a65 60%, transparent 100%); }
 
 .cal-session.hidden {
   display: none;
@@ -3521,11 +3532,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .volet--active::before { opacity: 1; }
 
-.volet:nth-child(1)::before { background: radial-gradient(ellipse at 30% 50%, rgba(76,202,216,0.15) 0%, transparent 60%); }
-.volet:nth-child(2)::before { background: radial-gradient(ellipse at 70% 40%, rgba(0,124,186,0.12) 0%, transparent 60%); }
-.volet:nth-child(3)::before { background: radial-gradient(ellipse at 30% 60%, rgba(46,184,96,0.1) 0%, transparent 55%); }
-.volet:nth-child(4)::before { background: radial-gradient(ellipse at 50% 50%, rgba(236,208,52,0.08) 0%, transparent 50%); }
-.volet:nth-child(5)::before { background: radial-gradient(ellipse at 70% 50%, rgba(76,202,216,0.12) 0%, transparent 55%); }
+/* Per-volet overlays — see PER-VOLET COLOR THEMES section below */
 
 .volet--active {
   opacity: 1;
@@ -3724,6 +3731,79 @@ img { max-width: 100%; height: auto; display: block; }
   .volet-visual { max-height: 40vh; overflow-y: auto; }
 }
 
+/* ===== ACCENT CARDS (replace border-left pattern) ===== */
+.accent-card {
+  position: relative;
+  padding: 32px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.accent-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+.accent-card::after {
+  content: '';
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  opacity: 0.1;
+  box-shadow: -20px 0 0 0 currentColor, 0 20px 0 0 currentColor;
+}
+
+.accent-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(9,41,51,0.1);
+}
+
+.accent-card--teal::before {
+  background: linear-gradient(90deg, var(--teal-500), var(--teal-600) 50%, transparent 100%);
+}
+.accent-card--teal::after { color: var(--teal-500); background: var(--teal-500); }
+.accent-card--teal .accent-tag { color: var(--teal-600); }
+
+.accent-card--gold::before {
+  background: linear-gradient(90deg, var(--gold-500), var(--gold-600) 50%, transparent 100%);
+}
+.accent-card--gold::after { color: var(--gold-500); background: var(--gold-500); }
+.accent-card--gold .accent-tag { color: var(--gold-600); }
+
+.accent-card--purple::before {
+  background: linear-gradient(90deg, #8b5cf6, #7c3aed 50%, transparent 100%);
+}
+.accent-card--purple::after { color: #8b5cf6; background: #8b5cf6; }
+.accent-card--purple .accent-tag { color: #7c3aed; }
+
+.accent-card h3 { font-size: 1.05rem; margin-bottom: 4px; }
+.accent-card .accent-sub { color: var(--neutral-500); font-size: 0.85rem; margin-bottom: 12px; }
+.accent-card .accent-body { font-size: 0.9rem; line-height: 1.6; }
+.accent-card .accent-tag { font-size: 0.82rem; font-weight: 600; margin-top: 12px; }
+
+.accent-card--link {
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+.accent-card--link:hover { color: inherit; }
+.accent-card--link .accent-cta {
+  font-size: 0.82rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.3s ease;
+}
+.accent-card--link:hover .accent-cta { gap: 10px; }
+
 /* --- Per-volet decorative Cartesa Squares --- */
 .volet-squares {
   position: absolute;
@@ -3827,6 +3907,267 @@ img { max-width: 100%; height: auto; display: block; }
 
 @media (max-width: 640px) {
   .tab-btn { padding: 10px 16px; font-size: 0.82rem; }
+}
+
+/* ===== FLOATING SECTION NAV ===== */
+.section-nav {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.section-nav.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.section-nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 0;
+  text-decoration: none;
+  color: var(--neutral-500);
+}
+
+.section-nav-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 3px;
+  background: var(--neutral-300);
+  flex-shrink: 0;
+  transition: all 0.4s cubic-bezier(0.22,1,0.36,1);
+}
+
+.section-nav-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+  color: var(--neutral-700);
+}
+
+.section-nav a:hover .section-nav-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.section-nav a.active .section-nav-dot {
+  background: var(--teal-600);
+  height: 18px;
+  box-shadow: 0 0 8px rgba(0,124,186,0.3);
+}
+
+.section-nav a.active .section-nav-label {
+  opacity: 1;
+  transform: translateX(0);
+  color: var(--teal-600);
+}
+
+@media (max-width: 1024px) {
+  .section-nav { display: none; }
+}
+
+/* ===== PARALLAX IMPACT BANDS ===== */
+.impact-band {
+  position: relative;
+  overflow: hidden;
+  background: var(--teal-900);
+  padding: 80px 0;
+}
+
+.impact-band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(33,182,200,0.12) 0%, transparent 50%),
+    linear-gradient(315deg, rgba(236,208,52,0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.impact-band::after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: rgba(76,202,216,0.08);
+  border-radius: 6px;
+  top: 10%;
+  right: 8%;
+  box-shadow:
+    -100px 20px 0 40px rgba(236,208,52,0.05),
+    -100px 20px 0 0 rgba(255,255,255,0.04),
+    40px 60px 0 0 rgba(76,202,216,0.06);
+  animation: squareFloat 10s ease-in-out infinite;
+}
+
+.impact-band .container {
+  position: relative;
+  z-index: 1;
+}
+
+.impact-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+
+.impact-stat {
+  position: relative;
+}
+
+.impact-stat-number {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.impact-stat-label {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.4;
+}
+
+.impact-stat::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--gold-500);
+  opacity: 0.4;
+}
+
+@media (max-width: 768px) {
+  .impact-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  .impact-band { padding: 56px 0; }
+}
+
+/* --- Quote Band --- */
+.quote-band {
+  position: relative;
+  overflow: hidden;
+  padding: 72px 0;
+  background: linear-gradient(135deg, var(--teal-50) 0%, #e8f4f8 50%, var(--gold-100) 100%);
+}
+
+.quote-band::before {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: rgba(33,182,200,0.06);
+  border-radius: 4px;
+  top: 12%;
+  left: 5%;
+  box-shadow:
+    80px 20px 0 20px rgba(236,208,52,0.05),
+    0 80px 0 0 rgba(33,182,200,0.04);
+  animation: sq-drift 10s ease-in-out infinite;
+}
+
+.quote-band-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.quote-band-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 20px;
+  color: var(--teal-500);
+  opacity: 0.3;
+}
+
+.quote-band blockquote {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 600;
+  color: var(--neutral-900);
+  line-height: 1.5;
+  margin-bottom: 20px;
+  font-style: normal;
+}
+
+.quote-band cite {
+  font-style: normal;
+  font-size: 0.9rem;
+  color: var(--neutral-500);
+  font-weight: 500;
+}
+
+/* ===== PER-VOLET COLOR THEMES ===== */
+.volet:nth-child(1) .volet-label { color: var(--teal-400); }
+.volet:nth-child(1) .volet-label::before { background: var(--teal-400); }
+.volet:nth-child(1) .volet-feature svg { stroke: var(--teal-400); filter: drop-shadow(0 0 6px rgba(76,202,216,0.4)); }
+
+.volet:nth-child(2) .volet-label { color: #7dd3fc; }
+.volet:nth-child(2) .volet-label::before { background: #7dd3fc; }
+.volet:nth-child(2) .volet-feature svg { stroke: #7dd3fc; filter: drop-shadow(0 0 6px rgba(125,211,252,0.4)); }
+.volet:nth-child(2) .volet-number { color: rgba(125,211,252,0.06); text-shadow: 0 0 80px rgba(125,211,252,0.08); }
+
+.volet:nth-child(3) .volet-label { color: #86efac; }
+.volet:nth-child(3) .volet-label::before { background: #86efac; }
+.volet:nth-child(3) .volet-feature svg { stroke: #86efac; filter: drop-shadow(0 0 6px rgba(134,239,172,0.4)); }
+.volet:nth-child(3) .volet-number { color: rgba(134,239,172,0.06); text-shadow: 0 0 80px rgba(134,239,172,0.08); }
+
+.volet:nth-child(4) .volet-label { color: var(--gold-400); }
+.volet:nth-child(4) .volet-label::before { background: var(--gold-400); }
+.volet:nth-child(4) .volet-feature svg { stroke: var(--gold-400); filter: drop-shadow(0 0 6px rgba(240,204,58,0.4)); }
+.volet:nth-child(4) .volet-number { color: rgba(240,204,58,0.06); text-shadow: 0 0 80px rgba(240,204,58,0.08); }
+
+.volet:nth-child(5) .volet-label { color: #c4b5fd; }
+.volet:nth-child(5) .volet-label::before { background: #c4b5fd; }
+.volet:nth-child(5) .volet-feature svg { stroke: #c4b5fd; filter: drop-shadow(0 0 6px rgba(196,181,253,0.4)); }
+.volet:nth-child(5) .volet-number { color: rgba(196,181,253,0.06); text-shadow: 0 0 80px rgba(196,181,253,0.08); }
+
+/* Per-volet radial overlay — more saturated */
+.volet:nth-child(1)::before { background: radial-gradient(ellipse at 30% 50%, rgba(76,202,216,0.18) 0%, transparent 55%); }
+.volet:nth-child(2)::before { background: radial-gradient(ellipse at 70% 40%, rgba(125,211,252,0.15) 0%, transparent 55%); }
+.volet:nth-child(3)::before { background: radial-gradient(ellipse at 30% 60%, rgba(74,222,128,0.12) 0%, transparent 50%); }
+.volet:nth-child(4)::before { background: radial-gradient(ellipse at 50% 50%, rgba(240,204,58,0.12) 0%, transparent 50%); }
+.volet:nth-child(5)::before { background: radial-gradient(ellipse at 70% 50%, rgba(196,181,253,0.12) 0%, transparent 50%); }
+
+/* Per-volet squares color accents */
+.volet:nth-child(3) .volet-squares::before { background: rgba(134,239,172,0.08); }
+.volet:nth-child(3) .volet-squares::after { background: rgba(74,222,128,0.06); }
+.volet:nth-child(4) .volet-squares::before { background: rgba(240,204,58,0.1); }
+.volet:nth-child(4) .volet-squares::after { background: rgba(240,204,58,0.06); }
+.volet:nth-child(5) .volet-squares::before { background: rgba(196,181,253,0.08); }
+.volet:nth-child(5) .volet-squares::after { background: rgba(167,139,250,0.06); }
+
+/* Volet CTA button color per-volet */
+.volet:nth-child(3) .btn--accent {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+.volet:nth-child(3) .btn--accent:hover {
+  background: linear-gradient(135deg, #16a34a, #15803d);
 }
 
 /* ===== FOOTER TEXT CONTRAST FIX ===== */

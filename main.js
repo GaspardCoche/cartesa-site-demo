@@ -60,7 +60,7 @@
     });
   }
   document.querySelectorAll('[data-count]').forEach(function(el) {
-    var c = el.closest('.hero-stats-bar, .page-hero-stats, .stat-row, .values-mosaic, .stat-banner');
+    var c = el.closest('.hero-stats-bar, .page-hero-stats, .stat-row, .values-mosaic, .stat-banner, .impact-band');
     if (!c || c._cObs) return;
     c._cObs = true;
     new IntersectionObserver(function(entries) {
@@ -148,6 +148,47 @@
       requestAnimationFrame(updateVolets);
     }, { passive: true });
     updateVolets();
+  }
+
+  // Floating section nav (homepage)
+  var sectionNav = document.getElementById('sectionNav');
+  if (sectionNav) {
+    var navLinks = sectionNav.querySelectorAll('a');
+    var sectionIds = [];
+    navLinks.forEach(function(link) {
+      sectionIds.push(link.getAttribute('href').slice(1));
+    });
+
+    function updateSectionNav() {
+      var scrollY = window.scrollY + window.innerHeight * 0.35;
+      var show = window.scrollY > 400;
+      sectionNav.classList.toggle('visible', show);
+      if (!show) return;
+
+      var activeId = sectionIds[0];
+      for (var i = sectionIds.length - 1; i >= 0; i--) {
+        var el = document.getElementById(sectionIds[i]);
+        if (el && el.getBoundingClientRect().top + window.scrollY <= scrollY) {
+          activeId = sectionIds[i];
+          break;
+        }
+      }
+      navLinks.forEach(function(link) {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + activeId);
+      });
+    }
+
+    var navTicking = false;
+    window.addEventListener('scroll', function() {
+      if (!navTicking) {
+        requestAnimationFrame(function() {
+          updateSectionNav();
+          navTicking = false;
+        });
+        navTicking = true;
+      }
+    }, { passive: true });
+    updateSectionNav();
   }
 
   // Tab switching (services page)

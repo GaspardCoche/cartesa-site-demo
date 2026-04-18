@@ -140,10 +140,22 @@
     </nav>
   </header>
 
+  <!-- FLOATING SECTION NAV -->
+  <nav class="section-nav" id="sectionNav" aria-label="Navigation rapide">
+    <a href="#hero"><span class="section-nav-dot"></span><span class="section-nav-label">Accueil</span></a>
+    <a href="#services"><span class="section-nav-dot"></span><span class="section-nav-label">Services</span></a>
+    <a href="#methode"><span class="section-nav-dot"></span><span class="section-nav-label">Méthode</span></a>
+    <a href="#enjeux"><span class="section-nav-dot"></span><span class="section-nav-label">Enjeux</span></a>
+    <a href="#rh-rse"><span class="section-nav-dot"></span><span class="section-nav-label">RH & RSE</span></a>
+    <a href="#valeurs"><span class="section-nav-dot"></span><span class="section-nav-label">Valeurs</span></a>
+    <a href="#certifications"><span class="section-nav-dot"></span><span class="section-nav-label">Certifications</span></a>
+    <a href="#faq"><span class="section-nav-dot"></span><span class="section-nav-label">FAQ</span></a>
+  </nav>
+
   <main>
 
   <!-- HERO -->
-  <section class="hero" aria-label="Présentation CARTESA">
+  <section class="hero" id="hero" aria-label="Présentation CARTESA">
     <div class="hero-bg-pattern"></div>
     <div class="container">
       <div class="hero-split">
@@ -229,7 +241,7 @@
   </section>
 
   <!-- VOLETS HORIZONTAUX — Découverte services au scroll -->
-  <div class="volets-wrap">
+  <div class="volets-wrap" id="services">
     <div class="volets-sticky">
       <div class="volets-track">
 
@@ -385,7 +397,7 @@
   </div>
 
   <!-- NOTRE MÉTHODE -->
-  <section class="section section--white">
+  <section class="section section--white" id="methode">
     <div class="container">
       <div class="section-header reveal-scale reveal">
         <span class="section-label">Notre méthode</span>
@@ -425,8 +437,32 @@
     </div>
   </section>
 
+  <!-- IMPACT BAND — Chiffres clés -->
+  <div class="impact-band">
+    <div class="container">
+      <div class="impact-stats">
+        <div class="impact-stat reveal">
+          <div class="impact-stat-number" data-count="22" data-suffix=" ans">0</div>
+          <div class="impact-stat-label">d'expérience terrain<br>en conseil RH & RSE</div>
+        </div>
+        <div class="impact-stat reveal">
+          <div class="impact-stat-number" data-count="7">0</div>
+          <div class="impact-stat-label">OPCO partenaires<br>sur les thématiques RH</div>
+        </div>
+        <div class="impact-stat reveal">
+          <div class="impact-stat-number" data-count="100" data-suffix="%">0</div>
+          <div class="impact-stat-label">de financement possible<br>via OPCO</div>
+        </div>
+        <div class="impact-stat reveal">
+          <div class="impact-stat-number" data-count="4">0</div>
+          <div class="impact-stat-label">certifications RH<br>& RSE reconnues</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- VOS ENJEUX -->
-  <section class="section section--alt sq-deco">
+  <section class="section section--alt sq-deco" id="enjeux">
     <div class="container">
       <div class="section-header reveal-left reveal">
         <span class="section-label">Vos enjeux</span>
@@ -500,7 +536,7 @@
   </section>
 
   <!-- RH / RSE DUAL TRACK -->
-  <section class="section section--white">
+  <section class="section section--white" id="rh-rse">
     <div class="container">
       <div class="section-header reveal-scale reveal">
         <span class="section-label">Deux expertises, une approche</span>
@@ -540,8 +576,17 @@
     </div>
   </section>
 
+  <!-- QUOTE BAND -->
+  <div class="quote-band">
+    <div class="quote-band-inner reveal">
+      <svg class="quote-band-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+      <blockquote>Ce qui fait la différence avec CARTESA, c'est qu'ils viennent sur le terrain, ils comprennent notre réalité avant de proposer quoi que ce soit.</blockquote>
+      <cite>Dirigeant PME industrielle — Isère</cite>
+    </div>
+  </div>
+
   <!-- VALUES -->
-  <section class="section section--white sq-deco">
+  <section class="section section--white sq-deco" id="valeurs">
     <div class="container">
       <div class="section-header reveal-right reveal">
         <span class="section-label">Nos valeurs</span>
@@ -582,7 +627,7 @@
   </section>
 
   <!-- CERTIFICATIONS -->
-  <section class="section section--teal sq-deco">
+  <section class="section section--teal sq-deco" id="certifications">
     <div class="container">
       <div class="section-header sq-header reveal">
         <span class="section-label">Nos certifications</span>
@@ -763,7 +808,7 @@
   </section>
 
   <!-- FAQ (SEO) -->
-  <section class="section section--white">
+  <section class="section section--white" id="faq">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">Questions fréquentes</span>
