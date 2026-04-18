@@ -22,6 +22,248 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ===== BLOG UNIFIED LAYOUT ===== */
+
+    .blog-section {
+      padding: 48px 0 80px;
+      background: var(--white);
+    }
+
+    /* --- Hero article --- */
+    .blog-hero-article {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(9,41,51,0.07);
+      margin-bottom: 48px;
+      box-shadow: 0 4px 32px rgba(9,41,51,0.06);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .blog-hero-article:hover {
+      box-shadow: 0 12px 48px rgba(9,41,51,0.11);
+      transform: translateY(-2px);
+    }
+
+    .blog-hero-image {
+      background: var(--teal-900);
+      min-height: 360px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+    .blog-hero-image-inner {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0; left: 0;
+      background: var(--teal-600);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .blog-hero-image-badge {
+      font-family: 'Sora', sans-serif;
+      font-size: 4rem;
+      font-weight: 800;
+      color: rgba(255,255,255,0.07);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      user-select: none;
+      position: relative;
+      z-index: 1;
+    }
+    .blog-hero-image-label {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      background: var(--gold-500);
+      color: var(--teal-900);
+      font-size: 0.65rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .blog-hero-content {
+      padding: 40px 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--white);
+    }
+    .blog-hero-content .blog-category {
+      margin-bottom: 16px;
+    }
+    .blog-hero-content h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--teal-900);
+      line-height: 1.25;
+      letter-spacing: -0.025em;
+      margin-bottom: 16px;
+    }
+    .blog-hero-content .blog-excerpt {
+      font-size: 0.95rem;
+      color: var(--neutral-500);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .blog-hero-content .blog-meta {
+      font-size: 0.78rem;
+      color: var(--neutral-400);
+      font-family: 'DM Sans', sans-serif;
+      display: flex;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .blog-hero-content .blog-link {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--teal-600);
+      align-self: flex-start;
+    }
+    .blog-hero-content .blog-link:hover {
+      color: var(--teal-700);
+    }
+
+    /* --- Unified article grid (3 cols) --- */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    /* Standard article card (inside grid) */
+    .blog-grid .card.blog-card {
+      border-radius: 16px;
+      border: 1px solid rgba(9,41,51,0.07);
+      padding: 28px 26px 22px;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.25s ease, transform 0.25s ease;
+      box-shadow: 0 2px 16px rgba(9,41,51,0.04);
+    }
+    .blog-grid .card.blog-card:hover {
+      box-shadow: 0 8px 32px rgba(9,41,51,0.1);
+      transform: translateY(-2px);
+    }
+
+    /* Actualité / featured badge on merged cards */
+    .blog-card--featured .blog-category {
+      background: rgba(236,208,52,0.15);
+      color: var(--teal-900);
+    }
+
+    /* --- Lunchbox promo card --- */
+    .blog-card--lunchbox {
+      background: var(--teal-900);
+      border-radius: 16px;
+      padding: 28px 26px 24px;
+      display: flex;
+      flex-direction: column;
+      color: var(--white);
+      border: none;
+      box-shadow: 0 4px 24px rgba(9,41,51,0.18);
+      transition: box-shadow 0.25s ease, transform 0.25s ease;
+    }
+    .blog-card--lunchbox:hover {
+      box-shadow: 0 12px 40px rgba(9,41,51,0.28);
+      transform: translateY(-2px);
+    }
+    .blog-card--lunchbox .lunchbox-eyebrow {
+      font-size: 0.65rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold-500);
+      font-family: 'DM Sans', sans-serif;
+      margin-bottom: 10px;
+    }
+    .blog-card--lunchbox h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+    .blog-card--lunchbox .lunchbox-sub {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+    .blog-card--lunchbox .lunchbox-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 22px;
+      flex: 1;
+    }
+    .blog-card--lunchbox .lunchbox-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.4;
+    }
+    .blog-card--lunchbox .lunchbox-list li:last-child {
+      border-bottom: none;
+    }
+    .blog-card--lunchbox .lunchbox-list .lb-num {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--teal-500);
+      color: var(--white);
+      font-size: 0.65rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Sans', sans-serif;
+      margin-top: 1px;
+    }
+    .blog-card--lunchbox .lb-cta {
+      display: block;
+      text-align: center;
+      padding: 11px 20px;
+      background: var(--gold-500);
+      color: var(--teal-900);
+      border-radius: 10px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      font-family: 'DM Sans', sans-serif;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .blog-card--lunchbox .lb-cta:hover {
+      background: var(--gold-400);
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 1024px) {
+      .blog-hero-article { grid-template-columns: 1fr; }
+      .blog-hero-image { min-height: 220px; }
+      .blog-hero-content { padding: 32px 28px; }
+      .blog-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .blog-hero-content h2 { font-size: 1.3rem; }
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -63,7 +305,7 @@
         <li><a href="formations.html">Formations 2026</a></li>
         <li><a href="ressources.html">Ressources</a></li>
         <li><a href="temoignages.html">Témoignages</a></li>
-        <li><a href="equipe.html">L'équipe</a></li>
+        <li><a href="contact.html#equipe">L'équipe</a></li>
         <li><a href="blog.html" class="active">Blog</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
@@ -79,193 +321,176 @@
     </div>
   </section>
 
-  <!-- CATEGORY FILTERS -->
-  <section class="section section--white" style="padding-bottom:0;">
+  <!-- UNIFIED BLOG SECTION -->
+  <section class="blog-section">
     <div class="container">
-      <div class="blog-filters">
-        <button class="filter-btn active" onclick="filterArticles('all', this)">Tous les articles</button>
-        <button class="filter-btn" onclick="filterArticles('droit-social', this)">Droit social</button>
-        <button class="filter-btn" onclick="filterArticles('management', this)">Management</button>
-        <button class="filter-btn" onclick="filterArticles('formation', this)">Formation</button>
-        <button class="filter-btn" onclick="filterArticles('rse', this)">RSE</button>
-        <button class="filter-btn" onclick="filterArticles('financement', this)">Financement</button>
-        <button class="filter-btn" onclick="filterArticles('organisation-rh', this)">Organisation RH</button>
-      </div>
-    </div>
-  </section>
 
-  <!-- ACTUALITÉS CARTESA -->
-  <section class="section section--alt" style="padding-top:24px;">
-    <div class="container">
-      <div class="section-header sq-header reveal">
-        <span class="section-label">Actualités</span>
-        <h2 class="section-title">Les nouveautés CARTESA</h2>
-        <p class="section-subtitle">Nos dernières programmations et nos avancées.</p>
+      <!-- CATEGORY FILTERS -->
+      <div class="blog-filters reveal">
+        <button class="filter-btn active" onclick="filterBlog('all', this)">Tous les articles</button>
+        <button class="filter-btn" onclick="filterBlog('droit-social', this)">Droit social</button>
+        <button class="filter-btn" onclick="filterBlog('management', this)">Management</button>
+        <button class="filter-btn" onclick="filterBlog('formation', this)">Formation</button>
+        <button class="filter-btn" onclick="filterBlog('rse', this)">RSE</button>
+        <button class="filter-btn" onclick="filterBlog('financement', this)">Financement</button>
+        <button class="filter-btn" onclick="filterBlog('organisation-rh', this)">Organisation RH</button>
       </div>
-      <div class="actu-grid">
-        <div class="actu-card" data-category="financement">
-          <span class="blog-category">Nouveau dispositif</span>
-          <h3>CO2i by OPCO2i : le dispositif est lancé</h3>
-          <p class="blog-excerpt">Avril 2026 — CARTESA est prestataire partenaire pour l'Isère, la Drôme et l'Ardèche dans le cadre du dispositif CO2i by OPCO2i. Accompagnement des entreprises industrielles dans le développement de leurs compétences en management et RH.</p>
-          <div class="blog-meta"><span>Avril 2026</span></div>
+
+      <!-- HERO ARTICLE — CO2i (featured/latest) -->
+      <article class="blog-hero-article reveal" id="article-co2i" data-category="financement">
+        <div class="blog-hero-image">
+          <div class="blog-hero-image-inner">
+            <span class="blog-hero-image-badge">CO2i</span>
+          </div>
+          <span class="blog-hero-image-label">Nouveauté Avril 2026</span>
         </div>
-        <div class="actu-card" data-category="financement">
+        <div class="blog-hero-content">
+          <span class="blog-category">Nouveau dispositif</span>
+          <h2>CO2i by OPCO2i : le dispositif est lancé</h2>
+          <p class="blog-excerpt">CARTESA est désormais prestataire partenaire pour l'Isère, la Drôme et l'Ardèche dans le cadre du dispositif CO2i by OPCO2i. Ce nouveau programme accompagne les entreprises industrielles dans le développement de leurs compétences en management et RH, avec un financement intégral par l'OPCO. Une opportunité concrète pour structurer vos pratiques RH sans mobiliser votre budget formation.</p>
+          <div class="blog-meta">
+            <span>Avril 2026</span>
+            <span>Isère · Drôme · Ardèche</span>
+          </div>
+          <a href="contact.html" class="blog-link">En savoir plus &rarr;</a>
+        </div>
+      </article>
+
+      <!-- UNIFIED ARTICLE GRID -->
+      <div class="blog-grid">
+
+        <!-- ARTICLE — Actualité Cantal -->
+        <article class="card blog-card blog-card--featured reveal" data-category="financement">
           <span class="blog-category">Région AURA</span>
           <h3>Conseil et Expertise RH dans le Cantal</h3>
           <p class="blog-excerpt">Mars 2026 — Une première entreprise du Cantal sollicite la prestation de Conseil et Expertise RH, intégralement financée par la région Auvergne-Rhône-Alpes et le Fonds Social Européen (FSE+). CARTESA sur le terrain.</p>
-          <div class="blog-meta"><span>Mars 2026</span></div>
-        </div>
-        <div class="actu-card" data-category="formation">
+          <div class="blog-meta">
+            <span>Mars 2026</span>
+          </div>
+          <a href="#" class="blog-link">En savoir plus &rarr;</a>
+        </article>
+
+        <!-- ARTICLE — Actualité Catalogue -->
+        <article class="card blog-card blog-card--featured reveal" data-category="formation">
           <span class="blog-category">Catalogue</span>
-          <h3>Catalogue de formations RH & Management 2026</h3>
+          <h3>Catalogue de formations RH &amp; Management 2026</h3>
           <p class="blog-excerpt">En partenariat avec Solaris, CARTESA publie son catalogue de formations en RH et Management. Formations sur mesure (intra-entreprises) et catalogue inter-entreprises 2026.</p>
-          <div class="blog-meta"><span>2026</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
+          <div class="blog-meta">
+            <span>2026</span>
+          </div>
+          <a href="formations.html" class="blog-link">Voir le catalogue &rarr;</a>
+        </article>
 
-  <!-- WEBINAIRES LUNCHBOX -->
-  <section class="section section--teal">
-    <div class="container">
-      <div class="section-header sq-header reveal">
-        <span class="section-label">Webinaires</span>
-        <h2 class="section-title">Les Lunchbox de CARTESA</h2>
-        <p class="section-subtitle">30 minutes chrono, de 12h30 à 13h00. Des webinaires concrets pour nourrir vos pratiques RH sur la pause déjeuner.</p>
-      </div>
-      <div class="lunchbox-grid">
-        <div class="lunchbox-card">
-          <span class="lunchbox-num">1</span>
-          <h4>CléA Management : KéZAKO</h4>
-          <p>Tout comprendre sur la certification CléA Management, éligible au CPF sans plafonnement.</p>
+        <!-- LUNCHBOX PROMO CARD -->
+        <div class="blog-card--lunchbox reveal" data-category="all">
+          <p class="lunchbox-eyebrow">Webinaires</p>
+          <h3>Les Lunchbox de CARTESA</h3>
+          <p class="lunchbox-sub">30 min, de 12h30 à 13h00. Des thématiques RH concrètes sur la pause déjeuner.</p>
+          <ul class="lunchbox-list">
+            <li><span class="lb-num">1</span>CléA Management : KéZAKO</li>
+            <li><span class="lb-num">2</span>Le nouveau dispositif de période de reconversion</li>
+            <li><span class="lb-num">3</span>L'engagement des équipes : les leviers d'action</li>
+            <li><span class="lb-num">4</span>L'IA et les RH</li>
+            <li><span class="lb-num">5</span>La RSE en pratique</li>
+          </ul>
+          <a href="contact.html" class="lb-cta">S'inscrire aux prochains webinaires</a>
         </div>
-        <div class="lunchbox-card">
-          <span class="lunchbox-num">2</span>
-          <h4>Le nouveau dispositif de période de reconversion</h4>
-          <p>Pourquoi le mobiliser ? Conditions, financement et bénéfices pour l'entreprise.</p>
-        </div>
-        <div class="lunchbox-card">
-          <span class="lunchbox-num">3</span>
-          <h4>L'engagement des équipes : les leviers d'action</h4>
-          <p>Identifier et activer les leviers de motivation et de fidélisation de vos collaborateurs.</p>
-        </div>
-        <div class="lunchbox-card">
-          <span class="lunchbox-num">4</span>
-          <h4>L'IA et les RH</h4>
-          <p>Comment l'intelligence artificielle transforme les pratiques RH et comment s'y préparer.</p>
-        </div>
-        <div class="lunchbox-card">
-          <span class="lunchbox-num">5</span>
-          <h4>La RSE en pratique</h4>
-          <p>Initier une démarche RSE concrète et mesurable, adaptée aux PME et ETI.</p>
-        </div>
-      </div>
-      <div class="lunchbox-cta">
-        <a href="contact.html" class="btn btn--accent btn--lg">S'inscrire aux prochains webinaires</a>
-      </div>
-    </div>
-  </section>
 
-  <!-- ARTICLES -->
-  <section class="section section--white" style="padding-top:24px;">
-    <div class="container">
-      <div class="grid-2" style="gap:28px;">
-
-        <!-- ARTICLE 1 -->
-        <div class="card blog-card" data-category="droit-social">
+        <!-- ARTICLE 1 — Seuils effectifs -->
+        <article class="card blog-card reveal" data-category="droit-social">
           <span class="blog-category">Droit social</span>
           <h3>Les obligations RH à 11, 20 et 50 salariés : le guide complet 2026</h3>
-          <p class="blog-excerpt">À chaque franchissement de seuil d'effectif, de nouvelles obligations sociales s'imposent à l'employeur. À 11 salariés, vous devez organiser les élections du CSE et mettre en place la participation aux résultats. À 20 salariés, la contribution FNAL passe au taux plein et le règlement intérieur devient obligatoire. À 50 salariés, les enjeux se multiplient : commission santé-sécurité du CSE, participation aux bénéfices obligatoire, plan de développement des compétences formalisé. Cet article détaille chaque seuil, les délais de mise en conformité et les sanctions encourues en cas de manquement.</p>
+          <p class="blog-excerpt">À chaque franchissement de seuil d'effectif, de nouvelles obligations sociales s'imposent à l'employeur. À 11 salariés, vous devez organiser les élections du CSE. À 50, les enjeux se multiplient : commission santé-sécurité, participation aux bénéfices, plan de développement des compétences.</p>
           <div class="blog-meta">
             <span>Mars 2026</span>
             <span>8 min de lecture</span>
           </div>
           <a href="#" class="blog-link">Lire la suite &rarr;</a>
-        </div>
+        </article>
 
-        <!-- ARTICLE 2 -->
-        <div class="card blog-card" data-category="financement">
+        <!-- ARTICLE 2 — PCRH -->
+        <article class="card blog-card reveal" data-category="financement">
           <span class="blog-category">Financement</span>
           <h3>PCRH : l'accompagnement RH gratuit dont personne ne parle</h3>
-          <p class="blog-excerpt">La Prestation de Conseil en Ressources Humaines (PCRH) est un dispositif financé par l'État via les DREETS et les OPCO, totalement gratuit pour les entreprises de moins de 250 salariés. Il permet de bénéficier de 12 à 20 jours d'accompagnement par un consultant RH pour structurer ses pratiques : diagnostic RH, mise en place des entretiens professionnels, construction d'un plan de développement des compétences, formalisation des fiches de poste. Le budget, pouvant atteindre 15 000 EUR, est intégralement pris en charge. Malgré cela, moins de 5% des entreprises éligibles en font la demande.</p>
+          <p class="blog-excerpt">La Prestation de Conseil en Ressources Humaines est financée par l'État, totalement gratuite pour les entreprises de moins de 250 salariés. Elle permet 12 à 20 jours d'accompagnement RH — jusqu'à 15 000&nbsp;EUR pris en charge. Moins de 5&nbsp;% des éligibles en font la demande.</p>
           <div class="blog-meta">
             <span>Février 2026</span>
             <span>6 min de lecture</span>
           </div>
           <a href="#" class="blog-link">Lire la suite &rarr;</a>
-        </div>
+        </article>
 
-        <!-- ARTICLE 3 -->
-        <div class="card blog-card" data-category="management">
+        <!-- ARTICLE 3 — Entretien professionnel vs annuel -->
+        <article class="card blog-card reveal" data-category="management">
           <span class="blog-category">Management</span>
           <h3>Entretien professionnel vs entretien annuel : ne confondez plus jamais</h3>
-          <p class="blog-excerpt">L'entretien professionnel est une obligation légale depuis la loi du 5 mars 2014 : il doit avoir lieu tous les deux ans et porte exclusivement sur les perspectives d'évolution professionnelle et les besoins en formation du salarié. L'entretien annuel d'évaluation, lui, est facultatif et se concentre sur la performance, les objectifs atteints et les axes d'amélioration. Confondre les deux expose l'entreprise à des sanctions : lors du bilan à 6 ans, si l'employeur n'a pas respecté ses obligations, il risque un abondement correctif de 3 000 EUR par salarié concerné sur le CPF. Voici comment distinguer les deux et tirer le meilleur de chacun.</p>
+          <p class="blog-excerpt">L'entretien professionnel est une obligation légale (tous les 2 ans, axé évolution et formation). L'entretien annuel est facultatif et porte sur la performance. Confondre les deux expose à un abondement correctif de 3&nbsp;000&nbsp;EUR par salarié sur le CPF.</p>
           <div class="blog-meta">
             <span>Janvier 2026</span>
             <span>7 min de lecture</span>
           </div>
           <a href="#" class="blog-link">Lire la suite &rarr;</a>
-        </div>
+        </article>
 
-        <!-- ARTICLE 4 -->
-        <div class="card blog-card" data-category="formation">
+        <!-- ARTICLE 4 — AFEST -->
+        <article class="card blog-card reveal" data-category="formation">
           <span class="blog-category">Formation</span>
           <h3>AFEST : former vos collaborateurs en situation de travail</h3>
-          <p class="blog-excerpt">Reconnue comme modalité pédagogique à part entière depuis la loi Avenir Professionnel de septembre 2018, l'AFEST (Action de Formation En Situation de Travail) permet d'apprendre directement dans son environnement de travail. Son principe repose sur l'alternance entre des mises en situation productives et des phases de réflexivité où l'apprenant analyse ce qu'il a fait, compris et retenu. Particulièrement adaptée aux métiers manuels, techniques et industriels, elle nécessite un référent AFEST formé et certifié. Chez CARTESA, nous formons vos référents internes et concevons le parcours pédagogique conforme aux exigences de la certification Qualiopi.</p>
+          <p class="blog-excerpt">Reconnue comme modalité pédagogique depuis la loi Avenir Professionnel de 2018, l'AFEST permet d'apprendre directement dans son environnement de travail. Particulièrement adaptée aux métiers manuels et techniques, elle nécessite un référent formé et certifié Qualiopi.</p>
           <div class="blog-meta">
             <span>Décembre 2025</span>
             <span>9 min de lecture</span>
           </div>
           <a href="#" class="blog-link">Lire la suite &rarr;</a>
-        </div>
+        </article>
 
-        <!-- ARTICLE 5 -->
-        <div class="card blog-card" data-category="management">
+        <!-- ARTICLE 5 — 5 erreurs management -->
+        <article class="card blog-card reveal" data-category="management">
           <span class="blog-category">Management</span>
           <h3>5 erreurs de management qui font fuir vos meilleurs talents</h3>
-          <p class="blog-excerpt">La première erreur : ne pas déléguer suffisamment, ce qui étouffe l'autonomie et la progression des collaborateurs les plus ambitieux. La deuxième : supprimer ou reporter systématiquement les entretiens individuels, envoyant le signal que le manager n'a pas de temps pour ses équipes. Troisième piège : confondre autorité et leadership, en imposant plutôt qu'en embarquant. Quatrième erreur : ignorer les signaux faibles de désengagement -- retards, silence en réunion, baisse d'initiative. Enfin, ne pas célébrer les réussites, même petites, érode la motivation durablement. Chacune de ces erreurs alimente le turnover ; cumulées, elles transforment votre entreprise en tremplin pour vos concurrents.</p>
+          <p class="blog-excerpt">Ne pas déléguer, supprimer les entretiens, confondre autorité et leadership, ignorer les signaux faibles de désengagement, ne pas célébrer les réussites. Chacune de ces erreurs alimente le turnover ; cumulées, elles transforment votre entreprise en tremplin pour vos concurrents.</p>
           <div class="blog-meta">
             <span>Novembre 2025</span>
             <span>6 min de lecture</span>
           </div>
           <a href="#" class="blog-link">Lire la suite &rarr;</a>
-        </div>
+        </article>
 
-        <!-- ARTICLE 6 -->
-        <div class="card blog-card" data-category="rse">
+        <!-- ARTICLE 6 — RSE en PME -->
+        <article class="card blog-card reveal" data-category="rse">
           <span class="blog-category">RSE</span>
           <h3>RSE en PME : par où commencer sans exploser votre budget</h3>
-          <p class="blog-excerpt">Contrairement aux idées reçues, initier une démarche RSE ne nécessite ni budget colossal ni équipe dédiée. Commencez par une analyse de matérialité simplifiée : identifiez les 3 à 5 enjeux sociaux et environnementaux les plus pertinents pour votre activité et vos parties prenantes. Priorisez la qualité de vie au travail, qui à un impact immédiat sur l'engagement et la fidélisation. Mettez en place des éco-gestes concrets et mesurables. Impliquez vos salariés dans la démarche via un groupe de travail volontaire. Appuyez-vous sur les outils gratuits comme la checklist RSE de BPI France ou le référentiel LUCIE. En 6 mois, vous aurez une démarche structurée et communicable.</p>
+          <p class="blog-excerpt">Initier une démarche RSE ne nécessite ni budget colossal ni équipe dédiée. Commencez par une analyse de matérialité simplifiée, priorisez la qualité de vie au travail, impliquez vos salariés via un groupe volontaire, et appuyez-vous sur les outils gratuits (BPI France, référentiel LUCIE).</p>
           <div class="blog-meta">
             <span>Octobre 2025</span>
             <span>7 min de lecture</span>
           </div>
           <a href="#" class="blog-link">Lire la suite &rarr;</a>
-        </div>
+        </article>
 
-        <!-- ARTICLE 7 -->
-        <div class="card blog-card" data-category="formation">
+        <!-- ARTICLE 7 — Guide entretien professionnel -->
+        <article class="card blog-card reveal" data-category="formation">
           <span class="blog-category">Formation</span>
           <h3>Le guide de l'entretien professionnel réussi</h3>
-          <p class="blog-excerpt">Un entretien professionnel réussi se prépare en amont, côté manager comme côté collaborateur. Sa structuré suit une progression logique : bilan des actions de formation et des évolutions depuis le dernier entretien, recueil des aspirations professionnelles du salarié, identification des besoins en formation et en accompagnement, puis élaboration d'un plan d'action concret avec des échéances. L'obligation légale impose également un bilan récapitulatif tous les 6 ans, lors duquel l'employeur doit démontrer que le salarié a bénéficié d'au moins une action de formation et d'une progression. À défaut, la sanction peut atteindre 3 000 EUR par salarié versé sur son CPF.</p>
+          <p class="blog-excerpt">Un entretien professionnel réussi se prépare en amont des deux côtés. Sa structure : bilan des actions passées, recueil des aspirations, identification des besoins en formation, plan d'action avec échéances. Le bilan à 6 ans exige de prouver au moins une action de formation par salarié.</p>
           <div class="blog-meta">
             <span>Septembre 2025</span>
             <span>8 min de lecture</span>
           </div>
           <a href="#" class="blog-link">Lire la suite &rarr;</a>
-        </div>
+        </article>
 
-        <!-- ARTICLE 8 -->
-        <div class="card blog-card" data-category="organisation-rh">
+        <!-- ARTICLE 8 — Structurer fonction RH -->
+        <article class="card blog-card reveal" data-category="organisation-rh">
           <span class="blog-category">Organisation RH</span>
           <h3>Comment structurer sa fonction RH quand on n'a pas de DRH</h3>
-          <p class="blog-excerpt">Dans les PME de 10 à 50 salariés, la fonction RH est souvent assurée par le dirigeant lui-même, un comptable ou un assistant polyvalent. Sans formation spécifique, les risques de non-conformité juridique sont élevés. La priorité absolue : sécuriser les obligations légales (contrats, paie, médecine du travail, entretiens professionnels). Ensuite, structurer les processus clés : recrutement, intégration, gestion des absences. Enfin seulement, investir dans le développement (formation, marque employeur, GPEC). Le dispositif PCRH, financé à 100%, est spécifiquement conçu pour accompagner cette structuration progressive. Un consultant externe apporte la méthode et le cadre légal que l'entreprise n'a pas en interne.</p>
+          <p class="blog-excerpt">Dans les PME de 10 à 50 salariés, la fonction RH est souvent assurée par le dirigeant lui-même. La priorité : sécuriser les obligations légales, structurer les processus clés, puis investir dans le développement. Le dispositif PCRH, financé à 100&nbsp;%, est fait pour ça.</p>
           <div class="blog-meta">
             <span>Août 2025</span>
             <span>7 min de lecture</span>
           </div>
           <a href="#" class="blog-link">Lire la suite &rarr;</a>
-        </div>
+        </article>
 
       </div>
     </div>
@@ -313,7 +538,7 @@
             <li><a href="index.html">Accueil</a></li>
             <li><a href="formations.html">Formations 2026</a></li>
             <li><a href="temoignages.html">Témoignages</a></li>
-            <li><a href="equipe.html">L'équipe</a></li>
+            <li><a href="contact.html#equipe">L'équipe</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -343,12 +568,34 @@
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 CARTESA. Tous droits réservés.</span>
-        <span>Compétences, Entreprises & Territoires</span>
+        <span>Compétences, Entreprises &amp; Territoires</span>
       </div>
     </div>
   </footer>
 
   <script src="main.js"></script>
+  <script>
+    function filterBlog(category, btn) {
+      // Update active button
+      document.querySelectorAll('.blog-filters .filter-btn').forEach(function(b) {
+        b.classList.remove('active');
+      });
+      btn.classList.add('active');
 
+      // Filter hero article
+      var hero = document.getElementById('article-co2i');
+      if (hero) {
+        var heroMatch = category === 'all' || hero.dataset.category === category;
+        hero.style.display = heroMatch ? '' : 'none';
+      }
+
+      // Filter grid items (articles + lunchbox card)
+      document.querySelectorAll('.blog-grid [data-category]').forEach(function(el) {
+        var elCat = el.dataset.category;
+        var match = category === 'all' || elCat === category || elCat === 'all';
+        el.style.display = match ? '' : 'none';
+      });
+    }
+  </script>
 </body>
 </html>

@@ -60,7 +60,7 @@
     });
   }
   document.querySelectorAll('[data-count]').forEach(function(el) {
-    var c = el.closest('.hero-stats-bar, .page-hero-stats, .stat-row, .values-mosaic, .stat-banner, .impact-band');
+    var c = el.closest('.hero-stats-bar, .page-hero-stats, .stat-row, .values-mosaic, .stat-banner');
     if (!c || c._cObs) return;
     c._cObs = true;
     new IntersectionObserver(function(entries) {
@@ -114,31 +114,31 @@
     }, { threshold: 0 }).observe(marker);
   }
 
-  // ===== VOLETS HORIZONTAUX =====
-  var voletsWrap = document.querySelector('.volets-wrap');
-  var voletsTrack = document.querySelector('.volets-track');
-  var voletItems = document.querySelectorAll('.volet');
-  var voletDots = document.querySelectorAll('.volet-dot');
+  // ===== VOLETS HORIZONTAUX (multi-instance) =====
+  function initVolets(wrap) {
+    var track = wrap.querySelector('.volets-track');
+    var items = wrap.querySelectorAll('.volet');
+    var dots = wrap.querySelectorAll('.volet-dot');
+    if (!track || !items.length) return;
 
-  if (voletsWrap && voletsTrack && voletItems.length) {
-    var panelCount = voletItems.length;
+    var panelCount = items.length;
     var lastIndex = -1;
 
     function updateVolets() {
-      var rect = voletsWrap.getBoundingClientRect();
+      var rect = wrap.getBoundingClientRect();
       var scrolled = -rect.top;
-      var total = voletsWrap.offsetHeight - window.innerHeight;
+      var total = wrap.offsetHeight - window.innerHeight;
       if (scrolled < 0 || total <= 0) return;
       var progress = Math.max(0, Math.min(1, scrolled / total));
       var idx = Math.min(panelCount - 1, Math.floor(progress * panelCount));
 
       if (idx !== lastIndex) {
         lastIndex = idx;
-        voletsTrack.style.transform = 'translateX(-' + (idx * (100 / panelCount)) + '%)';
-        voletItems.forEach(function(v, i) {
+        track.style.transform = 'translateX(-' + (idx * (100 / panelCount)) + '%)';
+        items.forEach(function(v, i) {
           v.classList.toggle('volet--active', i === idx);
         });
-        voletDots.forEach(function(d, i) {
+        dots.forEach(function(d, i) {
           d.classList.toggle('active', i === idx);
         });
       }
@@ -149,6 +149,34 @@
     }, { passive: true });
     updateVolets();
   }
+
+  document.querySelectorAll('.volets-wrap').forEach(function(wrap) {
+    initVolets(wrap);
+  });
+
+  // Anchor links targeting tab panels — activate the correct tab
+  document.querySelectorAll('a[href^="#tab-"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      var targetId = link.getAttribute('href').slice(1);
+      var panel = document.getElementById(targetId);
+      if (!panel) return;
+      var group = panel.closest('.container') || panel.parentElement;
+      if (!group) return;
+      // Deactivate all tabs and panels in this group
+      group.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+      group.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+      // Activate matching button and panel
+      var btn = group.querySelector('.tab-btn[data-tab="' + targetId + '"]');
+      if (btn) btn.classList.add('active');
+      panel.classList.add('active');
+      // Scroll to the tab section after a short delay to let the panel render
+      e.preventDefault();
+      var tabSection = group.closest('section') || group;
+      setTimeout(function() {
+        tabSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 50);
+    });
+  });
 
   // Tab switching (services page)
   document.querySelectorAll('.tab-btn').forEach(function(btn) {
