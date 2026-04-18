@@ -59,31 +59,22 @@
       <a href="index.html" class="nav-logo">
         <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA">
       </a>
-      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+      <button class="nav-toggle" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links">
         <li><a href="index.html">Accueil</a></li>
         <li class="nav-dropdown">
-          <a href="expertises.html">Nos services</a>
+          <a href="services-rh.html">Nos services</a>
           <ul class="nav-sub">
-            <li><a href="expertises.html">Diagnostic &amp; Expertise RH</a></li>
-            <li><a href="rse-decarbonation.html">RSE &amp; Decarbonation</a></li>
-            <li><a href="rh-transition.html">DRH de transition</a></li>
-            <li><a href="pass-rh.html">Pass RH (abonnements)</a></li>
+            <li><a href="services-rh.html">Services RH</a></li>
+            <li><a href="rse-decarbonation.html">RSE &amp; Décarbonation</a></li>
           </ul>
         </li>
         <li><a href="formations.html" class="active">Formations 2026</a></li>
-        <li class="nav-dropdown">
-          <a href="ressourcerie.html">Ressources</a>
-          <ul class="nav-sub">
-            <li><a href="ressourcerie.html">Ressourcerie</a></li>
-            <li><a href="entretien-parcours.html">Entretien de parcours</a></li>
-            <li><a href="financement.html">Financer avec mon OPCO</a></li>
-          </ul>
-        </li>
-        <li><a href="temoignages.html">Temoignages</a></li>
-        <li><a href="equipe.html">L'equipe</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+        <li><a href="temoignages.html">Témoignages</a></li>
+        <li><a href="equipe.html">L'équipe</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
@@ -637,12 +628,12 @@
         <div class="footer-col">
           <h4>Services</h4>
           <ul>
-            <li><a href="expertises.html">Diagnostic &amp; Expertise RH</a></li>
+            <li><a href="services-rh.html">Diagnostic &amp; Expertise RH</a></li>
             <li><a href="rse-decarbonation.html">RSE &amp; Decarbonation</a></li>
-            <li><a href="rh-transition.html">DRH de transition</a></li>
-            <li><a href="pass-rh.html">Pass RH</a></li>
-            <li><a href="ressourcerie.html">Ressourcerie</a></li>
-            <li><a href="financement.html">Financement OPCO</a></li>
+            <li><a href="services-rh.html">DRH de transition</a></li>
+            <li><a href="services-rh.html">Pass RH</a></li>
+            <li><a href="ressources.html">Ressourcerie</a></li>
+            <li><a href="ressources.html">Financement OPCO</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -664,155 +655,7 @@
     </div>
   </footer>
 
-  <script>
-    // Header scroll
-    window.addEventListener('scroll', function() {
-      document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 10);
-    });
-
-    // Calendar filter
-    (function() {
-      var filters = document.querySelectorAll('.cal-filter');
-      var sessions = document.querySelectorAll('.cal-session');
-      var months = document.querySelectorAll('.cal-month');
-
-      filters.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          filters.forEach(function(f) { f.classList.remove('active'); });
-          btn.classList.add('active');
-          var cat = btn.getAttribute('data-filter');
-
-          sessions.forEach(function(s) {
-            if (cat === 'all' || s.getAttribute('data-cat') === cat) {
-              s.classList.remove('hidden');
-              s.style.animation = 'fadeUp 0.35s ease forwards';
-            } else {
-              s.classList.add('hidden');
-              s.style.animation = '';
-            }
-          });
-
-          // Hide empty months
-          months.forEach(function(m) {
-            var visible = m.querySelectorAll('.cal-session:not(.hidden)');
-            m.style.display = visible.length ? '' : 'none';
-          });
-        });
-      });
-    })();
-
-    // Mini calendar grid generation
-    (function() {
-      var container = document.getElementById('calVisual');
-      if (!container) return;
-
-      var months = [
-        { name: 'Mai 2026', year: 2026, month: 4, anchor: 'cal-mai' },
-        { name: 'Juin 2026', year: 2026, month: 5, anchor: 'cal-juin' },
-        { name: 'Sept 2026', year: 2026, month: 8, anchor: 'cal-sept' },
-        { name: 'Oct 2026', year: 2026, month: 9, anchor: 'cal-oct' },
-        { name: 'Nov 2026', year: 2026, month: 10, anchor: 'cal-nov' }
-      ];
-
-      var events = [
-        { month: 4, days: [12,13,14], cat: 'management' },
-        { month: 4, days: [19,20], cat: 'droit' },
-        { month: 4, days: [26], cat: 'rh' },
-        { month: 5, days: [2,3], cat: 'recrutement' },
-        { month: 5, days: [9,10], cat: 'management' },
-        { month: 5, days: [16,17], cat: 'rse' },
-        { month: 5, days: [23,24], cat: 'rh' },
-        { month: 8, days: [7,8,9], cat: 'management' },
-        { month: 8, days: [15], cat: 'droit' },
-        { month: 8, days: [22,23], cat: 'recrutement' },
-        { month: 9, days: [13], cat: 'droit' },
-        { month: 10, days: [16,17,18], cat: 'management' }
-      ];
-
-      var dayNames = ['Lun','Mar','Mer','Jeu','Ven','Sam','Dim'];
-
-      months.forEach(function(m) {
-        var card = document.createElement('a');
-        card.href = '#' + m.anchor;
-        card.style.cssText = 'text-decoration:none;background:white;border:1px solid #e5e7eb;border-radius:16px;padding:20px;transition:border-color 0.2s;';
-        card.onmouseenter = function() { card.style.borderColor = '#007cba'; };
-        card.onmouseleave = function() { card.style.borderColor = '#e5e7eb'; };
-
-        var title = document.createElement('div');
-        title.style.cssText = 'font-family:Sora,sans-serif;font-weight:800;font-size:0.95rem;color:#092933;margin-bottom:12px;text-align:center;';
-        title.textContent = m.name;
-        card.appendChild(title);
-
-        var header = document.createElement('div');
-        header.className = 'cal-mini-header';
-        dayNames.forEach(function(d) {
-          var s = document.createElement('span');
-          s.textContent = d;
-          header.appendChild(s);
-        });
-        card.appendChild(header);
-
-        var grid = document.createElement('div');
-        grid.className = 'cal-mini-grid';
-
-        var firstDay = new Date(m.year, m.month, 1).getDay();
-        var offset = firstDay === 0 ? 6 : firstDay - 1;
-        var daysInMonth = new Date(m.year, m.month + 1, 0).getDate();
-
-        for (var e = 0; e < offset; e++) {
-          var empty = document.createElement('div');
-          empty.className = 'cal-mini-day empty';
-          grid.appendChild(empty);
-        }
-
-        var monthEvents = events.filter(function(ev) { return ev.month === m.month; });
-
-        for (var d = 1; d <= daysInMonth; d++) {
-          var cell = document.createElement('div');
-          cell.className = 'cal-mini-day';
-          cell.textContent = d;
-
-          var eventMatch = null;
-          for (var i = 0; i < monthEvents.length; i++) {
-            if (monthEvents[i].days.indexOf(d) !== -1) {
-              eventMatch = monthEvents[i];
-              break;
-            }
-          }
-
-          if (eventMatch) {
-            cell.classList.add('has-session', 'cat-' + eventMatch.cat);
-            var days = eventMatch.days;
-            if (days.length === 1) { cell.classList.add('event-single'); }
-            else if (d === days[0]) { cell.classList.add('event-start'); }
-            else if (d === days[days.length - 1]) { cell.classList.add('event-end'); }
-            else { cell.classList.add('event-mid'); }
-          }
-
-          grid.appendChild(cell);
-        }
-
-        card.appendChild(grid);
-
-        var count = monthEvents.reduce(function(a, ev) { return a + 1; }, 0);
-        var countEl = document.createElement('div');
-        countEl.style.cssText = 'text-align:center;margin-top:10px;font-size:0.75rem;font-weight:600;color:#6b7280;';
-        countEl.textContent = count + ' session' + (count > 1 ? 's' : '');
-        card.appendChild(countEl);
-
-        container.appendChild(card);
-      });
-    })();
-
-    // Scroll reveal
-    var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target); }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
-    document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
-    document.querySelectorAll('.reveal-stagger').forEach(function(el) { obs.observe(el); });
-  </script>
+  <script src="main.js"></script>
 
 </body>
 </html>

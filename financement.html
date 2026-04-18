@@ -341,15 +341,12 @@
     window.addEventListener('scroll', function() {
       document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 10);
     });
-    document.querySelector('.nav-toggle').addEventListener('click', function() {
-      document.querySelector('.nav-links').classList.toggle('open');
-    });
     var revealObs = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) { entry.target.classList.add('revealed'); revealObs.unobserve(entry.target); }
       });
     }, { threshold: 0.15 });
-    document.querySelectorAll('.reveal, .reveal-stagger').forEach(function(el) { revealObs.observe(el); });
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-stagger').forEach(function(el) { revealObs.observe(el); });
   </script>
 
 </body>

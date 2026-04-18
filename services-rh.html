@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services RH | Diagnostic, DRH de transition & Pass RH | CARTESA Isere</title>
+  <meta name="description" content="Tous nos services RH : diagnostic et expertise, DRH de transition et temps partage, abonnements Pass RH. Cabinet certifie Qualiopi en Isere. Accompagnement sur mesure pour PME.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://cartesa-lyon.com/services-rh.html">
+  <meta property="og:title" content="Services RH | Diagnostic, DRH de transition & Pass RH | CARTESA">
+  <meta property="og:description" content="Diagnostic RH/RSE, coaching, DRH de transition, abonnements Pass RH. Cabinet de conseil certifie Qualiopi en Isere.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="CARTESA">
+  <meta property="og:image" content="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="geo.region" content="FR-38">
+  <meta name="geo.placename" content="La Tour-du-Pin">
+  <meta name="geo.position" content="45.5628;5.4437">
+  <meta name="ICBM" content="45.5628, 5.4437">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "CARTESA",
+    "description": "Cabinet de conseil et organisme de formation RH certifie Qualiopi. Services RH : diagnostic, DRH de transition, Pass RH.",
+    "url": "https://cartesa-lyon.com/services-rh.html",
+    "logo": "https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png",
+    "foundingDate": "2003",
+    "email": "contact@cabinet-cartesa.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "36 avenue Alsace Lorraine",
+      "addressLocality": "La Tour-du-Pin",
+      "postalCode": "38110",
+      "addressRegion": "Auvergne-Rhone-Alpes",
+      "addressCountry": "FR"
+    },
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Isere, Auvergne-Rhone-Alpes"
+    },
+    "knowsAbout": ["Diagnostic RH", "Diagnostic RSE", "Coaching", "Conduite de transformation", "Co-developpement", "AFEST", "Ingenierie pedagogique", "DRH de transition", "Pass RH"]
+  }
+  </script>
+  <style>
+    /* === PRICING (from pass-rh) === */
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; max-width: 1100px; margin: 0 auto; align-items: stretch; }
+
+    .plan { padding: 44px 32px 36px; display: flex; flex-direction: column; position: relative; overflow: hidden; transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s cubic-bezier(0.22,1,0.36,1); }
+    .plan::after { content: ''; position: absolute; width: 320px; height: 320px; border-radius: 50%; right: -120px; top: -120px; pointer-events: none; transition: opacity 0.5s ease; }
+    .plan:hover { transform: translateY(-3px); }
+
+    .plan--respiration { background: var(--white); border: 1px solid rgba(9,41,51,0.06); border-radius: 20px 0 0 20px; box-shadow: 0 4px 24px rgba(9,41,51,0.04); }
+    .plan--respiration::after { background: radial-gradient(circle, rgba(33,182,200,0.06) 0%, transparent 70%); }
+    .plan--respiration:hover { box-shadow: 0 12px 40px rgba(9,41,51,0.1); }
+
+    .plan--elan { background: linear-gradient(160deg, #007cba 0%, #005a8c 60%, #004d7a 100%); color: var(--white); z-index: 2; box-shadow: 0 20px 56px rgba(0,93,148,0.35); border-radius: 20px; margin: -12px -2px; padding: 56px 36px 44px; }
+    .plan--elan::after { background: radial-gradient(circle, rgba(236,208,52,0.08) 0%, transparent 65%); }
+    .plan--elan:hover { box-shadow: 0 28px 72px rgba(0,93,148,0.4); transform: translateY(-5px); }
+
+    .plan--alliance { background: linear-gradient(160deg, #092933 0%, #071e28 100%); color: rgba(255,255,255,0.9); border-radius: 0 20px 20px 0; box-shadow: 0 4px 24px rgba(9,41,51,0.15); }
+    .plan--alliance::after { background: radial-gradient(circle, rgba(236,208,52,0.04) 0%, transparent 70%); }
+    .plan--alliance:hover { box-shadow: 0 12px 40px rgba(9,41,51,0.25); }
+
+    .plan-level { display: inline-block; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; margin-bottom: 12px; }
+    .plan--respiration .plan-level { color: var(--teal-500); }
+    .plan--elan .plan-level { color: var(--gold-400); }
+    .plan--alliance .plan-level { color: var(--gold-500); opacity: 0.7; }
+
+    .plan-name { font-family: 'Sora', sans-serif; font-size: 1.7rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 2px; }
+    .plan--respiration .plan-name { color: var(--teal-900); }
+    .plan--elan .plan-name { color: var(--white); }
+    .plan--alliance .plan-name { color: var(--white); }
+
+    .plan-subtitle { font-size: 0.82rem; margin-bottom: 24px; }
+    .plan--respiration .plan-subtitle { color: var(--neutral-500); }
+    .plan--elan .plan-subtitle { color: rgba(255,255,255,0.55); }
+    .plan--alliance .plan-subtitle { color: rgba(255,255,255,0.4); }
+
+    .plan-price { display: flex; align-items: baseline; gap: 4px; margin-bottom: 4px; position: relative; z-index: 1; }
+    .plan-amount { font-family: 'Sora', sans-serif; font-size: 3.4rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1; }
+    .plan--respiration .plan-amount { color: var(--teal-900); }
+    .plan--elan .plan-amount { color: var(--gold-400); }
+    .plan--alliance .plan-amount { color: var(--gold-500); }
+    .plan-currency { font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 600; }
+    .plan-currency small { display: block; font-size: 0.65rem; font-weight: 400; opacity: 0.5; margin-top: 2px; }
+    .plan--respiration .plan-currency { color: var(--neutral-500); }
+    .plan--elan .plan-currency { color: rgba(255,255,255,0.5); }
+    .plan--alliance .plan-currency { color: var(--gold-500); opacity: 0.6; }
+
+    .plan-tagline { font-size: 0.78rem; font-style: italic; margin-bottom: 24px; line-height: 1.5; }
+    .plan--respiration .plan-tagline { color: var(--neutral-400); }
+    .plan--elan .plan-tagline { color: rgba(255,255,255,0.45); }
+    .plan--alliance .plan-tagline { color: rgba(255,255,255,0.4); }
+
+    .plan-format { font-size: 0.72rem; padding: 10px 16px; border-radius: 10px; margin-bottom: 24px; font-weight: 500; letter-spacing: 0.02em; }
+    .plan--respiration .plan-format { background: var(--teal-50); color: var(--teal-700); }
+    .plan--elan .plan-format { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6); }
+    .plan--alliance .plan-format { background: rgba(236,208,52,0.06); color: var(--gold-400); opacity: 0.8; }
+
+    .plan-features { list-style: none; padding: 0; margin: 0 0 32px; flex: 1; }
+    .plan-features li { position: relative; padding: 9px 0 9px 18px; font-size: 0.86rem; line-height: 1.5; }
+    .plan-features li::before { content: ''; position: absolute; left: 0; top: 16px; width: 6px; height: 6px; border-radius: 50%; }
+    .plan--respiration .plan-features li::before { background: var(--teal-500); }
+    .plan--respiration .plan-features li { border-bottom: 1px solid var(--neutral-100); color: var(--neutral-700); }
+    .plan--elan .plan-features li::before { background: var(--gold-400); }
+    .plan--elan .plan-features li { border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .plan--alliance .plan-features li::before { background: var(--gold-500); }
+    .plan--alliance .plan-features li { border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .plan-features li:last-child { border-bottom: none; }
+
+    .plan-cta { display: block; text-align: center; padding: 14px 24px; border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 0.88rem; font-weight: 600; text-decoration: none; transition: all 0.3s cubic-bezier(0.22,1,0.36,1); letter-spacing: 0.01em; }
+    .plan--respiration .plan-cta { background: transparent; color: var(--teal-600); border: 2px solid var(--teal-500); }
+    .plan--respiration .plan-cta:hover { background: var(--teal-600); color: var(--white); border-color: var(--teal-600); }
+    .plan--elan .plan-cta { background: var(--gold-400); color: var(--teal-900); border: 2px solid var(--gold-400); }
+    .plan--elan .plan-cta:hover { background: var(--gold-600); border-color: var(--gold-600); }
+    .plan--alliance .plan-cta { background: transparent; color: var(--gold-400); border: 2px solid rgba(236,208,52,0.4); }
+    .plan--alliance .plan-cta:hover { background: var(--gold-400); color: var(--teal-900); border-color: var(--gold-400); }
+
+    .plan-ribbon { position: absolute; top: 24px; right: -28px; background: var(--gold-400); color: var(--teal-900); font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; padding: 6px 36px; transform: rotate(45deg); z-index: 3; }
+
+    /* === 4 EN 1 strip === */
+    .quatre-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; max-width: 1000px; margin: 0 auto; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(9,41,51,0.06); }
+    .quatre-item { padding: 32px 24px; text-align: center; position: relative; transition: background 0.3s ease; }
+    .quatre-item:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 20%; height: 60%; width: 1px; background: var(--neutral-200); }
+    .quatre-item:hover { background: var(--teal-50); }
+    .quatre-num { font-family: 'Sora', sans-serif; font-size: 2.4rem; font-weight: 800; line-height: 1; margin-bottom: 8px; }
+    .quatre-item:nth-child(1) .quatre-num { color: var(--teal-600); }
+    .quatre-item:nth-child(2) .quatre-num { color: var(--gold-600); }
+    .quatre-item:nth-child(3) .quatre-num { color: #2e7d32; }
+    .quatre-item:nth-child(4) .quatre-num { color: #7b1fa2; }
+    .quatre-item h3 { font-size: 0.95rem; margin-bottom: 6px; }
+    .quatre-item p { font-size: 0.8rem; color: var(--neutral-500); line-height: 1.55; }
+
+    /* === TARGET CARDS === */
+    .target-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; max-width: 1080px; margin: 48px auto 0; background: var(--teal-50); border-radius: 14px; overflow: hidden; }
+    .target-item { padding: 24px 28px; text-align: center; position: relative; }
+    .target-item:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 20%; height: 60%; width: 1px; background: rgba(0,124,186,0.12); }
+    .target-name { font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 700; margin-bottom: 6px; color: var(--teal-700); }
+    .target-item p { font-size: 0.78rem; color: var(--neutral-500); line-height: 1.5; }
+
+    /* === OPTIONS === */
+    .options-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 800px; margin: 0 auto; }
+    .option-item { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-radius: 10px; font-size: 0.86rem; color: var(--neutral-700); transition: background 0.2s ease; }
+    .option-item:hover { background: var(--teal-50); }
+    .option-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold-500); flex-shrink: 0; }
+
+    /* === DIFF SECTION === */
+    .diff-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; max-width: 900px; margin: 0 auto; border-radius: 16px; overflow: hidden; }
+    .diff-card { padding: 32px; background: rgba(255,255,255,0.06); transition: background 0.3s ease; }
+    .diff-card:hover { background: rgba(255,255,255,0.1); }
+    .diff-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+    .diff-card p { font-size: 0.86rem; color: rgba(255,255,255,0.55); line-height: 1.65; }
+
+    /* === SITUATION CARDS (from rh-transition) === */
+    .situation-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+    .situation-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 28px;
+      border-radius: 14px;
+      background: var(--white);
+      box-shadow: 0 2px 12px rgba(9,41,51,0.04);
+      transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .situation-card::after {
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      right: -80px;
+      bottom: -80px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .situation-card:hover::after { opacity: 1; }
+    .situation-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(9,41,51,0.1);
+    }
+    .situation-card:nth-child(-n+3)::after { background: radial-gradient(circle, rgba(33,182,200,0.08) 0%, transparent 70%); }
+    .situation-card:nth-child(n+4)::after { background: radial-gradient(circle, rgba(236,208,52,0.06) 0%, transparent 70%); }
+    .situation-num {
+      font-family: 'Sora', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1;
+      flex-shrink: 0;
+      min-width: 40px;
+    }
+    .situation-card:nth-child(-n+3) .situation-num { color: var(--teal-500); }
+    .situation-card:nth-child(n+4) .situation-num { color: var(--gold-500); }
+    .situation-card h3 { font-size: 1.05rem; margin-bottom: 6px; }
+    .situation-card p { font-size: 0.88rem; color: var(--neutral-600); line-height: 1.6; margin: 0; }
+
+    /* === FORMAT CARDS (from rh-transition) === */
+    .format-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: stretch;
+    }
+    .format-card {
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s ease;
+    }
+    .format-card:hover { transform: translateY(-3px); }
+    .format-card::after {
+      content: '';
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      right: -100px;
+      top: -100px;
+      pointer-events: none;
+    }
+    .format-card--transition {
+      background: var(--white);
+      border: 1px solid rgba(9,41,51,0.06);
+      border-radius: 20px 0 0 20px;
+      box-shadow: 0 4px 24px rgba(9,41,51,0.04);
+    }
+    .format-card--transition::after { background: radial-gradient(circle, rgba(33,182,200,0.06) 0%, transparent 70%); }
+    .format-card--transition:hover { box-shadow: 0 12px 40px rgba(9,41,51,0.1); }
+    .format-card--partage {
+      background: linear-gradient(160deg, #007cba 0%, #005a8c 60%, #004d7a 100%);
+      color: var(--white);
+      z-index: 2;
+      box-shadow: 0 20px 56px rgba(0,93,148,0.35);
+      border-radius: 20px;
+      margin: -12px -2px;
+      padding: 48px 32px;
+    }
+    .format-card--partage::after { background: radial-gradient(circle, rgba(236,208,52,0.08) 0%, transparent 65%); }
+    .format-card--partage:hover { box-shadow: 0 28px 72px rgba(0,93,148,0.4); transform: translateY(-5px); }
+    .format-card--rse {
+      background: linear-gradient(160deg, #3a1f6e 0%, #2a1555 100%);
+      color: rgba(255,255,255,0.9);
+      border-radius: 0 20px 20px 0;
+      box-shadow: 0 4px 24px rgba(9,41,51,0.15);
+    }
+    .format-card--rse::after { background: radial-gradient(circle, rgba(139,92,246,0.06) 0%, transparent 70%); }
+    .format-card--rse:hover { box-shadow: 0 12px 40px rgba(58,31,110,0.25); }
+
+    .format-card h3 { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; margin-bottom: 4px; }
+    .format-sub { font-size: 0.82rem; margin-bottom: 20px; }
+    .format-card--transition .format-sub { color: var(--neutral-500); }
+    .format-card--partage .format-sub { color: rgba(255,255,255,0.5); }
+    .format-card--rse .format-sub { color: rgba(255,255,255,0.4); }
+
+    .format-card ul { list-style: none; padding: 0; margin: 0 0 24px; flex: 1; }
+    .format-card ul li {
+      position: relative;
+      padding: 8px 0 8px 18px;
+      font-size: 0.86rem;
+      line-height: 1.5;
+    }
+    .format-card ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 15px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+    .format-card--transition ul li::before { background: var(--teal-500); }
+    .format-card--transition ul li { border-bottom: 1px solid var(--neutral-100); color: var(--neutral-700); }
+    .format-card--partage ul li::before { background: var(--gold-400); }
+    .format-card--partage ul li { border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .format-card--rse ul li::before { background: #a78bfa; }
+    .format-card--rse ul li { border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .format-card ul li:last-child { border-bottom: none; }
+
+    .format-cta {
+      display: block;
+      text-align: center;
+      padding: 13px 20px;
+      border-radius: 12px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.86rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .format-card--transition .format-cta { background: transparent; color: var(--teal-600); border: 2px solid var(--teal-500); }
+    .format-card--transition .format-cta:hover { background: var(--teal-600); color: var(--white); border-color: var(--teal-600); }
+    .format-card--partage .format-cta { background: var(--gold-400); color: var(--teal-900); border: 2px solid var(--gold-400); }
+    .format-card--partage .format-cta:hover { background: var(--gold-600); border-color: var(--gold-600); }
+    .format-card--rse .format-cta { background: transparent; color: #a78bfa; border: 2px solid rgba(167,139,250,0.4); }
+    .format-card--rse .format-cta:hover { background: #a78bfa; color: #1a0a3e; border-color: #a78bfa; }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 960px) {
+      .pricing-grid { grid-template-columns: 1fr; max-width: 440px; gap: 16px; }
+      .plan { border-radius: 20px !important; margin: 0 !important; padding: 40px 28px 32px !important; }
+      .plan--elan { padding: 40px 28px 32px !important; }
+      .quatre-strip { grid-template-columns: repeat(2, 1fr); }
+      .quatre-item:nth-child(2)::after { display: none; }
+      .quatre-item:nth-child(1), .quatre-item:nth-child(2) { border-bottom: 1px solid var(--neutral-200); }
+      .target-strip { grid-template-columns: 1fr; }
+      .target-item:not(:last-child)::after { display: none; }
+      .target-item:not(:last-child) { border-bottom: 1px solid rgba(0,124,186,0.08); }
+      .diff-grid { grid-template-columns: 1fr; }
+      .situation-grid { grid-template-columns: 1fr; }
+      .format-row { grid-template-columns: 1fr; max-width: 440px; gap: 16px; }
+      .format-card { border-radius: 20px !important; margin: 0 !important; padding: 36px 28px !important; }
+    }
+    @media (max-width: 640px) {
+      .quatre-strip { grid-template-columns: 1fr; }
+      .quatre-item::after { display: none !important; }
+      .quatre-item { border-bottom: 1px solid var(--neutral-200); }
+      .quatre-item:last-child { border-bottom: none; }
+      .options-grid { grid-template-columns: 1fr; }
+      .plan-amount { font-size: 2.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA">
+      </a>
+      <button class="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li class="nav-dropdown">
+          <a href="services-rh.html" class="active">Nos services</a>
+          <ul class="nav-sub">
+            <li><a href="services-rh.html">Services RH</a></li>
+            <li><a href="rse-decarbonation.html">RSE &amp; Decarbonation</a></li>
+          </ul>
+        </li>
+        <li><a href="formations.html">Formations 2026</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+        <li><a href="temoignages.html">Temoignages</a></li>
+        <li><a href="equipe.html">L'equipe</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero page-hero--enhanced">
+    <div class="hero-bg-pattern"></div>
+    <div class="container">
+      <span class="section-label" style="color:rgba(255,255,255,0.5);">Nos services RH</span>
+      <h1>Diagnostic, accompagnement et <span style="color: var(--gold-500);">pilotage RH</span> sur mesure</h1>
+      <p>Du diagnostic a la mise en oeuvre, une approche globale pour structurer, developper et piloter votre fonction RH. Plus de 500 dirigeants nous font confiance.</p>
+      <div class="page-hero-stats">
+        <div class="page-hero-stat"><strong>7</strong><span>expertises RH</span></div>
+        <div class="page-hero-stat"><strong>20+</strong><span>ans de terrain</span></div>
+        <div class="page-hero-stat"><strong>48h</strong><span>delai d'intervention</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB NAVIGATION -->
+  <section class="section section--white">
+    <div class="container">
+      <nav class="tab-nav" aria-label="Services RH">
+        <button class="tab-btn active" data-tab="tab-diagnostic">Diagnostic &amp; Expertise</button>
+        <button class="tab-btn" data-tab="tab-drh-transition">DRH de transition</button>
+        <button class="tab-btn" data-tab="tab-pass-rh">Pass RH</button>
+      </nav>
+
+      <!-- ============================================================ -->
+      <!-- TAB 1 : DIAGNOSTIC & EXPERTISE (from expertises.html)        -->
+      <!-- ============================================================ -->
+      <div class="tab-panel active" id="tab-diagnostic">
+
+        <div class="section-header reveal" style="margin-top:40px;">
+          <span class="section-label">Nos expertises</span>
+          <h2 class="section-title">7 domaines d'expertise au service de votre performance RH</h2>
+          <p class="section-subtitle">Du diagnostic a l'accompagnement, une approche globale et sur mesure pour chaque entreprise.</p>
+        </div>
+
+        <div class="grid-2" style="gap:24px;">
+
+          <div class="card expertise-card reveal" style="--delay: 0s;">
+            <div class="expertise-illustration">
+              <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/pourquoicartesa.png" alt="Diagnostic" class="illustration-img">
+            </div>
+            <span class="expertise-number">01</span>
+            <h3>Diagnostic et accompagnement RH/RSE</h3>
+            <p>Co-production d'un diagnostic sur mesure pour identifier vos leviers de progres et structurer votre politique RH. Notre approche repose sur l'ecoute active et l'analyse fine de votre contexte organisationnel, social et economique.</p>
+            <ul>
+              <li>Recrutement et marque employeur</li>
+              <li>Organisation du teletravail et management hybride</li>
+              <li>Developpement des competences et GPEC</li>
+              <li>Entretiens annuels et professionnels</li>
+              <li>Cartographie des competences et referentiels metiers</li>
+              <li>Demarche RSE et qualite de vie au travail</li>
+            </ul>
+            <a href="contact.html" class="btn btn--ghost btn--sm">Nous contacter</a>
+          </div>
+
+          <div class="card expertise-card reveal" style="--delay: 0.1s;">
+            <div class="expertise-illustration">
+              <img src="https://cartesa-lyon.com/wp-content/uploads/2020/05/Co-construire-3.jpg" alt="Formation" class="illustration-img">
+            </div>
+            <span class="expertise-number">02</span>
+            <h3>Formation</h3>
+            <p>Organisme certifie Qualiopi, nos formations reposent sur un apprentissage participatif et experientiel, ancre dans vos situations professionnelles. Chaque parcours est concu sur mesure, avec une alternance entre apports theoriques, mises en situation et retours d'experience.</p>
+            <ul>
+              <li>Management et leadership situationnel</li>
+              <li>Analyse de l'environnement et veille strategique</li>
+              <li>Intelligence collective et facilitation</li>
+              <li>Communication interpersonnelle et gestion de conflits</li>
+              <li>Recrutement, integration et fidelisation</li>
+              <li>Management a distance et management hybride</li>
+            </ul>
+            <a href="formations.html" class="btn btn--ghost btn--sm">Voir les formations</a>
+          </div>
+
+          <div class="card expertise-card reveal" id="coaching" style="--delay: 0.2s;">
+            <div class="expertise-illustration">
+              <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/Janus.png" alt="Coaching" class="illustration-img">
+            </div>
+            <span class="expertise-number">03</span>
+            <h3>Coaching individuel et collectif</h3>
+            <p>Un espace rassurant et stimulant pour prendre du recul, clarifier vos objectifs et actionner vos leviers de progression. Nos coachs respectent les standards deontologiques ICF et SF pour garantir un accompagnement ethique et professionnel.</p>
+            <ul>
+              <li>Coaching individuel de dirigeant : 6 a 8 seances</li>
+              <li>Coaching collectif d'equipe : demi-journees ou journees</li>
+              <li>Accompagnement de prise de poste et transition</li>
+              <li>Developpement du leadership et de la posture manageriale</li>
+              <li>Gestion du stress et prevention de l'epuisement</li>
+            </ul>
+            <a href="contact.html" class="btn btn--ghost btn--sm">Nous contacter</a>
+          </div>
+
+          <div class="card expertise-card reveal" style="--delay: 0.3s;">
+            <div class="expertise-illustration">
+              <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/Anticiper-4.jpeg" alt="Transformation" class="illustration-img">
+            </div>
+            <span class="expertise-number">04</span>
+            <h3>Conduite de projets de transformation</h3>
+            <p>Accompagner vos transformations organisationnelles avec methode et engagement. De l'evaluation des pratiques existantes a la mise en oeuvre des changements, nous co-construisons avec vos equipes les conditions de reussite de vos projets.</p>
+            <ul>
+              <li>Evaluation des pratiques existantes et benchmark</li>
+              <li>Identification des competences cles et des resistances</li>
+              <li>Co-production de referentiels et de processus</li>
+              <li>Accompagnement du changement et communication interne</li>
+              <li>Suivi et mesure des resultats post-transformation</li>
+            </ul>
+            <a href="contact.html" class="btn btn--ghost btn--sm">Nous contacter</a>
+          </div>
+
+          <div class="card expertise-card reveal" style="--delay: 0.4s;">
+            <div class="expertise-illustration">
+              <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/codev.png" alt="Co-developpement" class="illustration-img">
+            </div>
+            <span class="expertise-number">05</span>
+            <h3>Cercles de co-developpement</h3>
+            <p>Groupes d'apprentissage professionnel ou les participants apprennent les uns des autres dans un cadre structure et bienveillant. Une methode eprouvee pour resoudre des problematiques concretes grace a l'intelligence collective du groupe.</p>
+            <ul>
+              <li>Teletravail et management hybride</li>
+              <li>Transition expert-manager : reussir sa prise de poste</li>
+              <li>Marque employeur et attractivite</li>
+              <li>Cooperation interservices et transversalite</li>
+              <li>Competences numeriques et transformation digitale</li>
+            </ul>
+            <a href="contact.html" class="btn btn--ghost btn--sm">Nous contacter</a>
+          </div>
+
+          <div class="card expertise-card reveal" style="--delay: 0.5s;">
+            <div class="expertise-illustration">
+              <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/Enrichir-6.jpeg" alt="Ingenierie pedagogique" class="illustration-img">
+            </div>
+            <span class="expertise-number">06</span>
+            <h3>Ingenierie pedagogique</h3>
+            <p>Une expertise specifique en conception de formations : structuration des parcours, progression pedagogique, sequencement et engagement des apprenants. Nous concevons des dispositifs blended (presentiel + distanciel) adaptes a vos contraintes.</p>
+            <ul>
+              <li>Conception de parcours blended et multimodaux</li>
+              <li>Structuration des sequences et progression pedagogique</li>
+              <li>Outils d'engagement et d'animation a distance</li>
+              <li>Evaluation des acquis et certification</li>
+              <li>Formation de formateurs internes (AFEST)</li>
+            </ul>
+            <a href="contact.html" class="btn btn--ghost btn--sm">Nous contacter</a>
+          </div>
+
+          <div class="card expertise-card reveal" style="grid-column: 1 / -1; max-width: 560px; --delay: 0.6s;">
+            <div class="expertise-illustration">
+              <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/Cultiver-2.jpeg" alt="Entrepreneuriat" class="illustration-img">
+            </div>
+            <span class="expertise-number">07</span>
+            <h3>Accompagnement a l'entrepreneuriat</h3>
+            <p>5 actions cles pour reussir votre projet entrepreneurial. Du developpement des competences a la navigation des difficultes, un accompagnement complet par des consultants qui connaissent les realites de la creation d'entreprise.</p>
+            <ul>
+              <li>Developpement des competences cles de l'entrepreneur</li>
+              <li>Construction et positionnement de l'offre</li>
+              <li>Developpement du reseau et de la strategie commerciale</li>
+              <li>Recrutement et management des premiers collaborateurs</li>
+              <li>Navigation des difficultes et resilience entrepreneuriale</li>
+            </ul>
+            <div class="info-box" style="margin-bottom:14px; margin-top:4px;">
+              <p>Rendez-vous decouverte de 30 minutes offert pour echanger sur votre projet entrepreneurial.</p>
+            </div>
+            <a href="contact.html" class="btn btn--accent btn--sm">Prendre rendez-vous</a>
+          </div>
+
+        </div>
+
+        <!-- CTA BAND -->
+        <div style="margin-top:56px; padding:48px 0; background:var(--teal-700); border-radius:16px; text-align:center;">
+          <h2 class="reveal" style="margin-bottom:12px; color:var(--white);">Un besoin specifique ? Parlons-en.</h2>
+          <p class="reveal" style="color:rgba(255,255,255,0.85); max-width:520px; margin:0 auto 28px; font-size:1rem; --delay: 0.1s;">Chaque intervention est concue sur mesure. Contactez-nous pour un premier echange sans engagement.</p>
+          <a href="contact.html" class="btn btn--accent btn--lg reveal" style="--delay: 0.2s;">Nous contacter</a>
+        </div>
+
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- TAB 2 : DRH DE TRANSITION (from rh-transition.html)         -->
+      <!-- ============================================================ -->
+      <div class="tab-panel" id="tab-drh-transition">
+        <div id="drh-transition"></div>
+
+        <!-- QUAND -->
+        <div class="section-header reveal" style="margin-top:40px;">
+          <span class="section-label">Les situations</span>
+          <h2 class="section-title">Quand un DRH de transition change la donne</h2>
+          <p class="section-subtitle">6 situations ou un expert RH operationnel fait la difference entre subir et piloter.</p>
+        </div>
+        <div class="situation-grid reveal-stagger">
+          <div class="situation-card">
+            <div class="situation-num">01</div>
+            <div>
+              <h3>Depart du DRH</h3>
+              <p>Votre DRH ou RRH quitte l'entreprise. Il faut assurer la continuite operationnelle le temps du recrutement. Pas dans 3 mois -- maintenant.</p>
+            </div>
+          </div>
+          <div class="situation-card">
+            <div class="situation-num">02</div>
+            <div>
+              <h3>Croissance rapide</h3>
+              <p>Vous passez de 40 a 100 salaries. Il faut structurer la fonction RH, mettre en place les processus, sans le budget d'un CDI temps plein.</p>
+            </div>
+          </div>
+          <div class="situation-card">
+            <div class="situation-num">03</div>
+            <div>
+              <h3>Restructuration</h3>
+              <p>PSE, reorganisation, fermeture de site. Vous avez besoin d'un expert qui connait le droit social et qui sait gerer la dimension humaine.</p>
+            </div>
+          </div>
+          <div class="situation-card">
+            <div class="situation-num">04</div>
+            <div>
+              <h3>Mise en conformite</h3>
+              <p>CSE a mettre en place, accord collectif a negocier, DUERP a actualiser, egalite pro a structurer. Obligations legales qui ne peuvent pas attendre.</p>
+            </div>
+          </div>
+          <div class="situation-card">
+            <div class="situation-num">05</div>
+            <div>
+              <h3>Fusion-acquisition</h3>
+              <p>Integration de deux cultures, harmonisation des statuts, gestion des doublons. Un DRH de transition pilote le volet humain du rapprochement.</p>
+            </div>
+          </div>
+          <div class="situation-card">
+            <div class="situation-num">06</div>
+            <div>
+              <h3>Pression RSE des donneurs d'ordres</h3>
+              <p>Vos clients exigent une demarche RSE structuree. Questionnaires EcoVadis, bilans carbone, CSRD a anticiper. Il faut un partenaire RSE operationnel, pas un consultant qui fait des slides.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FORMATS -->
+        <div class="section-header reveal" style="margin-top:56px;">
+          <span class="section-label">Nos formats</span>
+          <h2 class="section-title">Trois formats, un seul objectif : que ca tourne</h2>
+        </div>
+        <div class="format-row reveal">
+          <div class="format-card format-card--transition">
+            <h3>Mission de transition</h3>
+            <p class="format-sub">Intervention intensive, duree definie</p>
+            <ul>
+              <li>Duree : <strong>3 a 18 mois</strong></li>
+              <li>Presence : <strong>3 a 5 jours/semaine</strong></li>
+              <li>Profil : <strong>DRH senior 15+ ans</strong></li>
+              <li>Cas : restructuration, PSE, fusion, remplacement urgent</li>
+              <li>Tarif indicatif : <strong>900 -- 1 200 &euro;/jour</strong></li>
+            </ul>
+            <a href="contact.html" class="format-cta">Discuter d'une mission</a>
+          </div>
+          <div class="format-card format-card--partage">
+            <h3>DRH a temps partage</h3>
+            <p class="format-sub">Presence reguliere, engagement souple</p>
+            <ul>
+              <li>Duree : <strong>reconductible (min. 6 mois)</strong></li>
+              <li>Presence : <strong>1 a 3 jours/semaine</strong></li>
+              <li>Profil : <strong>DRH / RRH experimente</strong></li>
+              <li>Cas : structuration RH, montee en competences, croissance</li>
+              <li>Tarif indicatif : <strong>1 600 -- 4 800 &euro;/mois</strong></li>
+            </ul>
+            <a href="contact.html" class="format-cta">En savoir plus</a>
+          </div>
+          <div class="format-card format-card--rse">
+            <h3>Partenaire RSE</h3>
+            <p class="format-sub">Votre referent RSE operationnel</p>
+            <ul>
+              <li>Duree : <strong>6 a 18 mois</strong></li>
+              <li>Presence : <strong>1 a 2 jours/semaine</strong></li>
+              <li>Profil : <strong>Expert RSE + RH senior</strong></li>
+              <li>Cas : conformite CSRD, EcoVadis, donneurs d'ordres, demarche RSE</li>
+              <li>Tarif indicatif : <strong>1 200 -- 3 200 &euro;/mois</strong></li>
+            </ul>
+            <a href="contact.html" class="format-cta">Discuter RSE</a>
+          </div>
+        </div>
+        <div class="card reveal" style="max-width:1100px; margin:32px auto 0; padding:24px; text-align:center; background:var(--teal-50); border:1px solid var(--teal-100);">
+          <p style="margin:0;"><strong>Comparaison :</strong> un RRH interne en CDI coute <strong>4 500 -- 6 500 &euro;/mois charges</strong>. Le DRH a temps partage demarre a <strong>1 600 &euro;/mois</strong>, le Partenaire RSE a <strong>1 200 &euro;/mois</strong> -- soit 3 a 4 fois moins cher, pour des profils plus seniors. Et pas besoin de deux prestataires.</p>
+        </div>
+
+        <!-- EQUIPE -->
+        <div class="section-header reveal" style="margin-top:56px;">
+          <span class="section-label">Les experts</span>
+          <h2 class="section-title">4 DRH de transition, prets a intervenir</h2>
+          <p class="section-subtitle">Des profils seniors, ancres dans le terrain, sans intermediaire. Vous travaillez directement avec l'expert, pas avec un commercial.</p>
+        </div>
+        <div class="grid-2 reveal-stagger" style="gap:24px; max-width:800px; margin:0 auto;">
+          <div class="card team-card">
+            <img src="https://cartesa-lyon.com/wp-content/uploads/2021/10/photo-catherine.png" alt="Catherine Lenoir" class="team-photo">
+            <h3>Catherine Lenoir</h3>
+            <div class="role">DRH de Transition -- Profil Formation & Transformation</div>
+            <p>20+ ans d'experience. Experte en ingenierie pedagogique, AFEST, structuration de la fonction RH. Missions en industrie, commerce et services.</p>
+          </div>
+          <div class="card team-card">
+            <img src="https://cartesa-lyon.com/wp-content/uploads/2021/10/photo-philippe-1.png" alt="Philippe Lenoir" class="team-photo">
+            <h3>Philippe Lenoir</h3>
+            <div class="role">DRH de Transition -- Profil Management & Leadership</div>
+            <p>15+ ans d'experience. Coach ICF, specialiste management comportemental, conduite du changement. Missions en ETI et PME industrielles.</p>
+          </div>
+          <div class="card team-card">
+            <div class="avatar" style="background:var(--gold-500); color:var(--teal-900);">EC</div>
+            <h3>Elodie Chapelle</h3>
+            <div class="role">DRH de Transition -- Profil Droit social & Relations sociales</div>
+            <p>Specialiste droit social, negociations collectives, CSE, PSE. Interventions en contexte de restructuration et mise en conformite.</p>
+          </div>
+          <div class="card team-card">
+            <div class="avatar" style="background:var(--gold-500); color:var(--teal-900);">CI</div>
+            <h3>Claire Iffenecker</h3>
+            <div class="role">DRH de Transition -- Profil Recrutement & GPEC</div>
+            <p>Experte recrutement, integration, GPEC, marque employeur. Missions de structuration RH pour PME en croissance.</p>
+          </div>
+        </div>
+
+        <!-- AVANTAGES -->
+        <div class="section-header reveal" style="margin-top:56px;">
+          <span class="section-label">Pourquoi CARTESA</span>
+          <h2 class="section-title">Ce qui nous differencie des grands cabinets de transition</h2>
+        </div>
+        <div class="grid-2 reveal" style="gap:32px; max-width:900px; margin:0 auto;">
+          <div>
+            <h3 style="color:var(--teal-600); margin-bottom:16px;">Les grands cabinets</h3>
+            <ul style="list-style:none; padding:0; color:var(--neutral-500);">
+              <li style="padding:8px 0; border-bottom:1px solid var(--neutral-100);">Delai de placement : 5 a 15 jours</li>
+              <li style="padding:8px 0; border-bottom:1px solid var(--neutral-100);">Commission d'intermediation : +15 a 25%</li>
+              <li style="padding:8px 0; border-bottom:1px solid var(--neutral-100);">TJM senior : 1 200 -- 2 200 &euro;/jour</li>
+              <li style="padding:8px 0; border-bottom:1px solid var(--neutral-100);">Reseau national, peu d'ancrage local</li>
+              <li style="padding:8px 0;">Missions de 6 mois minimum</li>
+            </ul>
+          </div>
+          <div>
+            <h3 style="color:var(--teal-600); margin-bottom:16px;">CARTESA</h3>
+            <ul style="list-style:none; padding:0;">
+              <li style="padding:8px 0; border-bottom:1px solid var(--neutral-100); display:flex; align-items:flex-start; gap:8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal-600)" stroke-width="2.5" style="flex-shrink:0; margin-top:3px;"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Intervention sous 48h</strong> -- nos experts sont locaux</span>
+              </li>
+              <li style="padding:8px 0; border-bottom:1px solid var(--neutral-100); display:flex; align-items:flex-start; gap:8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal-600)" stroke-width="2.5" style="flex-shrink:0; margin-top:3px;"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Zero commission</strong> -- vous payez l'expert, pas un intermediaire</span>
+              </li>
+              <li style="padding:8px 0; border-bottom:1px solid var(--neutral-100); display:flex; align-items:flex-start; gap:8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal-600)" stroke-width="2.5" style="flex-shrink:0; margin-top:3px;"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>TJM 900 -- 1 200 &euro;</strong> -- meme seniorite, sans marge intermediaire</span>
+              </li>
+              <li style="padding:8px 0; border-bottom:1px solid var(--neutral-100); display:flex; align-items:flex-start; gap:8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal-600)" stroke-width="2.5" style="flex-shrink:0; margin-top:3px;"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Ancrage Isere / AuRA</strong> -- connaissance du tissu economique local</span>
+              </li>
+              <li style="padding:8px 0; border-bottom:1px solid var(--neutral-100); display:flex; align-items:flex-start; gap:8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal-600)" stroke-width="2.5" style="flex-shrink:0; margin-top:3px;"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Souplesse</strong> -- missions d'1 mois possible, pas de minimum 6 mois</span>
+              </li>
+              <li style="padding:8px 0; display:flex; align-items:flex-start; gap:8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal-600)" stroke-width="2.5" style="flex-shrink:0; margin-top:3px;"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>RH + RSE en un seul interlocuteur</strong> -- pas besoin de deux prestataires</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- FAQ DRH -->
+        <div class="section-header reveal" style="margin-top:56px;">
+          <span class="section-label">Questions frequentes</span>
+          <h2 class="section-title">DRH & Partenaire RSE : vos questions</h2>
+        </div>
+        <div class="faq-list reveal">
+          <details class="faq-item">
+            <summary>Quelle est la difference entre DRH de transition et DRH a temps partage ?</summary>
+            <p>Le DRH de transition intervient sur une mission definie (remplacement, restructuration, mise en conformite) avec un objectif et une fin. Le DRH a temps partage est une presence reguliere et reconductible, pour les PME qui n'ont pas besoin d'un temps plein mais veulent une fonction RH structuree. Nous proposons les deux formats.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Mon entreprise a 60 salaries et pas de DRH. Est-ce pour moi ?</summary>
+            <p>C'est exactement votre situation. Un DRH a temps partage (1 a 2 jours par semaine) vous permet de structurer la fonction RH, mettre en conformite vos obligations legales et professionnaliser vos pratiques -- pour un cout 3 a 4 fois inferieur a un CDI.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Quel est le statut juridique de l'expert ?</summary>
+            <p>Nos experts interviennent en contrat de prestation directe avec CARTESA. Vous n'avez pas a gerer de portage salarial, de contrat interim ou de relation tripartite. Une facture, un interlocuteur.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Pouvez-vous intervenir en urgence ?</summary>
+            <p>Oui. Notre equipe est locale et disponible sous 48 heures. Pour les situations de crise (depart soudain, conflit social, controle URSSAF), nous pouvons intervenir le jour meme si un expert est disponible.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Le volet formation peut-il etre finance par OPCO ?</summary>
+            <p>Oui. CARTESA est certifie Qualiopi. Les actions de formation integrees a la mission (formation managers, entretiens pro, sensibilisation RSE...) peuvent etre financees via votre OPCO.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Vous proposez aussi un Partenaire RSE ?</summary>
+            <p>Oui, c'est notre 3e format. Un expert RSE-RH intervient 1 a 2 jours par semaine pour structurer votre demarche RSE : conformite CSRD, reponse EcoVadis, plan d'action carbone, sensibilisation equipes. L'avantage ? Le meme interlocuteur gere vos sujets RH et RSE. Pas de silo, pas de doublons.</p>
+          </details>
+        </div>
+
+        <!-- CTA DRH -->
+        <div style="margin-top:56px; padding:48px 0; background:var(--teal-700); border-radius:16px; text-align:center;">
+          <h2 class="reveal" style="margin-bottom:12px; color:var(--white);">Un besoin RH urgent ou structurel ?</h2>
+          <p class="reveal" style="color:rgba(255,255,255,0.85); max-width:520px; margin:0 auto 28px; font-size:1rem;">Premier echange de 30 minutes. On ecoute votre situation, on vous propose le format adapte. Pas de commercial, pas de pression.</p>
+          <a href="contact.html" class="btn btn--accent btn--lg reveal">Echanger sur ma situation</a>
+        </div>
+
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- TAB 3 : PASS RH (from pass-rh.html)                        -->
+      <!-- ============================================================ -->
+      <div class="tab-panel" id="tab-pass-rh">
+        <div id="pass-rh"></div>
+
+        <!-- POURQUOI UN ABONNEMENT -->
+        <div class="section-header reveal" style="margin-top:40px;">
+          <span class="section-label">Pourquoi un abonnement</span>
+          <h2 class="section-title">Les enjeux humains meritent de la continuite</h2>
+          <p class="section-subtitle">Un coaching ponctuel, c'est bien. Un partenaire qui connait votre contexte et vous accompagne dans la duree, c'est mieux.</p>
+        </div>
+        <div class="quatre-strip reveal-stagger" style="max-width:1000px; margin:0 auto; grid-template-columns:repeat(3,1fr);">
+          <div class="quatre-item" style="border-bottom:none;">
+            <div class="quatre-num" style="font-size:1.8rem;">01</div>
+            <h3 style="font-size:0.95rem; margin-bottom:6px;">Anticiper plutot que subir</h3>
+            <p style="font-size:0.84rem;">Les sujets RH et managerieux traites dans l'urgence coutent cher. Un rythme regulier permet d'anticiper, d'ajuster et d'eviter les crises.</p>
+          </div>
+          <div class="quatre-item" style="flex:1; border-bottom:none;">
+            <div class="quatre-num" style="font-size:1.8rem;">02</div>
+            <h3 style="font-size:0.95rem; margin-bottom:6px;">Un interlocuteur qui connait votre contexte</h3>
+            <p style="font-size:0.84rem;">Pas besoin de re-expliquer votre situation a chaque fois. Votre consultant connait vos equipes, vos enjeux, votre culture.</p>
+          </div>
+          <div class="quatre-item" style="flex:1; border-bottom:none;">
+            <div class="quatre-num" style="font-size:1.8rem;">03</div>
+            <h3 style="font-size:0.95rem; margin-bottom:6px;">Faire progresser, pas juste eteindre les feux</h3>
+            <p style="font-size:0.84rem;">L'abonnement cree un rythme. Il permet de developper les pratiques manageriales, de structurer les RH et d'ancrer les evolutions durablement.</p>
+          </div>
+        </div>
+
+        <!-- APPROCHE 4 EN 1 -->
+        <div class="section-header reveal" style="margin-top:56px;">
+          <span class="section-label">Notre approche</span>
+          <h2 class="section-title">4 dimensions, 1 interlocuteur</h2>
+          <p class="section-subtitle">Nous ne separons pas artificiellement les sujets. Selon vos besoins, nous articulons ces 4 leviers dans chaque abonnement.</p>
+        </div>
+        <div class="quatre-strip reveal-stagger">
+          <div class="quatre-item">
+            <div class="quatre-num">01</div>
+            <h3>Conseil RH</h3>
+            <p>Structurer, decider, securiser. Appui sur l'organisation, les competences, le droit social, les recrutements.</p>
+          </div>
+          <div class="quatre-item">
+            <div class="quatre-num">02</div>
+            <h3>Coaching</h3>
+            <p>Faire evoluer les postures. Accompagnement individuel de dirigeants et managers sur leurs enjeux concrets.</p>
+          </div>
+          <div class="quatre-item">
+            <div class="quatre-num">03</div>
+            <h3>Formation</h3>
+            <p>Developper les competences. Ateliers et modules sur-mesure, ancres dans vos situations reelles. Certifie Qualiopi.</p>
+          </div>
+          <div class="quatre-item">
+            <div class="quatre-num">04</div>
+            <h3>Codeveloppement</h3>
+            <p>Renforcer l'intelligence collective. Seances de partage et de co-construction entre pairs, animees par un facilitateur.</p>
+          </div>
+        </div>
+
+        <!-- PRICING -->
+        <div class="section-header reveal" style="margin-top:56px;" id="formules">
+          <span class="section-label">Nos formules</span>
+          <h2 class="section-title">3 niveaux, une meme exigence</h2>
+          <p class="section-subtitle">Chaque formule s'adapte a la realite de votre structure, a sa taille, a ses enjeux et a son actualite.</p>
+        </div>
+        <div class="pricing-grid reveal">
+
+          <!-- RESPIRATION -->
+          <div class="plan plan--respiration">
+            <div class="plan-level">Niveau 1</div>
+            <div class="plan-name">Respiration</div>
+            <div class="plan-subtitle">Sessions flash</div>
+            <div class="plan-price">
+              <span class="plan-amount">790</span>
+              <span class="plan-currency">&euro; <small>HT/mois</small></span>
+            </div>
+            <div class="plan-tagline">Prendre du recul. Retrouver de la clarte. Securiser l'essentiel.</div>
+            <div class="plan-format">~3h/mois &middot; 1 intervention/mois &middot; engagement 6 mois</div>
+            <ul class="plan-features">
+              <li>Point mensuel d'appui RH et managerial</li>
+              <li>Coaching flash sur problematique immediate</li>
+              <li>Capsule formation sur besoin cible</li>
+              <li>Seance codev / prise de recul ponctuelle</li>
+              <li>Relecture documents, aide a la decision</li>
+            </ul>
+            <a href="contact.html" class="plan-cta">Choisir Respiration</a>
+          </div>
+
+          <!-- ELAN -->
+          <div class="plan plan--elan">
+            <div class="plan-ribbon">Populaire</div>
+            <div class="plan-level">Niveau 2</div>
+            <div class="plan-name">Elan</div>
+            <div class="plan-subtitle">Sessions de progression</div>
+            <div class="plan-price">
+              <span class="plan-amount">1 490</span>
+              <span class="plan-currency">&euro; <small>HT/mois</small></span>
+            </div>
+            <div class="plan-tagline">Faire progresser les pratiques. Developper les personnes. Renforcer les equipes.</div>
+            <div class="plan-format">~6h/mois &middot; 2 interventions/mois &middot; engagement 6-12 mois</div>
+            <ul class="plan-features">
+              <li><strong>Pilotage mensuel RH</strong> : organisation, competences, recrutement</li>
+              <li><strong>Coaching individuel</strong> d'un manager ou dirigeant</li>
+              <li>Ateliers formation sur-mesure</li>
+              <li>Codeveloppement regulier entre pairs</li>
+              <li><strong>1 demi-journee collective</strong> par trimestre</li>
+              <li>Montee en competence progressive des managers</li>
+            </ul>
+            <a href="contact.html" class="plan-cta">Choisir Elan</a>
+          </div>
+
+          <!-- ALLIANCE -->
+          <div class="plan plan--alliance">
+            <div class="plan-level">Niveau 3</div>
+            <div class="plan-name">Alliance</div>
+            <div class="plan-subtitle">Sessions de pilotage</div>
+            <div class="plan-price">
+              <span class="plan-amount">2 890</span>
+              <span class="plan-currency">&euro; <small>HT/mois</small></span>
+            </div>
+            <div class="plan-tagline">Piloter dans la duree. Structurer les dynamiques. Accompagner la transformation.</div>
+            <div class="plan-format">10-12h/mois &middot; pilotage mensuel + interventions &middot; engagement 12 mois</div>
+            <ul class="plan-features">
+              <li><strong>Comite de pilotage mensuel</strong> et suivi priorites RH</li>
+              <li><strong>Coaching dirigeants et managers cles</strong></li>
+              <li>Journees formation sur-mesure</li>
+              <li>Codeveloppement avec capitalisation</li>
+              <li>Accompagnement sujets sensibles et aide a la decision</li>
+              <li><strong>1 journee collective</strong> par trimestre</li>
+              <li><strong>Lecture globale</strong> des enjeux humains et organisationnels</li>
+            </ul>
+            <a href="contact.html" class="plan-cta">Choisir Alliance</a>
+          </div>
+
+        </div>
+
+        <!-- A QUI S'ADRESSE CHAQUE FORMULE -->
+        <div class="target-strip reveal">
+          <div class="target-item">
+            <div class="target-name">Respiration, c'est pour vous si...</div>
+            <p>Vous etes dirigeant ou manager d'une TPE/PME et vous avez besoin d'un appui regulier, reactif et concret, sans engager un dispositif lourd.</p>
+          </div>
+          <div class="target-item">
+            <div class="target-name">Elan, c'est pour vous si...</div>
+            <p>Vous voulez aller au-dela du traitement ponctuel et mettre en place un accompagnement regulier pour faire progresser managers et equipes.</p>
+          </div>
+          <div class="target-item">
+            <div class="target-name">Alliance, c'est pour vous si...</div>
+            <p>Vous souhaitez un partenaire strategique capable d'accompagner vos enjeux RH, managerieux et collectifs dans la duree.</p>
+          </div>
+        </div>
+
+        <!-- COMPARAISON CDI -->
+        <div class="card reveal" style="max-width:700px; margin:40px auto 0; padding:28px; text-align:center; background:var(--white); border:2px solid var(--teal-100);">
+          <h3 style="margin-bottom:12px;">Combien coute un RRH interne en comparaison ?</h3>
+          <p>Un RRH salarie en PME coute <strong>40 000 a 55 000 &euro; brut/an</strong>, soit <strong>4 500 a 6 500 &euro;/mois charges</strong> (salaire + patronales + mutuelle + prevoyance). Et il ne fait ni coaching, ni formation, ni codeveloppement.</p>
+          <p style="margin-top:12px;">L'abonnement <strong>Elan a 1 490 &euro;/mois</strong> = un appui senior, certifie Qualiopi, qui combine 4 dimensions d'accompagnement, sans les couts fixes d'un CDI.</p>
+        </div>
+
+        <!-- CE QUI FAIT LA DIFFERENCE -->
+        <div style="margin-top:56px; padding:48px 32px; background:var(--teal-700); border-radius:16px;">
+          <div class="section-header reveal">
+            <span class="section-label" style="color:rgba(255,255,255,0.5);">Ce qui fait la difference</span>
+            <h2 class="section-title" style="color:var(--white);">Pas juste un prestataire. Un partenaire.</h2>
+          </div>
+          <div class="diff-grid reveal-stagger">
+            <div class="diff-card">
+              <h3 style="color:var(--white);">Une logique de continuite</h3>
+              <p>L'abonnement cree un rythme. Il permet d'anticiper, d'ajuster et d'ancrer les evolutions dans la duree. Pas de relation jetable.</p>
+            </div>
+            <div class="diff-card">
+              <h3 style="color:var(--white);">Une reponse sur-mesure</h3>
+              <p>Chaque formule s'adapte a votre realite : votre taille, vos enjeux, votre actualite. Pas de catalogue fige, pas de process standardise.</p>
+            </div>
+            <div class="diff-card">
+              <h3 style="color:var(--white);">Un accompagnement concret</h3>
+              <p>Notre approche est pragmatique, operationnelle, directement reliee aux situations reelles de vos dirigeants, managers et equipes.</p>
+            </div>
+            <div class="diff-card">
+              <h3 style="color:var(--white);">4 leviers, 1 interlocuteur</h3>
+              <p>Conseil, coaching, formation, codeveloppement : pas besoin de coordonner 4 prestataires. Nous articulons ces dimensions selon vos besoins.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- OPTIONS COMPLEMENTAIRES -->
+        <div class="section-header reveal" style="margin-top:56px;">
+          <span class="section-label">Aller plus loin</span>
+          <h2 class="section-title">Options complementaires</h2>
+          <p class="section-subtitle">Chaque abonnement peut etre enrichi selon vos besoins ponctuels.</p>
+        </div>
+        <div class="options-grid reveal-stagger">
+          <div class="option-item"><span class="option-dot"></span> Journee de formation supplementaire</div>
+          <div class="option-item"><span class="option-dot"></span> Seance de coaching additionnelle</div>
+          <div class="option-item"><span class="option-dot"></span> Diagnostic RH flash</div>
+          <div class="option-item"><span class="option-dot"></span> Mediation ou regulation d'equipe</div>
+          <div class="option-item"><span class="option-dot"></span> Seminaire d'equipe ou de managers</div>
+          <div class="option-item"><span class="option-dot"></span> Accompagnement recrutement</div>
+          <div class="option-item"><span class="option-dot"></span> Co-construction d'outils RH ou managerieux</div>
+          <div class="option-item"><span class="option-dot"></span> Audit RSE ou accompagnement CSRD</div>
+        </div>
+        <div class="card reveal" style="margin-top:32px; max-width:700px; margin-left:auto; margin-right:auto; padding:20px; background:var(--gold-100); border:1px solid var(--gold-400); text-align:center;">
+          <p style="margin:0; font-size:0.9rem;"><strong>Bon a savoir :</strong> les volets formation et diagnostic inclus dans les abonnements peuvent etre pris en charge par votre OPCO via la certification Qualiopi de CARTESA.</p>
+        </div>
+
+        <!-- FAQ PASS RH -->
+        <div class="section-header reveal" style="margin-top:56px;">
+          <span class="section-label">Questions frequentes</span>
+          <h2 class="section-title">Abonnements : vos questions</h2>
+        </div>
+        <div class="faq-list reveal">
+          <details class="faq-item">
+            <summary>Je suis une TPE de 15 salaries. Quel abonnement choisir ?</summary>
+            <p>Respiration est fait pour vous. Un appui souple et reactif pour les situations du quotidien : preparer un entretien delicat, gerer une tension, clarifier une repartition de roles. Environ 3h par mois, sans engager un dispositif lourd.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Puis-je changer de formule en cours de route ?</summary>
+            <p>Oui. Vous pouvez monter en gamme a tout moment. Le passage a une formule inferieure est possible a chaque renouvellement. On s'adapte a votre rythme et a vos besoins.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Quelle est la difference entre coaching et codeveloppement ?</summary>
+            <p>Le coaching est un accompagnement individuel centre sur vos enjeux specifiques (posture, leadership, prise de decision). Le codeveloppement est un format collectif ou des pairs partagent leurs situations et co-construisent des solutions. Les deux se completent : l'un fait progresser la personne, l'autre renforce l'intelligence collective.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Qui sera mon interlocuteur ?</summary>
+            <p>Un consultant senior certifie Qualiopi, avec 15+ ans d'experience. Sur Elan et Alliance, vous beneficiez d'un referent dedie qui connait votre contexte et vos equipes. La continuite de l'interlocuteur est au coeur de notre modele.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Les abonnements couvrent-ils aussi la RSE ?</summary>
+            <p>Oui. Nos consultants integrent naturellement les sujets RSE dans l'accompagnement : conformite, sensibilisation equipes, preparation aux audits. Pour un accompagnement RSE approfondi (CSRD, bilan carbone), nous le proposons en option complementaire ou via notre offre RSE & Decarbonation dediee.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Mon OPCO peut-il financer une partie ?</summary>
+            <p>Oui. CARTESA est certifie Qualiopi et habilite PCRH. Les volets formation, diagnostic et codeveloppement peuvent etre finances par votre OPCO. Le PCRH est une porte d'entree ideale pour tester l'accompagnement a moindre cout.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Est-ce que ca fonctionne aussi pour une association ?</summary>
+            <p>Tout a fait. Nous accompagnons regulierement des associations et des structures de l'ESS. Les problematiques de management, de gouvernance et de mobilisation des equipes sont les memes, et les financements OPCO s'appliquent aussi.</p>
+          </details>
+        </div>
+
+        <!-- CTA PASS RH -->
+        <div style="margin-top:56px; padding:48px 0; background:var(--teal-700); border-radius:16px; text-align:center;">
+          <h2 class="reveal" style="margin-bottom:12px; color:var(--white);">Pret a structurer vos enjeux humains dans la duree ?</h2>
+          <p class="reveal" style="color:rgba(255,255,255,0.85); max-width:560px; margin:0 auto 28px; font-size:1rem;">30 minutes d'echange, sans engagement. On ecoute votre situation, on vous oriente vers la formule adaptee.</p>
+          <a href="contact.html" class="btn btn--accent btn--lg reveal">On en discute</a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA">
+          <p>Cabinet de conseil et organisme de formation certifie Qualiopi. Nous accompagnons les entreprises et les territoires dans le developpement des competences depuis 2003.</p>
+          <div class="footer-qualiopi">
+            <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi">
+            <span>Certifie Qualiopi au titre des actions de formation</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="formations.html">Formations 2026</a></li>
+            <li><a href="temoignages.html">Temoignages</a></li>
+            <li><a href="equipe.html">L'equipe</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services-rh.html">Services RH</a></li>
+            <li><a href="rse-decarbonation.html">RSE &amp; Decarbonation</a></li>
+            <li><a href="formations.html">Formations 2026</a></li>
+            <li><a href="ressources.html">Ressources &amp; Guides</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" transform="scale(0.7)"/><circle cx="8.4" cy="7" r="2.1"/></svg>
+            <span>36 avenue Alsace Lorraine<br>38110 La Tour-du-Pin</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="M1.5 3.5l6.5 5 6.5-5"/></svg>
+            <a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 CARTESA. Tous droits reserves.</span>
+        <span>Competences, Entreprises & Territoires</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+
+</body>
+</html>
