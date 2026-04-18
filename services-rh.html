@@ -313,59 +313,113 @@
     .format-card--rse .format-cta { background: rgba(167,139,250,0.15); color: #c4b5fd; border: 2px solid rgba(167,139,250,0.5); }
     .format-card--rse .format-cta:hover { background: #a78bfa; color: #1a0a3e; border-color: #a78bfa; }
 
-    /* === HERO SERVICE NAV === */
-    .hero-services-nav {
+    /* === SERVICES TRIPTYCH === */
+    .services-triptych {
+      background: var(--white);
+      padding: 0;
+      margin-top: -48px;
+      position: relative;
+      z-index: 2;
+    }
+    .triptych-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 32px;
-      max-width: 820px;
+      gap: 0;
+      max-width: 1100px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(9,41,51,0.12);
     }
-    .hero-service-card {
+    .triptych-card {
       display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 16px 18px;
-      border-radius: 12px;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.1);
-      color: var(--white);
+      align-items: flex-start;
+      gap: 16px;
+      padding: 28px 24px;
+      background: var(--white);
       text-decoration: none;
+      color: var(--teal-900);
+      position: relative;
       transition: all 0.3s cubic-bezier(0.22,1,0.36,1);
       cursor: pointer;
     }
-    .hero-service-card:hover {
-      background: rgba(255,255,255,0.14);
-      border-color: rgba(255,255,255,0.2);
-      transform: translateY(-2px);
+    .triptych-card:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 16%;
+      height: 68%;
+      width: 1px;
+      background: var(--neutral-200);
     }
-    .hero-service-num {
-      font-family: 'Sora', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: var(--gold-500);
-      line-height: 1;
+    .triptych-card:hover {
+      background: var(--teal-50);
+    }
+    .triptych-card--accent {
+      background: linear-gradient(160deg, #007cba 0%, #005a8c 100%);
+      color: var(--white);
+    }
+    .triptych-card--accent::after { display: none; }
+    .triptych-card--accent:hover {
+      background: linear-gradient(160deg, #0088cc 0%, #006599 100%);
+    }
+    .triptych-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
     }
-    .hero-service-card div {
-      flex: 1;
-      min-width: 0;
+    .triptych-card:not(.triptych-card--accent) .triptych-icon {
+      background: var(--teal-50);
     }
-    .hero-service-card strong {
-      display: block;
+    .triptych-card--accent .triptych-icon {
+      background: rgba(255,255,255,0.12);
+    }
+    .triptych-content { flex: 1; min-width: 0; }
+    .triptych-num {
       font-family: 'Sora', sans-serif;
-      font-size: 0.88rem;
+      font-size: 0.65rem;
       font-weight: 700;
-      margin-bottom: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+      display: block;
     }
-    .hero-service-card span:not(.hero-service-num) {
-      font-size: 0.75rem;
-      color: rgba(255,255,255,0.5);
+    .triptych-card:not(.triptych-card--accent) .triptych-num { color: var(--teal-500); }
+    .triptych-card--accent .triptych-num { color: var(--gold-400); }
+    .triptych-content h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .triptych-content p {
+      font-size: 0.82rem;
+      line-height: 1.55;
+      margin: 0;
+    }
+    .triptych-card:not(.triptych-card--accent) .triptych-content p { color: var(--neutral-500); }
+    .triptych-card--accent .triptych-content p { color: rgba(255,255,255,0.7); }
+    .triptych-arrow {
+      flex-shrink: 0;
+      align-self: center;
+      opacity: 0.3;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    .triptych-card:hover .triptych-arrow {
+      opacity: 0.7;
+      transform: translateX(3px);
     }
 
     /* === RESPONSIVE === */
     @media (max-width: 960px) {
-      .hero-services-nav { grid-template-columns: 1fr; max-width: 400px; }
+      .triptych-grid { grid-template-columns: 1fr; }
+      .triptych-card:not(:last-child)::after { display: none; }
+      .triptych-card:not(:last-child) { border-bottom: 1px solid var(--neutral-100); }
+      .triptych-card--accent:not(:last-child) { border-bottom: 1px solid rgba(255,255,255,0.1); }
       .pricing-grid { grid-template-columns: 1fr; max-width: 440px; gap: 16px; }
       .plan { border-radius: 20px !important; margin: 0 !important; padding: 40px 28px 32px !important; }
       .plan--elan { padding: 40px 28px 32px !important; }
@@ -437,37 +491,46 @@
     <div class="container">
       <span class="section-label" style="color:rgba(255,255,255,0.88);">Nos services RH</span>
       <h1>Diagnostic, accompagnement et <span style="color: var(--gold-500);">pilotage RH</span> sur mesure</h1>
-      <p>Du diagnostic ponctuel a l'accompagnement dans la duree, trois approches complementaires pour structurer, developper et piloter votre fonction RH.</p>
-      <div class="page-hero-stats">
-        <div class="page-hero-stat"><strong>7</strong><span>expertises RH</span></div>
-        <div class="page-hero-stat"><strong>20+</strong><span>ans de terrain</span></div>
-        <div class="page-hero-stat"><strong>48h</strong><span>delai d'intervention</span></div>
-        <div class="page-hero-stat"><strong>500+</strong><span>dirigeants accompagnes</span></div>
-      </div>
-      <div class="hero-services-nav">
-        <a href="#tab-diagnostic" class="hero-service-card" onclick="document.querySelector('.tab-btn[data-tab=tab-diagnostic]').click();">
-          <span class="hero-service-num">01</span>
-          <div>
-            <strong>Diagnostic &amp; Expertise</strong>
-            <span>7 expertises &middot; PCRH 100%</span>
+      <p>Du diagnostic ponctuel a l'accompagnement dans la duree, trois approches complementaires pour structurer, developper et piloter votre fonction RH. Plus de 500 dirigeants nous font confiance.</p>
+    </div>
+  </section>
+
+  <!-- 3 APPROCHES — section de navigation -->
+  <section class="services-triptych">
+    <div class="container">
+      <div class="triptych-grid">
+        <a href="#tab-diagnostic" class="triptych-card" onclick="document.querySelector('.tab-btn[data-tab=tab-diagnostic]').click();">
+          <div class="triptych-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--teal-500)" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           </div>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0; opacity:0.5;"><polyline points="9 18 15 12 9 6"/></svg>
+          <div class="triptych-content">
+            <span class="triptych-num">01</span>
+            <h3>Diagnostic &amp; Expertise</h3>
+            <p>7 expertises pour comprendre votre organisation et agir sur les bons leviers. Finançable PCRH a 100%.</p>
+          </div>
+          <svg class="triptych-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
         </a>
-        <a href="#tab-drh-transition" class="hero-service-card" onclick="document.querySelector('.tab-btn[data-tab=tab-drh-transition]').click();">
-          <span class="hero-service-num">02</span>
-          <div>
-            <strong>DRH de transition</strong>
-            <span>Operationnel sous 48h</span>
+        <a href="#tab-drh-transition" class="triptych-card triptych-card--accent" onclick="document.querySelector('.tab-btn[data-tab=tab-drh-transition]').click();">
+          <div class="triptych-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold-400)" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
           </div>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0; opacity:0.5;"><polyline points="9 18 15 12 9 6"/></svg>
+          <div class="triptych-content">
+            <span class="triptych-num">02</span>
+            <h3>DRH de transition</h3>
+            <p>Un DRH operationnel sous 48h : transition, temps partage ou partenaire RSE. Zero intermediaire.</p>
+          </div>
+          <svg class="triptych-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
         </a>
-        <a href="#tab-pass-rh" class="hero-service-card" onclick="document.querySelector('.tab-btn[data-tab=tab-pass-rh]').click();">
-          <span class="hero-service-num">03</span>
-          <div>
-            <strong>Pass RH</strong>
-            <span>Des 790 &euro;/mois</span>
+        <a href="#tab-pass-rh" class="triptych-card" onclick="document.querySelector('.tab-btn[data-tab=tab-pass-rh]').click();">
+          <div class="triptych-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--teal-500)" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
           </div>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0; opacity:0.5;"><polyline points="9 18 15 12 9 6"/></svg>
+          <div class="triptych-content">
+            <span class="triptych-num">03</span>
+            <h3>Pass RH</h3>
+            <p>Conseil, coaching, formation et codeveloppement en abonnement. 3 formules a partir de 790 &euro;/mois.</p>
+          </div>
+          <svg class="triptych-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
         </a>
       </div>
     </div>
@@ -861,41 +924,17 @@
       <div class="tab-panel" id="tab-pass-rh">
         <div id="pass-rh"></div>
 
-        <!-- POURQUOI UN ABONNEMENT -->
+        <!-- POURQUOI UN ABONNEMENT + APPROCHE 4 EN 1 -->
         <div class="section-header reveal" style="margin-top:40px;">
-          <span class="section-label">Pourquoi un abonnement</span>
-          <h2 class="section-title">Les enjeux humains meritent de la continuité</h2>
-          <p class="section-subtitle">Un coaching ponctuel, c'est bien. Un partenaire qui connait votre contexte et vous accompagne dans la duree, c'est mieux.</p>
-        </div>
-        <div class="quatre-strip reveal-stagger" style="max-width:1000px; margin:0 auto; grid-template-columns:repeat(3,1fr);">
-          <div class="quatre-item" style="border-bottom:none;">
-            <div class="quatre-num" style="font-size:1.8rem;">01</div>
-            <h3 style="font-size:0.95rem; margin-bottom:6px;">Anticiper plutot que subir</h3>
-            <p style="font-size:0.84rem;">Les sujets RH et managerieux traites dans l'urgence coutent cher. Un rythme regulier permet d'anticiper, d'ajuster et d'eviter les crises.</p>
-          </div>
-          <div class="quatre-item" style="flex:1; border-bottom:none;">
-            <div class="quatre-num" style="font-size:1.8rem;">02</div>
-            <h3 style="font-size:0.95rem; margin-bottom:6px;">Un interlocuteur qui connait votre contexte</h3>
-            <p style="font-size:0.84rem;">Pas besoin de re-expliquer votre situation a chaque fois. Votre consultant connait vos équipes, vos enjeux, votre culture.</p>
-          </div>
-          <div class="quatre-item" style="flex:1; border-bottom:none;">
-            <div class="quatre-num" style="font-size:1.8rem;">03</div>
-            <h3 style="font-size:0.95rem; margin-bottom:6px;">Faire progresser, pas juste eteindre les feux</h3>
-            <p style="font-size:0.84rem;">L'abonnement cree un rythme. Il permet de développer les pratiques manageriales, de structurer les RH et d'ancrer les evolutions durablement.</p>
-          </div>
-        </div>
-
-        <!-- APPROCHE 4 EN 1 -->
-        <div class="section-header reveal" style="margin-top:56px;">
           <span class="section-label">Notre approche</span>
-          <h2 class="section-title">4 dimensions, 1 interlocuteur</h2>
-          <p class="section-subtitle">Nous ne separons pas artificiellement les sujets. Selon vos besoins, nous articulons ces 4 leviers dans chaque abonnement.</p>
+          <h2 class="section-title">4 leviers, 1 interlocuteur, de la continuité</h2>
+          <p class="section-subtitle">Un coaching ponctuel, c'est bien. Un partenaire qui connait votre contexte, articule 4 leviers complementaires et vous accompagne dans la duree, c'est mieux.</p>
         </div>
         <div class="quatre-strip reveal-stagger">
           <div class="quatre-item">
             <div class="quatre-num">01</div>
             <h3>Conseil RH</h3>
-            <p>Structurer, decider, securiser. Appui sur l'organisation, les compétences, le droit social, les recrutements.</p>
+            <p>Structurer, decider, securiser. Appui sur l'organisation, les competences, le droit social, les recrutements.</p>
           </div>
           <div class="quatre-item">
             <div class="quatre-num">02</div>
@@ -905,12 +944,22 @@
           <div class="quatre-item">
             <div class="quatre-num">03</div>
             <h3>Formation</h3>
-            <p>Developper les compétences. Ateliers et modules sur-mesure, ancres dans vos situations reelles. Certifié Qualiopi.</p>
+            <p>Developper les competences. Ateliers et modules sur-mesure, ancres dans vos situations reelles. Certifie Qualiopi.</p>
           </div>
           <div class="quatre-item">
             <div class="quatre-num">04</div>
-            <h3>Codéveloppement</h3>
+            <h3>Codeveloppement</h3>
             <p>Renforcer l'intelligence collective. Seances de partage et de co-construction entre pairs, animees par un facilitateur.</p>
+          </div>
+        </div>
+        <div class="card reveal" style="max-width:1000px; margin:24px auto 0; padding:20px 28px; background:var(--teal-50); border:1px solid var(--teal-100); display:flex; gap:28px; align-items:center; flex-wrap:wrap;">
+          <div style="flex:1; min-width:200px;">
+            <strong style="color:var(--teal-700);">Anticiper plutot que subir</strong>
+            <p style="margin:4px 0 0; font-size:0.84rem; color:var(--neutral-500);">Les sujets RH traites dans l'urgence coutent cher. L'abonnement cree un rythme pour ancrer les evolutions durablement.</p>
+          </div>
+          <div style="flex:1; min-width:200px;">
+            <strong style="color:var(--teal-700);">Un interlocuteur qui vous connait</strong>
+            <p style="margin:4px 0 0; font-size:0.84rem; color:var(--neutral-500);">Pas besoin de re-expliquer votre situation. Votre consultant connait vos equipes, vos enjeux, votre culture.</p>
           </div>
         </div>
 

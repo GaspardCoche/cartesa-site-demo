@@ -62,7 +62,7 @@
     });
   }
   document.querySelectorAll('[data-count]').forEach(function(el) {
-    var c = el.closest('.hero-stats-bar, .page-hero-stats, .stat-row, .values-mosaic, .stat-banner');
+    var c = el.closest('.hero-stats-bar, .page-hero-stats, .stat-row, .values-mosaic, .stat-banner, .trust-band-grid');
     if (!c || c._cObs) return;
     c._cObs = true;
     new IntersectionObserver(function(entries) {
