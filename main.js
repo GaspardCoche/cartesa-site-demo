@@ -208,6 +208,35 @@
     });
   });
 
+  // Formation calendar legend filter
+  var legendItems = document.querySelectorAll('.cal-legend-item');
+  var activeTheme = null;
+  for (var li = 0; li < legendItems.length; li++) {
+    legendItems[li].addEventListener('click', function() {
+      var dot = this.querySelector('.cal-legend-dot');
+      if (!dot) return;
+      var theme = dot.className.replace('cal-legend-dot ', '').trim();
+      if (activeTheme === theme) {
+        activeTheme = null;
+        for (var a = 0; a < legendItems.length; a++) { legendItems[a].classList.remove('active', 'dimmed'); }
+        var allCards = document.querySelectorAll('.formation-card[data-theme]');
+        for (var b = 0; b < allCards.length; b++) { allCards[b].classList.remove('theme-hidden'); }
+      } else {
+        activeTheme = theme;
+        for (var c = 0; c < legendItems.length; c++) {
+          var d = legendItems[c].querySelector('.cal-legend-dot');
+          var t = d ? d.className.replace('cal-legend-dot ', '').trim() : '';
+          legendItems[c].classList.toggle('active', t === theme);
+          legendItems[c].classList.toggle('dimmed', t !== theme);
+        }
+        var cards = document.querySelectorAll('.formation-card[data-theme]');
+        for (var e = 0; e < cards.length; e++) {
+          cards[e].classList.toggle('theme-hidden', cards[e].getAttribute('data-theme') !== theme);
+        }
+      }
+    });
+  }
+
   // Filter tabs (temoignages page)
   var filterTabs = document.querySelectorAll('.filter-tab');
   for (var ft = 0; ft < filterTabs.length; ft++) {

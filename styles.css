@@ -2777,6 +2777,27 @@ img { max-width: 100%; height: auto; display: block; }
 .cal-legend-dot.rse { background: #7b1fa2; }
 .cal-legend-dot.recrutement { background: #e65100; }
 
+.cal-legend-item {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  user-select: none;
+}
+.cal-legend-item:hover { opacity: 0.8; }
+.cal-legend-item.active { font-weight: 700; }
+.cal-legend-item.dimmed { opacity: 0.35; }
+
+.formation-card[data-theme="management"] { border-top: 3px solid #3b6fc2; }
+.formation-card[data-theme="droit"] { border-top: 3px solid #b87d20; }
+.formation-card[data-theme="rh"] { border-top: 3px solid #2e7d32; }
+.formation-card[data-theme="rse"] { border-top: 3px solid #7b1fa2; }
+.formation-card[data-theme="recrutement"] { border-top: 3px solid #e65100; }
+.formation-card[data-theme="management"] .card-icon svg { stroke: #3b6fc2; }
+.formation-card[data-theme="droit"] .card-icon svg { stroke: #b87d20; }
+.formation-card[data-theme="rh"] .card-icon svg { stroke: #2e7d32; }
+.formation-card[data-theme="rse"] .card-icon svg { stroke: #7b1fa2; }
+.formation-card[data-theme="recrutement"] .card-icon svg { stroke: #e65100; }
+.formation-card.theme-hidden { display: none; }
+
 @media (max-width: 640px) {
   .cal-mini-day { font-size: 0.65rem; }
 }
@@ -4062,6 +4083,112 @@ img { max-width: 100%; height: auto; display: block; }
 @media (max-width: 480px) {
   .cert-compact-logos { grid-template-columns: 1fr 1fr; }
 }
+
+/* ===== TRUST BAND (hero chiffres + preuves fusionnés) ===== */
+.trust-band {
+  background: var(--white);
+  padding: 40px 0 32px;
+  border-bottom: 1px solid var(--neutral-100);
+}
+.trust-band-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  text-align: center;
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--neutral-100);
+}
+.trust-stat .stat-number {
+  font-family: 'Sora', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--teal-700);
+  line-height: 1;
+}
+.trust-stat .stat-label {
+  font-size: 0.78rem;
+  color: var(--neutral-500);
+  margin-top: 4px;
+}
+.trust-proof-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.trust-proof {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.trust-proof-logo {
+  height: 32px;
+  width: auto;
+  flex-shrink: 0;
+}
+.trust-proof svg { flex-shrink: 0; margin-top: 2px; }
+.trust-proof strong {
+  font-size: 0.82rem;
+  color: var(--teal-900);
+  display: block;
+  line-height: 1.3;
+}
+.trust-proof span {
+  font-size: 0.72rem;
+  color: var(--neutral-500);
+  line-height: 1.4;
+  display: block;
+}
+@media (max-width: 768px) {
+  .trust-band-grid { grid-template-columns: repeat(2, 1fr); }
+  .trust-proof-row { grid-template-columns: 1fr 1fr; gap: 16px; }
+}
+@media (max-width: 480px) {
+  .trust-proof-row { grid-template-columns: 1fr; }
+}
+
+/* ===== NEWS CARDS (colorées par thématique) ===== */
+.news-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.news-card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.news-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.15); }
+.news-card--rse { background: linear-gradient(145deg, #2a6b4a 0%, #1a4a32 100%); }
+.news-card--rh { background: linear-gradient(145deg, var(--teal-700) 0%, var(--teal-900) 100%); }
+.news-card--formation { background: linear-gradient(145deg, #b8860b 0%, #8b6508 100%); }
+.news-card--event { background: linear-gradient(145deg, #5b4a9e 0%, #3d2e7a 100%); }
+.news-card-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 4px;
+}
+.news-card-date { font-size: 0.72rem; color: rgba(255,255,255,0.5); margin-bottom: 12px; }
+.news-card h3 { font-size: 1.05rem; margin-bottom: 8px; line-height: 1.3; }
+.news-card p { font-size: 0.82rem; line-height: 1.5; color: rgba(255,255,255,0.8); margin: 0; flex: 1; }
+.news-card-link {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+  margin-top: 14px;
+  display: block;
+}
+@media (max-width: 768px) { .news-cards { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .news-cards { grid-template-columns: 1fr; } }
 
 /* ===== VOLET DOT HOVER ===== */
 .volet-dot:hover {

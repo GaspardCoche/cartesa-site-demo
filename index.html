@@ -174,60 +174,53 @@
         </div>
       </div>
     </div>
-    <div class="hero-stats-bar" id="heroStats">
-      <div class="container">
-        <div class="stat-row">
-          <div class="stat-item">
-            <div class="stat-number" data-count="1500" data-suffix="+">0</div>
-            <div class="stat-label">Entreprises accompagnées</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number" data-count="10" data-suffix="+">0</div>
-            <div class="stat-label">Partenariats institutionnels</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number" data-count="4">0</div>
-            <div class="stat-label">Certifications RH & RSE</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number" data-count="1">0</div>
-            <div class="stat-label">Formation certifiante</div>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
 
-  <!-- QUALITY PROOF BAND -->
-  <section class="proof-band">
+  <!-- TRUST BAND — chiffres + preuves fusionnés -->
+  <section class="trust-band" id="heroStats">
     <div class="container">
-      <div class="proof-band-inner">
-        <div class="proof-item reveal" style="--delay: 0s;">
-          <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi" class="proof-logo">
+      <div class="trust-band-grid">
+        <div class="trust-stat reveal" style="--delay:0s;">
+          <div class="stat-number" data-count="1500" data-suffix="+">0</div>
+          <div class="stat-label">Entreprises accompagnées</div>
+        </div>
+        <div class="trust-stat reveal" style="--delay:0.05s;">
+          <div class="stat-number" data-count="7">0</div>
+          <div class="stat-label">OPCO partenaires</div>
+        </div>
+        <div class="trust-stat reveal" style="--delay:0.1s;">
+          <div class="stat-number" data-count="4">0</div>
+          <div class="stat-label">Certifications RH & RSE</div>
+        </div>
+        <div class="trust-stat reveal" style="--delay:0.15s;">
+          <div class="stat-number" data-count="48" data-suffix="h">0</div>
+          <div class="stat-label">Délai d'intervention</div>
+        </div>
+      </div>
+      <div class="trust-proof-row">
+        <div class="trust-proof reveal" style="--delay:0.2s;">
+          <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi" class="trust-proof-logo">
           <div>
             <strong>Certifié Qualiopi</strong>
             <span>Qualité reconnue par l'État</span>
           </div>
         </div>
-        <div class="proof-divider"></div>
-        <div class="proof-item reveal" style="--delay: 0.1s;">
-          <svg width="28" height="28" fill="none" stroke="var(--teal-600)" stroke-width="1.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg>
+        <div class="trust-proof reveal" style="--delay:0.25s;">
+          <svg width="22" height="22" fill="none" stroke="var(--teal-500)" stroke-width="1.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg>
           <div>
-            <strong>7 OPCO partenaires RH & RSE</strong>
-            <span class="proof-opco-list">OPCO 2i · AKTO · Uniformation · ATLAS · OCAPIAT · L'Opcommerce · OPCO EP</span>
+            <strong>7 OPCO partenaires</strong>
+            <span>OPCO 2i · AKTO · Uniformation · ATLAS · OCAPIAT · L'Opcommerce · OPCO EP</span>
           </div>
         </div>
-        <div class="proof-divider"></div>
-        <div class="proof-item reveal" style="--delay: 0.2s;">
-          <svg width="28" height="28" fill="none" stroke="var(--teal-600)" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <div class="trust-proof reveal" style="--delay:0.3s;">
+          <svg width="22" height="22" fill="none" stroke="var(--teal-500)" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           <div>
             <strong>Financement à 100%</strong>
             <span>Prise en charge OPCO intégrale</span>
           </div>
         </div>
-        <div class="proof-divider"></div>
-        <div class="proof-item reveal" style="--delay: 0.3s;">
-          <svg width="28" height="28" fill="none" stroke="var(--teal-600)" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        <div class="trust-proof reveal" style="--delay:0.35s;">
+          <svg width="22" height="22" fill="none" stroke="var(--teal-500)" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
           <div>
             <strong>Intervention sous 48h</strong>
             <span>Experts locaux, zéro intermédiaire</span>
@@ -644,43 +637,42 @@
     </div>
   </section>
 
-  <!-- ACTUALITÉS -->
+  <!-- ACTUALITÉS — cards colorées par thématique -->
   <section class="section section--white">
     <div class="container">
       <div class="section-header reveal" style="padding-top:40px;">
         <span class="section-label">Actualités</span>
-        <h2 class="section-title">Les nouveautés CARTESA</h2>
-        <p class="section-subtitle">Nos dernières programmations et nos avancées.</p>
+        <h2 class="section-title">Quoi de neuf chez CARTESA ?</h2>
       </div>
-      <div class="news-grid reveal reveal-stagger">
-        <article class="news-item news-item--highlight">
-          <span class="news-date">Avril 2026</span>
-          <span class="badge">Nouveau dispositif</span>
-          <h3>CO2i by OPCO2i : CARTESA prestataire partenaire</h3>
-          <p>Le dispositif CO2i est lancé. CARTESA est prestataire partenaire pour l'Isère, la Drôme et l'Ardèche. Accompagnement des entreprises industrielles dans le développement de leurs compétences en management et RH.</p>
-          <a href="blog.html" class="news-link">En savoir plus</a>
-        </article>
-        <article class="news-item">
-          <span class="news-date">Mars 2026</span>
-          <span class="badge">Région AURA</span>
-          <h3>Conseil et Expertise RH dans le Cantal</h3>
-          <p>Une première entreprise du Cantal sollicite la prestation de Conseil et Expertise RH, intégralement financée par la région Auvergne-Rhône-Alpes et le Fonds Social Européen (FSE+). CARTESA sur le terrain.</p>
-          <a href="blog.html" class="news-link">En savoir plus</a>
-        </article>
-        <article class="news-item">
-          <span class="news-date">Avril 2026</span>
-          <span class="badge">Obligation légale</span>
-          <h3>Entretien professionnel &amp; bilan 6 ans</h3>
-          <p>L'entretien professionnel est obligatoire tous les 2 ans. Le bilan à 6 ans doit prouver au moins une action de formation par salarié, sous peine d'un abondement correctif de 3 000 € par salarié.</p>
-          <a href="ressources.html#tab-entretien" class="news-link">En savoir plus</a>
-        </article>
-        <article class="news-item">
-          <span class="news-date">2026</span>
-          <span class="badge">Webinaires</span>
-          <h3>Les Lunchbox de CARTESA</h3>
-          <p>Webinaires de 30 min, de 12h30 à 13h00 : CléA Management KéZAKO, Le dispositif de période de reconversion, L'engagement des équipes, L'IA et les RH, La RSE en pratique.</p>
-          <a href="contact.html" class="news-link">S'inscrire</a>
-        </article>
+      <div class="news-cards reveal-stagger">
+        <a href="rse-decarbonation.html" class="news-card news-card--rse reveal">
+          <span class="news-card-badge">Nouveau dispositif</span>
+          <span class="news-card-date">Avril 2026</span>
+          <h3>CO2i by OPCO2i</h3>
+          <p>CARTESA prestataire partenaire en Isère, Drôme et Ardèche. Financement intégral OPCO2i.</p>
+          <span class="news-card-link">Découvrir l'offre RSE &rarr;</span>
+        </a>
+        <a href="services-rh.html" class="news-card news-card--rh reveal">
+          <span class="news-card-badge">Région AURA</span>
+          <span class="news-card-date">Mars 2026</span>
+          <h3>Expertise RH dans le Cantal</h3>
+          <p>Première mission financée par la région AURA et le FSE+. CARTESA sur le terrain.</p>
+          <span class="news-card-link">Nos services RH &rarr;</span>
+        </a>
+        <a href="ressources.html#tab-entretien" class="news-card news-card--formation reveal">
+          <span class="news-card-badge">Obligation légale</span>
+          <span class="news-card-date">Avril 2026</span>
+          <h3>Entretien pro &amp; bilan 6 ans</h3>
+          <p>Obligatoire tous les 2 ans. Abondement correctif de 3 000 &euro;/salarié en cas de manquement.</p>
+          <span class="news-card-link">Guide complet &rarr;</span>
+        </a>
+        <a href="contact.html" class="news-card news-card--event reveal">
+          <span class="news-card-badge">Webinaires</span>
+          <span class="news-card-date">2026</span>
+          <h3>Les Lunchbox CARTESA</h3>
+          <p>30 min sur la pause dej : CléA, reconversion, engagement, IA & RH, RSE en pratique.</p>
+          <span class="news-card-link">S'inscrire &rarr;</span>
+        </a>
       </div>
     </div>
   </section>
