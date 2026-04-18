@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calendrier des obligations sociales 2026 -- CARTESA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #007cba;
+    --primary-dark: #005a8c;
+    --gold: #f0cc3a;
+    --gold-light: #fdf6d8;
+    --text: #1a1a2e;
+    --text-light: #4a4a5a;
+    --bg: #ffffff;
+    --bg-light: #f7f9fc;
+    --border: #d0d7e0;
+    --red: #dc2626;
+    --red-light: #fef2f2;
+    --red-border: #fca5a5;
+    --blue: #007cba;
+    --blue-light: #eff6ff;
+    --blue-border: #93c5fd;
+    --green: #16a34a;
+    --green-light: #f0fdf4;
+    --green-border: #86efac;
+    --radius: 8px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 14px;
+    background: var(--bg);
+  }
+  h1, h2, h3, h4 { font-family: 'Sora', sans-serif; line-height: 1.3; }
+  h1 { font-size: 2rem; font-weight: 800; }
+  h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.6rem; }
+  p { margin-bottom: 0.8rem; }
+  a { color: var(--primary); text-decoration: none; }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 0 2rem; }
+
+  /* Cover */
+  .cover {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: #fff;
+    padding: 3rem 2rem;
+    text-align: center;
+    position: relative;
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: var(--bg);
+    clip-path: ellipse(55% 100% at 50% 100%);
+  }
+  .cover img { max-width: 200px; margin-bottom: 1.5rem; }
+  .cover h1 { color: #fff; margin-bottom: 0.5rem; }
+  .cover .subtitle { font-size: 1.1rem; opacity: 0.92; }
+  .cover .year-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--text);
+    font-family: 'Sora', sans-serif;
+    font-weight: 800;
+    font-size: 1.3rem;
+    padding: 0.5rem 2rem;
+    border-radius: 30px;
+    margin-top: 1rem;
+  }
+
+  /* Legend */
+  .legend {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 1.2rem 1.5rem;
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin: 2rem 0 1.5rem;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+  .legend-item { display: flex; align-items: center; gap: 0.5rem; }
+  .legend-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .legend-dot.red { background: var(--red); }
+  .legend-dot.blue { background: var(--blue); }
+  .legend-dot.green { background: var(--green); }
+
+  /* Month card */
+  .month-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    break-inside: avoid;
+  }
+  .month-header {
+    background: var(--primary);
+    color: #fff;
+    padding: 0.7rem 1.2rem;
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .month-header .month-name { text-transform: uppercase; letter-spacing: 0.05em; }
+
+  .month-body {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 100px;
+  }
+
+  /* Mini calendar grid */
+  .mini-cal {
+    background: var(--bg-light);
+    padding: 0.8rem;
+    border-right: 1px solid var(--border);
+    font-size: 0.75rem;
+  }
+  .mini-cal-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 0.3rem;
+    font-size: 0.7rem;
+  }
+  .mini-cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    gap: 2px;
+  }
+  .mini-cal-day {
+    padding: 3px 2px;
+    border-radius: 3px;
+    font-size: 0.72rem;
+    line-height: 1.4;
+  }
+  .mini-cal-day.empty { visibility: hidden; }
+  .mini-cal-day.highlight-red { background: var(--red-light); color: var(--red); font-weight: 700; border: 1px solid var(--red-border); }
+  .mini-cal-day.highlight-blue { background: var(--blue-light); color: var(--blue); font-weight: 700; border: 1px solid var(--blue-border); }
+  .mini-cal-day.highlight-green { background: var(--green-light); color: var(--green); font-weight: 700; border: 1px solid var(--green-border); }
+  .mini-cal-day.weekend { color: #aaa; }
+
+  /* Obligations list */
+  .obligations {
+    padding: 0.8rem 1.2rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .obligation {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+  }
+  .obligation.ob-red { background: var(--red-light); border-left: 3px solid var(--red); }
+  .obligation.ob-blue { background: var(--blue-light); border-left: 3px solid var(--blue); }
+  .obligation.ob-green { background: var(--green-light); border-left: 3px solid var(--green); }
+  .ob-tag {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 2px 6px;
+    border-radius: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .ob-tag.tag-red { background: var(--red); color: #fff; }
+  .ob-tag.tag-blue { background: var(--blue); color: #fff; }
+  .ob-tag.tag-green { background: var(--green); color: #fff; }
+
+  /* Footer */
+  footer {
+    background: var(--text);
+    color: #ccc;
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 0.82rem;
+    line-height: 1.8;
+    margin-top: 2rem;
+  }
+  footer strong { color: var(--gold); }
+  footer a { color: var(--gold); text-decoration: none; }
+
+  /* Print */
+  @media print {
+    body { font-size: 10pt; }
+    .cover {
+      background: var(--primary) !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      padding: 1.5rem;
+    }
+    .cover::after { display: none; }
+    .month-card { break-inside: avoid; margin-bottom: 1rem; }
+    .month-header {
+      background: var(--primary) !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .obligation.ob-red, .obligation.ob-blue, .obligation.ob-green {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .ob-tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .mini-cal-day.highlight-red, .mini-cal-day.highlight-blue, .mini-cal-day.highlight-green {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    footer { background: var(--bg-light) !important; color: var(--text) !important; }
+    .legend { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .legend-dot { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .container { padding: 0 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA">
+  <h1>Calendrier des obligations sociales 2026</h1>
+  <p class="subtitle">Les échéances RH mois par mois pour les PME</p>
+  <div class="year-badge">2026</div>
+</div>
+
+<div class="container">
+
+  <!-- LEGEND -->
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot red"></div> Obligation légale</div>
+    <div class="legend-item"><div class="legend-dot blue"></div> Recommandé / Bonne pratique</div>
+    <div class="legend-item"><div class="legend-dot green"></div> Formation / Compétences</div>
+  </div>
+
+  <!-- ==================== JANVIER ==================== -->
+  <div class="month-card">
+    <div class="month-header"><span class="month-name">Janvier 2026</span></div>
+    <div class="month-body">
+      <div class="mini-cal">
+        <div class="mini-cal-header"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+        <div class="mini-cal-grid">
+          <span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day highlight-red">1</span><span class="mini-cal-day">2</span><span class="mini-cal-day weekend">3</span><span class="mini-cal-day weekend">4</span>
+          <span class="mini-cal-day highlight-red">5</span><span class="mini-cal-day">6</span><span class="mini-cal-day">7</span><span class="mini-cal-day">8</span><span class="mini-cal-day">9</span><span class="mini-cal-day weekend">10</span><span class="mini-cal-day weekend">11</span>
+          <span class="mini-cal-day">12</span><span class="mini-cal-day">13</span><span class="mini-cal-day">14</span><span class="mini-cal-day highlight-red">15</span><span class="mini-cal-day">16</span><span class="mini-cal-day weekend">17</span><span class="mini-cal-day weekend">18</span>
+          <span class="mini-cal-day">19</span><span class="mini-cal-day">20</span><span class="mini-cal-day">21</span><span class="mini-cal-day">22</span><span class="mini-cal-day">23</span><span class="mini-cal-day weekend">24</span><span class="mini-cal-day weekend">25</span>
+          <span class="mini-cal-day">26</span><span class="mini-cal-day">27</span><span class="mini-cal-day">28</span><span class="mini-cal-day">29</span><span class="mini-cal-day">30</span><span class="mini-cal-day weekend">31</span><span class="mini-cal-day empty"></span>
+        </div>
+      </div>
+      <ul class="obligations">
+        <li class="obligation ob-red"><span class="ob-tag tag-red">Obligatoire</span>DSN mensuelle (décembre N-1) -- transmission au plus tard le 5 ou le 15 selon l'effectif (art. R. 243-6 du CSS)</li>
+        <li class="obligation ob-red"><span class="ob-tag tag-red">Obligatoire</span>Solde de tout compte des départs de décembre -- remise des documents de fin de contrat</li>
+        <li class="obligation ob-red"><span class="ob-tag tag-red">Obligatoire</span>Mise à jour du DUERP (Document Unique d'Évaluation des Risques Professionnels) -- art. R. 4121-2 du Code du travail</li>
+        <li class="obligation ob-blue"><span class="ob-tag tag-blue">Recommandé</span>Versement de la participation et de l'intéressement (si accord prévoyant un versement en janvier)</li>
+        <li class="obligation ob-blue"><span class="ob-tag tag-blue">Recommandé</span>Vérification des seuils d'effectif au 31/12 N-1 et anticipation des obligations associées</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== FÉVRIER ==================== -->
+  <div class="month-card">
+    <div class="month-header"><span class="month-name">Février 2026</span></div>
+    <div class="month-body">
+      <div class="mini-cal">
+        <div class="mini-cal-header"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+        <div class="mini-cal-grid">
+          <span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day weekend highlight-red">1</span>
+          <span class="mini-cal-day">2</span><span class="mini-cal-day">3</span><span class="mini-cal-day">4</span><span class="mini-cal-day">5</span><span class="mini-cal-day">6</span><span class="mini-cal-day weekend">7</span><span class="mini-cal-day weekend">8</span>
+          <span class="mini-cal-day">9</span><span class="mini-cal-day">10</span><span class="mini-cal-day">11</span><span class="mini-cal-day">12</span><span class="mini-cal-day">13</span><span class="mini-cal-day weekend">14</span><span class="mini-cal-day weekend">15</span>
+          <span class="mini-cal-day">16</span><span class="mini-cal-day">17</span><span class="mini-cal-day">18</span><span class="mini-cal-day">19</span><span class="mini-cal-day">20</span><span class="mini-cal-day weekend">21</span><span class="mini-cal-day weekend">22</span>
+          <span class="mini-cal-day">23</span><span class="mini-cal-day">24</span><span class="mini-cal-day">25</span><span class="mini-cal-day">26</span><span class="mini-cal-day">27</span><span class="mini-cal-day weekend">28</span><span class="mini-cal-day empty"></span>
+        </div>
+      </div>
+      <ul class="obligations">
+        <li class="obligation ob-red"><span class="ob-tag tag-red">Obligatoire</span>DSN mensuelle (janvier)</li>
+        <li class="obligation ob-red"><span class="ob-tag tag-red">Obligatoire</span>Publication de l'index de l'égalité professionnelle femmes-hommes avant le 1er mars (entreprises de 50 salariés et plus) -- art. D. 1142-4 du Code du travail</li>
+        <li class="obligation ob-blue"><span class="ob-tag tag-blue">Recommandé</span>Préparation et ouverture de la NAO (Négociation Annuelle Obligatoire) pour les entreprises concernées -- art. L. 2242-1 du Code du travail</li>
+        <li class="obligation ob-blue"><span class="ob-tag tag-blue">Recommandé</span>Vérification de la conformité des affichages obligatoires (mis à jour au 1er janvier)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== MARS ==================== -->
+  <div class="month-card">
+    <div class="month-header"><span class="month-name">Mars 2026</span></div>
+    <div class="month-body">
+      <div class="mini-cal">
+        <div class="mini-cal-header"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+        <div class="mini-cal-grid">
+          <span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day weekend highlight-red">1</span>
+          <span class="mini-cal-day highlight-red">2</span><span class="mini-cal-day">3</span><span class="mini-cal-day">4</span><span class="mini-cal-day">5</span><span class="mini-cal-day">6</span><span class="mini-cal-day weekend">7</span><span class="mini-cal-day weekend">8</span>
+          <span class="mini-cal-day">9</span><span class="mini-cal-day">10</span><span class="mini-cal-day">11</span><span class="mini-cal-day">12</span><span class="mini-cal-day">13</span><span class="mini-cal-day weekend">14</span><span class="mini-cal-day weekend">15</span>
+          <span class="mini-cal-day">16</span><span class="mini-cal-day">17</span><span class="mini-cal-day">18</span><span class="mini-cal-day">19</span><span class="mini-cal-day">20</span><span class="mini-cal-day weekend">21</span><span class="mini-cal-day weekend">22</span>
+          <span class="mini-cal-day">23</span><span class="mini-cal-day">24</span><span class="mini-cal-day">25</span><span class="mini-cal-day">26</span><span class="mini-cal-day">27</span><span class="mini-cal-day weekend">28</span><span class="mini-cal-day weekend">29</span>
+          <span class="mini-cal-day">30</span><span class="mini-cal-day highlight-red">31</span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span>
+        </div>
+      </div>
+      <ul class="obligations">
+        <li class="obligation ob-red"><span class="ob-tag tag-red">Obligatoire</span>DSN mensuelle (février)</li>
+        <li class="obligation ob-red"><span class="ob-tag tag-red">Obligatoire</span>Date limite de publication de l'index égalité F/H (1er mars) et transmission à la DREETS et au CSE</li>
+        <li class="obligation ob-red"><span class="ob-tag tag-red">Obligatoire</span>Date limite de versement de la participation aux résultats (si exercice clos au 31/12) -- avant le 1er juin au plus tard, mais souvent dès mars-avril</li>
+        <li class="obligation ob-red"><span class="ob-tag tag-red">Obligatoire</span>Bilan social de l'année N-1 (entreprises de 300 salariés et plus) -- art. L. 2312-28 du Code du travail</li>
+        <li class="obligation ob-green"><span class="ob-tag tag-green">Formation</span>Déclaration annuelle relative à l'effort de formation (bilan pédagogique et financier pour les organismes de formation) -- art. L. 6352-11</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== AVRIL ==================== -->
+  <div class="month-card">
+    <div class="month-header"><span class="month-name">Avril 2026</span></div>
+    <div class="month-body">
+      <div class="mini-cal">
+        <div class="mini-cal-header"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+        <div class="mini-cal-grid">
+          <span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day highlight-green">1</span><span class="mini-cal-day">2</span><span class="mini-cal-day">3</span><span class="mini-cal-day weekend">4</span><span class="mini-cal-day weekend">5</span>
+          <span class="mini-cal-day">6</span><span class="mini-cal-day">7</span><span class="mini-cal-day">8</span><span class="mini-cal-day">9</span><span class="mini-cal-day">10</span><span class="mini-cal-day weekend">11</span><span class="mini-cal-day weekend">12</span>
+          <span class="mini-cal-day">13</span><span class="mini-cal-day">14</span><span class="mini-cal-day highlight-red">15</span><span class="mini-cal-day">16</span><span class="mini-cal-day">17</span><span class="mini-cal-day weekend">18</span><span class="mini-cal-day weekend">19</span>
+          <span class="mini-cal-day">20</span><span class="mini-cal-day">21</span><span class="mini-cal-day">22</span><span class="mini-cal-day">23</span><span class="mini-cal-day">24</span><span class="mini-cal-day weekend">25</span><span class="mini-cal-day weekend">26</span>
+          <span class="mini-cal-day">27</span><span class="mini-cal-day">28</span><span class="mini-cal-day">29</span><span class="mini-cal-day">30</span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span>
+        </div>
+      </div>
+      <ul class="obligations">
+        <li class="obligation ob-red"><span class="ob-tag tag-red">Obligatoire</span>DSN mensuelle (mars)</li>
+        <li class="obligation ob-red"><span class="ob-tag tag-red">Obligatoire</span>Contribution à la formation professionnelle continue -- collecte URSSAF via la DSN</li>
+        <li class="obligation ob-green"><span class="ob-tag tag-green">Formation</span>Période recommandée pour lancer la campagne d'entretiens professionnels (planification des sessions du 1er semestre)</li>
+        <li class="obligation ob-blue"><span class="ob-tag tag-blue">Recommandé</span>Vérification de la couverture santé et prévoyance (mise en conformité des contrats si changement au 1er janvier)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== MAI ==================== -->
+  <div class="month-card">
+    <div class="month-header"><span class="month-name">Mai 2026</span></div>
+    <div class="month-body">
+      <div class="mini-cal">
+        <div class="mini-cal-header"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+        <div class="mini-cal-grid">
+          <span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day highlight-red">1</span><span class="mini-cal-day weekend">2</span><span class="mini-cal-day weekend">3</span>
+          <span class="mini-cal-day">4</span><span class="mini-cal-day">5</span><span class="mini-cal-day">6</span><span class="mini-cal-day">7</span><span class="mini-cal-day">8</span><span class="mini-cal-day weekend">9</span><span class="mini-cal-day weekend">10</span>
+          <span class="mini-cal-day">11</span><span class="mini-cal-day">12</span><span class="mini-cal-day">13</span><span class="mini-cal-day highlight-red">14</span><span class="mini-cal-day">15</span><span class="mini-cal-day weekend">16</span><span class="mini-cal-day weekend">17</span>
+          <span class="mini-cal-day">18</span><span class="mini-cal-day">19</span><span class="mini-cal-day">20</span><span class="mini-cal-day">21</span><span class="mini-cal-day">22</span><span class="mini-cal-day weekend">23</span><span class="mini-cal-day weekend highlight-red">24</span>
+          <span class="mini-cal-day highlight-red">25</span><span class="mini-cal-day">26</span><span class="mini-cal-day">27</span><span class="mini-cal-day">28</span><span class="mini-cal-day">29</span><span class="mini-cal-day weekend">30</span><span class="mini-cal-day weekend">31</span>
+        </div>
+      </div>
+      <ul class="obligations">
+        <li class="obligation ob-red"><span class="ob-tag tag-red">Obligatoire</span>DSN mensuelle (avril)</li>
+        <li class="obligation ob-red"><span class="ob-tag tag-red">Obligatoire</span>Déclaration AGEFIPH -- Obligation d'Emploi des Travailleurs Handicapés (OETH) via la DSN -- art. L. 5212-1 du Code du travail</li>
+        <li class="obligation ob-red"><span class="ob-tag tag-red">Obligatoire</span>Journée de solidarité -- organisation à définir par accord d'entreprise ou décision unilatérale (art. L. 3133-7)</li>
+        <li class="obligation ob-blue"><span class="ob-tag tag-blue">Recommandé</span>Jours fériés de mai : 1er mai (Fête du travail), 8 mai (Victoire 1945), 14 mai (Ascension), 25 mai (Pentecôte) -- anticiper l'organisation du travail</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== JUIN ==================== -->
+  <div class="month-card">
+    <div class="month-header"><span class="month-name">Juin 2026</span></div>
+    <div class="month-body">
+      <div class="mini-cal">
+        <div class="mini-cal-header"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+        <div class="mini-cal-grid">
+          <span class="mini-cal-day highlight-red">1</span><span class="mini-cal-day">2</span><span class="mini-cal-day">3</span><span class="mini-cal-day">4</span><span class="mini-cal-day">5</span><span class="mini-cal-day weekend">6</span><span class="mini-cal-day weekend">7</span>
+          <span class="mini-cal-day">8</span><span class="mini-cal-day">9</span><span class="mini-cal-day">10</span><span class="mini-cal-day">11</span><span class="mini-cal-day">12</span><span class="mini-cal-day weekend">13</span><span class="mini-cal-day weekend">14</span>
+          <span class="mini-cal-day highlight-blue">15</span><span class="mini-cal-day">16</span><span class="mini-cal-day">17</span><span class="mini-cal-day">18</span><span class="mini-cal-day">19</span><span class="mini-cal-day weekend">20</span><span class="mini-cal-day weekend">21</span>
+          <span class="mini-cal-day">22</span><span class="mini-cal-day">23</span><span class="mini-cal-day">24</span><span class="mini-cal-day">25</span><span class="mini-cal-day">26</span><span class="mini-cal-day weekend">27</span><span class="mini-cal-day weekend">28</span>
+          <span class="mini-cal-day">29</span><span class="mini-cal-day highlight-red">30</span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span>
+        </div>
+      </div>
+      <ul class="obligations">
+        <li class="obligation ob-red"><span class="ob-tag tag-red">Obligatoire</span>DSN mensuelle (mai)</li>
+        <li class="obligation ob-red"><span class="ob-tag tag-red">Obligatoire</span>Date limite de versement de la participation et de l'intéressement (1er juin, si clôture au 31/12) -- art. D. 3324-21-2 du Code du travail</li>
+        <li class="obligation ob-blue"><span class="ob-tag tag-blue">Recommandé</span>Point semestriel sur l'avancement des entretiens professionnels -- état des lieux des entretiens réalisés et à programmer</li>
+        <li class="obligation ob-blue"><span class="ob-tag tag-blue">Recommandé</span>Médecine du travail : planification des visites de reprise et visites périodiques (suivi individuel renforcé si postes à risque)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== JUILLET ==================== -->
+  <div class="month-card">
+    <div class="month-header"><span class="month-name">Juillet 2026</span></div>
+    <div class="month-body">
+      <div class="mini-cal">
+        <div class="mini-cal-header"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+        <div class="mini-cal-grid">
+          <span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day highlight-blue">1</span><span class="mini-cal-day">2</span><span class="mini-cal-day">3</span><span class="mini-cal-day weekend">4</span><span class="mini-cal-day weekend">5</span>
+          <span class="mini-cal-day">6</span><span class="mini-cal-day">7</span><span class="mini-cal-day">8</span><span class="mini-cal-day">9</span><span class="mini-cal-day">10</span><span class="mini-cal-day weekend">11</span><span class="mini-cal-day weekend">12</span>
+          <span class="mini-cal-day">13</span><span class="mini-cal-day highlight-red">14</span><span class="mini-cal-day">15</span><span class="mini-cal-day">16</span><span class="mini-cal-day">17</span><span class="mini-cal-day weekend">18</span><span class="mini-cal-day weekend">19</span>
+          <span class="mini-cal-day">20</span><span class="mini-cal-day">21</span><span class="mini-cal-day">22</span><span class="mini-cal-day">23</span><span class="mini-cal-day">24</span><span class="mini-cal-day weekend">25</span><span class="mini-cal-day weekend">26</span>
+          <span class="mini-cal-day">27</span><span class="mini-cal-day">28</span><span class="mini-cal-day">29</span><span class="mini-cal-day">30</span><span class="mini-cal-day highlight-blue">31</span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span>
+        </div>
+      </div>
+      <ul class="obligations">
+        <li class="obligation ob-red"><span class="ob-tag tag-red">Obligatoire</span>DSN mensuelle (juin)</li>
+        <li class="obligation ob-blue"><span class="ob-tag tag-blue">Recommandé</span>Calcul de l'effectif moyen semestriel (1er janvier - 30 juin) -- vérification des seuils déclenchant de nouvelles obligations</li>
+        <li class="obligation ob-blue"><span class="ob-tag tag-blue">Recommandé</span>Préparation de la rentrée : anticipation des besoins de recrutement, recours à l'intérim et aux contrats saisonniers</li>
+        <li class="obligation ob-blue"><span class="ob-tag tag-blue">Recommandé</span>Vérification de la planification des congés payés -- respect du délai de prévenance d'un mois (art. D. 3141-6)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== AOÛT ==================== -->
+  <div class="month-card">
+    <div class="month-header"><span class="month-name">Août 2026</span></div>
+    <div class="month-body">
+      <div class="mini-cal">
+        <div class="mini-cal-header"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+        <div class="mini-cal-grid">
+          <span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day weekend">1</span><span class="mini-cal-day weekend">2</span>
+          <span class="mini-cal-day">3</span><span class="mini-cal-day">4</span><span class="mini-cal-day">5</span><span class="mini-cal-day">6</span><span class="mini-cal-day">7</span><span class="mini-cal-day weekend">8</span><span class="mini-cal-day weekend">9</span>
+          <span class="mini-cal-day">10</span><span class="mini-cal-day">11</span><span class="mini-cal-day">12</span><span class="mini-cal-day">13</span><span class="mini-cal-day">14</span><span class="mini-cal-day weekend highlight-red">15</span><span class="mini-cal-day weekend">16</span>
+          <span class="mini-cal-day">17</span><span class="mini-cal-day">18</span><span class="mini-cal-day">19</span><span class="mini-cal-day">20</span><span class="mini-cal-day">21</span><span class="mini-cal-day weekend">22</span><span class="mini-cal-day weekend">23</span>
+          <span class="mini-cal-day">24</span><span class="mini-cal-day">25</span><span class="mini-cal-day">26</span><span class="mini-cal-day">27</span><span class="mini-cal-day">28</span><span class="mini-cal-day weekend">29</span><span class="mini-cal-day weekend">30</span>
+          <span class="mini-cal-day highlight-green">31</span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span>
+        </div>
+      </div>
+      <ul class="obligations">
+        <li class="obligation ob-red"><span class="ob-tag tag-red">Obligatoire</span>DSN mensuelle (juillet)</li>
+        <li class="obligation ob-blue"><span class="ob-tag tag-blue">Recommandé</span>Clôture de la période de prise des congés payés -- vérification des soldes et report éventuel (si la période de référence court du 1er juin au 31 mai)</li>
+        <li class="obligation ob-green"><span class="ob-tag tag-green">Formation</span>Préparation du plan de développement des compétences pour N+1 : recueil des besoins, identification des priorités, consultation des managers</li>
+        <li class="obligation ob-blue"><span class="ob-tag tag-blue">Recommandé</span>Préparation administrative de la rentrée : accueil des nouveaux arrivants, livret d'accueil, parcours d'intégration</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== SEPTEMBRE ==================== -->
+  <div class="month-card">
+    <div class="month-header"><span class="month-name">Septembre 2026</span></div>
+    <div class="month-body">
+      <div class="mini-cal">
+        <div class="mini-cal-header"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+        <div class="mini-cal-grid">
+          <span class="mini-cal-day highlight-green">1</span><span class="mini-cal-day">2</span><span class="mini-cal-day">3</span><span class="mini-cal-day">4</span><span class="mini-cal-day">5</span><span class="mini-cal-day weekend">6</span><span class="mini-cal-day weekend">7</span>
+          <span class="mini-cal-day">8</span><span class="mini-cal-day">9</span><span class="mini-cal-day">10</span><span class="mini-cal-day">11</span><span class="mini-cal-day">12</span><span class="mini-cal-day weekend">13</span><span class="mini-cal-day weekend">14</span>
+          <span class="mini-cal-day highlight-blue">15</span><span class="mini-cal-day">16</span><span class="mini-cal-day">17</span><span class="mini-cal-day">18</span><span class="mini-cal-day">19</span><span class="mini-cal-day weekend">20</span><span class="mini-cal-day weekend">21</span>
+          <span class="mini-cal-day">22</span><span class="mini-cal-day">23</span><span class="mini-cal-day">24</span><span class="mini-cal-day">25</span><span class="mini-cal-day">26</span><span class="mini-cal-day weekend">27</span><span class="mini-cal-day weekend">28</span>
+          <span class="mini-cal-day">29</span><span class="mini-cal-day">30</span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span>
+        </div>
+      </div>
+      <ul class="obligations">
+        <li class="obligation ob-red"><span class="ob-tag tag-red">Obligatoire</span>DSN mensuelle (août)</li>
+        <li class="obligation ob-green"><span class="ob-tag tag-green">Formation</span>Lancement du plan de développement des compétences : inscription des salariés, dépôt des dossiers OPCO, planification des sessions</li>
+        <li class="obligation ob-red"><span class="ob-tag tag-red">Obligatoire</span>Élections CSE : organisation du scrutin si renouvellement prévu (protocole d'accord préélectoral à négocier 2 mois avant) -- art. L. 2314-4</li>
+        <li class="obligation ob-green"><span class="ob-tag tag-green">Formation</span>Rentrée AFEST (Actions de Formation en Situation de Travail) : démarrage des parcours de formation en situation de travail pour les nouveaux arrivants et les montées en compétences</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== OCTOBRE ==================== -->
+  <div class="month-card">
+    <div class="month-header"><span class="month-name">Octobre 2026</span></div>
+    <div class="month-body">
+      <div class="mini-cal">
+        <div class="mini-cal-header"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+        <div class="mini-cal-grid">
+          <span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day highlight-green">1</span><span class="mini-cal-day">2</span><span class="mini-cal-day weekend">3</span><span class="mini-cal-day weekend">4</span>
+          <span class="mini-cal-day">5</span><span class="mini-cal-day">6</span><span class="mini-cal-day">7</span><span class="mini-cal-day">8</span><span class="mini-cal-day">9</span><span class="mini-cal-day weekend">10</span><span class="mini-cal-day weekend">11</span>
+          <span class="mini-cal-day">12</span><span class="mini-cal-day">13</span><span class="mini-cal-day">14</span><span class="mini-cal-day">15</span><span class="mini-cal-day">16</span><span class="mini-cal-day weekend">17</span><span class="mini-cal-day weekend">18</span>
+          <span class="mini-cal-day">19</span><span class="mini-cal-day">20</span><span class="mini-cal-day">21</span><span class="mini-cal-day">22</span><span class="mini-cal-day">23</span><span class="mini-cal-day weekend">24</span><span class="mini-cal-day weekend">25</span>
+          <span class="mini-cal-day">26</span><span class="mini-cal-day">27</span><span class="mini-cal-day">28</span><span class="mini-cal-day">29</span><span class="mini-cal-day">30</span><span class="mini-cal-day weekend highlight-blue">31</span><span class="mini-cal-day empty"></span>
+        </div>
+      </div>
+      <ul class="obligations">
+        <li class="obligation ob-red"><span class="ob-tag tag-red">Obligatoire</span>DSN mensuelle (septembre)</li>
+        <li class="obligation ob-red"><span class="ob-tag tag-red">Obligatoire</span>Consultation du CSE sur les orientations de la formation professionnelle -- art. L. 2312-24 du Code du travail (dans le cadre de la consultation sur la politique sociale)</li>
+        <li class="obligation ob-blue"><span class="ob-tag tag-blue">Recommandé</span>Bilan annuel QVCT (Qualité de Vie et Conditions de Travail) : analyse des indicateurs RPS, absentéisme, satisfaction, actions correctives</li>
+        <li class="obligation ob-green"><span class="ob-tag tag-green">Formation</span>Consultation du CSE sur le plan de développement des compétences prévisionnel N+1</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== NOVEMBRE ==================== -->
+  <div class="month-card">
+    <div class="month-header"><span class="month-name">Novembre 2026</span></div>
+    <div class="month-body">
+      <div class="mini-cal">
+        <div class="mini-cal-header"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+        <div class="mini-cal-grid">
+          <span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day weekend highlight-red">1</span>
+          <span class="mini-cal-day">2</span><span class="mini-cal-day">3</span><span class="mini-cal-day">4</span><span class="mini-cal-day">5</span><span class="mini-cal-day">6</span><span class="mini-cal-day weekend">7</span><span class="mini-cal-day weekend">8</span>
+          <span class="mini-cal-day">9</span><span class="mini-cal-day">10</span><span class="mini-cal-day highlight-red">11</span><span class="mini-cal-day">12</span><span class="mini-cal-day">13</span><span class="mini-cal-day weekend">14</span><span class="mini-cal-day weekend">15</span>
+          <span class="mini-cal-day">16</span><span class="mini-cal-day">17</span><span class="mini-cal-day">18</span><span class="mini-cal-day">19</span><span class="mini-cal-day">20</span><span class="mini-cal-day weekend">21</span><span class="mini-cal-day weekend">22</span>
+          <span class="mini-cal-day">23</span><span class="mini-cal-day">24</span><span class="mini-cal-day">25</span><span class="mini-cal-day">26</span><span class="mini-cal-day">27</span><span class="mini-cal-day weekend">28</span><span class="mini-cal-day weekend">29</span>
+          <span class="mini-cal-day highlight-green">30</span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span>
+        </div>
+      </div>
+      <ul class="obligations">
+        <li class="obligation ob-red"><span class="ob-tag tag-red">Obligatoire</span>DSN mensuelle (octobre)</li>
+        <li class="obligation ob-green"><span class="ob-tag tag-green">Formation</span>Préparation et validation du budget formation N+1 -- arbitrage des priorités avec la direction</li>
+        <li class="obligation ob-blue"><span class="ob-tag tag-blue">Recommandé</span>Vérification des soldes de congés payés -- anticipation des reports et pertes de droits</li>
+        <li class="obligation ob-blue"><span class="ob-tag tag-blue">Recommandé</span>Jours fériés : 1er novembre (Toussaint), 11 novembre (Armistice) -- organisation du travail</li>
+        <li class="obligation ob-green"><span class="ob-tag tag-green">Formation</span>Dépôt des dossiers FNE-Formation pour l'exercice suivant (selon calendrier OPCO)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== DÉCEMBRE ==================== -->
+  <div class="month-card">
+    <div class="month-header"><span class="month-name">Décembre 2026</span></div>
+    <div class="month-body">
+      <div class="mini-cal">
+        <div class="mini-cal-header"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+        <div class="mini-cal-grid">
+          <span class="mini-cal-day empty"></span><span class="mini-cal-day highlight-green">1</span><span class="mini-cal-day">2</span><span class="mini-cal-day">3</span><span class="mini-cal-day">4</span><span class="mini-cal-day weekend">5</span><span class="mini-cal-day weekend">6</span>
+          <span class="mini-cal-day">7</span><span class="mini-cal-day">8</span><span class="mini-cal-day">9</span><span class="mini-cal-day">10</span><span class="mini-cal-day">11</span><span class="mini-cal-day weekend">12</span><span class="mini-cal-day weekend">13</span>
+          <span class="mini-cal-day">14</span><span class="mini-cal-day">15</span><span class="mini-cal-day">16</span><span class="mini-cal-day">17</span><span class="mini-cal-day">18</span><span class="mini-cal-day weekend">19</span><span class="mini-cal-day weekend">20</span>
+          <span class="mini-cal-day">21</span><span class="mini-cal-day">22</span><span class="mini-cal-day">23</span><span class="mini-cal-day">24</span><span class="mini-cal-day highlight-red">25</span><span class="mini-cal-day weekend">26</span><span class="mini-cal-day weekend">27</span>
+          <span class="mini-cal-day">28</span><span class="mini-cal-day">29</span><span class="mini-cal-day">30</span><span class="mini-cal-day highlight-red">31</span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span><span class="mini-cal-day empty"></span>
+        </div>
+      </div>
+      <ul class="obligations">
+        <li class="obligation ob-red"><span class="ob-tag tag-red">Obligatoire</span>DSN mensuelle (novembre)</li>
+        <li class="obligation ob-red"><span class="ob-tag tag-red">Obligatoire</span>Entretiens professionnels : réalisation des bilans récapitulatifs à 6 ans avant le 31 décembre pour les salariés concernés -- art. L. 6315-1 III du Code du travail</li>
+        <li class="obligation ob-green"><span class="ob-tag tag-green">Formation</span>Clôture du plan de développement des compétences de l'année -- bilan des actions réalisées, taux de réalisation</li>
+        <li class="obligation ob-blue"><span class="ob-tag tag-blue">Recommandé</span>Bilan d'année RH : indicateurs sociaux, turnover, absentéisme, satisfaction -- préparation du rapport annuel</li>
+        <li class="obligation ob-red"><span class="ob-tag tag-red">Obligatoire</span>Vérification de la conformité au 31/12 : affichages obligatoires, registre du personnel, DUERP à jour</li>
+        <li class="obligation ob-blue"><span class="ob-tag tag-blue">Recommandé</span>Communication interne de fin d'année : voeux, bilan social simplifié, perspectives et projets pour N+1</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION SYNTHÈSE -->
+  <div style="background: var(--gold-light); border: 1px solid var(--gold); border-radius: var(--radius); padding: 1.5rem; margin: 2rem 0;">
+    <h2 style="color: var(--primary-dark);">Rappels transversaux -- toute l'année</h2>
+    <ul style="padding-left: 1.5rem; font-size: 0.92rem;">
+      <li style="margin-bottom: 0.5rem;"><strong>DSN mensuelle</strong> : à transmettre le 5 du mois (entreprises de 50 salariés et plus) ou le 15 du mois (moins de 50 salariés), via net-entreprises.fr -- art. R. 243-6 du Code de la sécurité sociale.</li>
+      <li style="margin-bottom: 0.5rem;"><strong>Registre unique du personnel</strong> : tenu à jour en permanence, mentionnant chaque entrée et sortie de salarié -- art. L. 1221-13 du Code du travail.</li>
+      <li style="margin-bottom: 0.5rem;"><strong>Visites médicales</strong> : suivi individuel de l'état de santé (SIR ou SIA selon le poste), visites de reprise après arrêt de plus de 60 jours, visite de mi-carrière à 45 ans -- art. L. 4624-1 et suivants.</li>
+      <li style="margin-bottom: 0.5rem;"><strong>Entretiens professionnels</strong> : tous les 2 ans et au retour de certaines absences (congé maternité, parental, sabbatique, arrêt longue maladie, etc.) -- art. L. 6315-1.</li>
+      <li style="margin-bottom: 0.5rem;"><strong>Affichage obligatoire</strong> : horaires collectifs, convention collective applicable, coordonnées inspection du travail, médecine du travail, consignes de sécurité, interdiction de fumer, égalité de rémunération, harcèlement.</li>
+      <li><strong>DUERP</strong> : mis à jour au moins une fois par an (entreprises de 11 salariés et plus) ou lors de tout changement significatif -- art. R. 4121-2.</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>CARTESA</strong> -- Cabinet de conseil et formation RH certifié Qualiopi<br>
+  La Tour-du-Pin, Isère -- Auvergne-Rhône-Alpes<br>
+  Téléphone : 04 74 97 29 56 | E-mail : <a href="mailto:contact@cartesa-lyon.com">contact@cartesa-lyon.com</a><br>
+  Site web : <a href="https://cartesa-lyon.com">cartesa-lyon.com</a><br>
+  <span style="opacity: 0.7; font-size: 0.78rem;">Calendrier des obligations sociales 2026 -- Document CARTESA -- Avril 2026 -- Les dates et obligations sont fournies à titre indicatif. Consultez les textes en vigueur pour toute application.</span>
+</footer>
+
+</body>
+</html>

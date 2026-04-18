@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 dispositifs pour financer la formation de vos salariés -- CARTESA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #007cba;
+    --primary-dark: #005a8c;
+    --gold: #f0cc3a;
+    --gold-light: #fdf6d8;
+    --text: #1a1a2e;
+    --text-light: #4a4a5a;
+    --bg: #ffffff;
+    --bg-light: #f7f9fc;
+    --border: #e2e8f0;
+    --success: #16a34a;
+    --radius: 8px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+    background: var(--bg);
+  }
+  h1, h2, h3, h4 { font-family: 'Sora', sans-serif; line-height: 1.3; }
+  h1 { font-size: 2.2rem; font-weight: 800; }
+  h2 { font-size: 1.6rem; font-weight: 700; color: var(--primary); margin-bottom: 0.8rem; }
+  h3 { font-size: 1.15rem; font-weight: 600; color: var(--primary-dark); margin-bottom: 0.5rem; }
+  p { margin-bottom: 1rem; }
+  a { color: var(--primary); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+
+  /* Cover */
+  .cover {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: #fff;
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: var(--bg);
+    clip-path: ellipse(55% 100% at 50% 100%);
+  }
+  .cover img { max-width: 220px; margin-bottom: 2rem; }
+  .cover h1 { font-size: 2.4rem; margin-bottom: 0.8rem; color: #fff; }
+  .cover .subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: 0.92;
+    margin-bottom: 1.5rem;
+  }
+  .cover .badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--text);
+    font-family: 'Sora', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+  }
+
+  /* Sections */
+  section { padding: 3rem 0; }
+  section + section { border-top: 1px solid var(--border); }
+
+  .intro-section {
+    background: var(--bg-light);
+    border-left: 4px solid var(--gold);
+    padding: 2rem;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin: 2rem 0;
+  }
+  .intro-section p:last-child { margin-bottom: 0; }
+
+  /* Dispositif cards */
+  .dispositif {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  .dispositif-number {
+    position: absolute;
+    top: -18px;
+    left: 24px;
+    background: var(--primary);
+    color: #fff;
+    font-family: 'Sora', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .dispositif h2 { margin-top: 0.5rem; }
+
+  .highlight-box {
+    background: var(--gold-light);
+    border-left: 4px solid var(--gold);
+    padding: 1rem 1.5rem;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+  }
+  .highlight-box strong { color: var(--primary-dark); }
+
+  .steps {
+    counter-reset: step;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  .steps li {
+    counter-increment: step;
+    padding: 0.6rem 0 0.6rem 2.8rem;
+    position: relative;
+    border-left: 2px solid var(--border);
+    margin-left: 1rem;
+  }
+  .steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: -12px;
+    top: 0.5rem;
+    background: var(--primary);
+    color: #fff;
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .steps li:last-child { border-left-color: transparent; }
+
+  ul.bullet { padding-left: 1.5rem; margin: 0.8rem 0; }
+  ul.bullet li { margin-bottom: 0.4rem; }
+
+  /* Comparison table */
+  .table-wrapper { overflow-x: auto; margin: 2rem 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  table th {
+    background: var(--primary);
+    color: #fff;
+    font-family: 'Sora', sans-serif;
+    font-weight: 600;
+    padding: 0.8rem 1rem;
+    text-align: left;
+    white-space: nowrap;
+  }
+  table td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:nth-child(even) { background: var(--bg-light); }
+  table tr:hover { background: #eef5fb; }
+
+  /* CTA section */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    margin: 2rem 0;
+    text-align: center;
+  }
+  .cta-section h2 { color: #fff; }
+  .cta-section p { opacity: 0.95; }
+  .cta-button {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--text);
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: transform 0.2s;
+  }
+  .cta-button:hover { transform: translateY(-2px); text-decoration: none; }
+
+  /* Footer */
+  footer {
+    background: var(--text);
+    color: #ccc;
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.85rem;
+    line-height: 1.8;
+    margin-top: 3rem;
+  }
+  footer strong { color: var(--gold); }
+
+  /* OPCO list */
+  .opco-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.8rem;
+    margin: 1rem 0;
+  }
+  .opco-item {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  /* Print */
+  @media print {
+    body { font-size: 12pt; }
+    .cover { background: var(--primary) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 2rem; }
+    .cover::after { display: none; }
+    .dispositif { break-inside: avoid; }
+    .cta-section { background: var(--bg-light) !important; color: var(--text) !important; border: 2px solid var(--primary); }
+    .cta-section h2 { color: var(--primary) !important; }
+    .cta-button { border: 2px solid var(--primary); }
+    footer { background: var(--bg-light) !important; color: var(--text) !important; }
+    table th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    a { color: var(--primary); }
+    section { padding: 1.5rem 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA - Cabinet de conseil et formation RH">
+  <h1>5 dispositifs pour financer la formation de vos salariés</h1>
+  <p class="subtitle">Le guide pratique pour les dirigeants de PME</p>
+  <span class="badge">Organisme certifié Qualiopi</span>
+</div>
+
+<div class="container">
+
+  <!-- INTRODUCTION -->
+  <section>
+    <h2>Introduction : la formation, un investissement -- pas un coût</h2>
+    <div class="intro-section">
+      <p>En France, chaque employeur a l'obligation de participer au financement de la formation professionnelle continue de ses salariés (articles L. 6311-1 et suivants du Code du travail). Au-delà de cette obligation légale, la formation constitue un levier stratégique de compétitivité, de fidélisation des talents et d'adaptation aux mutations économiques.</p>
+      <p>Pourtant, de nombreux dirigeants de PME renoncent à former leurs équipes par manque de temps ou de connaissance des dispositifs de financement existants. Ce guide a pour objectif de vous présenter les cinq principaux mécanismes de prise en charge, concrets et mobilisables dès aujourd'hui.</p>
+      <p><strong>La contribution unique à la formation professionnelle (CUFPA)</strong>, collectée par l'URSSAF depuis le 1er janvier 2022 et reversée aux OPCO, représente entre 0,55 % et 1 % de la masse salariale selon la taille de l'entreprise (article L. 6131-1 du Code du travail). Ces fonds vous reviennent -- encore faut-il les mobiliser.</p>
+    </div>
+  </section>
+
+  <!-- DISPOSITIF 1 -->
+  <section>
+    <div class="dispositif">
+      <div class="dispositif-number">1</div>
+      <h2>Le Plan de développement des compétences</h2>
+      <p><em>Anciennement « plan de formation », renommé par la loi n° 2018-771 du 5 septembre 2018 pour la liberté de choisir son avenir professionnel.</em></p>
+
+      <h3>De quoi s'agit-il ?</h3>
+      <p>Le plan de développement des compétences regroupe l'ensemble des actions de formation, de bilan de compétences et de validation des acquis de l'expérience (VAE) décidées par l'employeur au bénéfice de ses salariés (article L. 6312-1 du Code du travail). Il se distingue des formations à l'initiative du salarié (CPF) : ici, c'est l'entreprise qui pilote.</p>
+
+      <h3>Qui décide, qui finance ?</h3>
+      <ul class="bullet">
+        <li><strong>L'employeur</strong> définit les priorités de formation en lien avec la stratégie de l'entreprise.</li>
+        <li>Le <strong>CSE</strong> est consulté chaque année sur les orientations de la formation professionnelle (article L. 2312-24 du Code du travail).</li>
+        <li>Le financement repose sur les <strong>fonds mutualisés de l'OPCO</strong> pour les entreprises de moins de 50 salariés. Au-delà, l'entreprise finance sur ses propres ressources.</li>
+      </ul>
+
+      <h3>Prise en charge OPCO selon la taille de l'entreprise</h3>
+      <ul class="bullet">
+        <li><strong>Moins de 11 salariés</strong> : prise en charge intégrale des coûts pédagogiques et, selon l'OPCO, de la rémunération du salarié en formation.</li>
+        <li><strong>De 11 à 49 salariés</strong> : prise en charge des coûts pédagogiques (plafonds variables par OPCO, généralement entre 25 et 40 euros/heure).</li>
+        <li><strong>50 salariés et plus</strong> : pas de prise en charge OPCO sauf accord de branche spécifique ou versement volontaire.</li>
+      </ul>
+
+      <h3>Comment monter un dossier ?</h3>
+      <ol class="steps">
+        <li>Identifiez les besoins en compétences à partir des entretiens professionnels et de la stratégie d'entreprise.</li>
+        <li>Sélectionnez un organisme de formation certifié Qualiopi (obligatoire depuis le 1er janvier 2022 pour toute prise en charge publique ou mutualisée, article L. 6316-1).</li>
+        <li>Constituez le dossier auprès de votre OPCO : programme de formation, devis, convention, calendrier.</li>
+        <li>Obtenez l'accord de prise en charge <strong>avant le démarrage</strong> de la formation.</li>
+        <li>Transmettez les justificatifs après la formation : feuilles d'émargement, attestation de fin de formation, facture.</li>
+      </ol>
+
+      <div class="highlight-box">
+        <strong>Astuce : le regroupement inter-entreprises.</strong> Plusieurs PME d'un même territoire peuvent mutualiser leurs besoins pour négocier des tarifs de groupe auprès d'un organisme de formation, tout en conservant chacune leur prise en charge OPCO individuelle. CARTESA organise régulièrement ces sessions collectives en Nord-Isère.
+      </div>
+    </div>
+  </section>
+
+  <!-- DISPOSITIF 2 -->
+  <section>
+    <div class="dispositif">
+      <div class="dispositif-number">2</div>
+      <h2>La PCRH -- Prestation de Conseil en Ressources Humaines</h2>
+      <p><em>Le dispositif le plus méconnu et le plus avantageux pour les PME.</em></p>
+
+      <h3>De quoi s'agit-il ?</h3>
+      <p>La PCRH est un dispositif d'accompagnement RH cofinancé par l'État (via les DREETS, ex-DIRECCTE) et les OPCO. Il permet aux TPE-PME de bénéficier d'un consultant RH externe pour structurer leur politique de gestion des ressources humaines. Ce dispositif est régi par l'instruction DGEFP n° 2020-90 du 9 juin 2020 et ses actualisations successives.</p>
+
+      <div class="highlight-box">
+        <strong>100 % gratuit pour l'entreprise.</strong> La prestation est intégralement prise en charge : entre 12 et 20 jours d'accompagnement, pour un montant pouvant atteindre 15 000 euros, sans aucun reste à charge pour l'entreprise.
+      </div>
+
+      <h3>Critères d'éligibilité</h3>
+      <ul class="bullet">
+        <li>Entreprises de <strong>moins de 250 salariés</strong> (TPE-PME).</li>
+        <li>Ne disposant pas de service RH structuré ou de compétences RH internes suffisantes.</li>
+        <li>Les demandes collectives (groupements d'entreprises, filières) sont également éligibles.</li>
+      </ul>
+
+      <h3>Ce que couvre concrètement la PCRH</h3>
+      <ul class="bullet">
+        <li>Diagnostic RH global de l'entreprise.</li>
+        <li>Mise en place des entretiens professionnels et de la GEPP (Gestion des Emplois et des Parcours Professionnels).</li>
+        <li>Construction du plan de développement des compétences.</li>
+        <li>Structuration des fiches de poste et des processus de recrutement.</li>
+        <li>Accompagnement à la mise en conformité sociale (DUERP, index égalité, etc.).</li>
+        <li>Accompagnement aux transitions (numérique, écologique, organisationnelle).</li>
+        <li>Appui au dialogue social et à la qualité de vie au travail (QVCT).</li>
+      </ul>
+
+      <h3>Comment en faire la demande ?</h3>
+      <ol class="steps">
+        <li>Contactez votre OPCO ou votre DREETS Auvergne-Rhône-Alpes pour vérifier votre éligibilité.</li>
+        <li>Sélectionnez un prestataire référencé (CARTESA est prestataire PCRH agréé en Isère).</li>
+        <li>Le prestataire établit une proposition d'intervention personnalisée.</li>
+        <li>L'OPCO ou la DREETS valide la prise en charge et conventionnent l'intervention.</li>
+        <li>L'accompagnement démarre, généralement sur une période de 3 à 6 mois.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- DISPOSITIF 3 -->
+  <section>
+    <div class="dispositif">
+      <div class="dispositif-number">3</div>
+      <h2>Le CPF -- Compte Personnel de Formation</h2>
+      <p><em>Un droit individuel du salarié, mais un levier de co-investissement pour l'entreprise.</em></p>
+
+      <h3>Fonctionnement</h3>
+      <p>Depuis la loi n° 2018-771 du 5 septembre 2018, chaque actif dispose d'un Compte Personnel de Formation crédité de <strong>500 euros par an</strong> (800 euros pour les salariés non qualifiés), dans la limite d'un plafond de <strong>5 000 euros</strong> (8 000 euros pour les non qualifiés). Les droits sont gérés par la Caisse des dépôts et consignations et mobilisables via la plateforme moncompteformation.gouv.fr.</p>
+      <p>Depuis le 2 mai 2024, un reste à charge de 100 euros est appliqué au titulaire du CPF pour toute inscription (décret n° 2024-394 du 29 avril 2024), sauf pour les demandeurs d'emploi et les cas d'abondement employeur.</p>
+
+      <h3>Co-construction avec l'employeur</h3>
+      <p>L'employeur n'a aucun droit de regard sur l'utilisation du CPF par le salarié en dehors du temps de travail. En revanche, lorsque la formation est suivie sur le temps de travail, l'accord de l'employeur est requis (article L. 6323-17 du Code du travail). C'est dans ce cadre que se construit un véritable partenariat formation.</p>
+
+      <h3>L'abondement employeur</h3>
+      <ul class="bullet">
+        <li>L'employeur peut compléter les droits CPF du salarié par un <strong>abondement volontaire</strong> (article L. 6323-4 du Code du travail), via la plateforme EDEF (Espace des Employeurs et des Financeurs).</li>
+        <li>Cet abondement est déductible de la contribution formation et constitue un signal fort d'engagement envers le développement du collaborateur.</li>
+        <li>L'abondement peut être prévu par <strong>accord collectif d'entreprise ou de branche</strong>.</li>
+      </ul>
+
+      <h3>Formations éligibles au CPF</h3>
+      <ul class="bullet">
+        <li>Formations certifiantes inscrites au RNCP ou au Répertoire spécifique.</li>
+        <li>Bilans de compétences.</li>
+        <li>Actions de VAE (Validation des Acquis de l'Expérience).</li>
+        <li>Permis de conduire (B, C, D).</li>
+        <li>Création ou reprise d'entreprise.</li>
+        <li>Formations aux compétences numériques (CléA Numérique, TOSA, etc.).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- DISPOSITIF 4 -->
+  <section>
+    <div class="dispositif">
+      <div class="dispositif-number">4</div>
+      <h2>Le FNE-Formation</h2>
+      <p><em>Un dispositif de l'État pour accompagner les transitions des entreprises.</em></p>
+
+      <h3>Contexte et évolution</h3>
+      <p>Le FNE-Formation (Fonds National de l'Emploi) est un dispositif historique créé en 1963, profondément remanié depuis 2020. Initialement réservé aux entreprises en difficulté ou en activité partielle, il a été élargi puis recentré sur les transitions stratégiques. Depuis 2023, il cible les <strong>parcours de formation structurés</strong> s'inscrivant dans les transitions prioritaires définies par l'État.</p>
+
+      <h3>Entreprises éligibles</h3>
+      <ul class="bullet">
+        <li>Toutes les entreprises, quelle que soit leur taille, y compris les associations.</li>
+        <li>Priorité aux entreprises engagées dans une démarche de transition identifiée.</li>
+        <li>La demande est instruite par l'OPCO dans le cadre d'une convention annuelle avec l'État (DGEFP).</li>
+      </ul>
+
+      <h3>Taux de prise en charge (barème indicatif)</h3>
+      <ul class="bullet">
+        <li><strong>Moins de 300 salariés</strong> : jusqu'à 70 % des coûts pédagogiques.</li>
+        <li><strong>De 300 à 1 000 salariés</strong> : jusqu'à 60 %.</li>
+        <li><strong>Plus de 1 000 salariés</strong> : jusqu'à 50 %.</li>
+        <li>Ces taux peuvent être majorés selon les priorités annuelles et les accords OPCO.</li>
+      </ul>
+
+      <h3>Thématiques prioritaires</h3>
+      <ul class="bullet">
+        <li><strong>Transition écologique</strong> : adaptation aux enjeux environnementaux, RSE, économie circulaire.</li>
+        <li><strong>Transition numérique</strong> : cybersécurité, intelligence artificielle, digitalisation des processus.</li>
+        <li><strong>Transition alimentaire et agricole.</strong></li>
+        <li><strong>Transition démographique</strong> : gestion des âges, transmission des compétences.</li>
+      </ul>
+
+      <div class="highlight-box">
+        <strong>Point de vigilance :</strong> les enveloppes FNE sont limitées et attribuées par ordre d'arrivée. Il est recommandé de déposer les dossiers dès le début de l'exercice budgétaire (généralement janvier-février).
+      </div>
+    </div>
+  </section>
+
+  <!-- DISPOSITIF 5 -->
+  <section>
+    <div class="dispositif">
+      <div class="dispositif-number">5</div>
+      <h2>Pro-A -- Reconversion ou promotion par alternance</h2>
+      <p><em>Un outil de montée en compétences par l'alternance, pour les salariés déjà en poste.</em></p>
+
+      <h3>Principe</h3>
+      <p>Créé par la loi n° 2018-771 du 5 septembre 2018 (articles L. 6324-1 à L. 6324-10 du Code du travail), le dispositif Pro-A permet aux salariés en CDI, en CUI ou aux sportifs/entraîneurs professionnels en CDD de suivre une formation en alternance visant une qualification supérieure ou une reconversion professionnelle, tout en conservant leur contrat de travail et leur rémunération.</p>
+
+      <h3>Public cible</h3>
+      <ul class="bullet">
+        <li>Salariés dont la qualification est <strong>inférieure au niveau 6 (licence)</strong> -- soit les niveaux 3 à 5 (CAP, Bac, BTS/DUT).</li>
+        <li>Salariés en activité partielle ou en position d'emploi menacé.</li>
+        <li>Les métiers et certifications éligibles sont définis par <strong>accord de branche étendu</strong>.</li>
+      </ul>
+
+      <h3>Avantages pour l'employeur</h3>
+      <ul class="bullet">
+        <li>Fidélisation des salariés par la montée en compétences et la qualification.</li>
+        <li>Réponse aux besoins en compétences sur les métiers en tension sans recourir au recrutement externe.</li>
+        <li>Maintien de la rémunération du salarié (pas de perte de revenu).</li>
+        <li>Formation en situation de travail intégrée au temps productif.</li>
+      </ul>
+
+      <h3>Durée et organisation</h3>
+      <ul class="bullet">
+        <li>Durée comprise entre <strong>6 et 12 mois</strong> (jusqu'à 36 mois dans certains cas définis par accord de branche).</li>
+        <li>La formation en alternance représente entre 15 % et 25 % de la durée totale (minimum 150 heures).</li>
+        <li>Un tuteur est désigné dans l'entreprise pour accompagner le salarié.</li>
+      </ul>
+
+      <h3>Financement</h3>
+      <p>La prise en charge est assurée par l'<strong>OPCO</strong> de l'entreprise, selon les niveaux définis par la branche professionnelle. Elle couvre les frais pédagogiques, les frais de transport et d'hébergement, et la rémunération du tuteur dans certains cas.</p>
+    </div>
+  </section>
+
+  <!-- TABLEAU COMPARATIF -->
+  <section>
+    <h2>Tableau comparatif des 5 dispositifs</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Dispositif</th>
+            <th>Pour qui ?</th>
+            <th>Financement</th>
+            <th>Reste à charge</th>
+            <th>Comment ?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Plan de développement des compétences</strong></td>
+            <td>Toute entreprise, priorité aux -50 salariés pour la prise en charge OPCO</td>
+            <td>OPCO (mutualisé) pour les -50 ; budget propre au-delà</td>
+            <td>Nul à faible pour les -50 salariés</td>
+            <td>Dossier auprès de l'OPCO avant le démarrage</td>
+          </tr>
+          <tr>
+            <td><strong>PCRH</strong></td>
+            <td>TPE-PME de moins de 250 salariés</td>
+            <td>État (DREETS) + OPCO, jusqu'à 15 000 euros</td>
+            <td><strong>0 euro</strong></td>
+            <td>Demande auprès de l'OPCO ou de la DREETS</td>
+          </tr>
+          <tr>
+            <td><strong>CPF</strong></td>
+            <td>Tout salarié (droit individuel)</td>
+            <td>Caisse des dépôts (500 euros/an, plafond 5 000 euros)</td>
+            <td>100 euros de participation salarié (depuis mai 2024)</td>
+            <td>moncompteformation.gouv.fr + abondement employeur possible</td>
+          </tr>
+          <tr>
+            <td><strong>FNE-Formation</strong></td>
+            <td>Toute entreprise engagée dans une transition</td>
+            <td>État via OPCO, 50 à 70 % des coûts</td>
+            <td>30 à 50 % selon la taille</td>
+            <td>Dossier auprès de l'OPCO (enveloppes limitées)</td>
+          </tr>
+          <tr>
+            <td><strong>Pro-A</strong></td>
+            <td>Salariés en CDI, qualification inférieure au niveau 6</td>
+            <td>OPCO (niveaux de branche)</td>
+            <td>Variable selon la branche</td>
+            <td>Avenant au contrat + organisme certifié Qualiopi</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ACCOMPAGNEMENT CARTESA -->
+  <section>
+    <div class="cta-section">
+      <h2>Comment CARTESA vous accompagne</h2>
+      <p>En tant que cabinet de conseil et formation RH certifié Qualiopi, implanté à La Tour-du-Pin (Isère), CARTESA vous accompagne à chaque étape :</p>
+      <ul style="text-align: left; display: inline-block; margin: 1rem auto;">
+        <li><strong>Diagnostic des besoins</strong> en compétences et identification des dispositifs mobilisables.</li>
+        <li><strong>Montage complet des dossiers</strong> de financement auprès de votre OPCO.</li>
+        <li><strong>Relation directe avec les OPCO</strong> et les DREETS pour maximiser vos prises en charge.</li>
+        <li><strong>Conception et animation</strong> de formations sur mesure (management, RH, soft skills, QVCT).</li>
+        <li><strong>Suivi administratif et pédagogique</strong> de bout en bout.</li>
+        <li><strong>Prestataire PCRH référencé</strong> pour un accompagnement 100 % financé.</li>
+      </ul>
+      <br>
+      <a href="mailto:contact@cartesa-lyon.com" class="cta-button">Contactez-nous pour un diagnostic gratuit</a>
+    </div>
+  </section>
+
+  <!-- OPCO PARTENAIRES -->
+  <section>
+    <h2>Liste des principaux OPCO</h2>
+    <p>Depuis la réforme de 2019, 11 opérateurs de compétences couvrent l'ensemble des branches professionnelles :</p>
+    <div class="opco-grid">
+      <div class="opco-item">OPCO EP (Entreprises de proximité)</div>
+      <div class="opco-item">OPCO Atlas (Services financiers, conseil)</div>
+      <div class="opco-item">OPCO Santé</div>
+      <div class="opco-item">OPCO Mobilités</div>
+      <div class="opco-item">AFDAS (Culture, médias, loisirs)</div>
+      <div class="opco-item">Uniformation (Cohésion sociale)</div>
+      <div class="opco-item">Constructys (BTP)</div>
+      <div class="opco-item">OCAPIAT (Agriculture, pêche)</div>
+      <div class="opco-item">OPCO 2i (Interindustriel)</div>
+      <div class="opco-item">OPCO Commerce</div>
+      <div class="opco-item">AKTO (Services à forte intensité de main-d'oeuvre)</div>
+    </div>
+    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-light);">Vous ne connaissez pas votre OPCO ? Rendez-vous sur <a href="https://quel-est-mon-opco.francecompetences.fr/" target="_blank">quel-est-mon-opco.francecompetences.fr</a> ou contactez CARTESA pour un accompagnement personnalisé.</p>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>CARTESA</strong> -- Cabinet de conseil et formation RH certifié Qualiopi<br>
+  La Tour-du-Pin, Isère -- Auvergne-Rhône-Alpes<br>
+  Téléphone : 04 74 97 29 56 | E-mail : <a href="mailto:contact@cartesa-lyon.com" style="color: var(--gold);">contact@cartesa-lyon.com</a><br>
+  Site web : <a href="https://cartesa-lyon.com" style="color: var(--gold);">cartesa-lyon.com</a><br>
+  <span style="opacity: 0.7; font-size: 0.8rem;">Document à usage informatif -- Avril 2026 -- Les informations contenues dans ce guide sont fournies à titre indicatif et ne constituent pas un conseil juridique.</span>
+</footer>
+
+</body>
+</html>

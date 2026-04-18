@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auto-diagnostic RH pour PME - CARTESA</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #007cba;
+    --primary-dark: #005a8a;
+    --gold: #f0cc3a;
+    --gold-dark: #d4b32e;
+    --text: #1a1a2e;
+    --text-light: #4a4a5a;
+    --bg-light: #f7f9fc;
+    --border: #d0d8e0;
+    --green: #2e7d4f;
+    --orange: #c87a20;
+    --red: #b8363b;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    color: var(--text);
+    font-size: 11pt;
+    line-height: 1.5;
+    background: #eef1f5;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20mm 18mm;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    position: relative;
+    page-break-after: always;
+  }
+
+  .page:last-child { page-break-after: auto; }
+
+  h1, h2, h3, h4 {
+    font-family: 'Sora', sans-serif;
+    color: var(--primary);
+  }
+
+  /* ── COVER ── */
+  .cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: calc(297mm - 40mm);
+  }
+
+  .cover-header {
+    text-align: center;
+    padding-top: 15mm;
+  }
+
+  .cover-header img {
+    height: 60px;
+    margin-bottom: 12mm;
+  }
+
+  .cover-title {
+    font-size: 28pt;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1.15;
+    margin-bottom: 6mm;
+  }
+
+  .cover-subtitle {
+    font-size: 13pt;
+    color: var(--text-light);
+    font-weight: 400;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .cover-gold-bar {
+    width: 80px;
+    height: 4px;
+    background: var(--gold);
+    margin: 8mm auto;
+    border-radius: 2px;
+  }
+
+  .cover-fields {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8mm 10mm;
+    margin: 0 15mm;
+  }
+
+  .cover-field {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 5mm;
+    border-bottom: 1px dotted var(--border);
+    padding-bottom: 4mm;
+  }
+
+  .cover-field:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .cover-field label {
+    font-family: 'Sora', sans-serif;
+    font-weight: 600;
+    font-size: 10pt;
+    color: var(--primary);
+    min-width: 160px;
+    flex-shrink: 0;
+  }
+
+  .cover-field input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11pt;
+    color: var(--text);
+    outline: none;
+    padding: 2px 0;
+  }
+
+  .cover-footer {
+    text-align: center;
+    padding-bottom: 5mm;
+  }
+
+  .cover-footer p {
+    font-size: 9pt;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+
+  .cover-footer strong {
+    color: var(--primary);
+    font-family: 'Sora', sans-serif;
+  }
+
+  .tagline {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    font-family: 'Sora', sans-serif;
+    font-size: 8.5pt;
+    font-weight: 600;
+    padding: 3px 14px;
+    border-radius: 20px;
+    margin-top: 4mm;
+    letter-spacing: 0.3px;
+  }
+
+  /* ── CHECKLIST THEMES ── */
+  .theme-block {
+    margin-bottom: 7mm;
+  }
+
+  .theme-header {
+    display: flex;
+    align-items: center;
+    gap: 3mm;
+    margin-bottom: 3mm;
+    padding-bottom: 2mm;
+    border-bottom: 2px solid var(--primary);
+  }
+
+  .theme-number {
+    font-family: 'Sora', sans-serif;
+    font-weight: 800;
+    font-size: 18pt;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .theme-title {
+    font-size: 12pt;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .theme-count {
+    margin-left: auto;
+    font-size: 8.5pt;
+    color: var(--text-light);
+    font-style: italic;
+  }
+
+  .checklist-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10pt;
+  }
+
+  .checklist-table thead th {
+    font-family: 'Sora', sans-serif;
+    font-size: 8pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 2mm 2mm;
+    text-align: center;
+    color: #fff;
+    background: var(--primary);
+  }
+
+  .checklist-table thead th:first-child {
+    text-align: left;
+    width: auto;
+    border-radius: 4px 0 0 0;
+  }
+
+  .checklist-table thead th:last-child {
+    border-radius: 0 4px 0 0;
+  }
+
+  .checklist-table thead th.col-check {
+    width: 22mm;
+  }
+
+  .checklist-table tbody tr {
+    border-bottom: 1px solid #e8ecf0;
+  }
+
+  .checklist-table tbody tr:nth-child(even) {
+    background: #fafbfd;
+  }
+
+  .checklist-table tbody tr:hover {
+    background: #f0f5fa;
+  }
+
+  .checklist-table td {
+    padding: 2.2mm 2.5mm;
+    vertical-align: middle;
+  }
+
+  .checklist-table td:first-child {
+    padding-left: 3mm;
+  }
+
+  .item-label {
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+
+  .item-note {
+    font-size: 8pt;
+    color: var(--text-light);
+    font-style: italic;
+  }
+
+  .check-cell {
+    text-align: center;
+    width: 22mm;
+  }
+
+  /* Interactive checkboxes */
+  .check-cell label {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .check-cell input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--border);
+    border-radius: 3px;
+    cursor: pointer;
+    vertical-align: middle;
+    position: relative;
+    transition: all 0.15s ease;
+  }
+
+  .check-cell input[type="checkbox"]:checked {
+    border-color: currentColor;
+  }
+
+  .check-cell input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 4px;
+    width: 4px;
+    height: 8px;
+    border: solid currentColor;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  .check-cell.cell-ok input[type="checkbox"] { color: var(--green); }
+  .check-cell.cell-ok input[type="checkbox"]:checked { background: #e8f5ec; border-color: var(--green); }
+
+  .check-cell.cell-partial input[type="checkbox"] { color: var(--orange); }
+  .check-cell.cell-partial input[type="checkbox"]:checked { background: #fef5e7; border-color: var(--orange); }
+
+  .check-cell.cell-absent input[type="checkbox"] { color: var(--red); }
+  .check-cell.cell-absent input[type="checkbox"]:checked { background: #fce8e9; border-color: var(--red); }
+
+  .col-header-ok { background: var(--green) !important; }
+  .col-header-partial { background: var(--orange) !important; }
+  .col-header-absent { background: var(--red) !important; }
+
+  /* ── PAGE 4 - SCORING ── */
+  .scoring-section {
+    margin-bottom: 7mm;
+  }
+
+  .scoring-section h2 {
+    font-size: 16pt;
+    margin-bottom: 5mm;
+    padding-bottom: 2mm;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .scoring-grid {
+    display: flex;
+    gap: 4mm;
+    margin-bottom: 6mm;
+  }
+
+  .scoring-box {
+    flex: 1;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4mm;
+    text-align: center;
+    background: var(--bg-light);
+  }
+
+  .scoring-box .score-icon {
+    font-size: 20pt;
+    margin-bottom: 2mm;
+  }
+
+  .scoring-box .score-label {
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 10pt;
+    margin-bottom: 1mm;
+  }
+
+  .scoring-box .score-input {
+    font-family: 'Sora', sans-serif;
+    font-size: 22pt;
+    font-weight: 800;
+    color: var(--primary);
+    width: 60px;
+    text-align: center;
+    border: 2px dashed var(--border);
+    border-radius: 6px;
+    background: #fff;
+    padding: 2mm;
+    outline: none;
+  }
+
+  .scoring-box .score-total {
+    font-size: 8pt;
+    color: var(--text-light);
+    margin-top: 1mm;
+  }
+
+  .score-ok .score-label { color: var(--green); }
+  .score-partial .score-label { color: var(--orange); }
+  .score-absent .score-label { color: var(--red); }
+
+  .profile-card {
+    border-radius: 8px;
+    padding: 5mm 6mm;
+    margin-bottom: 4mm;
+    page-break-inside: avoid;
+  }
+
+  .profile-card h3 {
+    font-size: 12pt;
+    margin-bottom: 2mm;
+    display: flex;
+    align-items: center;
+    gap: 2mm;
+  }
+
+  .profile-card ul {
+    margin-left: 5mm;
+    font-size: 10pt;
+    line-height: 1.7;
+  }
+
+  .profile-card .profile-range {
+    font-family: 'Sora', sans-serif;
+    font-size: 9pt;
+    font-weight: 600;
+    display: inline-block;
+    padding: 1px 8px;
+    border-radius: 12px;
+    margin-left: 2mm;
+    color: #fff;
+  }
+
+  .profile-green {
+    background: #eef7f1;
+    border-left: 4px solid var(--green);
+  }
+  .profile-green h3 { color: var(--green); }
+  .profile-green .profile-range { background: var(--green); }
+
+  .profile-orange {
+    background: #fef8ee;
+    border-left: 4px solid var(--orange);
+  }
+  .profile-orange h3 { color: var(--orange); }
+  .profile-orange .profile-range { background: var(--orange); }
+
+  .profile-red {
+    background: #fdf0f0;
+    border-left: 4px solid var(--red);
+  }
+  .profile-red h3 { color: var(--red); }
+  .profile-red .profile-range { background: var(--red); }
+
+  .cta-box {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: #fff;
+    border-radius: 8px;
+    padding: 6mm 8mm;
+    margin-top: 6mm;
+    page-break-inside: avoid;
+  }
+
+  .cta-box h3 {
+    color: var(--gold);
+    font-size: 13pt;
+    margin-bottom: 3mm;
+  }
+
+  .cta-box p {
+    font-size: 10pt;
+    line-height: 1.6;
+    margin-bottom: 2mm;
+  }
+
+  .cta-box .cta-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4mm 8mm;
+    margin-top: 3mm;
+    font-size: 10pt;
+  }
+
+  .cta-box .cta-contact span {
+    font-weight: 700;
+  }
+
+  .cta-services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2mm;
+    margin-top: 3mm;
+  }
+
+  .cta-services span {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 1.5mm 4mm;
+    border-radius: 4px;
+    font-size: 8.5pt;
+    font-family: 'Sora', sans-serif;
+    font-weight: 500;
+  }
+
+  /* ── PAGE FOOTER ── */
+  .page-footer {
+    position: absolute;
+    bottom: 10mm;
+    left: 18mm;
+    right: 18mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 7.5pt;
+    color: var(--text-light);
+    border-top: 1px solid #e8ecf0;
+    padding-top: 2mm;
+  }
+
+  .page-footer .footer-brand {
+    font-family: 'Sora', sans-serif;
+    font-weight: 600;
+    color: var(--primary);
+  }
+
+  /* ── LEGEND ── */
+  .legend {
+    display: flex;
+    gap: 6mm;
+    margin-bottom: 4mm;
+    padding: 2.5mm 4mm;
+    background: var(--bg-light);
+    border-radius: 4px;
+    font-size: 9pt;
+    border: 1px solid #e8ecf0;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5mm;
+  }
+
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    display: inline-block;
+  }
+
+  .legend-dot.dot-ok { background: var(--green); }
+  .legend-dot.dot-partial { background: var(--orange); }
+  .legend-dot.dot-absent { background: var(--red); }
+
+  /* ── PRINT STYLES ── */
+  @media print {
+    body {
+      background: #fff;
+    }
+
+    .page {
+      margin: 0;
+      box-shadow: none;
+      width: 100%;
+      min-height: auto;
+      padding: 12mm 15mm;
+    }
+
+    .page-footer {
+      left: 15mm;
+      right: 15mm;
+      bottom: 8mm;
+    }
+
+    .check-cell input[type="checkbox"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 12px;
+      height: 12px;
+      border: 1.5px solid #999;
+      border-radius: 2px;
+      background: #fff !important;
+    }
+
+    .check-cell input[type="checkbox"]:checked::after {
+      display: block;
+    }
+
+    .checklist-table tbody tr:hover {
+      background: inherit;
+    }
+
+    .cta-box {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .checklist-table thead th,
+    .col-header-ok, .col-header-partial, .col-header-absent {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .profile-card, .scoring-box {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .cover-field input {
+      border-bottom: 1px solid #ccc;
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════ PAGE 1 - COVER ═══ -->
+<div class="page">
+  <div class="cover">
+    <div class="cover-header">
+      <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA">
+      <div class="cover-gold-bar"></div>
+      <h1 class="cover-title">Auto-diagnostic RH<br>pour PME</h1>
+      <p class="cover-subtitle">&Eacute;valuez la maturit&eacute; de vos pratiques RH en 15 minutes</p>
+    </div>
+
+    <div class="cover-fields">
+      <div class="cover-field">
+        <label>Nom de l'entreprise</label>
+        <input type="text" placeholder="......................................................................">
+      </div>
+      <div class="cover-field">
+        <label>Date</label>
+        <input type="text" placeholder="......................................................................">
+      </div>
+      <div class="cover-field">
+        <label>Effectif</label>
+        <input type="text" placeholder="......................................................................">
+      </div>
+      <div class="cover-field">
+        <label>Rempli par</label>
+        <input type="text" placeholder="......................................................................">
+      </div>
+      <div class="cover-field">
+        <label>Fonction</label>
+        <input type="text" placeholder="......................................................................">
+      </div>
+    </div>
+
+    <div class="cover-footer">
+      <p>
+        <strong>CARTESA</strong> &mdash; Cabinet de conseil et formation RH certifi&eacute; Qualiopi<br>
+        La Tour-du-Pin, Is&egrave;re | cartesa-lyon.com
+      </p>
+      <span class="tagline">40 items &mdash; 5 th&egrave;mes &mdash; 15 minutes</span>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="footer-brand">CARTESA</span>
+    <span>Auto-diagnostic RH pour PME</span>
+    <span>Page 1 / 4</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ PAGE 2 - THEMES 1-2 ═══ -->
+<div class="page">
+
+  <div class="legend">
+    <div class="legend-item"><span class="legend-dot dot-ok"></span> En place</div>
+    <div class="legend-item"><span class="legend-dot dot-partial"></span> Partiel</div>
+    <div class="legend-item"><span class="legend-dot dot-absent"></span> Absent</div>
+    <span style="margin-left:auto; color: var(--text-light); font-style: italic;">Cochez une case par ligne</span>
+  </div>
+
+  <!-- THEME 1 -->
+  <div class="theme-block">
+    <div class="theme-header">
+      <span class="theme-number">1</span>
+      <span class="theme-title">Conformit&eacute; l&eacute;gale</span>
+      <span class="theme-count">10 items</span>
+    </div>
+    <table class="checklist-table">
+      <thead>
+        <tr>
+          <th>&Eacute;l&eacute;ment &agrave; &eacute;valuer</th>
+          <th class="col-check col-header-ok">En place</th>
+          <th class="col-check col-header-partial">Partiel</th>
+          <th class="col-check col-header-absent">Absent</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="item-label">Contrats de travail &agrave; jour et conformes</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">Registre unique du personnel tenu</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">DUERP r&eacute;dig&eacute; et mis &agrave; jour annuellement</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">Affichages obligatoires en place</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">M&eacute;decine du travail : visites &agrave; jour</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td><span class="item-label">CSE mis en place</span> <span class="item-note">(si +11 salari&eacute;s)</span></td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td><span class="item-label">R&egrave;glement int&eacute;rieur</span> <span class="item-note">(si +20 salari&eacute;s)</span></td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td><span class="item-label">Participation / int&eacute;ressement</span> <span class="item-note">(si +50 salari&eacute;s)</span></td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">D&eacute;clarations sociales &agrave; jour (DSN)</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td><span class="item-label">Index &eacute;galit&eacute; femmes-hommes publi&eacute;</span> <span class="item-note">(si +50 salari&eacute;s)</span></td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- THEME 2 -->
+  <div class="theme-block">
+    <div class="theme-header">
+      <span class="theme-number">2</span>
+      <span class="theme-title">Gestion administrative</span>
+      <span class="theme-count">8 items</span>
+    </div>
+    <table class="checklist-table">
+      <thead>
+        <tr>
+          <th>&Eacute;l&eacute;ment &agrave; &eacute;valuer</th>
+          <th class="col-check col-header-ok">En place</th>
+          <th class="col-check col-header-partial">Partiel</th>
+          <th class="col-check col-header-absent">Absent</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="item-label">Fiches de poste formalis&eacute;es</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">Processus de paie structur&eacute;</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">Gestion des temps et absences outill&eacute;e</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">Dossiers du personnel complets et s&eacute;curis&eacute;s</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">Proc&eacute;dure disciplinaire document&eacute;e</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">Convention collective identifi&eacute;e et appliqu&eacute;e</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">Veille juridique sociale en place</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">Archivage conforme RGPD</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="page-footer">
+    <span class="footer-brand">CARTESA</span>
+    <span>Auto-diagnostic RH pour PME</span>
+    <span>Page 2 / 4</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ PAGE 3 - THEMES 3-5 ═══ -->
+<div class="page">
+
+  <div class="legend">
+    <div class="legend-item"><span class="legend-dot dot-ok"></span> En place</div>
+    <div class="legend-item"><span class="legend-dot dot-partial"></span> Partiel</div>
+    <div class="legend-item"><span class="legend-dot dot-absent"></span> Absent</div>
+    <span style="margin-left:auto; color: var(--text-light); font-style: italic;">Cochez une case par ligne</span>
+  </div>
+
+  <!-- THEME 3 -->
+  <div class="theme-block">
+    <div class="theme-header">
+      <span class="theme-number">3</span>
+      <span class="theme-title">Entretiens et d&eacute;veloppement</span>
+      <span class="theme-count">8 items</span>
+    </div>
+    <table class="checklist-table">
+      <thead>
+        <tr>
+          <th>&Eacute;l&eacute;ment &agrave; &eacute;valuer</th>
+          <th class="col-check col-header-ok">En place</th>
+          <th class="col-check col-header-partial">Partiel</th>
+          <th class="col-check col-header-absent">Absent</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="item-label">Entretiens professionnels r&eacute;alis&eacute;s tous les 2 ans</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">Bilan &agrave; 6 ans pr&eacute;par&eacute;</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">Entretiens annuels d'&eacute;valuation men&eacute;s</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">Plan de d&eacute;veloppement des comp&eacute;tences formalis&eacute;</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">Budget formation identifi&eacute;</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">OPCO identifi&eacute; et relation active</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td><span class="item-label">Dispositifs de financement utilis&eacute;s</span> <span class="item-note">(PCRH, CPF, etc.)</span></td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">Parcours d'int&eacute;gration structur&eacute;</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- THEME 4 -->
+  <div class="theme-block">
+    <div class="theme-header">
+      <span class="theme-number">4</span>
+      <span class="theme-title">Recrutement et fid&eacute;lisation</span>
+      <span class="theme-count">7 items</span>
+    </div>
+    <table class="checklist-table">
+      <thead>
+        <tr>
+          <th>&Eacute;l&eacute;ment &agrave; &eacute;valuer</th>
+          <th class="col-check col-header-ok">En place</th>
+          <th class="col-check col-header-partial">Partiel</th>
+          <th class="col-check col-header-absent">Absent</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="item-label">Processus de recrutement formalis&eacute;</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">Offres d'emploi structur&eacute;es et attractives</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">Entretiens de recrutement avec grille d'&eacute;valuation</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td><span class="item-label">Parcours d'onboarding</span> <span class="item-note">(90 premiers jours)</span></td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">Entretiens de d&eacute;part syst&eacute;matiques</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">Actions de fid&eacute;lisation identifi&eacute;es</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">Marque employeur travaill&eacute;e</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- THEME 5 -->
+  <div class="theme-block">
+    <div class="theme-header">
+      <span class="theme-number">5</span>
+      <span class="theme-title">Qualit&eacute; de vie et RSE</span>
+      <span class="theme-count">7 items</span>
+    </div>
+    <table class="checklist-table">
+      <thead>
+        <tr>
+          <th>&Eacute;l&eacute;ment &agrave; &eacute;valuer</th>
+          <th class="col-check col-header-ok">En place</th>
+          <th class="col-check col-header-partial">Partiel</th>
+          <th class="col-check col-header-absent">Absent</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="item-label">Politique QVCT d&eacute;finie</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">Pr&eacute;vention des RPS mise en place</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">Indicateurs d'absent&eacute;isme suivis</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">Indicateurs de turnover suivis</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">D&eacute;marche RSE initi&eacute;e</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">&Eacute;co-gestes et actions environnementales</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+        <tr>
+          <td class="item-label">Communication interne structur&eacute;e</td>
+          <td class="check-cell cell-ok"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-partial"><label><input type="checkbox"></label></td>
+          <td class="check-cell cell-absent"><label><input type="checkbox"></label></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="page-footer">
+    <span class="footer-brand">CARTESA</span>
+    <span>Auto-diagnostic RH pour PME</span>
+    <span>Page 3 / 4</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ PAGE 4 - SCORING ═══ -->
+<div class="page">
+
+  <div class="scoring-section">
+    <h2>Votre score</h2>
+    <p style="margin-bottom: 4mm; font-size: 10pt; color: var(--text-light);">
+      Comptez le nombre de cases coch&eacute;es dans chaque colonne sur l'ensemble des 40 items.
+    </p>
+
+    <div class="scoring-grid">
+      <div class="scoring-box score-ok">
+        <div class="score-label">En place</div>
+        <input type="text" class="score-input" placeholder="--">
+        <div class="score-total">/ 40</div>
+      </div>
+      <div class="scoring-box score-partial">
+        <div class="score-label">Partiel</div>
+        <input type="text" class="score-input" placeholder="--">
+        <div class="score-total">/ 40</div>
+      </div>
+      <div class="scoring-box score-absent">
+        <div class="score-label">Absent</div>
+        <input type="text" class="score-input" placeholder="--">
+        <div class="score-total">/ 40</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scoring-section">
+    <h2>Interpr&eacute;tation de votre profil</h2>
+
+    <div class="profile-card profile-green">
+      <h3>Fondations solides <span class="profile-range">30+ En place</span></h3>
+      <ul>
+        <li>Vos bases RH sont bien structur&eacute;es. Concentrez-vous sur l'optimisation et l'am&eacute;lioration continue.</li>
+        <li>Passez &agrave; une d&eacute;marche proactive : marque employeur, QVCT avanc&eacute;e, GEPP.</li>
+        <li>Envisagez une certification ou un label (Great Place to Work, Top Employer).</li>
+        <li>Mettez en place des indicateurs de performance RH pour piloter votre strat&eacute;gie.</li>
+      </ul>
+    </div>
+
+    <div class="profile-card profile-orange">
+      <h3>En construction <span class="profile-range">20-29 En place</span></h3>
+      <ul>
+        <li>Vous avez pos&eacute; les bases mais des axes d'am&eacute;lioration significatifs subsistent.</li>
+        <li>Priorisez la conformit&eacute; l&eacute;gale si des items sont encore absents dans le th&egrave;me 1.</li>
+        <li>Structurez vos entretiens professionnels et votre plan de d&eacute;veloppement des comp&eacute;tences.</li>
+        <li>Un accompagnement ponctuel peut acc&eacute;l&eacute;rer votre mise en conformit&eacute; et votre structuration.</li>
+      </ul>
+    </div>
+
+    <div class="profile-card profile-red">
+      <h3>Urgences &agrave; traiter <span class="profile-range">Moins de 20 En place</span></h3>
+      <ul>
+        <li>Des risques juridiques et sociaux importants sont probablement pr&eacute;sents.</li>
+        <li>Traitez en priorit&eacute; absolue : DUERP, contrats, registre du personnel, entretiens professionnels.</li>
+        <li>Faites appel &agrave; un expert RH externe pour un diagnostic approfondi et un plan d'action.</li>
+        <li>Le dispositif PCRH (Prestation de Conseil en Ressources Humaines) peut financer cet accompagnement.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="cta-box">
+    <h3>CARTESA vous accompagne</h3>
+    <p>
+      Cabinet de conseil et formation RH certifi&eacute; Qualiopi, CARTESA accompagne les PME de la r&eacute;gion
+      Auvergne-Rh&ocirc;ne-Alpes dans la structuration et l'optimisation de leurs pratiques RH.
+    </p>
+    <div class="cta-services">
+      <span>Audit RH</span>
+      <span>Mise en conformit&eacute;</span>
+      <span>Formation</span>
+      <span>Recrutement</span>
+      <span>PCRH</span>
+      <span>QVCT</span>
+      <span>CSE</span>
+      <span>Marque employeur</span>
+    </div>
+    <div class="cta-contact">
+      <div>Site : <span>cartesa-lyon.com</span></div>
+      <div>Si&egrave;ge : <span>La Tour-du-Pin, Is&egrave;re</span></div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="footer-brand">CARTESA</span>
+    <span>Auto-diagnostic RH pour PME</span>
+    <span>Page 4 / 4</span>
+  </div>
+</div>
+
+</body>
+</html>

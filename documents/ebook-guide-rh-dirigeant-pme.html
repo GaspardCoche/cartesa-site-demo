@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Guide RH du Dirigeant de PME -- CARTESA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #007cba;
+  --primary-dark: #005a8c;
+  --gold: #f0cc3a;
+  --gold-light: #fdf6d8;
+  --text: #1a1a2e;
+  --text-light: #4a4a6a;
+  --bg: #ffffff;
+  --bg-light: #f7f9fc;
+  --border: #e2e8f0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 15px;
+  background: var(--bg);
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Sora', sans-serif;
+  line-height: 1.3;
+}
+
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto 30px auto;
+  padding: 45mm 25mm 35mm 25mm;
+  background: var(--bg);
+  position: relative;
+}
+
+/* ========== COVER ========== */
+.cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30mm 25mm;
+  background: linear-gradient(160deg, #003d5c 0%, var(--primary) 50%, var(--primary-dark) 100%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.cover::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -30%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(240,204,58,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.cover::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.cover-logo {
+  width: 200px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+  filter: brightness(0) invert(1);
+}
+
+.cover-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--text);
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 6px 22px;
+  border-radius: 20px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+  position: relative;
+  z-index: 1;
+}
+
+.cover h1 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.cover h1 span {
+  color: var(--gold);
+}
+
+.cover-subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  opacity: 0.9;
+  max-width: 500px;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 1;
+  line-height: 1.6;
+}
+
+.cover-footer {
+  position: absolute;
+  bottom: 30mm;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 1;
+}
+
+.cover-footer p {
+  font-size: 13px;
+  opacity: 0.8;
+  margin-bottom: 5px;
+}
+
+.cover-separator {
+  width: 60px;
+  height: 3px;
+  background: var(--gold);
+  margin: 0 auto 15px auto;
+}
+
+/* ========== TOC ========== */
+.toc {
+  padding-top: 50mm;
+}
+
+.toc h2 {
+  font-size: 28px;
+  color: var(--primary);
+  margin-bottom: 30px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid var(--gold);
+  display: inline-block;
+}
+
+.toc-list {
+  list-style: none;
+}
+
+.toc-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px 0;
+  border-bottom: 1px dotted var(--border);
+  font-size: 15px;
+}
+
+.toc-list li.toc-chapter {
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 16px;
+  padding-top: 16px;
+}
+
+.toc-list li.toc-sub {
+  padding-left: 25px;
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.toc-page {
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  color: var(--primary);
+  min-width: 30px;
+  text-align: right;
+}
+
+/* ========== CHAPTER STYLES ========== */
+.chapter-header {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid var(--gold);
+}
+
+.chapter-number {
+  font-family: 'Sora', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.chapter-title {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin: 28px 0 14px 0;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 20px 0 10px 0;
+}
+
+p {
+  margin-bottom: 12px;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ========== COMPONENTS ========== */
+.info-box {
+  background: var(--bg-light);
+  border-left: 4px solid var(--primary);
+  padding: 18px 22px;
+  margin: 20px 0;
+  border-radius: 0 6px 6px 0;
+}
+
+.info-box p { margin-bottom: 6px; }
+.info-box p:last-child { margin-bottom: 0; }
+
+.warning-box {
+  background: #fff8e1;
+  border-left: 4px solid var(--gold);
+  padding: 18px 22px;
+  margin: 20px 0;
+  border-radius: 0 6px 6px 0;
+}
+
+.warning-box .box-title {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #b8860b;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.key-figure {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: #fff;
+  padding: 20px 25px;
+  border-radius: 8px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.key-figure .figure {
+  font-family: 'Sora', sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 5px;
+}
+
+.key-figure .figure-label {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 13.5px;
+}
+
+table thead th {
+  background: var(--primary);
+  color: #fff;
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 13px;
+}
+
+table tbody td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+table tbody tr:nth-child(even) {
+  background: var(--bg-light);
+}
+
+table tbody tr:hover {
+  background: #edf4fa;
+}
+
+ul, ol {
+  margin: 10px 0 16px 22px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.checklist {
+  list-style: none;
+  margin-left: 0;
+}
+
+.checklist li {
+  padding-left: 28px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.checklist li::before {
+  content: '\2610';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.grille {
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.grille-header {
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 18px;
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.grille-row {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  padding: 10px 18px;
+  font-size: 14px;
+}
+
+.grille-row:last-child { border-bottom: none; }
+.grille-row:nth-child(even) { background: var(--bg-light); }
+
+.grille-label {
+  flex: 1;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.grille-value {
+  flex: 2;
+  color: var(--text-light);
+}
+
+.step-list {
+  counter-reset: step-counter;
+  list-style: none;
+  margin-left: 0;
+}
+
+.step-list li {
+  counter-increment: step-counter;
+  padding-left: 45px;
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.step-list li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+blockquote {
+  border-left: 4px solid var(--gold);
+  padding: 12px 20px;
+  margin: 18px 0;
+  font-style: italic;
+  color: var(--text-light);
+  background: var(--gold-light);
+  border-radius: 0 6px 6px 0;
+}
+
+.page-number {
+  position: absolute;
+  bottom: 20mm;
+  right: 25mm;
+  font-family: 'Sora', sans-serif;
+  font-size: 11px;
+  color: var(--text-light);
+}
+
+.footer-line {
+  position: absolute;
+  bottom: 25mm;
+  left: 25mm;
+  right: 25mm;
+  border-top: 1px solid var(--border);
+}
+
+.footer-brand {
+  position: absolute;
+  bottom: 20mm;
+  left: 25mm;
+  font-family: 'Sora', sans-serif;
+  font-size: 10px;
+  color: #aaa;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+strong { font-weight: 700; }
+
+.highlight { color: var(--primary); font-weight: 700; }
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 16px 0;
+}
+
+.col-card {
+  background: var(--bg-light);
+  padding: 18px;
+  border-radius: 8px;
+  border-top: 3px solid var(--primary);
+}
+
+.col-card h4 {
+  margin-top: 0;
+  color: var(--primary);
+}
+
+.conclusion-box {
+  background: linear-gradient(135deg, #003d5c 0%, var(--primary) 100%);
+  color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 25px 0;
+}
+
+.conclusion-box h3 {
+  color: var(--gold);
+  margin-top: 0;
+}
+
+.conclusion-box p { color: rgba(255,255,255,0.9); }
+.conclusion-box a { color: var(--gold); }
+
+/* ========== PRINT ========== */
+@media print {
+  body { font-size: 11pt; }
+
+  .page {
+    width: auto;
+    min-height: auto;
+    margin: 0;
+    padding: 15mm 20mm;
+    box-shadow: none;
+    border: none;
+  }
+
+  .cover {
+    padding: 40mm 20mm;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page-break {
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .no-break {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .chapter-header {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  table { page-break-inside: avoid; }
+  .info-box, .warning-box, .key-figure { page-break-inside: avoid; }
+
+  .page-number, .footer-line, .footer-brand { display: none; }
+
+  @page {
+    size: A4;
+    margin: 15mm 20mm;
+    @bottom-center {
+      content: counter(page);
+      font-family: 'Sora', sans-serif;
+      font-size: 10pt;
+      color: #999;
+    }
+  }
+}
+
+@media screen {
+  .page {
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    border: 1px solid #e8e8e8;
+    border-radius: 2px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  body { background: #eee; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- COVER PAGE -->
+<!-- ============================================================ -->
+<div class="page cover page-break">
+  <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA" class="cover-logo">
+  <div class="cover-badge">Edition 2026</div>
+  <h1>Le Guide RH du <span>Dirigeant de PME</span></h1>
+  <p class="cover-subtitle">Tout ce que vous devez savoir pour structurer et securiser vos pratiques RH</p>
+  <div class="cover-footer">
+    <div class="cover-separator"></div>
+    <p>Cabinet de conseil et formation RH -- Certifie Qualiopi</p>
+    <p>La Tour-du-Pin, Isere | contact@cabinet-cartesa.com</p>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- TABLE DES MATIERES -->
+<!-- ============================================================ -->
+<div class="page toc page-break">
+  <h2>Table des matieres</h2>
+  <ul class="toc-list">
+    <li class="toc-chapter"><span>Chapitre 1 -- Les obligations legales par seuil d'effectif</span> <span class="toc-page">3</span></li>
+    <li class="toc-sub"><span>Seuils de 11, 20 et 50 salaries</span> <span class="toc-page">3</span></li>
+    <li class="toc-sub"><span>Tableau recapitulatif et sanctions</span> <span class="toc-page">5</span></li>
+
+    <li class="toc-chapter"><span>Chapitre 2 -- Les entretiens obligatoires</span> <span class="toc-page">7</span></li>
+    <li class="toc-sub"><span>Entretien professionnel vs entretien annuel</span> <span class="toc-page">7</span></li>
+    <li class="toc-sub"><span>Le bilan a 6 ans et grille type</span> <span class="toc-page">8</span></li>
+
+    <li class="toc-chapter"><span>Chapitre 3 -- Le plan de developpement des competences</span> <span class="toc-page">10</span></li>
+    <li class="toc-sub"><span>Construction etape par etape</span> <span class="toc-page">10</span></li>
+    <li class="toc-sub"><span>Budget et financement OPCO</span> <span class="toc-page">12</span></li>
+
+    <li class="toc-chapter"><span>Chapitre 4 -- Le financement de la formation</span> <span class="toc-page">13</span></li>
+    <li class="toc-sub"><span>OPCO, PCRH, CPF, FNE-Formation, Pro-A</span> <span class="toc-page">13</span></li>
+    <li class="toc-sub"><span>Tableau comparatif des dispositifs</span> <span class="toc-page">15</span></li>
+
+    <li class="toc-chapter"><span>Chapitre 5 -- Le recrutement et l'integration</span> <span class="toc-page">16</span></li>
+    <li class="toc-sub"><span>Offre, entretien, onboarding</span> <span class="toc-page">16</span></li>
+    <li class="toc-sub"><span>Cout d'un recrutement rate</span> <span class="toc-page">18</span></li>
+
+    <li class="toc-chapter"><span>Chapitre 6 -- La fidelisation et la QVT</span> <span class="toc-page">19</span></li>
+    <li class="toc-sub"><span>Leviers, QVCT, DUERP et RPS</span> <span class="toc-page">19</span></li>
+
+    <li class="toc-chapter"><span>Chapitre 7 -- La RSE accessible aux PME</span> <span class="toc-page">22</span></li>
+    <li class="toc-sub"><span>Pilier social, outils gratuits, marque employeur</span> <span class="toc-page">22</span></li>
+
+    <li class="toc-chapter"><span>Chapitre 8 -- Les certifications utiles</span> <span class="toc-page">24</span></li>
+    <li class="toc-sub"><span>Qualiopi, CleA, impact employeur</span> <span class="toc-page">24</span></li>
+
+    <li class="toc-chapter"><span>Conclusion et ressources</span> <span class="toc-page">25</span></li>
+  </ul>
+</div>
+
+<!-- ============================================================ -->
+<!-- CHAPITRE 1 : OBLIGATIONS LEGALES PAR SEUIL -->
+<!-- ============================================================ -->
+<div class="page page-break">
+  <div class="chapter-header">
+    <span class="chapter-number">Chapitre 1</span>
+    <h2 class="chapter-title">Les obligations legales par seuil d'effectif</h2>
+  </div>
+
+  <p>En France, le Code du travail impose aux entreprises un ensemble d'obligations dont la nature et l'etendue varient selon l'effectif. La loi PACTE du 22 mai 2019 a simplifie le calcul des seuils en instaurant une regle de franchissement durable : un seuil n'est considere comme franchi que lorsque l'effectif atteint ou depasse le nombre requis pendant <strong>cinq annees civiles consecutives</strong> (art. L. 130-1 du Code de la Securite sociale). Cette disposition offre aux PME en croissance un delai d'adaptation precieux.</p>
+
+  <p>Neanmoins, cette souplesse ne dispense pas de la vigilance. Meconnaitre ses obligations expose l'entreprise a des sanctions financieres, a des contentieux prud'homaux et a un risque reputationnel de plus en plus tangible dans un marche de l'emploi tendu.</p>
+
+  <h3>A partir de 11 salaries</h3>
+
+  <h4>Le Comite Social et Economique (CSE)</h4>
+  <p>Depuis les ordonnances Macron du 22 septembre 2017, le CSE est l'instance unique de representation du personnel. Il fusionne les anciens delegues du personnel, le comite d'entreprise et le CHSCT. Toute entreprise atteignant 11 salaries pendant 12 mois consecutifs doit organiser des elections dans les 90 jours suivant l'information du personnel (art. L. 2311-2 du Code du travail).</p>
+
+  <div class="info-box">
+    <p><strong>En pratique :</strong> l'employeur doit informer les salaries par tout moyen de l'organisation des elections, puis engager la negociation du protocole d'accord preelectoral (PAP) avec les organisations syndicales representatives. En l'absence de candidat apres deux tours, un PV de carence est etabli -- mais l'obligation de renouveler le processus tous les 4 ans demeure.</p>
+  </div>
+
+  <p>Le CSE dans les entreprises de 11 a 49 salaries dispose de competences limitees aux reclamations individuelles et collectives, a la sante-securite et aux conditions de travail. Les membres titulaires beneficient de 10 heures de delegation mensuelles.</p>
+
+  <h4>La contribution a la formation professionnelle</h4>
+  <p>Les entreprises de 11 salaries et plus versent une contribution unique de <strong>1 % de la masse salariale brute</strong> (contre 0,55 % pour les entreprises de moins de 11 salaries). Depuis 2022, cette contribution est collectee par l'URSSAF, qui la reverse a France Competences.</p>
+
+  <h4>Le DUERP (Document Unique d'Evaluation des Risques Professionnels)</h4>
+  <p>Obligatoire des le premier salarie (decret du 5 novembre 2001), le DUERP prend une dimension supplementaire a 11 salaries : il doit etre conserve pendant au moins <strong>40 ans</strong> et etre depose sur un portail numerique dedie (obligation entree en vigueur le 1er juillet 2023 pour les entreprises de 150 salaries et plus, et a partir du 1er juillet 2024 pour toutes les autres).</p>
+
+  <div class="footer-line"></div>
+  <span class="footer-brand">CARTESA -- Guide RH du Dirigeant de PME</span>
+  <span class="page-number">3</span>
+</div>
+
+<div class="page page-break">
+  <h3>A partir de 20 salaries</h3>
+
+  <h4>Le reglement interieur</h4>
+  <p>L'elaboration et l'affichage d'un reglement interieur deviennent obligatoires a 50 salaries (art. L. 1311-2 du Code du travail, modifie par la loi du 22 mai 2019). Toutefois, la redaction d'un reglement interieur des 20 salaries constitue une bonne pratique fortement recommandee, car il permet de fixer les regles en matiere de discipline, de sante-securite et de harcelement. Ce document doit etre soumis pour avis au CSE et transmis a l'inspection du travail.</p>
+
+  <h4>Le FNAL (Fonds National d'Aide au Logement)</h4>
+  <p>A partir de 50 salaries, la cotisation patronale au FNAL passe de <strong>0,10 %</strong> (sur la fraction du salaire dans la limite du plafond de la Securite sociale) a <strong>0,50 %</strong> de la masse salariale totale. Ce doublement represente un cout significatif qu'il convient d'anticiper dans les projections financieres de l'entreprise.</p>
+
+  <h4>L'obligation d'emploi de travailleurs handicapes (OETH)</h4>
+  <p>Des 20 salaries, l'entreprise est assujettie a l'obligation d'employer au moins <strong>6 % de travailleurs handicapes</strong> dans son effectif (art. L. 5212-2 du Code du travail). En cas de non-respect, une contribution annuelle est due a l'Agefiph. Depuis la loi Avenir Professionnel du 5 septembre 2018, toutes les entreprises declarent leur effectif de travailleurs handicapes via la DSN, mais seules celles de 20 salaries et plus sont redevables de la contribution.</p>
+
+  <h3>A partir de 50 salaries</h3>
+
+  <p>Le franchissement du seuil de 50 salaries constitue un tournant majeur pour l'entreprise. Le nombre d'obligations et leur complexite augmentent considerablement.</p>
+
+  <h4>Le CSE renforce</h4>
+  <p>A 50 salaries, le CSE acquiert des attributions elargies : consultation sur les orientations strategiques, la situation economique et financiere, et la politique sociale. Il dispose d'un budget de fonctionnement egal a <strong>0,20 % de la masse salariale brute</strong> et gere les activites sociales et culturelles. Les membres titulaires beneficient desormais d'au moins 24 heures de delegation mensuelles.</p>
+
+  <h4>La commission Sante, Securite et Conditions de Travail (SSCT)</h4>
+  <p>A partir de 300 salaries, la mise en place d'une commission SSCT au sein du CSE est obligatoire. En deca, l'inspecteur du travail peut en imposer la creation dans les entreprises de 50 salaries et plus en cas de risques particuliers (installations nucleaires, sites Seveso, etc.).</p>
+
+  <h4>La participation aux benefices</h4>
+  <p>Obligatoire dans les entreprises de 50 salaries et plus (art. L. 3322-2 du Code du travail). La formule legale est : <strong>RSP = 1/2 x (B - 5 %C) x S/VA</strong> ou B = benefice net fiscal, C = capitaux propres, S = salaires, VA = valeur ajoutee. L'entreprise dispose d'un delai de 3 ans apres le franchissement du seuil pour mettre en place l'accord de participation.</p>
+
+  <div class="warning-box">
+    <div class="box-title">Point de vigilance</div>
+    <p>L'absence de mise en place de la participation alors que l'entreprise y est assujettie peut entrainer des penalites fiscales et la perte du benefice des exonerations sociales sur l'epargne salariale. En outre, chaque salarie peut saisir le juge pour reclamer individuellement sa quote-part.</p>
+  </div>
+
+  <div class="footer-line"></div>
+  <span class="footer-brand">CARTESA -- Guide RH du Dirigeant de PME</span>
+  <span class="page-number">4</span>
+</div>
+
+<div class="page page-break">
+  <h4>Le plan de developpement des competences</h4>
+  <p>Si le plan de developpement des competences n'est pas juridiquement obligatoire quelle que soit la taille de l'entreprise, le CSE des entreprises de 50 salaries et plus doit etre consulte chaque annee sur les orientations de la formation professionnelle et le plan de developpement des competences (art. L. 2312-24 du Code du travail). Cette consultation implique necessairement l'existence d'un document formalise.</p>
+
+  <h3>Tableau recapitulatif des obligations par seuil</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Seuil</th>
+        <th>Obligation</th>
+        <th>Base legale</th>
+        <th>Delai / Periodicite</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="3"><strong>11 salaries</strong></td>
+        <td>Election du CSE</td>
+        <td>Art. L. 2311-2 C. trav.</td>
+        <td>90 jours apres information</td>
+      </tr>
+      <tr>
+        <td>Contribution formation 1 %</td>
+        <td>Art. L. 6331-1 C. trav.</td>
+        <td>Annuelle (via URSSAF)</td>
+      </tr>
+      <tr>
+        <td>DUERP + depot numerique</td>
+        <td>Decret 2001-1016</td>
+        <td>Mise a jour annuelle minimum</td>
+      </tr>
+      <tr>
+        <td rowspan="2"><strong>20 salaries</strong></td>
+        <td>OETH (6 % TH)</td>
+        <td>Art. L. 5212-2 C. trav.</td>
+        <td>Declaration annuelle DSN</td>
+      </tr>
+      <tr>
+        <td>FNAL taux plein (0,50 %)</td>
+        <td>Art. L. 834-1 CSS</td>
+        <td>Mensuelle (bulletin de paie)</td>
+      </tr>
+      <tr>
+        <td rowspan="4"><strong>50 salaries</strong></td>
+        <td>CSE aux attributions elargies</td>
+        <td>Art. L. 2312-1 C. trav.</td>
+        <td>Consultations recurrentes</td>
+      </tr>
+      <tr>
+        <td>Participation aux benefices</td>
+        <td>Art. L. 3322-2 C. trav.</td>
+        <td>Delai 3 ans apres seuil</td>
+      </tr>
+      <tr>
+        <td>Reglement interieur</td>
+        <td>Art. L. 1311-2 C. trav.</td>
+        <td>Dans l'annee du franchissement</td>
+      </tr>
+      <tr>
+        <td>Base de donnees economiques et sociales (BDES)</td>
+        <td>Art. L. 2312-18 C. trav.</td>
+        <td>Mise a jour permanente</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Sanctions encourues</h3>
+
+  <p>Le non-respect des obligations liees aux seuils d'effectif expose l'entreprise a des sanctions de nature diverse :</p>
+
+  <ul>
+    <li><strong>Absence de CSE :</strong> delit d'entrave passible de 7 500 EUR d'amende (art. L. 2317-1 du Code du travail). L'absence de CSE empeche egalement l'entreprise de proceder a des licenciements economiques collectifs.</li>
+    <li><strong>Absence de DUERP :</strong> amende de 1 500 EUR par unite de travail (3 000 EUR en cas de recidive). La responsabilite penale du dirigeant peut etre engagee en cas d'accident du travail.</li>
+    <li><strong>Absence de participation :</strong> perte des exonerations sociales et fiscales sur l'ensemble des dispositifs d'epargne salariale, et versement d'interets de retard.</li>
+    <li><strong>Non-respect de l'OETH :</strong> contribution majoree a l'Agefiph pouvant atteindre 1 500 fois le SMIC horaire par beneficiaire manquant, soit environ <strong>17 685 EUR par unite manquante</strong> en 2026.</li>
+    <li><strong>Entretiens professionnels non realises :</strong> abondement correctif de 3 000 EUR par salarie verse sur le CPF (entreprises de 50 salaries et plus).</li>
+  </ul>
+
+  <div class="key-figure">
+    <span class="figure">3 000 EUR</span>
+    <span class="figure-label">Abondement correctif par salarie en cas de non-respect des obligations d'entretien professionnel (entreprises de 50+ salaries)</span>
+  </div>
+
+  <div class="footer-line"></div>
+  <span class="footer-brand">CARTESA -- Guide RH du Dirigeant de PME</span>
+  <span class="page-number">5</span>
+</div>
+
+<div class="page page-break">
+  <div class="info-box">
+    <p><strong>Conseil CARTESA :</strong> ne considerez pas ces obligations comme de simples contraintes administratives. Un CSE bien anime, un DUERP serieusement elabore et des entretiens professionnels bien conduits sont des outils de management qui renforcent l'engagement des equipes et la performance de l'entreprise. Les entreprises qui traitent ces sujets comme des leviers strategiques plutot que comme des corvees reglementaires constatent un taux de turnover inferieur de 25 % en moyenne.</p>
+  </div>
+
+  <p>Pour les PME situees juste en dessous d'un seuil, il est essentiel de preparer le franchissement en amont. Prevoyez un retro-planning de 12 a 18 mois couvrant les aspects juridiques, financiers et organisationnels. CARTESA accompagne regulierement des dirigeants dans cette phase de transition critique avec un programme specifique &laquo; Franchissement de seuil &raquo;.</p>
+
+  <div class="footer-line"></div>
+  <span class="footer-brand">CARTESA -- Guide RH du Dirigeant de PME</span>
+  <span class="page-number">6</span>
+</div>
+
+<!-- ============================================================ -->
+<!-- CHAPITRE 2 : LES ENTRETIENS OBLIGATOIRES -->
+<!-- ============================================================ -->
+<div class="page page-break">
+  <div class="chapter-header">
+    <span class="chapter-number">Chapitre 2</span>
+    <h2 class="chapter-title">Les entretiens obligatoires</h2>
+  </div>
+
+  <p>La loi du 5 mars 2014 relative a la formation professionnelle a instaure l'entretien professionnel, distinct de l'entretien annuel d'evaluation. Cette distinction, renforcee par la loi Avenir Professionnel du 5 septembre 2018, est source de confusion chez de nombreux dirigeants de PME. Clarifions les enjeux.</p>
+
+  <h3>Entretien professionnel vs entretien annuel d'evaluation</h3>
+
+  <div class="two-col">
+    <div class="col-card">
+      <h4>Entretien professionnel</h4>
+      <ul>
+        <li><strong>Obligatoire</strong> (art. L. 6315-1 C. trav.)</li>
+        <li>Tous les <strong>2 ans</strong></li>
+        <li>Porte sur les <strong>perspectives d'evolution</strong></li>
+        <li>Concerne tous les salaries</li>
+        <li>Donne lieu a un document ecrit remis au salarie</li>
+        <li>Doit etre propose au retour de certaines absences (maternite, arret longue duree, conge sabbatique...)</li>
+      </ul>
+    </div>
+    <div class="col-card">
+      <h4>Entretien annuel d'evaluation</h4>
+      <ul>
+        <li><strong>Facultatif</strong> (sauf convention collective)</li>
+        <li>Generalement annuel</li>
+        <li>Porte sur la <strong>performance</strong> et les objectifs</li>
+        <li>Modalites libres</li>
+        <li>Peut etre combine a l'entretien professionnel sous reserve de bien distinguer les deux volets</li>
+        <li>Soumis a information prealable du salarie sur les criteres</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="warning-box">
+    <div class="box-title">Erreur frequente</div>
+    <p>Fusionner les deux entretiens en un seul document sans distinguer les volets &laquo; evaluation &raquo; et &laquo; evolution professionnelle &raquo;. En cas de controle ou de contentieux, cette confusion peut etre assimilee a une absence d'entretien professionnel, avec les sanctions financieres afferentes.</p>
+  </div>
+
+  <h3>Le bilan a 6 ans : un rendez-vous critique</h3>
+
+  <p>Tous les 6 ans (en reference a l'anciennete du salarie), l'entretien professionnel doit faire l'objet d'un <strong>etat des lieux recapitulatif</strong> du parcours professionnel du salarie (art. L. 6315-1 II du Code du travail). Ce bilan verifie que le salarie a beneficie, au cours des 6 dernieres annees, des elements suivants :</p>
+
+  <ol>
+    <li>Au moins <strong>trois entretiens professionnels</strong> (un tous les deux ans)</li>
+    <li>Au moins <strong>une action de formation non obligatoire</strong></li>
+  </ol>
+
+  <p>Avant la reforme de 2018, deux criteres supplementaires s'appliquaient : une progression salariale ou professionnelle et l'acquisition d'elements de certification. La loi Avenir Professionnel a simplifie en ne retenant que les deux criteres ci-dessus.</p>
+
+  <div class="key-figure">
+    <span class="figure">3 000 EUR / salarie</span>
+    <span class="figure-label">Abondement correctif verse sur le CPF si le bilan a 6 ans revele un manquement (entreprises de 50 salaries et plus) -- Art. L. 6323-13 C. trav.</span>
+  </div>
+
+  <div class="footer-line"></div>
+  <span class="footer-brand">CARTESA -- Guide RH du Dirigeant de PME</span>
+  <span class="page-number">7</span>
+</div>
+
+<div class="page page-break">
+  <p>Pour une entreprise de 50 salaries, une defaillance systematique sur les entretiens professionnels peut representer un cout de <strong>150 000 EUR</strong> en abondements correctifs -- sans compter le risque contentieux individuel. Pour les entreprises de moins de 50 salaries, la sanction financiere ne s'applique pas automatiquement, mais les entretiens restent obligatoires et leur absence constitue un manquement opposable devant les prud'hommes.</p>
+
+  <h3>Grille type d'entretien professionnel</h3>
+
+  <div class="grille">
+    <div class="grille-header">Trame d'entretien professionnel -- Points a aborder</div>
+    <div class="grille-row">
+      <span class="grille-label">1. Bilan de la periode ecoulee</span>
+      <span class="grille-value">Poste occupe, missions, evolutions depuis le dernier entretien, formations suivies, certifications obtenues</span>
+    </div>
+    <div class="grille-row">
+      <span class="grille-label">2. Competences acquises</span>
+      <span class="grille-value">Competences developpees en situation de travail, via des formations, des missions transverses ou du tutorat</span>
+    </div>
+    <div class="grille-row">
+      <span class="grille-label">3. Projet professionnel</span>
+      <span class="grille-value">Souhaits d'evolution du salarie, mobilite geographique ou fonctionnelle envisagee, aspirations a moyen terme</span>
+    </div>
+    <div class="grille-row">
+      <span class="grille-label">4. Actions a envisager</span>
+      <span class="grille-value">Formations identifiees, VAE, bilan de competences, CPF, tutorat, immersion dans un autre service</span>
+    </div>
+    <div class="grille-row">
+      <span class="grille-label">5. Utilisation du CPF</span>
+      <span class="grille-value">Information sur les droits acquis, possibilite d'abondement par l'employeur, articulation avec le plan de formation</span>
+    </div>
+    <div class="grille-row">
+      <span class="grille-label">6. Conseil en evolution professionnelle</span>
+      <span class="grille-value">Information sur le CEP (gratuit, confidentiel, ouvert a tous les actifs). Operateurs : France Travail, APEC, Cap Emploi, operateurs regionaux</span>
+    </div>
+    <div class="grille-row">
+      <span class="grille-label">7. Synthese et engagement</span>
+      <span class="grille-value">Actions retenues, calendrier previsionnel, signature des deux parties, remise d'une copie au salarie</span>
+    </div>
+  </div>
+
+  <h3>Erreurs frequentes a eviter</h3>
+
+  <ul>
+    <li><strong>Reporter indefiniment les entretiens</strong> en periode de forte activite. Conseil : planifiez-les sur un trimestre dedie (janvier-mars ou septembre-novembre) et bloquez les creneaux dans les agendas des 3 mois precedents.</li>
+    <li><strong>Ne pas formaliser par ecrit</strong>. Un entretien non documente est un entretien qui n'a pas eu lieu aux yeux de la loi.</li>
+    <li><strong>Confondre formation obligatoire et non obligatoire</strong>. Les formations &laquo; obligatoires &raquo; au sens de l'art. L. 6321-2 (securite, habilitations) ne comptent pas pour le bilan a 6 ans. Le salarie doit avoir beneficie d'au moins une formation &laquo; non obligatoire &raquo;, c'est-a-dire contribuant a son developpement professionnel au-dela des exigences de son poste.</li>
+    <li><strong>Oublier les entretiens de reprise</strong>. Apres un conge maternite, un conge parental, un arret maladie de plus de 30 jours ou un conge sabbatique, l'entretien professionnel doit etre propose systematiquement dans le mois suivant la reprise.</li>
+    <li><strong>Ne pas conserver les preuves</strong>. Archivez les comptes rendus signes pendant au moins 6 ans (duree du cycle de bilan). Format papier ou numerique, peu importe, mais l'accessibilite et la tracabilite doivent etre garanties.</li>
+  </ul>
+
+  <div class="info-box">
+    <p><strong>Conseil CARTESA :</strong> nous recommandons de digitaliser la gestion des entretiens avec un outil simple (meme un tableur bien structure peut suffire pour les TPE/PME). L'essentiel est de disposer d'un systeme d'alerte automatique pour ne jamais depasser les echeances legales. Pour les structures de plus de 30 salaries, un SIRH dedie (Lucca, Eurecua, Factorial...) represente un investissement rapidement rentabilise.</p>
+  </div>
+
+  <div class="footer-line"></div>
+  <span class="footer-brand">CARTESA -- Guide RH du Dirigeant de PME</span>
+  <span class="page-number">8</span>
+</div>
+
+<div class="page page-break">
+  <h3>Calendrier pratique des entretiens</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Type d'entretien</th>
+        <th>Periodicite</th>
+        <th>Obligatoire ?</th>
+        <th>Document a produire</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Entretien professionnel</td>
+        <td>Tous les 2 ans</td>
+        <td>Oui (loi du 5 mars 2014)</td>
+        <td>Compte rendu signe en double exemplaire</td>
+      </tr>
+      <tr>
+        <td>Bilan a 6 ans</td>
+        <td>Tous les 6 ans</td>
+        <td>Oui (art. L. 6315-1 II)</td>
+        <td>Etat recapitulatif signe</td>
+      </tr>
+      <tr>
+        <td>Entretien de reprise</td>
+        <td>Au retour d'absence qualifiee</td>
+        <td>Oui</td>
+        <td>Compte rendu signe</td>
+      </tr>
+      <tr>
+        <td>Entretien annuel d'evaluation</td>
+        <td>Annuel (usage)</td>
+        <td>Non (sauf CCN)</td>
+        <td>Support libre</td>
+      </tr>
+      <tr>
+        <td>Entretien forfait jours</td>
+        <td>Annuel</td>
+        <td>Oui (si salaries au forfait)</td>
+        <td>Controle charge de travail et equilibre vie pro/perso</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer-line"></div>
+  <span class="footer-brand">CARTESA -- Guide RH du Dirigeant de PME</span>
+  <span class="page-number">9</span>
+</div>
+
+<!-- ============================================================ -->
+<!-- CHAPITRE 3 : PLAN DE DEVELOPPEMENT DES COMPETENCES -->
+<!-- ============================================================ -->
+<div class="page page-break">
+  <div class="chapter-header">
+    <span class="chapter-number">Chapitre 3</span>
+    <h2 class="chapter-title">Le plan de developpement des competences</h2>
+  </div>
+
+  <p>Depuis le 1er janvier 2019, le &laquo; plan de formation &raquo; est devenu le &laquo; plan de developpement des competences &raquo; (loi Avenir Professionnel du 5 septembre 2018). Au-dela du changement semantique, cette evolution traduit une approche plus large : il ne s'agit plus seulement de programmer des stages, mais d'organiser l'ensemble des actions concourant au developpement des competences des salaries.</p>
+
+  <h3>Obligation ou bonne pratique ?</h3>
+
+  <p>Le plan de developpement des competences n'est pas juridiquement obligatoire en tant que tel, quelle que soit la taille de l'entreprise. En revanche :</p>
+
+  <ul>
+    <li>L'employeur a une <strong>obligation generale d'adaptation</strong> des salaries a leur poste de travail et de maintien de leur capacite a occuper un emploi (art. L. 6321-1 du Code du travail). Le plan est l'outil naturel pour satisfaire cette obligation.</li>
+    <li>Dans les entreprises de 50 salaries et plus, le CSE doit etre <strong>consulte annuellement</strong> sur le plan, ce qui implique son existence formelle.</li>
+    <li>Le bilan a 6 ans exige qu'au moins une formation non obligatoire ait ete dispensee, ce qui suppose un minimum de planification.</li>
+  </ul>
+
+  <p>En pratique, meme pour une TPE de 5 salaries, formaliser un plan de developpement des competences est un acte de gestion fondamental. Il permet de structurer l'investissement formation, d'anticiper les evolutions de l'activite et de repondre aux attentes des collaborateurs exprimees lors des entretiens professionnels.</p>
+
+  <h3>Construire son plan etape par etape</h3>
+
+  <ol class="step-list">
+    <li><strong>Analyser les besoins strategiques.</strong> Quelles sont les evolutions de votre marche, de votre technologie, de votre reglementation ? Quelles competences nouvelles devez-vous acquerir dans les 12 a 24 prochains mois ? Croisez cette analyse avec votre plan strategique et votre GPEC/GEPP si vous en disposez.</li>
+    <li><strong>Recueillir les besoins individuels.</strong> Exploitez systematiquement les comptes rendus des entretiens professionnels. Chaque souhait de formation exprime par un salarie doit etre trace et analyse. Classez les demandes par priorite et par coherence avec le projet d'entreprise.</li>
+    <li><strong>Distinguer les categories d'actions.</strong> Le plan doit identifier clairement les formations obligatoires (securite, habilitations, certifications reglementaires) et les formations non obligatoires (montee en competences, developpement personnel, management, langues...). Cette distinction est cruciale pour le bilan a 6 ans.</li>
+    <li><strong>Chiffrer et arbitrer.</strong> Estimez le cout de chaque action (frais pedagogiques, salaires maintenus, deplacements). Identifiez les financements mobilisables (OPCO, PCRH, CPF co-construit, FNE-Formation). Arbitrez en fonction de l'enveloppe disponible et des priorites strategiques.</li>
+    <li><strong>Formaliser le plan.</strong> Un tableau synthetique suffit : action de formation, salaries concernes, calendrier previsionnel, organisme prestataire, cout previsionnel, financement prevu. Presentez-le au CSE s'il existe.</li>
+    <li><strong>Deployer et suivre.</strong> Lancez les inscriptions, gerez la logistique, assurez le remplacement des salaries en formation. A l'issue de chaque action, recueillez les evaluations (a chaud et a froid) et mesurez le transfert en situation de travail.</li>
+    <li><strong>Evaluer et capitaliser.</strong> En fin d'exercice, dressez le bilan quantitatif et qualitatif du plan. Ce bilan alimente la consultation du CSE de l'annee suivante et nourrit la reflexion pour le plan N+1.</li>
+  </ol>
+
+  <div class="footer-line"></div>
+  <span class="footer-brand">CARTESA -- Guide RH du Dirigeant de PME</span>
+  <span class="page-number">10</span>
+</div>
+
+<div class="page page-break">
+  <h3>Le lien avec les entretiens professionnels</h3>
+
+  <p>Le plan de developpement des competences et les entretiens professionnels forment un <strong>cercle vertueux</strong> :</p>
+
+  <blockquote>
+    Les entretiens professionnels alimentent le plan en identifiant les besoins individuels. Le plan repond a ces besoins de maniere structuree. Le bilan a 6 ans verifie que la boucle a bien fonctionne.
+  </blockquote>
+
+  <p>En pratique, nous constatons chez nos clients que les entreprises qui connectent rigoureusement ces deux processus obtiennent un taux de satisfaction des salaries en formation superieur de 40 % par rapport a celles qui planifient la formation de maniere deconnectee des entretiens.</p>
+
+  <h3>Budget et financement OPCO</h3>
+
+  <p>Il n'existe pas de norme legale fixant un budget minimum de formation, hormis l'obligation de verser la contribution legale (1 % de la masse salariale pour les entreprises de 11 salaries et plus). Toutefois, les benchmarks sectoriels fournissent des reperes utiles :</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Taille d'entreprise</th>
+        <th>Budget moyen constate</th>
+        <th>Recommandation CARTESA</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Moins de 11 salaries</td>
+        <td>0,8 % a 1,5 % MS</td>
+        <td>Minimum 1,5 % MS</td>
+      </tr>
+      <tr>
+        <td>11 a 49 salaries</td>
+        <td>1,2 % a 2 % MS</td>
+        <td>Minimum 2 % MS</td>
+      </tr>
+      <tr>
+        <td>50 a 299 salaries</td>
+        <td>1,5 % a 3 % MS</td>
+        <td>Minimum 2,5 % MS</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Pour les entreprises de moins de 50 salaries, les OPCO constituent le principal levier de financement. Chaque OPCO definit ses propres criteres de prise en charge (plafonds horaires, priorites thematiques, durees maximales). Les taux de prise en charge varient generalement de <strong>15 EUR a 35 EUR de l'heure</strong> selon l'OPCO et la taille de l'entreprise.</p>
+
+  <div class="info-box">
+    <p><strong>Astuce :</strong> les entreprises de moins de 50 salaries beneficient de conditions de prise en charge privilegiees par les OPCO, car une part specifique de la contribution legale leur est reservee via France Competences. N'hesitez pas a solliciter votre OPCO en debut d'annee pour connaitre vos droits et les priorites de financement pour l'exercice en cours.</p>
+  </div>
+
+  <p>Les principaux OPCO couvrant les PME en Auvergne-Rhone-Alpes sont :</p>
+  <ul>
+    <li><strong>OPCO EP</strong> (Entreprises de Proximite) : artisanat, professions liberales, commerce de detail</li>
+    <li><strong>OPCO Atlas</strong> : services financiers, conseil, numerique</li>
+    <li><strong>OPCO 2i</strong> : industrie, metallurgie, chimie</li>
+    <li><strong>Constructys</strong> : BTP</li>
+    <li><strong>AKTO</strong> : travail temporaire, securite, nettoyage, restauration</li>
+    <li><strong>AFDAS</strong> : culture, medias, sport, tourisme</li>
+    <li><strong>Ocapiat</strong> : agriculture, agroalimentaire, peche</li>
+  </ul>
+
+  <div class="footer-line"></div>
+  <span class="footer-brand">CARTESA -- Guide RH du Dirigeant de PME</span>
+  <span class="page-number">11</span>
+</div>
+
+<div class="page page-break">
+  <p>Pour identifier votre OPCO de rattachement, vous pouvez consulter la table de correspondance de France Competences sur le site <strong>france-competences.fr</strong> en renseignant votre code IDCC (Identifiant de Convention Collective) figurant sur vos bulletins de paie.</p>
+
+  <div class="warning-box">
+    <div class="box-title">Erreur courante</div>
+    <p>Ne pas solliciter son OPCO par meconnaissance ou par crainte de la complexite administrative. Or, les demarches se sont considerablement simplifiees : la plupart des OPCO proposent des espaces en ligne ou le depôt de demande de prise en charge se fait en quelques clics. Le ROI est immediat : une journee de formation a 800 EUR peut etre financee a 100 % pour une TPE.</p>
+  </div>
+
+  <div class="footer-line"></div>
+  <span class="footer-brand">CARTESA -- Guide RH du Dirigeant de PME</span>
+  <span class="page-number">12</span>
+</div>
+
+<!-- ============================================================ -->
+<!-- CHAPITRE 4 : LE FINANCEMENT DE LA FORMATION -->
+<!-- ============================================================ -->
+<div class="page page-break">
+  <div class="chapter-header">
+    <span class="chapter-number">Chapitre 4</span>
+    <h2 class="chapter-title">Le financement de la formation</h2>
+  </div>
+
+  <p>Le paysage du financement de la formation professionnelle en France est riche mais complexe. Depuis la reforme de 2018, l'architecture a ete profondement remaniee avec la creation de France Competences comme autorite de regulation, le transfert de la collecte aux URSSAF et la monetisation du CPF. Pour un dirigeant de PME, savoir naviguer dans cet ecosysteme represente un avantage concurrentiel direct en matiere d'attractivite et de developpement des competences.</p>
+
+  <h3>Les OPCO : votre partenaire de proximite</h3>
+
+  <p>Les 11 Operateurs de Competences (OPCO) ont remplace les anciens OPCA depuis le 1er avril 2019. Leurs missions :</p>
+  <ul>
+    <li>Financer les <strong>contrats d'apprentissage et de professionnalisation</strong> selon les niveaux de prise en charge (NPEC) fixes par les branches</li>
+    <li>Financer le <strong>plan de developpement des competences</strong> des entreprises de moins de 50 salaries</li>
+    <li>Apporter un <strong>appui technique aux branches professionnelles</strong> pour la GPEC et la certification</li>
+    <li>Accompagner les PME dans la <strong>definition de leurs besoins en formation</strong></li>
+  </ul>
+
+  <p>Concretement, pour une PME de moins de 50 salaries, l'OPCO peut financer tout ou partie des actions inscrites au plan de developpement des competences. Les modalites varient selon les OPCO, mais le principe est simple : vous deposez une demande de prise en charge avant le debut de la formation, l'OPCO instruit le dossier et vous notifie l'accord de financement.</p>
+
+  <h3>Le dispositif PCRH : un accompagnement gratuit et meconnu</h3>
+
+  <div class="key-figure">
+    <span class="figure">Jusqu'a 15 000 EUR</span>
+    <span class="figure-label">d'accompagnement RH gratuit pour les PME de moins de 250 salaries via le dispositif PCRH</span>
+  </div>
+
+  <p>La <strong>Prestation de Conseil en Ressources Humaines (PCRH)</strong> est un dispositif cofinance par l'Etat (DREETS) et les OPCO. Il permet aux entreprises de moins de 250 salaries de beneficier d'un accompagnement personnalise par un consultant RH sur des thematiques variees :</p>
+  <ul>
+    <li>Mise en place d'une GPEC/GEPP</li>
+    <li>Structuration de la fonction RH</li>
+    <li>Amelioration de la QVT</li>
+    <li>Gestion des entretiens professionnels</li>
+    <li>Professionnalisation du recrutement</li>
+    <li>Diagnostic RH complet</li>
+  </ul>
+
+  <p>La prestation est financee jusqu'a 100 % pour les entreprises de moins de 50 salaries. Le volume d'intervention va de 1 a 10 jours selon la nature de l'accompagnement. La demande s'effectue aupres de la DREETS (Direction regionale de l'economie, de l'emploi, du travail et des solidarites) de votre region ou directement via votre OPCO.</p>
+
+  <div class="footer-line"></div>
+  <span class="footer-brand">CARTESA -- Guide RH du Dirigeant de PME</span>
+  <span class="page-number">13</span>
+</div>
+
+<div class="page page-break">
+  <div class="info-box">
+    <p><strong>CARTESA est prestataire agree PCRH.</strong> Nous accompagnons chaque annee plus de 30 PME de la region Auvergne-Rhone-Alpes dans le cadre de ce dispositif. Si vous n'en avez jamais beneficie, contactez-nous pour verifier votre eligibilite : la demarche prend moins de 15 minutes et l'accompagnement peut demarrer sous 4 a 6 semaines.</p>
+  </div>
+
+  <h3>Le Compte Personnel de Formation (CPF)</h3>
+
+  <p>Depuis la loi du 5 septembre 2018, le CPF est <strong>monetise</strong> (il n'est plus en heures mais en euros) et directement mobilisable par le salarie via l'application &laquo; Mon Compte Formation &raquo; (moncompteformation.gouv.fr). Les droits sont alimentes a hauteur de :</p>
+  <ul>
+    <li><strong>500 EUR par an</strong> pour un salarie a temps plein (plafond 5 000 EUR)</li>
+    <li><strong>800 EUR par an</strong> pour un salarie peu qualifie -- niveau inferieur au CAP/BEP (plafond 8 000 EUR)</li>
+  </ul>
+
+  <p>Depuis mai 2024, un <strong>reste a charge de 100 EUR</strong> est demande au salarie pour toute formation financee via le CPF (sauf demandeurs d'emploi et abondements employeur). Cette mesure a reduit le nombre de formations &laquo; de confort &raquo; et recentre l'usage du CPF sur des projets professionnels serieux.</p>
+
+  <p><strong>Le CPF co-construit :</strong> l'employeur peut abonder le CPF du salarie pour co-financer une formation alignee avec les besoins de l'entreprise. C'est un outil de fidelisation puissant et un signal fort de l'investissement de l'entreprise dans le developpement de ses collaborateurs. L'abondement se fait via la plateforme EDEF (Espace Des Employeurs et des Financeurs) sur moncompteformation.gouv.fr.</p>
+
+  <h3>Le FNE-Formation</h3>
+
+  <p>Le Fonds National de l'Emploi -- Formation est un dispositif de l'Etat destine a accompagner les entreprises dans la formation de leurs salaries. Historiquement reserve aux entreprises en difficulte, il a ete elargi durant la crise Covid puis recentre depuis 2023 sur les <strong>transitions ecologique et numerique</strong>.</p>
+
+  <p>En 2025-2026, les priorites du FNE-Formation sont :</p>
+  <ul>
+    <li>Les transitions ecologiques (decarbonation, economie circulaire, biodiversite)</li>
+    <li>Les transitions numeriques et intelligence artificielle</li>
+    <li>Les transitions alimentaires et agricoles</li>
+    <li>Les transitions demographiques (management intergenerationnel, silver economy)</li>
+  </ul>
+
+  <p>Le taux de prise en charge varie selon la taille de l'entreprise : <strong>70 % pour les TPE/PME</strong> (moins de 250 salaries), 60 % pour les ETI, 40 % pour les grandes entreprises. Les dossiers sont instruits par les OPCO pour le compte de l'Etat.</p>
+
+  <h3>La Pro-A (reconversion ou promotion par l'alternance)</h3>
+
+  <p>La Pro-A permet aux salaries en CDI dont la qualification est inferieure au niveau licence (bac+3) de suivre une formation en alternance tout en conservant leur contrat de travail et leur remuneration. Le dispositif vise l'obtention d'une certification professionnelle enregistree au RNCP.</p>
+
+  <p>C'est un outil particulierement adapte pour les PME qui souhaitent <strong>faire evoluer un salarie vers un nouveau metier</strong> ou l'accompagner dans une montee en competences certifiante. La Pro-A est financee par l'OPCO selon les NPEC de la branche.</p>
+
+  <div class="footer-line"></div>
+  <span class="footer-brand">CARTESA -- Guide RH du Dirigeant de PME</span>
+  <span class="page-number">14</span>
+</div>
+
+<div class="page page-break">
+  <h3>Tableau comparatif des dispositifs de financement</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Dispositif</th>
+        <th>Public cible</th>
+        <th>Financement</th>
+        <th>Initiative</th>
+        <th>Point fort</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Plan via OPCO</strong></td>
+        <td>Entreprises &lt; 50 sal.</td>
+        <td>Jusqu'a 100 %</td>
+        <td>Employeur</td>
+        <td>Souplesse, rapidite</td>
+      </tr>
+      <tr>
+        <td><strong>PCRH</strong></td>
+        <td>Entreprises &lt; 250 sal.</td>
+        <td>Jusqu'a 15 000 EUR (100 % pour &lt; 50 sal.)</td>
+        <td>Employeur</td>
+        <td>Conseil RH gratuit</td>
+      </tr>
+      <tr>
+        <td><strong>CPF</strong></td>
+        <td>Tout salarie</td>
+        <td>500 a 800 EUR/an (reste a charge 100 EUR)</td>
+        <td>Salarie</td>
+        <td>Autonomie du salarie</td>
+      </tr>
+      <tr>
+        <td><strong>CPF co-construit</strong></td>
+        <td>Salarie + employeur</td>
+        <td>CPF + abondement employeur</td>
+        <td>Conjointe</td>
+        <td>Alignement interets</td>
+      </tr>
+      <tr>
+        <td><strong>FNE-Formation</strong></td>
+        <td>Toute entreprise</td>
+        <td>40 % a 70 % selon taille</td>
+        <td>Employeur</td>
+        <td>Transitions strategiques</td>
+      </tr>
+      <tr>
+        <td><strong>Pro-A</strong></td>
+        <td>Salaries CDI &lt; bac+3</td>
+        <td>OPCO (NPEC branche)</td>
+        <td>Conjointe</td>
+        <td>Certification en alternance</td>
+      </tr>
+      <tr>
+        <td><strong>Contrat de professionnalisation</strong></td>
+        <td>Demandeurs d'emploi, jeunes</td>
+        <td>OPCO</td>
+        <td>Employeur</td>
+        <td>Recrutement + formation</td>
+      </tr>
+      <tr>
+        <td><strong>Apprentissage</strong></td>
+        <td>16-29 ans (derogations)</td>
+        <td>OPCO (NPEC)</td>
+        <td>Employeur</td>
+        <td>Aide a l'embauche 6 000 EUR</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="warning-box">
+    <div class="box-title">Strategie de financement</div>
+    <p>Ne vous limitez pas a un seul dispositif. Les PME les plus performantes en matiere de formation combinent systematiquement plusieurs leviers : plan finance par l'OPCO pour les formations courtes, CPF co-construit pour les certifications, FNE pour les formations liees aux transitions, et PCRH pour structurer la demarche. Un diagnostic formation avec CARTESA permet d'identifier la combinaison optimale pour votre situation.</p>
+  </div>
+
+  <div class="footer-line"></div>
+  <span class="footer-brand">CARTESA -- Guide RH du Dirigeant de PME</span>
+  <span class="page-number">15</span>
+</div>
+
+<!-- ============================================================ -->
+<!-- CHAPITRE 5 : RECRUTEMENT ET INTEGRATION -->
+<!-- ============================================================ -->
+<div class="page page-break">
+  <div class="chapter-header">
+    <span class="chapter-number">Chapitre 5</span>
+    <h2 class="chapter-title">Le recrutement et l'integration</h2>
+  </div>
+
+  <p>Dans un contexte de tensions persistantes sur le marche de l'emploi -- en 2025, 61 % des PME francaises declaraient rencontrer des difficultes de recrutement selon la BPI -- la capacite a attirer, selectionner et integrer les bons profils constitue un avantage concurrentiel majeur. Pour une PME sans service RH dedie, structurer ces processus est un investissement a tres fort rendement.</p>
+
+  <h3>Rediger une offre d'emploi attractive</h3>
+
+  <p>L'offre d'emploi est le premier point de contact avec vos futurs collaborateurs. Trop d'annonces de PME restent generiques, peu engageantes et juridiquement imprecises. Voici les regles fondamentales :</p>
+
+  <ul>
+    <li><strong>Titre du poste clair et recherche.</strong> Privilegiez les intitules couramment recherches par les candidats sur les jobboards. Evitez les titres fantaisistes (&laquo; Ninja du marketing &raquo;) qui nuisent au referencement.</li>
+    <li><strong>Presentation de l'entreprise en 3-4 lignes.</strong> Ce qui vous distingue, votre secteur, votre taille, votre localisation, votre culture. Soyez authentique : les candidats detectent le &laquo; corporate washing &raquo;.</li>
+    <li><strong>Missions concretes.</strong> 5 a 7 missions cles, formulees avec des verbes d'action. Distinguez les missions principales des missions secondaires.</li>
+    <li><strong>Profil recherche honnete.</strong> Differenciez les competences indispensables des competences souhaitees. Exiger &laquo; 5 ans d'experience &raquo; pour un poste payable au niveau d'un debutant est contre-productif.</li>
+    <li><strong>Remuneration.</strong> Depuis les recommandations de la directive europeenne sur la transparence salariale (transposition prevue d'ici juin 2026), afficher une fourchette de remuneration est fortement recommande. Les annonces mentionnant le salaire recoivent en moyenne <strong>30 % de candidatures en plus</strong>.</li>
+    <li><strong>Mentions legales obligatoires.</strong> L'offre ne doit contenir aucun critere discriminatoire (art. L. 1132-1 du Code du travail). Elle doit etre redigee en francais (art. L. 5331-4) et peut etre bilingue si necessaire.</li>
+  </ul>
+
+  <h3>Structurer un entretien de recrutement</h3>
+
+  <p>Un entretien non structure genere un taux de fiabilite predictive de seulement <strong>14 %</strong>. Un entretien structure (memes questions, meme grille d'evaluation pour tous les candidats) atteint <strong>51 %</strong> de fiabilite (meta-analyse Schmidt & Hunter, actualisee en 2022). La difference est colossale.</p>
+
+  <p>Methode recommandee :</p>
+
+  <ol class="step-list">
+    <li><strong>Definir 5 a 8 competences cles</strong> a evaluer, directement liees a la fiche de poste. Exemple : capacite d'organisation, autonomie, competence technique X, communication ecrite.</li>
+    <li><strong>Preparer 2 questions par competence</strong>, en privilegiant les questions comportementales (methode STAR : Situation, Tache, Action, Resultat). Exemple : &laquo; Decrivez une situation ou vous avez du gerer un delai tres serre. Quelle a ete votre approche ? &raquo;</li>
+    <li><strong>Utiliser une grille de notation</strong> (1 a 5) pour chaque competence. Evaluer immediatement apres l'entretien, jamais en differé, pour eviter les biais de memoire.</li>
+    <li><strong>Impliquer un second evaluateur</strong> quand c'est possible (manager direct, collegue senior) pour croiser les perceptions et limiter les biais cognitifs (effet de halo, biais de confirmation, biais de similarite).</li>
+  </ol>
+
+  <div class="footer-line"></div>
+  <span class="footer-brand">CARTESA -- Guide RH du Dirigeant de PME</span>
+  <span class="page-number">16</span>
+</div>
+
+<div class="page page-break">
+  <h3>Le parcours d'onboarding : les 90 premiers jours</h3>
+
+  <p>22 % des departs en PME interviennent dans les <strong>45 premiers jours</strong> suivant l'embauche (source : etude DARES 2023). Un onboarding structure reduit ce chiffre de moitie. Voici un cadre en trois phases :</p>
+
+  <h4>Phase 1 : Pre-boarding (J-15 a J-1)</h4>
+  <ul>
+    <li>Envoi d'un message de bienvenue personnalise avec les informations pratiques (horaires, parking, dress code, documents a fournir)</li>
+    <li>Preparation du poste de travail (materiel, acccs informatiques, badge)</li>
+    <li>Information de l'equipe sur l'arrivee du nouveau collaborateur et designation d'un parrain/marraine</li>
+    <li>Preparation du dossier administratif (DPAE, contrat de travail, mutuelle, prevoyance)</li>
+  </ul>
+
+  <h4>Phase 2 : Integration (J1 a J30)</h4>
+  <ul>
+    <li><strong>Jour 1 :</strong> accueil par le dirigeant ou le manager, visite des locaux, presentation de l'equipe, remise du livret d'accueil, formation securite</li>
+    <li><strong>Semaine 1 :</strong> decouverte du poste avec le parrain, premiers objectifs simples et atteignables, point quotidien de 15 minutes</li>
+    <li><strong>Semaine 2-4 :</strong> montee en autonomie progressive, entretien de suivi a J15 et J30 avec le manager, recueil du &laquo; rapport d'etonnement &raquo;</li>
+  </ul>
+
+  <h4>Phase 3 : Confirmation (J30 a J90)</h4>
+  <ul>
+    <li>Fixation des objectifs a 3 mois en lien avec la fiche de poste</li>
+    <li>Entretien de mi-periode d'essai (J45-J60) : point franc sur l'adequation mutuelle</li>
+    <li>Entretien de fin de periode d'essai (avant J90 pour un non-cadre, avant J120-J240 pour un cadre selon renouvellement) : decision de confirmation</li>
+    <li>Plan de formation d'integration : competences techniques, outils, processus internes</li>
+  </ul>
+
+  <h3>Le cout d'un recrutement rate</h3>
+
+  <p>Les etudes convergent : un recrutement rate coute entre <strong>20 000 EUR et 200 000 EUR</strong> selon le niveau du poste, le delai avant detection de l'erreur et le cout de remplacement. Pour un poste intermediaire en PME, l'estimation courante est de <strong>6 a 9 mois de salaire brut charge</strong>.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Poste de cout</th>
+        <th>Estimation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Couts directs de recrutement (annonces, cabinet, temps passe)</td>
+        <td>3 000 a 10 000 EUR</td>
+      </tr>
+      <tr>
+        <td>Salaires verses pendant la periode (3-6 mois)</td>
+        <td>10 000 a 30 000 EUR</td>
+      </tr>
+      <tr>
+        <td>Formation et integration</td>
+        <td>2 000 a 5 000 EUR</td>
+      </tr>
+      <tr>
+        <td>Perte de productivite (salarie + manager + equipe)</td>
+        <td>5 000 a 15 000 EUR</td>
+      </tr>
+      <tr>
+        <td>Impact sur le moral de l'equipe</td>
+        <td>Difficilement chiffrable</td>
+      </tr>
+      <tr>
+        <td>Cout du remplacement (nouveau recrutement)</td>
+        <td>3 000 a 10 000 EUR</td>
+      </tr>
+      <tr>
+        <td><strong>Total estime</strong></td>
+        <td><strong>25 000 a 70 000 EUR</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="info-box">
+    <p><strong>Conseil CARTESA :</strong> investir 2 000 a 5 000 EUR dans un processus de recrutement structure (definition du besoin, redaction de l'annonce, grille d'entretien, assessment) est derisoire au regard du cout d'un echec. Nous proposons un accompagnement au recrutement &laquo; a la carte &raquo; adapte aux budgets des PME, de la simple relecture d'annonce a la conduite complete du processus.</p>
+  </div>
+
+  <div class="footer-line"></div>
+  <span class="footer-brand">CARTESA -- Guide RH du Dirigeant de PME</span>
+  <span class="page-number">17</span>
+</div>
+
+<div class="page page-break">
+  <div class="key-figure">
+    <span class="figure">45 000 EUR</span>
+    <span class="figure-label">Cout moyen d'un recrutement rate en PME (poste intermediaire, depart a 6 mois)</span>
+  </div>
+
+  <p>Au-dela du cout financier, un recrutement rate a des consequences humaines souvent sous-estimees : demotivation de l'equipe qui a du compenser, perte de confiance du manager dans sa capacite a recruter, deterioration de l'image employeur aupres des candidats qui echangent entre eux sur les reseaux sociaux.</p>
+
+  <p>La bonne nouvelle : en structurant votre processus, vous reduisez statistiquement le risque d'echec de <strong>50 a 70 %</strong>. Les trois leviers les plus efficaces sont, dans l'ordre : la definition precise du besoin en amont, l'entretien structure, et l'onboarding formalise.</p>
+
+  <div class="footer-line"></div>
+  <span class="footer-brand">CARTESA -- Guide RH du Dirigeant de PME</span>
+  <span class="page-number">18</span>
+</div>
+
+<!-- ============================================================ -->
+<!-- CHAPITRE 6 : FIDELISATION ET QVT -->
+<!-- ============================================================ -->
+<div class="page page-break">
+  <div class="chapter-header">
+    <span class="chapter-number">Chapitre 6</span>
+    <h2 class="chapter-title">La fidelisation et la QVT</h2>
+  </div>
+
+  <p>Recruter coute cher. Perdre un collaborateur performant coute encore plus cher. Dans un marche de l'emploi ou les candidats ont souvent le choix -- particulierement dans les metiers en tension -- la fidelisation des talents est devenue un enjeu strategique de premier plan pour les PME. La bonne nouvelle : les leviers les plus efficaces ne sont pas necessairement les plus couteux.</p>
+
+  <h3>Les leviers de fidelisation : au-dela du salaire</h3>
+
+  <p>L'enquete Randstad Employer Brand 2025 revele que la <strong>remuneration n'est que le 3e critere</strong> de fidelisation en France, derriere l'equilibre vie professionnelle / vie personnelle et l'ambiance de travail. Pour une PME, c'est une opportunite : la proximite humaine, la polyvalence des missions et l'acces direct au dirigeant sont des atouts que les grands groupes ne peuvent pas offrir.</p>
+
+  <div class="two-col">
+    <div class="col-card">
+      <h4>Leviers non financiers</h4>
+      <ul>
+        <li>Flexibilite horaire et teletravail</li>
+        <li>Autonomie et responsabilisation</li>
+        <li>Perspectives d'evolution claires</li>
+        <li>Reconnaissance et feedback regulier</li>
+        <li>Qualite du management de proximite</li>
+        <li>Sens et utilite du travail</li>
+        <li>Ambiance d'equipe</li>
+      </ul>
+    </div>
+    <div class="col-card">
+      <h4>Leviers financiers accessibles</h4>
+      <ul>
+        <li>Prime de partage de la valeur (PPV) : jusqu'a 3 000 EUR exoneres</li>
+        <li>Interessement (possible des 1 salarie)</li>
+        <li>Titres-restaurant</li>
+        <li>Mutuelle competitive</li>
+        <li>Cheques vacances, cheques culture</li>
+        <li>Plan d'epargne entreprise (PEE)</li>
+        <li>Abondement CPF</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Qualite de Vie et Conditions de Travail (QVCT)</h3>
+
+  <p>L'Accord National Interprofessionnel (ANI) du 9 decembre 2020 a fait evoluer la notion de QVT vers la QVCT en integrant explicitement les <strong>conditions de travail</strong> -- et non seulement le bien-etre au travail. Il ne s'agit plus de poser un baby-foot dans la salle de pause, mais de travailler sur le contenu du travail, l'organisation, les relations, l'environnement physique et l'equilibre des temps de vie.</p>
+
+  <p>Les six dimensions de la QVCT selon l'ANACT :</p>
+  <ol>
+    <li><strong>Le contenu du travail :</strong> autonomie, variete des taches, sens, charge de travail</li>
+    <li><strong>La sante au travail :</strong> prevention des risques, ergonomie, suivi medical</li>
+    <li><strong>Les competences et parcours :</strong> formation, evolution, reconnaissance des acquis</li>
+    <li><strong>L'egalite professionnelle :</strong> equite salariale, non-discrimination, diversite</li>
+    <li><strong>Le management participatif :</strong> droit d'expression, implication dans les decisions</li>
+    <li><strong>Les relations de travail et climat social :</strong> dialogue social, convivialite, cohesion</li>
+  </ol>
+
+  <div class="footer-line"></div>
+  <span class="footer-brand">CARTESA -- Guide RH du Dirigeant de PME</span>
+  <span class="page-number">19</span>
+</div>
+
+<div class="page page-break">
+  <h3>Le Document Unique d'Evaluation des Risques Professionnels (DUERP)</h3>
+
+  <p>Obligatoire depuis le decret du 5 novembre 2001 des le premier salarie, le DUERP est trop souvent percu comme une simple formalite administrative. C'est pourtant un outil de management de la sante-securite qui, bien utilise, reduit les accidents du travail, l'absenteisme et les contentieux.</p>
+
+  <p>Le DUERP doit :</p>
+  <ul>
+    <li><strong>Identifier</strong> tous les risques professionnels auxquels sont exposes les salaries (risques physiques, chimiques, biologiques, psychosociaux, lies aux deplacements, au travail sur ecran, etc.)</li>
+    <li><strong>Evaluer</strong> ces risques en termes de gravite et de frequence</li>
+    <li><strong>Hierarchiser</strong> les risques pour definir les priorites d'action</li>
+    <li><strong>Proposer des mesures de prevention</strong> : suppression du risque, substitution, protections collectives, protections individuelles, formation</li>
+  </ul>
+
+  <p>Depuis la loi du 2 aout 2021 pour renforcer la prevention en sante au travail, le DUERP doit integrer un <strong>programme annuel de prevention des risques professionnels et d'amelioration des conditions de travail</strong> (PAPRIPACT) pour les entreprises de 50 salaries et plus. Pour les entreprises de moins de 50 salaries, il doit definir des <strong>actions de prevention et de protection</strong>.</p>
+
+  <div class="warning-box">
+    <div class="box-title">Mise a jour obligatoire</div>
+    <p>Le DUERP doit etre mis a jour <strong>au moins une fois par an</strong> dans les entreprises de 11 salaries et plus, et <strong>a chaque modification importante des conditions de travail</strong> (nouveau procede, nouveau produit chimique, reorganisation, demenagement, evenement ayant revele un risque...). Pour les entreprises de moins de 11 salaries, la mise a jour est requise lors de tout changement significatif.</p>
+  </div>
+
+  <h3>Les Risques Psychosociaux (RPS) : prevention et detection</h3>
+
+  <p>Les RPS (stress, harcelement moral ou sexuel, violences, burn-out, bore-out) constituent le deuxieme motif de consultation en medecine du travail et representent <strong>20 % des arrets maladie de longue duree</strong>. La responsabilite de l'employeur est engagee au titre de son obligation de securite de resultat (art. L. 4121-1 du Code du travail).</p>
+
+  <p>En PME, les signaux d'alerte sont souvent plus visibles qu'en grande entreprise -- encore faut-il savoir les detecter :</p>
+
+  <ul>
+    <li><strong>Signaux individuels :</strong> absenteisme repete, changement de comportement, isolement, irritabilite inhabituelle, erreurs repetees, plaintes somatiques (maux de tete, troubles du sommeil)</li>
+    <li><strong>Signaux collectifs :</strong> augmentation du turnover, degradation du climat social, multiplication des conflits interpersonnels, baisse de la qualite du travail, arrets maladie en cascade</li>
+  </ul>
+
+  <p>La prevention des RPS repose sur trois niveaux d'intervention :</p>
+
+  <ol>
+    <li><strong>Prevention primaire :</strong> agir sur les causes (charge de travail, clarte des roles, soutien managerial, reconnaissance). C'est le niveau le plus efficace mais aussi le plus exigeant car il implique de questionner l'organisation du travail.</li>
+    <li><strong>Prevention secondaire :</strong> former les managers et les salaries a la detection et a la gestion du stress. Mettre en place des procedures d'alerte (referent harcelement, cellule d'ecoute).</li>
+    <li><strong>Prevention tertiaire :</strong> accompagner les salaries en souffrance (cellule psychologique, amenagement de poste, mediation). Ce niveau est necessaire mais insuffisant s'il n'est pas adosse a une prevention primaire serieuse.</li>
+  </ol>
+
+  <div class="info-box">
+    <p><strong>Obligation legale :</strong> depuis la loi du 2 aout 2021, toute entreprise d'au moins 250 salaries doit designer un <strong>referent harcelement sexuel et agissements sexistes</strong> au sein du CSE. En pratique, nous recommandons cette designation des 11 salaries, meme si elle n'est pas juridiquement obligatoire en deca de 250.</p>
+  </div>
+
+  <div class="footer-line"></div>
+  <span class="footer-brand">CARTESA -- Guide RH du Dirigeant de PME</span>
+  <span class="page-number">20</span>
+</div>
+
+<div class="page page-break">
+  <h3>Mesurer la fidelisation : les indicateurs cles</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Indicateur</th>
+        <th>Formule / Source</th>
+        <th>Benchmark PME</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Taux de turnover</td>
+        <td>(Departs volontaires / Effectif moyen) x 100</td>
+        <td>Cible : &lt; 10 %</td>
+      </tr>
+      <tr>
+        <td>Taux d'absenteisme</td>
+        <td>(Jours d'absence / Jours travailles theoriques) x 100</td>
+        <td>Cible : &lt; 4 %</td>
+      </tr>
+      <tr>
+        <td>Anciennete moyenne</td>
+        <td>Somme des anciennetes / Effectif</td>
+        <td>Cible : &gt; 5 ans</td>
+      </tr>
+      <tr>
+        <td>Taux de departs en periode d'essai</td>
+        <td>(Departs PE / Embauches) x 100</td>
+        <td>Cible : &lt; 15 %</td>
+      </tr>
+      <tr>
+        <td>eNPS (Employee Net Promoter Score)</td>
+        <td>Enquete anonyme (1 question)</td>
+        <td>Cible : &gt; 20</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Suivre ces indicateurs trimestriellement permet de detecter les tendances avant qu'elles ne deviennent des crises. Un tableau de bord RH simple, meme sur tableur, est un outil de pilotage indispensable.</p>
+
+  <div class="footer-line"></div>
+  <span class="footer-brand">CARTESA -- Guide RH du Dirigeant de PME</span>
+  <span class="page-number">21</span>
+</div>
+
+<!-- ============================================================ -->
+<!-- CHAPITRE 7 : RSE ACCESSIBLE AUX PME -->
+<!-- ============================================================ -->
+<div class="page page-break">
+  <div class="chapter-header">
+    <span class="chapter-number">Chapitre 7</span>
+    <h2 class="chapter-title">La RSE accessible aux PME</h2>
+  </div>
+
+  <p>La Responsabilite Societale des Entreprises (RSE) est souvent percue par les dirigeants de PME comme un sujet reserve aux grands groupes disposant de departements dedies et de budgets consequents. C'est une idee fausse. La RSE est d'abord une demarche de bon sens qui structure des pratiques que beaucoup de PME appliquent deja sans les formaliser. Et c'est devenu un puissant levier de competitivite : en 2025, <strong>78 % des candidats de moins de 35 ans</strong> declarent prendre en compte les engagements RSE de l'entreprise dans leur choix d'employeur (Barometre Universum 2025).</p>
+
+  <h3>Par ou commencer ?</h3>
+
+  <p>La norme ISO 26000 identifie sept questions centrales de RSE. Pour une PME, l'approche la plus pragmatique consiste a commencer par les piliers les plus proches de son quotidien :</p>
+
+  <ol class="step-list">
+    <li><strong>Realiser un autodiagnostic.</strong> Des outils gratuits existent : le &laquo; Diag RSE &raquo; de BPI France, la &laquo; Plateforme RSE &raquo; de France Strategie, ou les outils proposes par votre CCI. En 30 minutes, vous identifiez vos forces et vos axes de progres.</li>
+    <li><strong>Choisir 3 a 5 actions concretes</strong> en lien avec votre activite, vos valeurs et les attentes de vos parties prenantes. Commencez par ce qui est simple et visible.</li>
+    <li><strong>Impliquer les salaries.</strong> La RSE ne peut pas etre une demarche descendante du dirigeant. Creez un groupe de travail volontaire, organisez un atelier collaboratif (type Fresque du Climat), donnez de la visibilite aux initiatives.</li>
+    <li><strong>Communiquer sobrement.</strong> Valorisez vos actions sans tomber dans le greenwashing. La sincerite et la coherence sont plus payantes qu'une communication sur-prometteuse.</li>
+  </ol>
+
+  <h3>Le pilier social de la RSE : votre terrain naturel</h3>
+
+  <p>En tant que cabinet RH, CARTESA insiste sur le pilier social de la RSE, qui recouvre des sujets ou les PME ont un impact direct et immediat :</p>
+
+  <ul>
+    <li><strong>Egalite professionnelle femmes-hommes :</strong> depuis le 1er mars 2020, l'index egalite (note sur 100) est obligatoire pour les entreprises de 50 salaries et plus. En deca, un diagnostic egalite reste une bonne pratique.</li>
+    <li><strong>Inclusion et diversite :</strong> emploi de travailleurs handicapes (au-dela de l'obligation legale), politique d'embauche inclusive, lutte contre les discriminations a l'embauche.</li>
+    <li><strong>Conditions de travail :</strong> DUERP serieux, prevention des RPS, ergonomie des postes, droit a la deconnexion (art. L. 2242-17 du Code du travail, entreprises de 50+ salaries).</li>
+    <li><strong>Developpement des competences :</strong> plan de formation ambitieux, acces equitable a la formation, accompagnement des transitions professionnelles.</li>
+    <li><strong>Ancrage territorial :</strong> recrutement local, partenariats avec les ecoles et centres de formation du territoire, mecenat de competences.</li>
+  </ul>
+
+  <h3>Outils gratuits disponibles</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Outil</th>
+        <th>Editeur</th>
+        <th>Usage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Diag RSE</td><td>BPI France</td><td>Autodiagnostic en ligne (30 min)</td></tr>
+      <tr><td>Label Lucie / Engage RSE</td><td>AFNOR</td><td>Labellisation RSE (payant mais accompagne)</td></tr>
+      <tr><td>Fresque du Climat</td><td>Association</td><td>Atelier de sensibilisation (3h)</td></tr>
+      <tr><td>Convention des Entreprises pour le Climat</td><td>CEC</td><td>Parcours de transformation (PME-ETI)</td></tr>
+      <tr><td>Impact Score</td><td>Impact France</td><td>Mesure d'impact (gratuit jusqu'a 50 sal.)</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Impact sur la marque employeur</h3>
+
+  <p>La RSE n'est pas de la communication : c'est un <strong>investissement strategique</strong> dont la marque employeur est l'un des retours les plus tangibles. Les entreprises engagees dans une demarche RSE authentique constatent en moyenne un turnover inferieur de 28 % et un volume de candidatures spontanees superieur de 50 % (source : meta-analyse Greenly, 2024). Dans un bassin d'emploi comme le Nord-Isere, ou la concurrence entre employeurs est vive, ces chiffres font la difference.</p>
+
+  <div class="footer-line"></div>
+  <span class="footer-brand">CARTESA -- Guide RH du Dirigeant de PME</span>
+  <span class="page-number">22</span>
+</div>
+
+<div class="page page-break">
+  <div class="info-box">
+    <p><strong>L'experience CARTESA :</strong> nous integrons systematiquement un volet RSE dans nos diagnostics RH. Notre approche pragmatique permet aux PME de lancer leurs premieres actions RSE en moins de 3 mois, sans budget supplementaire significatif, en capitalisant sur les bonnes pratiques deja en place et en les rendant visibles.</p>
+  </div>
+
+  <div class="footer-line"></div>
+  <span class="footer-brand">CARTESA -- Guide RH du Dirigeant de PME</span>
+  <span class="page-number">23</span>
+</div>
+
+<!-- ============================================================ -->
+<!-- CHAPITRE 8 : LES CERTIFICATIONS UTILES -->
+<!-- ============================================================ -->
+<div class="page page-break">
+  <div class="chapter-header">
+    <span class="chapter-number">Chapitre 8</span>
+    <h2 class="chapter-title">Les certifications utiles</h2>
+  </div>
+
+  <h3>Qualiopi : la certification des organismes de formation</h3>
+
+  <p>Depuis le 1er janvier 2022, la certification Qualiopi est <strong>obligatoire</strong> pour tout organisme de formation souhaitant beneficier de fonds publics ou mutualises (OPCO, CPF, France Travail, Regions). Basee sur le Referentiel National Qualite (RNQ), elle evalue 7 criteres et 32 indicateurs couvrant l'ensemble du processus de formation.</p>
+
+  <p>Pour un dirigeant de PME, Qualiopi est un repere important a deux titres :</p>
+  <ul>
+    <li><strong>En tant qu'acheteur de formation :</strong> privilegiez les organismes certifies Qualiopi. C'est la garantie d'un prestataire engage dans une demarche qualite structuree, et c'est la condition pour que votre OPCO finance la formation.</li>
+    <li><strong>En tant qu'organisme formateur :</strong> si votre entreprise dispense des formations en externe (meme occasionnellement), la certification Qualiopi est necessaire pour acceder aux financements publics. Le processus d'obtention prend 6 a 12 mois et l'audit initial coute entre 1 500 et 3 000 EUR selon le perimetre.</li>
+  </ul>
+
+  <div class="info-box">
+    <p><strong>CARTESA est certifie Qualiopi</strong> pour les actions de formation et les bilans de competences. Cette certification atteste de notre engagement qualite et vous garantit l'eligibilite de nos formations a une prise en charge par votre OPCO.</p>
+  </div>
+
+  <h3>CleA et CleA Management</h3>
+
+  <p><strong>CleA</strong> est une certification interprofessionnelle qui atteste la maitrise d'un socle de connaissances et de competences professionnelles dans 7 domaines : communication en francais, calcul et raisonnement mathematique, numerique, travail en equipe, autonomie, capacite d'apprendre, maitrise des gestes et postures. Elle s'adresse aux salaries peu qualifies et constitue une premiere marche vers la qualification.</p>
+
+  <p><strong>CleA Management</strong>, lance en 2023, certifie les competences manageriales de base : pilotage de l'activite, gestion d'equipe, communication manageriale, accompagnement du changement. Elle cible les managers de proximite, souvent promus sans formation manageriale prealable -- un profil tres courant en PME.</p>
+
+  <p>Ces certifications sont financables via le CPF et par les OPCO. Elles sont delivrees par des organismes evaluateurs habilites, independamment des organismes de formation.</p>
+
+  <h3>Comment les certifications renforcent votre offre employeur</h3>
+
+  <p>Proposer a vos collaborateurs d'obtenir une certification reconnue, c'est :</p>
+  <ul>
+    <li>Reconnaitre officiellement leurs competences et leur progression</li>
+    <li>Renforcer leur employabilite, donc leur engagement et leur fidelite</li>
+    <li>Professionnaliser vos pratiques internes (un manager certifie CleA Management est un meilleur manager)</li>
+    <li>Valoriser votre entreprise comme employeur formateur dans vos offres d'emploi et votre communication RH</li>
+  </ul>
+
+  <div class="footer-line"></div>
+  <span class="footer-brand">CARTESA -- Guide RH du Dirigeant de PME</span>
+  <span class="page-number">24</span>
+</div>
+
+<!-- ============================================================ -->
+<!-- CONCLUSION ET RESSOURCES -->
+<!-- ============================================================ -->
+<div class="page page-break">
+  <div class="chapter-header">
+    <span class="chapter-number">Conclusion</span>
+    <h2 class="chapter-title">Conclusion et ressources</h2>
+  </div>
+
+  <p>Gerer les ressources humaines d'une PME sans service RH dedie est un defi quotidien. Ce guide a pour ambition de vous fournir les reperes essentiels pour aborder cette responsabilite avec methode et confiance. La reglementation est exigeante, mais elle est aussi le socle d'une relation de travail equilibree et durable. Les meilleures pratiques RH ne sont pas reservees aux grandes entreprises : elles sont a la portee de toute PME qui decide d'en faire un levier de performance.</p>
+
+  <p>Notre conviction chez CARTESA : <strong>la fonction RH n'est pas un centre de cout, c'est un investissement strategique</strong>. Chaque euro investi dans la structuration de vos pratiques RH genere un retour multiple en reduction du turnover, en productivite, en engagement des equipes et en securite juridique.</p>
+
+  <h3>Checklist des priorites</h3>
+
+  <ul class="checklist">
+    <li>Verifier la conformite de vos obligations par seuil d'effectif (chapitre 1)</li>
+    <li>Mettre en place un calendrier des entretiens professionnels avec systeme d'alerte (chapitre 2)</li>
+    <li>Formaliser votre plan de developpement des competences pour l'annee en cours (chapitre 3)</li>
+    <li>Contacter votre OPCO pour connaitre vos droits a financement (chapitre 4)</li>
+    <li>Verifier votre eligibilite au dispositif PCRH (chapitre 4)</li>
+    <li>Structurer votre processus de recrutement avec une grille d'entretien (chapitre 5)</li>
+    <li>Formaliser un parcours d'onboarding pour vos prochaines embauches (chapitre 5)</li>
+    <li>Mettre a jour votre DUERP (chapitre 6)</li>
+    <li>Realiser un autodiagnostic RSE en ligne (chapitre 7)</li>
+    <li>Explorer les certifications CleA Management pour vos managers (chapitre 8)</li>
+  </ul>
+
+  <div class="conclusion-box">
+    <h3>Contactez CARTESA</h3>
+    <p><strong>Cabinet de conseil et formation RH -- Certifie Qualiopi</strong></p>
+    <p>La Tour-du-Pin, Isere (38)</p>
+    <p>Email : <a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a></p>
+    <p>Site web : <a href="https://cartesa-lyon.com">cartesa-lyon.com</a></p>
+    <p style="margin-top: 15px; font-size: 14px;">Diagnostic RH gratuit de 30 minutes -- Prenez rendez-vous pour identifier vos priorites et les financements mobilisables.</p>
+  </div>
+
+  <h3>Liens et ressources utiles</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Ressource</th>
+        <th>Lien</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>France Competences</td><td>france-competences.fr</td></tr>
+      <tr><td>Mon Compte Formation (CPF)</td><td>moncompteformation.gouv.fr</td></tr>
+      <tr><td>OPCO EP</td><td>opcoep.fr</td></tr>
+      <tr><td>OPCO Atlas</td><td>opco-atlas.fr</td></tr>
+      <tr><td>OPCO 2i</td><td>opco2i.fr</td></tr>
+      <tr><td>Constructys</td><td>constructys.fr</td></tr>
+      <tr><td>AKTO</td><td>akto.fr</td></tr>
+      <tr><td>DREETS Auvergne-Rhone-Alpes (PCRH)</td><td>auvergne-rhone-alpes.dreets.gouv.fr</td></tr>
+      <tr><td>Service-public.fr (droit du travail)</td><td>service-public.fr/professionnels-entreprises</td></tr>
+      <tr><td>ANACT (conditions de travail)</td><td>anact.fr</td></tr>
+      <tr><td>BPI France (Diag RSE)</td><td>bpifrance.fr</td></tr>
+      <tr><td>Certification CleA</td><td>certificat-clea.fr</td></tr>
+    </tbody>
+  </table>
+
+  <div class="footer-line"></div>
+  <span class="footer-brand">CARTESA -- Guide RH du Dirigeant de PME</span>
+  <span class="page-number">25</span>
+</div>
+
+<!-- ============================================================ -->
+<!-- BACK COVER -->
+<!-- ============================================================ -->
+<div class="page cover" style="min-height: 297mm;">
+  <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA" class="cover-logo" style="width: 160px; margin-bottom: 30px;">
+  <p style="font-size: 22px; font-family: 'Sora', sans-serif; font-weight: 700; margin-bottom: 10px; position: relative; z-index: 1;">CARTESA</p>
+  <p style="font-size: 15px; opacity: 0.85; margin-bottom: 30px; position: relative; z-index: 1;">Cabinet de conseil et formation RH -- Certifie Qualiopi</p>
+  <div class="cover-separator" style="margin-bottom: 30px;"></div>
+  <p style="font-size: 14px; opacity: 0.8; position: relative; z-index: 1;">La Tour-du-Pin, Isere (38)</p>
+  <p style="font-size: 14px; opacity: 0.8; position: relative; z-index: 1;">contact@cabinet-cartesa.com</p>
+  <p style="font-size: 14px; opacity: 0.8; position: relative; z-index: 1;">cartesa-lyon.com</p>
+  <p style="font-size: 12px; opacity: 0.5; margin-top: 50px; position: relative; z-index: 1;">Edition 2026 -- Tous droits reserves</p>
+</div>
+
+</body>
+</html>

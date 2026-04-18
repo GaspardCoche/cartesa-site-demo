@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entretien de parcours professionnel | Obligation legale & opportunite | CARTESA</title>
+  <meta name="description" content="L'entretien professionnel est obligatoire tous les 2 ans. Risque : 3000 euros d'abondement par salarie. CARTESA vous aide a transformer cette obligation en outil de fidelisation. Isere, Auvergne-Rhone-Alpes.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://cartesa-lyon.com/entretien-parcours.html">
+  <meta property="og:title" content="Entretien de parcours professionnel | CARTESA">
+  <meta property="og:description" content="L'entretien professionnel est obligatoire. Risque de 3000 euros/salarie. On vous aide a en faire une force.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="CARTESA">
+  <meta property="og:image" content="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="geo.region" content="FR-38">
+  <meta name="geo.placename" content="La Tour-du-Pin">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Entretien de parcours professionnel",
+    "description": "Guide sur l'entretien professionnel obligatoire et l'accompagnement CARTESA",
+    "provider": { "@type": "Organization", "name": "CARTESA", "url": "https://cartesa-lyon.com" }
+  }
+  </script>
+  <style>
+    /* === LAW CARDS — dual panel === */
+    .law-row {
+      display: grid;
+      grid-template-columns: 1fr 40px 1fr;
+      gap: 0;
+      max-width: 900px;
+      margin: 0 auto;
+      align-items: center;
+    }
+    .law-card {
+      padding: 36px 32px;
+      border-radius: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+    .law-card::after {
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      right: -60px;
+      bottom: -60px;
+      pointer-events: none;
+    }
+    .law-card--2ans {
+      background: linear-gradient(145deg, var(--teal-50) 0%, rgba(33,182,200,0.06) 100%);
+      box-shadow: 0 4px 20px rgba(9,41,51,0.06);
+    }
+    .law-card--2ans::after { background: radial-gradient(circle, rgba(33,182,200,0.06) 0%, transparent 70%); }
+    .law-card--6ans {
+      background: linear-gradient(145deg, rgba(240,180,41,0.08) 0%, rgba(236,208,52,0.03) 100%);
+      box-shadow: 0 4px 20px rgba(240,180,41,0.08);
+    }
+    .law-card--6ans::after { background: radial-gradient(circle, rgba(240,180,41,0.05) 0%, transparent 70%); }
+    .law-big {
+      font-family: 'Sora', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 12px;
+      letter-spacing: -0.03em;
+    }
+    .law-card--2ans .law-big { color: var(--teal-600); }
+    .law-card--6ans .law-big { color: var(--gold-500); }
+    .law-card h3 { font-size: 1.05rem; margin-bottom: 10px; }
+    .law-card p { font-size: 0.88rem; color: var(--neutral-600); line-height: 1.65; margin: 0; }
+    .law-connector {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      padding: 0 4px;
+    }
+    .law-connector span {
+      display: block;
+      width: 2px;
+      height: 12px;
+      border-radius: 1px;
+      background: var(--neutral-300);
+    }
+    .law-connector span:nth-child(2) { height: 8px; opacity: 0.5; }
+
+    /* === RISK CARDS — alert strip === */
+    .risk-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      max-width: 1000px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .risk-card {
+      padding: 32px 28px;
+      background: #fff5f5;
+      position: relative;
+      transition: background 0.3s ease;
+    }
+    .risk-card:hover { background: #ffe8e8; }
+    .risk-amount {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #c0392b;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .risk-card h3 { font-size: 1rem; margin-bottom: 8px; color: #7f1d1d; }
+    .risk-card p { font-size: 0.88rem; color: #991b1b; opacity: 0.7; line-height: 1.6; margin: 0; }
+
+    @media (max-width: 960px) {
+      .risk-strip { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .law-row { grid-template-columns: 1fr; gap: 16px; }
+      .law-connector { flex-direction: row; padding: 4px 0; }
+      .law-connector span { width: 12px; height: 2px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA">
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li class="nav-dropdown">
+          <a href="expertises.html">Nos services</a>
+          <ul class="nav-sub">
+            <li><a href="expertises.html">Diagnostic &amp; Expertise RH</a></li>
+            <li><a href="rse-decarbonation.html">RSE &amp; Decarbonation</a></li>
+            <li><a href="rh-transition.html">DRH de transition</a></li>
+            <li><a href="pass-rh.html">Pass RH (abonnements)</a></li>
+          </ul>
+        </li>
+        <li><a href="formations.html">Formations 2026</a></li>
+        <li class="nav-dropdown">
+          <a href="ressourcerie.html" class="active">Ressources</a>
+          <ul class="nav-sub">
+            <li><a href="ressourcerie.html">Ressourcerie</a></li>
+            <li><a href="entretien-parcours.html">Entretien de parcours</a></li>
+            <li><a href="financement.html">Financer avec mon OPCO</a></li>
+          </ul>
+        </li>
+        <li><a href="temoignages.html">Temoignages</a></li>
+        <li><a href="equipe.html">L'equipe</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+  <!-- HERO -->
+  <section class="page-hero page-hero--enhanced">
+    <div class="hero-bg-pattern"></div>
+    <div class="container">
+      <span class="section-label" style="color:rgba(255,255,255,0.5);">Entretien de parcours</span>
+      <h1>L'entretien professionnel, c'est <span style="color: var(--gold-500);">obligatoire</span>. Et c'est une chance.</h1>
+      <p>Tous les 2 ans, chaque salarie doit avoir un entretien professionnel. Tous les 6 ans, un bilan recapitulatif. Si vous ne le faites pas, c'est 3 000 euros d'abondement par salarie. Mais bien fait, c'est un outil de fidelisation en or.</p>
+      <div class="page-hero-stats">
+        <div class="page-hero-stat"><strong>3 000 &euro;</strong><span>risque par salarie</span></div>
+        <div class="page-hero-stat"><strong>2 ans</strong><span>frequence obligatoire</span></div>
+        <div class="page-hero-stat"><strong>100%</strong><span>financable OPCO</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CE QUE DIT LA LOI -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Ce que dit la loi</span>
+        <h2 class="section-title">L'entretien professionnel, mode d'emploi</h2>
+      </div>
+      <div class="law-row reveal-stagger">
+        <div class="law-card law-card--2ans">
+          <div class="law-big">2 ans</div>
+          <h3>Entretien professionnel</h3>
+          <p>Obligatoire depuis la loi du 5 mars 2014. Chaque salarie doit beneficier d'un entretien professionnel consacre a ses perspectives d'evolution. Ce n'est pas un entretien d'evaluation : on parle parcours, pas performance.</p>
+        </div>
+        <div class="law-connector">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="law-card law-card--6ans">
+          <div class="law-big">6 ans</div>
+          <h3>Bilan recapitulatif</h3>
+          <p>Tous les 6 ans, un etat des lieux recapitulatif verifie que le salarie a bien eu ses entretiens et au moins une action de formation, une progression salariale ou une evolution professionnelle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LES RISQUES -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Les risques</span>
+        <h2 class="section-title">Ne pas le faire, ca coute cher</h2>
+      </div>
+      <div class="risk-strip reveal-stagger">
+        <div class="risk-card">
+          <div class="risk-amount">3 000 &euro;</div>
+          <h3>Par salarie concerne</h3>
+          <p>Pour les entreprises de 50+ salaries, le non-respect du bilan a 6 ans entraine un abondement correctif de 3 000 &euro; sur le CPF de chaque salarie concerne. Pour 100 salaries, ca fait 300 000 &euro;.</p>
+        </div>
+        <div class="risk-card">
+          <div class="risk-amount">Prud'hommes</div>
+          <h3>Risque contentieux</h3>
+          <p>Un salarie qui n'a jamais eu d'entretien pro peut invoquer un manquement a l'obligation de formation. En cas de licenciement, ca joue contre vous.</p>
+        </div>
+        <div class="risk-card">
+          <div class="risk-amount">Turnover</div>
+          <h3>Desengagement silencieux</h3>
+          <p>Un salarie qui ne voit pas de perspectives d'evolution finit par partir. L'entretien pro bien mene est un outil de retention puissant -- et gratuit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMENT CARTESA AIDE -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Notre accompagnement</span>
+        <h2 class="section-title">On vous aide a transformer l'obligation en opportunite</h2>
+      </div>
+      <div class="method-timeline reveal">
+        <div class="method-step">
+          <div class="method-step-number">1</div>
+          <div class="method-step-content">
+            <h3>Audit de vos pratiques</h3>
+            <p>On fait le point : combien de salaries concernes, quels entretiens ont ete faits, quels bilans arrivent a echeance. En general, ca prend une demi-journee.</p>
+          </div>
+        </div>
+        <div class="method-step">
+          <div class="method-step-number">2</div>
+          <div class="method-step-content">
+            <h3>Formation de vos managers</h3>
+            <p>On forme vos managers a mener des entretiens professionnels qui ont du sens. Pas un formulaire a remplir, un vrai echange sur le parcours. Formation Qualiopi, financable OPCO.</p>
+          </div>
+        </div>
+        <div class="method-step">
+          <div class="method-step-number">3</div>
+          <div class="method-step-content">
+            <h3>Outils et templates</h3>
+            <p>On vous fournit les trames d'entretien, les grilles de suivi, les modeles de compte-rendu. Tout ce qu'il faut pour etre en conformite sans y passer des nuits.</p>
+          </div>
+        </div>
+        <div class="method-step">
+          <div class="method-step-number">4</div>
+          <div class="method-step-content">
+            <h3>Suivi et bilan a 6 ans</h3>
+            <p>On vous accompagne sur le bilan recapitulatif. On verifie que les 3 criteres sont remplis. Et si ca coince, on trouve des solutions avant la sanction.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIFICITES AURA -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">En Auvergne-Rhone-Alpes</span>
+        <h2 class="section-title">Ce qu'il faut savoir localement</h2>
+      </div>
+      <div class="grid-2 reveal-stagger" style="gap:24px; max-width:900px; margin:0 auto;">
+        <div class="card" style="padding:24px;">
+          <h3 style="font-size:1rem; margin-bottom:8px;">OPCO et financement</h3>
+          <p style="font-size:0.9rem;">En AuRA, les OPCO les plus presents sont OPCO2i (industrie), Constructys (BTP), OPCO EP (proximite), L'Opcommerce (commerce). Tous financent la formation a la conduite d'entretiens professionnels via le plan de developpement des competences ou le PCRH.</p>
+        </div>
+        <div class="card" style="padding:24px;">
+          <h3 style="font-size:1rem; margin-bottom:8px;">DREETS et controles</h3>
+          <p style="font-size:0.9rem;">La DREETS Auvergne-Rhone-Alpes renforce les controles sur les obligations en matiere d'entretiens professionnels, notamment dans l'industrie et le BTP. Mieux vaut anticiper que subir un controle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Questions frequentes</span>
+        <h2 class="section-title">Entretien de parcours : vos questions</h2>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq-item">
+          <summary>L'entretien professionnel est-il obligatoire pour les TPE ?</summary>
+          <p>Oui, l'obligation s'applique a toutes les entreprises, quelle que soit la taille. Seule la sanction financiere (abondement CPF de 3 000 &euro;) ne s'applique qu'aux entreprises de 50 salaries et plus. Mais le risque prud'homal existe pour tous.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Quelle difference entre entretien professionnel et entretien annuel ?</summary>
+          <p>L'entretien annuel porte sur la performance et les objectifs. L'entretien professionnel porte sur les perspectives d'evolution, les souhaits de formation et le parcours. Ce sont deux exercices distincts, et ils ne doivent pas etre confondus (meme si en pratique, beaucoup d'entreprises les fusionnent a tort).</p>
+        </details>
+        <details class="faq-item">
+          <summary>Mon OPCO peut-il financer la mise en conformite ?</summary>
+          <p>Oui. La formation de vos managers aux entretiens professionnels est eligible au plan de developpement des competences et au PCRH. CARTESA est certifie Qualiopi et habilite PCRH. Le financement est souvent a 100%.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Que se passe-t-il si je n'ai jamais fait d'entretien professionnel ?</summary>
+          <p>Il n'est jamais trop tard pour se mettre en conformite. On commence par un etat des lieux, on priorise les situations les plus a risque (bilans a 6 ans en approche), et on met en place un calendrier realiste. L'objectif, c'est d'avancer, pas de paniquer.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--teal" style="padding:56px 0;">
+    <div class="container" style="text-align:center;">
+      <h2 class="reveal" style="margin-bottom:12px;">Vos entretiens pro sont-ils a jour ?</h2>
+      <p class="reveal" style="color:rgba(255,255,255,0.65); max-width:520px; margin:0 auto 28px; font-size:1rem;">On fait le point en 30 minutes. Gratuit, sans engagement, et sans jugement si vous etes en retard. Tout le monde l'est un peu.</p>
+      <a href="contact.html" class="btn btn--accent btn--lg reveal">Faire le point</a>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA">
+          <p>Cabinet de conseil et organisme de formation certifie Qualiopi. Accompagnement des entreprises depuis 2003.</p>
+          <div class="footer-qualiopi">
+            <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi">
+            <span>Certifie Qualiopi au titre des actions de formation</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="formations.html">Formations 2026</a></li>
+            <li><a href="temoignages.html">Temoignages</a></li>
+            <li><a href="equipe.html">L'equipe</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="expertises.html">Diagnostic &amp; Expertise RH</a></li>
+            <li><a href="rse-decarbonation.html">RSE &amp; Decarbonation</a></li>
+            <li><a href="rh-transition.html">DRH de transition</a></li>
+            <li><a href="pass-rh.html">Pass RH</a></li>
+            <li><a href="ressourcerie.html">Ressourcerie</a></li>
+            <li><a href="financement.html">Financement OPCO</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" transform="scale(0.7)"/><circle cx="8.4" cy="7" r="2.1"/></svg>
+            <span>36 avenue Alsace Lorraine<br>38110 La Tour-du-Pin</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="M1.5 3.5l6.5 5 6.5-5"/></svg>
+            <a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 CARTESA. Tous droits reserves.</span>
+        <span>Competences, Entreprises & Territoires</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 10);
+    });
+    var revealObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('revealed'); revealObs.unobserve(entry.target); }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-stagger').forEach(function(el) { revealObs.observe(el); });
+  </script>
+
+</body>
+</html>

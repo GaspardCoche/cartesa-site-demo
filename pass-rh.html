@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nos abonnements RH, Management & RSE | CARTESA Isere</title>
+  <meta name="description" content="3 abonnements d'accompagnement RH, management et RSE pour PME. Conseil, coaching, formation et codeveloppement. A partir de 790 EUR/mois. Cabinet certifie Qualiopi en Isere.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://cartesa-lyon.com/pass-rh.html">
+  <meta property="og:title" content="Nos abonnements RH, Management & RSE | CARTESA">
+  <meta property="og:description" content="Respiration, Elan, Alliance : 3 niveaux d'accompagnement combinant conseil RH, coaching, formation et codeveloppement. Des 790 EUR/mois.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="CARTESA">
+  <meta property="og:image" content="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Abonnements d'accompagnement CARTESA",
+    "provider": { "@type": "Organization", "name": "CARTESA", "url": "https://cartesa-lyon.com" },
+    "description": "3 niveaux d'accompagnement RH, management et RSE combinant conseil, coaching, formation et codeveloppement.",
+    "offers": [
+      { "@type": "Offer", "name": "Respiration", "price": "790", "priceCurrency": "EUR", "unitText": "mois" },
+      { "@type": "Offer", "name": "Elan", "price": "1490", "priceCurrency": "EUR", "unitText": "mois" },
+      { "@type": "Offer", "name": "Alliance", "price": "2890", "priceCurrency": "EUR", "unitText": "mois" }
+    ]
+  }
+  </script>
+  <style>
+    /* === PRICING === */
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; max-width: 1100px; margin: 0 auto; align-items: stretch; }
+
+    .plan { padding: 44px 32px 36px; display: flex; flex-direction: column; position: relative; overflow: hidden; transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s cubic-bezier(0.22,1,0.36,1); }
+    .plan::after { content: ''; position: absolute; width: 320px; height: 320px; border-radius: 50%; right: -120px; top: -120px; pointer-events: none; transition: opacity 0.5s ease; }
+    .plan:hover { transform: translateY(-3px); }
+
+    /* Respiration — light, airy */
+    .plan--respiration { background: var(--white); border: 1px solid rgba(9,41,51,0.06); border-radius: 20px 0 0 20px; box-shadow: 0 4px 24px rgba(9,41,51,0.04); }
+    .plan--respiration::after { background: radial-gradient(circle, rgba(33,182,200,0.06) 0%, transparent 70%); }
+    .plan--respiration:hover { box-shadow: 0 12px 40px rgba(9,41,51,0.1); }
+
+    /* Elan — bold, teal gradient, elevated */
+    .plan--elan { background: linear-gradient(160deg, #007cba 0%, #005a8c 60%, #004d7a 100%); color: var(--white); z-index: 2; box-shadow: 0 20px 56px rgba(0,93,148,0.35); border-radius: 20px; margin: -12px -2px; padding: 56px 36px 44px; }
+    .plan--elan::after { background: radial-gradient(circle, rgba(236,208,52,0.08) 0%, transparent 65%); }
+    .plan--elan:hover { box-shadow: 0 28px 72px rgba(0,93,148,0.4); transform: translateY(-5px); }
+
+    /* Alliance — premium, dark, gold */
+    .plan--alliance { background: linear-gradient(160deg, #092933 0%, #071e28 100%); color: rgba(255,255,255,0.85); border-radius: 0 20px 20px 0; box-shadow: 0 4px 24px rgba(9,41,51,0.15); }
+    .plan--alliance::after { background: radial-gradient(circle, rgba(236,208,52,0.04) 0%, transparent 70%); }
+    .plan--alliance:hover { box-shadow: 0 12px 40px rgba(9,41,51,0.25); }
+
+    .plan-level { display: inline-block; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; margin-bottom: 12px; }
+    .plan--respiration .plan-level { color: var(--teal-500); }
+    .plan--elan .plan-level { color: var(--gold-400); }
+    .plan--alliance .plan-level { color: var(--gold-500); opacity: 0.7; }
+
+    .plan-name { font-family: 'Sora', sans-serif; font-size: 1.7rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 2px; }
+    .plan--respiration .plan-name { color: var(--teal-900); }
+    .plan--elan .plan-name { color: var(--white); }
+    .plan--alliance .plan-name { color: var(--white); }
+
+    .plan-subtitle { font-size: 0.82rem; margin-bottom: 24px; }
+    .plan--respiration .plan-subtitle { color: var(--neutral-500); }
+    .plan--elan .plan-subtitle { color: rgba(255,255,255,0.55); }
+    .plan--alliance .plan-subtitle { color: rgba(255,255,255,0.4); }
+
+    .plan-price { display: flex; align-items: baseline; gap: 4px; margin-bottom: 4px; position: relative; z-index: 1; }
+    .plan-amount { font-family: 'Sora', sans-serif; font-size: 3.4rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1; }
+    .plan--respiration .plan-amount { color: var(--teal-900); }
+    .plan--elan .plan-amount { color: var(--gold-400); }
+    .plan--alliance .plan-amount { color: var(--gold-500); }
+    .plan-currency { font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 600; }
+    .plan-currency small { display: block; font-size: 0.65rem; font-weight: 400; opacity: 0.5; margin-top: 2px; }
+    .plan--respiration .plan-currency { color: var(--neutral-500); }
+    .plan--elan .plan-currency { color: rgba(255,255,255,0.5); }
+    .plan--alliance .plan-currency { color: var(--gold-500); opacity: 0.6; }
+
+    .plan-tagline { font-size: 0.78rem; font-style: italic; margin-bottom: 24px; line-height: 1.5; }
+    .plan--respiration .plan-tagline { color: var(--neutral-400); }
+    .plan--elan .plan-tagline { color: rgba(255,255,255,0.45); }
+    .plan--alliance .plan-tagline { color: rgba(255,255,255,0.35); }
+
+    .plan-format { font-size: 0.72rem; padding: 10px 16px; border-radius: 10px; margin-bottom: 24px; font-weight: 500; letter-spacing: 0.02em; }
+    .plan--respiration .plan-format { background: var(--teal-50); color: var(--teal-700); }
+    .plan--elan .plan-format { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6); }
+    .plan--alliance .plan-format { background: rgba(236,208,52,0.06); color: var(--gold-400); opacity: 0.8; }
+
+    .plan-features { list-style: none; padding: 0; margin: 0 0 32px; flex: 1; }
+    .plan-features li { position: relative; padding: 9px 0 9px 18px; font-size: 0.86rem; line-height: 1.5; }
+    .plan-features li::before { content: ''; position: absolute; left: 0; top: 16px; width: 6px; height: 6px; border-radius: 50%; }
+    .plan--respiration .plan-features li::before { background: var(--teal-500); }
+    .plan--respiration .plan-features li { border-bottom: 1px solid var(--neutral-100); color: var(--neutral-700); }
+    .plan--elan .plan-features li::before { background: var(--gold-400); }
+    .plan--elan .plan-features li { border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .plan--alliance .plan-features li::before { background: var(--gold-500); }
+    .plan--alliance .plan-features li { border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .plan-features li:last-child { border-bottom: none; }
+
+    .plan-cta { display: block; text-align: center; padding: 14px 24px; border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 0.88rem; font-weight: 600; text-decoration: none; transition: all 0.3s cubic-bezier(0.22,1,0.36,1); letter-spacing: 0.01em; }
+    .plan--respiration .plan-cta { background: transparent; color: var(--teal-600); border: 2px solid var(--teal-500); }
+    .plan--respiration .plan-cta:hover { background: var(--teal-600); color: var(--white); border-color: var(--teal-600); }
+    .plan--elan .plan-cta { background: var(--gold-400); color: var(--teal-900); border: 2px solid var(--gold-400); }
+    .plan--elan .plan-cta:hover { background: var(--gold-600); border-color: var(--gold-600); }
+    .plan--alliance .plan-cta { background: transparent; color: var(--gold-400); border: 2px solid rgba(236,208,52,0.4); }
+    .plan--alliance .plan-cta:hover { background: var(--gold-400); color: var(--teal-900); border-color: var(--gold-400); }
+
+    .plan-ribbon { position: absolute; top: 24px; right: -28px; background: var(--gold-400); color: var(--teal-900); font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; padding: 6px 36px; transform: rotate(45deg); z-index: 3; }
+
+    /* === 4 EN 1 — horizontal strip layout === */
+    .quatre-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; max-width: 1000px; margin: 0 auto; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(9,41,51,0.06); }
+    .quatre-item { padding: 32px 24px; text-align: center; position: relative; transition: background 0.3s ease; }
+    .quatre-item:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 20%; height: 60%; width: 1px; background: var(--neutral-200); }
+    .quatre-item:hover { background: var(--teal-50); }
+    .quatre-num { font-family: 'Sora', sans-serif; font-size: 2.4rem; font-weight: 800; line-height: 1; margin-bottom: 8px; }
+    .quatre-item:nth-child(1) .quatre-num { color: var(--teal-600); }
+    .quatre-item:nth-child(2) .quatre-num { color: var(--gold-600); }
+    .quatre-item:nth-child(3) .quatre-num { color: #2e7d32; }
+    .quatre-item:nth-child(4) .quatre-num { color: #7b1fa2; }
+    .quatre-item h3 { font-size: 0.95rem; margin-bottom: 6px; }
+    .quatre-item p { font-size: 0.8rem; color: var(--neutral-500); line-height: 1.55; }
+
+    /* === TARGET CARDS === */
+    .target-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; max-width: 1080px; margin: 48px auto 0; background: var(--teal-50); border-radius: 14px; overflow: hidden; }
+    .target-item { padding: 24px 28px; text-align: center; position: relative; }
+    .target-item:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 20%; height: 60%; width: 1px; background: rgba(0,124,186,0.12); }
+    .target-name { font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 700; margin-bottom: 6px; color: var(--teal-700); }
+    .target-item p { font-size: 0.78rem; color: var(--neutral-500); line-height: 1.5; }
+
+    /* === OPTIONS === */
+    .options-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 800px; margin: 0 auto; }
+    .option-item { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-radius: 10px; font-size: 0.86rem; color: var(--neutral-700); transition: background 0.2s ease; }
+    .option-item:hover { background: var(--teal-50); }
+    .option-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold-500); flex-shrink: 0; }
+
+    /* === DIFF SECTION === */
+    .diff-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; max-width: 900px; margin: 0 auto; border-radius: 16px; overflow: hidden; }
+    .diff-card { padding: 32px; background: rgba(255,255,255,0.06); transition: background 0.3s ease; }
+    .diff-card:hover { background: rgba(255,255,255,0.1); }
+    .diff-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+    .diff-card p { font-size: 0.86rem; color: rgba(255,255,255,0.55); line-height: 1.65; }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 960px) {
+      .pricing-grid { grid-template-columns: 1fr; max-width: 440px; gap: 16px; }
+      .plan { border-radius: 20px !important; margin: 0 !important; padding: 40px 28px 32px !important; }
+      .plan--elan { padding: 40px 28px 32px !important; }
+      .quatre-strip { grid-template-columns: repeat(2, 1fr); }
+      .quatre-item:nth-child(2)::after { display: none; }
+      .quatre-item:nth-child(1), .quatre-item:nth-child(2) { border-bottom: 1px solid var(--neutral-200); }
+      .target-strip { grid-template-columns: 1fr; }
+      .target-item:not(:last-child)::after { display: none; width: 60%; height: 1px; bottom: 0; top: auto; left: 20%; right: auto; }
+      .target-item:not(:last-child) { border-bottom: 1px solid rgba(0,124,186,0.08); }
+      .diff-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .quatre-strip { grid-template-columns: 1fr; }
+      .quatre-item::after { display: none !important; }
+      .quatre-item { border-bottom: 1px solid var(--neutral-200); }
+      .quatre-item:last-child { border-bottom: none; }
+      .options-grid { grid-template-columns: 1fr; }
+      .plan-amount { font-size: 2.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA">
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li class="nav-dropdown">
+          <a href="expertises.html" class="active">Nos services</a>
+          <ul class="nav-sub">
+            <li><a href="expertises.html">Diagnostic &amp; Expertise RH</a></li>
+            <li><a href="rse-decarbonation.html">RSE &amp; Decarbonation</a></li>
+            <li><a href="rh-transition.html">DRH de transition</a></li>
+            <li><a href="pass-rh.html">Pass RH (abonnements)</a></li>
+          </ul>
+        </li>
+        <li><a href="formations.html">Formations 2026</a></li>
+        <li class="nav-dropdown">
+          <a href="ressourcerie.html">Ressources</a>
+          <ul class="nav-sub">
+            <li><a href="ressourcerie.html">Ressourcerie</a></li>
+            <li><a href="entretien-parcours.html">Entretien de parcours</a></li>
+            <li><a href="financement.html">Financer avec mon OPCO</a></li>
+          </ul>
+        </li>
+        <li><a href="temoignages.html">Temoignages</a></li>
+        <li><a href="equipe.html">L'equipe</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+  <!-- HERO -->
+  <section class="page-hero page-hero--enhanced">
+    <div class="hero-bg-pattern"></div>
+    <div class="container">
+      <span class="section-label" style="color:rgba(255,255,255,0.5);">Nos abonnements</span>
+      <h1>Soutenir, faire progresser, <span style="color: var(--gold-500);">piloter.</span></h1>
+      <p>Parce que les enjeux humains ne se traitent ni dans l'urgence permanente, ni au coup par coup, nous proposons des abonnements qui combinent conseil RH, coaching, formation et codeveloppement. Une logique simple : accompagner dans la duree.</p>
+      <div class="page-hero-stats">
+        <div class="page-hero-stat"><strong>790 &euro;</strong><span>a partir de /mois</span></div>
+        <div class="page-hero-stat"><strong>3</strong><span>niveaux</span></div>
+        <div class="page-hero-stat"><strong>4 en 1</strong><span>conseil + coaching + formation + codev</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POURQUOI UN ABONNEMENT -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Pourquoi un abonnement</span>
+        <h2 class="section-title">Les enjeux humains meritent de la continuite</h2>
+        <p class="section-subtitle">Un coaching ponctuel, c'est bien. Un partenaire qui connait votre contexte et vous accompagne dans la duree, c'est mieux.</p>
+      </div>
+      <div class="quatre-strip reveal-stagger" style="max-width:1000px; margin:0 auto; grid-template-columns:repeat(3,1fr);">
+        <div class="quatre-item" style="border-bottom:none;">
+          <div class="quatre-num" style="font-size:1.8rem;">01</div>
+          <h3 style="font-size:0.95rem; margin-bottom:6px;">Anticiper plutot que subir</h3>
+          <p style="font-size:0.84rem;">Les sujets RH et managerieux traites dans l'urgence coutent cher. Un rythme regulier permet d'anticiper, d'ajuster et d'eviter les crises.</p>
+        </div>
+        <div class="quatre-item" style="flex:1; border-bottom:none;">
+          <div class="quatre-num" style="font-size:1.8rem;">02</div>
+          <h3 style="font-size:0.95rem; margin-bottom:6px;">Un interlocuteur qui connait votre contexte</h3>
+          <p style="font-size:0.84rem;">Pas besoin de re-expliquer votre situation a chaque fois. Votre consultant connait vos equipes, vos enjeux, votre culture.</p>
+        </div>
+        <div class="quatre-item" style="flex:1; border-bottom:none;">
+          <div class="quatre-num" style="font-size:1.8rem;">03</div>
+          <h3 style="font-size:0.95rem; margin-bottom:6px;">Faire progresser, pas juste eteindre les feux</h3>
+          <p style="font-size:0.84rem;">L'abonnement cree un rythme. Il permet de developper les pratiques manageriales, de structurer les RH et d'ancrer les evolutions durablement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROCHE 4 EN 1 -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Notre approche</span>
+        <h2 class="section-title">4 dimensions, 1 interlocuteur</h2>
+        <p class="section-subtitle">Nous ne separons pas artificiellement les sujets. Selon vos besoins, nous articulons ces 4 leviers dans chaque abonnement.</p>
+      </div>
+      <div class="quatre-strip reveal-stagger">
+        <div class="quatre-item">
+          <div class="quatre-num">01</div>
+          <h3>Conseil RH</h3>
+          <p>Structurer, decider, securiser. Appui sur l'organisation, les competences, le droit social, les recrutements.</p>
+        </div>
+        <div class="quatre-item">
+          <div class="quatre-num">02</div>
+          <h3>Coaching</h3>
+          <p>Faire evoluer les postures. Accompagnement individuel de dirigeants et managers sur leurs enjeux concrets.</p>
+        </div>
+        <div class="quatre-item">
+          <div class="quatre-num">03</div>
+          <h3>Formation</h3>
+          <p>Developper les competences. Ateliers et modules sur-mesure, ancres dans vos situations reelles. Certifie Qualiopi.</p>
+        </div>
+        <div class="quatre-item">
+          <div class="quatre-num">04</div>
+          <h3>Codeveloppement</h3>
+          <p>Renforcer l'intelligence collective. Seances de partage et de co-construction entre pairs, animees par un facilitateur.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section section--white" id="formules">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Nos formules</span>
+        <h2 class="section-title">3 niveaux, une meme exigence</h2>
+        <p class="section-subtitle">Chaque formule s'adapte a la realite de votre structure, a sa taille, a ses enjeux et a son actualite.</p>
+      </div>
+      <div class="pricing-grid reveal">
+
+        <!-- RESPIRATION -->
+        <div class="plan plan--respiration">
+          <div class="plan-level">Niveau 1</div>
+          <div class="plan-name">Respiration</div>
+          <div class="plan-subtitle">Sessions flash</div>
+          <div class="plan-price">
+            <span class="plan-amount">790</span>
+            <span class="plan-currency">&euro; <small>HT/mois</small></span>
+          </div>
+          <div class="plan-tagline">Prendre du recul. Retrouver de la clarte. Securiser l'essentiel.</div>
+          <div class="plan-format">~3h/mois &middot; 1 intervention/mois &middot; engagement 6 mois</div>
+          <ul class="plan-features">
+            <li>Point mensuel d'appui RH et managerial</li>
+            <li>Coaching flash sur problematique immediate</li>
+            <li>Capsule formation sur besoin cible</li>
+            <li>Seance codev / prise de recul ponctuelle</li>
+            <li>Relecture documents, aide a la decision</li>
+          </ul>
+          <a href="contact.html" class="plan-cta">Choisir Respiration</a>
+        </div>
+
+        <!-- ÉLAN -->
+        <div class="plan plan--elan">
+          <div class="plan-ribbon">Populaire</div>
+          <div class="plan-level">Niveau 2</div>
+          <div class="plan-name">Elan</div>
+          <div class="plan-subtitle">Sessions de progression</div>
+          <div class="plan-price">
+            <span class="plan-amount">1 490</span>
+            <span class="plan-currency">&euro; <small>HT/mois</small></span>
+          </div>
+          <div class="plan-tagline">Faire progresser les pratiques. Developper les personnes. Renforcer les equipes.</div>
+          <div class="plan-format">~6h/mois &middot; 2 interventions/mois &middot; engagement 6-12 mois</div>
+          <ul class="plan-features">
+            <li><strong>Pilotage mensuel RH</strong> : organisation, competences, recrutement</li>
+            <li><strong>Coaching individuel</strong> d'un manager ou dirigeant</li>
+            <li>Ateliers formation sur-mesure</li>
+            <li>Codeveloppement regulier entre pairs</li>
+            <li><strong>1 demi-journee collective</strong> par trimestre</li>
+            <li>Montee en competence progressive des managers</li>
+          </ul>
+          <a href="contact.html" class="plan-cta">Choisir Elan</a>
+        </div>
+
+        <!-- ALLIANCE -->
+        <div class="plan plan--alliance">
+          <div class="plan-level">Niveau 3</div>
+          <div class="plan-name">Alliance</div>
+          <div class="plan-subtitle">Sessions de pilotage</div>
+          <div class="plan-price">
+            <span class="plan-amount">2 890</span>
+            <span class="plan-currency">&euro; <small>HT/mois</small></span>
+          </div>
+          <div class="plan-tagline">Piloter dans la duree. Structurer les dynamiques. Accompagner la transformation.</div>
+          <div class="plan-format">10-12h/mois &middot; pilotage mensuel + interventions &middot; engagement 12 mois</div>
+          <ul class="plan-features">
+            <li><strong>Comite de pilotage mensuel</strong> et suivi priorites RH</li>
+            <li><strong>Coaching dirigeants et managers cles</strong></li>
+            <li>Journees formation sur-mesure</li>
+            <li>Codeveloppement avec capitalisation</li>
+            <li>Accompagnement sujets sensibles et aide a la decision</li>
+            <li><strong>1 journee collective</strong> par trimestre</li>
+            <li><strong>Lecture globale</strong> des enjeux humains et organisationnels</li>
+          </ul>
+          <a href="contact.html" class="plan-cta">Choisir Alliance</a>
+        </div>
+
+      </div>
+
+      <!-- A QUI S'ADRESSE CHAQUE FORMULE -->
+      <div class="target-strip reveal">
+        <div class="target-item">
+          <div class="target-name">Respiration, c'est pour vous si...</div>
+          <p>Vous etes dirigeant ou manager d'une TPE/PME et vous avez besoin d'un appui regulier, reactif et concret, sans engager un dispositif lourd.</p>
+        </div>
+        <div class="target-item">
+          <div class="target-name">Elan, c'est pour vous si...</div>
+          <p>Vous voulez aller au-dela du traitement ponctuel et mettre en place un accompagnement regulier pour faire progresser managers et equipes.</p>
+        </div>
+        <div class="target-item">
+          <div class="target-name">Alliance, c'est pour vous si...</div>
+          <p>Vous souhaitez un partenaire strategique capable d'accompagner vos enjeux RH, managerieux et collectifs dans la duree.</p>
+        </div>
+      </div>
+
+      <!-- COMPARAISON CDI -->
+      <div class="card reveal" style="max-width:700px; margin:40px auto 0; padding:28px; text-align:center; background:var(--white); border:2px solid var(--teal-100);">
+        <h3 style="margin-bottom:12px;">Combien coute un RRH interne en comparaison ?</h3>
+        <p>Un RRH salarie en PME coute <strong>40 000 a 55 000 &euro; brut/an</strong>, soit <strong>4 500 a 6 500 &euro;/mois charges</strong> (salaire + patronales + mutuelle + prevoyance). Et il ne fait ni coaching, ni formation, ni codeveloppement.</p>
+        <p style="margin-top:12px;">L'abonnement <strong>Elan a 1 490 &euro;/mois</strong> = un appui senior, certifie Qualiopi, qui combine 4 dimensions d'accompagnement, sans les couts fixes d'un CDI.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CE QUI FAIT LA DIFFÉRENCE -->
+  <section class="section section--teal">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Ce qui fait la difference</span>
+        <h2 class="section-title">Pas juste un prestataire. Un partenaire.</h2>
+      </div>
+      <div class="diff-grid reveal-stagger">
+        <div class="diff-card">
+          <h3>Une logique de continuite</h3>
+          <p>L'abonnement cree un rythme. Il permet d'anticiper, d'ajuster et d'ancrer les evolutions dans la duree. Pas de relation jetable.</p>
+        </div>
+        <div class="diff-card">
+          <h3>Une reponse sur-mesure</h3>
+          <p>Chaque formule s'adapte a votre realite : votre taille, vos enjeux, votre actualite. Pas de catalogue figé, pas de process standardise.</p>
+        </div>
+        <div class="diff-card">
+          <h3>Un accompagnement concret</h3>
+          <p>Notre approche est pragmatique, operationnelle, directement reliee aux situations reelles de vos dirigeants, managers et equipes.</p>
+        </div>
+        <div class="diff-card">
+          <h3>4 leviers, 1 interlocuteur</h3>
+          <p>Conseil, coaching, formation, codeveloppement : pas besoin de coordonner 4 prestataires. Nous articulons ces dimensions selon vos besoins.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTIONS COMPLÉMENTAIRES -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Aller plus loin</span>
+        <h2 class="section-title">Options complementaires</h2>
+        <p class="section-subtitle">Chaque abonnement peut etre enrichi selon vos besoins ponctuels.</p>
+      </div>
+      <div class="options-grid reveal-stagger">
+        <div class="option-item"><span class="option-dot"></span> Journee de formation supplementaire</div>
+        <div class="option-item"><span class="option-dot"></span> Seance de coaching additionnelle</div>
+        <div class="option-item"><span class="option-dot"></span> Diagnostic RH flash</div>
+        <div class="option-item"><span class="option-dot"></span> Mediation ou regulation d'equipe</div>
+        <div class="option-item"><span class="option-dot"></span> Seminaire d'equipe ou de managers</div>
+        <div class="option-item"><span class="option-dot"></span> Accompagnement recrutement</div>
+        <div class="option-item"><span class="option-dot"></span> Co-construction d'outils RH ou managerieux</div>
+        <div class="option-item"><span class="option-dot"></span> Audit RSE ou accompagnement CSRD</div>
+      </div>
+      <div class="card reveal" style="margin-top:32px; max-width:700px; margin-left:auto; margin-right:auto; padding:20px; background:var(--gold-100); border:1px solid var(--gold-400); text-align:center;">
+        <p style="margin:0; font-size:0.9rem;"><strong>Bon a savoir :</strong> les volets formation et diagnostic inclus dans les abonnements peuvent etre pris en charge par votre OPCO via la certification Qualiopi de CARTESA.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Questions frequentes</span>
+        <h2 class="section-title">Abonnements : vos questions</h2>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq-item">
+          <summary>Je suis une TPE de 15 salaries. Quel abonnement choisir ?</summary>
+          <p>Respiration est fait pour vous. Un appui souple et reactif pour les situations du quotidien : preparer un entretien delicat, gerer une tension, clarifier une repartition de roles. Environ 3h par mois, sans engager un dispositif lourd.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Puis-je changer de formule en cours de route ?</summary>
+          <p>Oui. Vous pouvez monter en gamme a tout moment. Le passage a une formule inferieure est possible a chaque renouvellement. On s'adapte a votre rythme et a vos besoins.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Quelle est la difference entre coaching et codeveloppement ?</summary>
+          <p>Le coaching est un accompagnement individuel centre sur vos enjeux specifiques (posture, leadership, prise de decision). Le codeveloppement est un format collectif ou des pairs partagent leurs situations et co-construisent des solutions. Les deux se completent : l'un fait progresser la personne, l'autre renforce l'intelligence collective.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Qui sera mon interlocuteur ?</summary>
+          <p>Un consultant senior certifie Qualiopi, avec 15+ ans d'experience. Sur Elan et Alliance, vous beneficiez d'un referent dedie qui connait votre contexte et vos equipes. La continuite de l'interlocuteur est au coeur de notre modele.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Les abonnements couvrent-ils aussi la RSE ?</summary>
+          <p>Oui. Nos consultants integrent naturellement les sujets RSE dans l'accompagnement : conformite, sensibilisation equipes, preparation aux audits. Pour un accompagnement RSE approfondi (CSRD, bilan carbone), nous le proposons en option complementaire ou via notre offre RSE & Decarbonation dediee.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Mon OPCO peut-il financer une partie ?</summary>
+          <p>Oui. CARTESA est certifie Qualiopi et habilite PCRH. Les volets formation, diagnostic et codeveloppement peuvent etre finances par votre OPCO. Le PCRH est une porte d'entree ideale pour tester l'accompagnement a moindre cout.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Est-ce que ca fonctionne aussi pour une association ?</summary>
+          <p>Tout a fait. Nous accompagnons regulierement des associations et des structures de l'ESS. Les problematiques de management, de gouvernance et de mobilisation des equipes sont les memes, et les financements OPCO s'appliquent aussi.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--teal" style="padding:56px 0;">
+    <div class="container" style="text-align:center;">
+      <h2 class="reveal" style="margin-bottom:12px;">Pret a structurer vos enjeux humains dans la duree ?</h2>
+      <p class="reveal" style="color:rgba(255,255,255,0.65); max-width:560px; margin:0 auto 28px; font-size:1rem;">30 minutes d'echange, sans engagement. On ecoute votre situation, on vous oriente vers la formule adaptee.</p>
+      <a href="contact.html" class="btn btn--accent btn--lg reveal">On en discute</a>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA">
+          <p>Cabinet de conseil et organisme de formation certifie Qualiopi. Accompagnement des entreprises depuis 2003.</p>
+          <div class="footer-qualiopi">
+            <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi">
+            <span>Certifie Qualiopi</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="formations.html">Formations 2026</a></li>
+            <li><a href="temoignages.html">Temoignages</a></li>
+            <li><a href="equipe.html">L'equipe</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="expertises.html">Diagnostic &amp; Expertise RH</a></li>
+            <li><a href="rse-decarbonation.html">RSE &amp; Decarbonation</a></li>
+            <li><a href="rh-transition.html">DRH de transition</a></li>
+            <li><a href="pass-rh.html">Pass RH</a></li>
+            <li><a href="ressourcerie.html">Ressourcerie</a></li>
+            <li><a href="financement.html">Financement OPCO</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" transform="scale(0.7)"/><circle cx="8.4" cy="7" r="2.1"/></svg>
+            <span>36 avenue Alsace Lorraine<br>38110 La Tour-du-Pin</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="M1.5 3.5l6.5 5 6.5-5"/></svg>
+            <a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 CARTESA. Tous droits reserves.</span>
+        <span>Competences, Entreprises & Territoires</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', function() { document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 10); });
+    var revealObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) { if (entry.isIntersecting) { entry.target.classList.add('revealed'); revealObs.unobserve(entry.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-stagger').forEach(function(el) { revealObs.observe(el); });
+    document.querySelectorAll('.faq-item summary').forEach(function(s) {
+      s.addEventListener('click', function(e) { e.preventDefault(); var item = s.parentElement;
+        if (item.open) { item.open = false; } else { document.querySelectorAll('.faq-item[open]').forEach(function(o) { o.open = false; }); item.open = true; }
+      });
+    });
+  </script>
+
+</body>
+</html>
