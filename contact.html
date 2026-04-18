@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>L'équipe & Contact | CARTESA — Conseil & Formation RH</title>
-  <meta name="description" content="Rencontrez l'équipe CARTESA et contactez-nous pour un diagnostic RH gratuit. Cabinet certifié Qualiopi à La Tour-du-Pin. Partenariats OPCO. Financement possible.">
+  <title>Contact | CARTESA — Conseil & Formation RH</title>
+  <meta name="description" content="Contactez CARTESA pour un diagnostic RH gratuit, une formation ou un accompagnement RSE. Réponse sous 24h. Cabinet certifié Qualiopi à La Tour-du-Pin (Isère).">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://cartesa-lyon.com/contact.html">
-  <meta property="og:title" content="L'équipe & Contact | CARTESA — Conseil & Formation RH">
-  <meta property="og:description" content="Rencontrez l'équipe CARTESA et contactez-nous pour un diagnostic RH gratuit. Cabinet certifié Qualiopi à La Tour-du-Pin. Partenariats OPCO. Financement possible.">
+  <meta property="og:title" content="Contact | CARTESA — Conseil & Formation RH">
+  <meta property="og:description" content="Contactez CARTESA pour un diagnostic RH gratuit, une formation ou un accompagnement RSE. Réponse sous 24h. Cabinet certifié Qualiopi à La Tour-du-Pin (Isère).">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="CARTESA">
@@ -26,7 +26,7 @@
   [{
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    "name": "L'équipe & Contact CARTESA",
+    "name": "Contact CARTESA",
     "url": "https://cartesa-lyon.com/contact.html"
   },
   {
@@ -57,6 +57,457 @@
     }
   }]
   </script>
+
+  <style>
+    /* ===== CONTACT PAGE STYLES ===== */
+
+    /* Hero override for contact page */
+    .contact-hero {
+      background: var(--teal-600);
+      color: var(--white);
+      padding: 56px 0 48px;
+      text-align: center;
+    }
+    .contact-hero h1 {
+      color: var(--white);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      margin-bottom: 12px;
+    }
+    .contact-hero p {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.05rem;
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .contact-hero .hero-promise {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 20px;
+      padding: 8px 20px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--white);
+    }
+    .contact-hero .hero-promise svg {
+      flex-shrink: 0;
+    }
+
+    /* Value proposition strip */
+    .value-strip {
+      background: var(--teal-900);
+      padding: 0;
+    }
+    .value-strip-inner {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+    .value-strip-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 18px 32px;
+      color: var(--white);
+      font-size: 0.875rem;
+      font-weight: 500;
+      font-family: 'DM Sans', sans-serif;
+      position: relative;
+    }
+    .value-strip-item + .value-strip-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 25%;
+      height: 50%;
+      width: 1px;
+      background: rgba(255,255,255,0.12);
+    }
+    .value-strip-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .value-strip-icon svg {
+      color: var(--gold-400);
+    }
+
+    @media (max-width: 768px) {
+      .value-strip-inner {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+      }
+      .value-strip-item {
+        padding: 12px 24px;
+        width: 100%;
+        justify-content: center;
+      }
+      .value-strip-item + .value-strip-item::before {
+        top: 0;
+        left: 20%;
+        width: 60%;
+        height: 1px;
+      }
+    }
+
+    /* Contact main layout */
+    .contact-main {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 48px;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 960px) {
+      .contact-main {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
+
+    /* Smart form card */
+    .smart-form-card {
+      background: var(--white);
+      border: 1px solid rgba(9,41,51,0.06);
+      border-radius: 16px;
+      padding: 36px;
+      box-shadow: 0 2px 12px rgba(9,41,51,0.05);
+    }
+    .smart-form-card h2 {
+      font-size: 1.4rem;
+      margin-bottom: 4px;
+    }
+    .smart-form-card .form-intro {
+      color: var(--neutral-500);
+      font-size: 0.9rem;
+      margin-bottom: 28px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .form-row-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+    }
+
+    @media (max-width: 640px) {
+      .smart-form-card {
+        padding: 24px;
+      }
+      .form-row,
+      .form-row-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Select styling enhancement */
+    .form-group select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+
+    /* Sidebar info panel */
+    .contact-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .sidebar-card {
+      background: var(--white);
+      border: 1px solid rgba(9,41,51,0.06);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 2px 12px rgba(9,41,51,0.05);
+    }
+    .sidebar-card h3 {
+      font-size: 1rem;
+      margin-bottom: 16px;
+      color: var(--teal-900);
+    }
+    .sidebar-contact-row {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+    .sidebar-contact-row:last-child {
+      margin-bottom: 0;
+    }
+    .sidebar-contact-row .contact-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--teal-50);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--teal-600);
+    }
+    .sidebar-contact-row .label {
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: var(--neutral-900);
+      margin-bottom: 2px;
+    }
+    .sidebar-contact-row .value {
+      font-size: 0.85rem;
+      color: var(--neutral-500);
+      line-height: 1.5;
+    }
+    .sidebar-contact-row .value a {
+      color: var(--teal-600);
+      font-size: 0.85rem;
+    }
+
+    /* Accessibility + discovery info boxes in sidebar */
+    .sidebar-info {
+      background: var(--teal-50);
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .sidebar-info h4 {
+      font-size: 0.88rem;
+      color: var(--teal-900);
+      margin-bottom: 6px;
+    }
+    .sidebar-info p {
+      font-size: 0.82rem;
+      color: var(--neutral-700);
+      line-height: 1.6;
+    }
+
+    /* Map in sidebar */
+    .sidebar-map {
+      background: var(--neutral-100);
+      border-radius: 10px;
+      height: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(0,0,0,0.06);
+      margin-top: 8px;
+    }
+    .sidebar-map svg {
+      opacity: 0.3;
+      margin-bottom: 6px;
+    }
+    .sidebar-map p {
+      font-size: 0.82rem;
+      color: var(--neutral-500);
+      text-align: center;
+    }
+    .sidebar-map .map-city {
+      font-weight: 600;
+      color: var(--neutral-700);
+      margin-top: 2px;
+    }
+
+    /* Accordion sections (team + partners) */
+    .accordion-section {
+      border: 1px solid rgba(9,41,51,0.06);
+      border-radius: 16px;
+      background: var(--white);
+      box-shadow: 0 2px 12px rgba(9,41,51,0.05);
+      overflow: hidden;
+    }
+    .accordion-section + .accordion-section {
+      margin-top: 16px;
+    }
+    .accordion-section summary {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 22px 28px;
+      cursor: pointer;
+      list-style: none;
+      font-family: 'Sora', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--teal-900);
+      transition: background 0.2s ease;
+      user-select: none;
+    }
+    .accordion-section summary::-webkit-details-marker {
+      display: none;
+    }
+    .accordion-section summary::before {
+      content: '';
+      display: inline-block;
+      width: 28px;
+      height: 3px;
+      background: var(--gold-500);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .accordion-section summary::after {
+      content: '';
+      margin-left: auto;
+      width: 10px;
+      height: 10px;
+      border-right: 2px solid var(--neutral-500);
+      border-bottom: 2px solid var(--neutral-500);
+      transform: rotate(45deg);
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+    .accordion-section[open] summary::after {
+      transform: rotate(-135deg);
+    }
+    .accordion-section summary:hover {
+      background: var(--neutral-50);
+    }
+    .accordion-section .accordion-body {
+      padding: 0 28px 28px;
+    }
+    .accordion-section .accordion-intro {
+      font-size: 0.9rem;
+      color: var(--neutral-500);
+      margin-bottom: 24px;
+      max-width: 600px;
+    }
+
+    /* Team cards inside accordion */
+    .team-grid-compact {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .team-card-compact {
+      text-align: center;
+      padding: 20px 16px;
+      border-radius: 12px;
+      background: var(--neutral-50);
+      border: 1px solid rgba(9,41,51,0.04);
+    }
+    .team-card-compact img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 12px;
+      border: 2px solid var(--teal-100);
+    }
+    .team-card-compact .avatar-sm {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--teal-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--teal-700);
+    }
+    .team-card-compact h4 {
+      font-size: 0.92rem;
+      margin-bottom: 2px;
+    }
+    .team-card-compact .role {
+      font-size: 0.75rem;
+      color: var(--teal-600);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 8px;
+    }
+    .team-card-compact p {
+      font-size: 0.8rem;
+      color: var(--neutral-500);
+      line-height: 1.5;
+    }
+
+    .associates-note {
+      text-align: center;
+      background: var(--neutral-50);
+      border-radius: 10px;
+      padding: 16px 20px;
+    }
+    .associates-note h4 {
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+    .associates-note p {
+      font-size: 0.82rem;
+      color: var(--neutral-500);
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* Partners inside accordion */
+    .partners-grid-compact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .partner-card-compact {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 16px;
+      border-radius: 10px;
+      background: var(--neutral-50);
+      border: 1px solid rgba(9,41,51,0.04);
+    }
+    .partner-card-compact img {
+      width: 56px;
+      height: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .partner-card-compact h4 {
+      font-size: 0.88rem;
+      margin-bottom: 3px;
+    }
+    .partner-card-compact p {
+      font-size: 0.78rem;
+      color: var(--neutral-500);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 960px) {
+      .team-grid-compact {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .partners-grid-compact {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 640px) {
+      .team-grid-compact {
+        grid-template-columns: 1fr;
+      }
+      .accordion-section summary {
+        padding: 18px 20px;
+        font-size: 1rem;
+      }
+      .accordion-section .accordion-body {
+        padding: 0 20px 20px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -81,155 +532,102 @@
         <li><a href="formations.html">Formations 2026</a></li>
         <li><a href="ressources.html">Ressources</a></li>
         <li><a href="temoignages.html">Témoignages</a></li>
-        <li><a href="contact.html#equipe">L'équipe</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html" class="nav-cta active">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- PAGE HERO -->
-  <section class="page-hero">
+  <!-- HERO -->
+  <section class="contact-hero">
     <div class="container">
-      <span class="section-label" style="color:rgba(255,255,255,0.88);">L'équipe &amp; Contact</span>
-      <h1>Une équipe engagée à votre service</h1>
-      <p>Depuis 2003, des consultants expérimentés et des partenariats institutionnels solides pour accompagner vos projets RH.</p>
-    </div>
-  </section>
-
-  <!-- TEAM SECTION -->
-  <section class="section section--white" id="equipe">
-    <div class="container">
-
-      <!-- GROUP PHOTO -->
-      <div style="text-align:center; margin-bottom:48px;" class="reveal">
-        <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/cartesa-team-1-800x702.png" alt="L'équipe CARTESA" class="team-group-photo" style="max-width:560px;">
-        <p style="font-size:0.9rem; color:var(--neutral-500); margin-top:14px;">L'équipe CARTESA — Compétences, Entreprises &amp; Territoires</p>
-      </div>
-
-      <div class="section-header reveal">
-        <span class="section-label">L'équipe</span>
-        <h2 class="section-title">Les consultants CARTESA</h2>
-        <p class="section-subtitle">Une équipe pluridisciplinaire de consultants expérimentés, au service de vos enjeux RH.</p>
-      </div>
-
-      <div class="grid-3 reveal" style="margin-bottom:40px;">
-        <div class="card team-card">
-          <img src="https://cartesa-lyon.com/wp-content/uploads/2021/10/photo-catherine.png" alt="Catherine Lenoir" class="team-photo">
-          <h3>Catherine Lenoir</h3>
-          <div class="role">Consultante Associée</div>
-          <p>Développement des pratiques managériales et RH, formation de formateurs, coaching d'équipe dirigeante. Experte en ingénierie pédagogique, accompagnement des transformations et conception de parcours AFEST. Plus de 20 ans d'expérience en conseil et formation.</p>
-        </div>
-        <div class="card team-card">
-          <img src="https://cartesa-lyon.com/wp-content/uploads/2021/10/photo-philippe-1.png" alt="Philippe Lenoir" class="team-photo">
-          <h3>Philippe Lenoir</h3>
-          <div class="role">Consultant Associé</div>
-          <p>Coaching de dirigeant, management RH et comportemental, développement commercial. Spécialiste de l'accompagnement entrepreneurial, du leadership et de la conduite du changement. Certifié coach ICF, formateur en management depuis plus de 15 ans.</p>
-        </div>
-        <div class="card team-card">
-          <div class="avatar">MC</div>
-          <h3>Maryline Chifflet-Saby</h3>
-          <div class="role">Assistante Administrative et Commerciale</div>
-          <p>Suivi administratif et commercial, gestion de la communication externe, coordination des plannings de formation. Votre premier point de contact pour toute demande d'information ou de devis.</p>
-        </div>
-      </div>
-
-      <div class="card reveal" style="text-align:center; background:var(--neutral-50);">
-        <h3 style="font-size:1.05rem; margin-bottom:8px;">Consultantes associées</h3>
-        <p style="color:var(--neutral-500); font-size:0.9rem; max-width:560px; margin:0 auto;">Élodie Chapelle, Claire Iffenecker et Christine Jalbart complètent l'équipe en tant que consultantes associées, apportant leurs expertises spécifiques en droit social, accompagnement RH et ingénierie de formation selon les missions.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- PARTENARIATS -->
-  <section class="section section--alt">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Partenariats</span>
-        <h2 class="section-title">Des partenariats institutionnels forts</h2>
-        <p class="section-subtitle">CARTESA est partenaire des principaux OPCO et institutions du développement des compétences.</p>
-      </div>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;" class="reveal">
-
-        <div class="partnership-item">
-          <img src="https://cartesa-lyon.com/wp-content/uploads/2020/04/LOPCOMMERCE-Logo.jpg" alt="L'Opcommerce">
-          <div>
-            <h4>L'Opcommerce</h4>
-            <p>Partenaire depuis 2012, "Cabinet Partenaire" depuis 2018. Programme Cap Compétences Commerce pour les entreprises de moins de 250 salariés du commerce. Accompagnement RH et formation management sur tout le territoire Auvergne-Rhône-Alpes.</p>
-          </div>
-        </div>
-
-        <div class="partnership-item">
-          <img src="https://cartesa-lyon.com/wp-content/uploads/2020/09/OPCO-EP-Entreprise-de-Proximité.png" alt="OPCO EP">
-          <div>
-            <h4>OPCO EP</h4>
-            <p>Diagnostic de la fonction RH et accompagnement stratégique pour les entreprises de proximité. Financement intégral des prestations PCRH. Programme de développement des compétences pour les artisans et commerçants.</p>
-          </div>
-        </div>
-
-        <div class="partnership-item">
-          <img src="https://cartesa-lyon.com/wp-content/uploads/2020/04/5b22d28d3fef8_20170621uniformationlogo.png" alt="Uniformation">
-          <div>
-            <h4>Uniformation</h4>
-            <p>Programme ZOOM RH pour les entreprises de moins de 50 salariés. Secteurs sport, animation, tourisme social et familial. Partenariat actif depuis 2015 sur les thématiques de management et de GPEC.</p>
-          </div>
-        </div>
-
-        <div class="partnership-item">
-          <img src="https://cartesa-lyon.com/wp-content/uploads/2026/02/Logo_Auvergne-Rhone-Alpes.png" alt="Région AURA">
-          <div>
-            <h4>Région Auvergne-Rhône-Alpes</h4>
-            <p>Programme EXPERTISE RH (2016-2022). Accompagnement des entreprises de la Drôme et de l'Ardèche dans le développement de leur politique RH. Plus de 80 entreprises accompagnées dans le cadre de ce dispositif régional.</p>
-          </div>
-        </div>
-
-        <div class="partnership-item">
-          <img src="https://cartesa-lyon.com/wp-content/uploads/2022/01/AKTO-LOGO.png" alt="AKTO">
-          <div>
-            <h4>AKTO</h4>
-            <p>Partenaire depuis 2020. Accompagnement des entreprises de l'éducation privée et de la sécurité dans leurs problématiques RH, management et fidélisation des talents. Programme PCRH et diagnostics RH sectoriels.</p>
-          </div>
-        </div>
-
-        <div class="partnership-item">
-          <img src="https://cartesa-lyon.com/wp-content/uploads/2020/04/OPCO2i-logo.png" alt="OPCO2i">
-          <div>
-            <h4>OPCO2i</h4>
-            <p>Programme Attractivité / Recrutement / Intégration (2022-2024) et Performance RH (2024-2026). Accompagnement spécifique pour les entreprises industrielles du territoire Nord-Isère et Savoie.</p>
-          </div>
-        </div>
-
+      <span class="section-label" style="color:rgba(255,255,255,0.88);">Contact</span>
+      <h1>Parlons de votre projet</h1>
+      <p>Que vous ayez un besoin précis ou une simple question, nous sommes là pour vous guider. Décrivez votre situation, nous trouverons la bonne réponse ensemble.</p>
+      <div class="hero-promise">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="7"/><path d="M8 4.5V8l2.5 1.5"/></svg>
+        Réponse sous 24 heures ouvrées
       </div>
     </div>
   </section>
 
-  <!-- CONTACT SECTION -->
+  <!-- VALUE STRIP -->
+  <div class="value-strip">
+    <div class="container">
+      <div class="value-strip-inner">
+        <div class="value-strip-item">
+          <div class="value-strip-icon">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="7"/><path d="M8 4.5V8l2.5 1.5"/></svg>
+          </div>
+          Réponse sous 24h
+        </div>
+        <div class="value-strip-item">
+          <div class="value-strip-icon">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2L7.5 14L4 8.5"/></svg>
+          </div>
+          Premier échange gratuit
+        </div>
+        <div class="value-strip-item">
+          <div class="value-strip-icon">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="10" rx="1.5"/><path d="M2 7h12"/><path d="M6 3v10"/></svg>
+          </div>
+          Montage dossier OPCO inclus
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTACT SECTION: form + sidebar -->
   <section class="section section--white">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Contact</span>
-        <h2 class="section-title">Échangeons sur vos besoins</h2>
-        <p class="section-subtitle">Un premier échange gratuit et sans engagement pour identifier vos enjeux et les solutions adaptées.</p>
-      </div>
-      <div class="contact-grid reveal">
+      <div class="contact-main">
 
-        <!-- FORM -->
-        <div>
-          <div class="form-value-prop">
-            <h3>Pourquoi nous contacter ?</h3>
-            <ul>
-              <li>Réponse personnalisée sous 24 heures ouvrées</li>
-              <li>Premier échange gratuit et sans engagement</li>
-              <li>Accompagnement dans le montage du dossier de financement OPCO</li>
-              <li>Devis sur mesure adapté à votre contexte et votre budget</li>
-            </ul>
-          </div>
-          <h2 style="font-size:1.3rem; margin-bottom:6px;">Envoyez-nous un message</h2>
-          <p style="color:var(--neutral-500); font-size:0.9rem; margin-bottom:28px;">Nous vous répondons sous 24 heures ouvrées.</p>
+        <!-- SMART FORM -->
+        <div class="smart-form-card">
+          <h2>Décrivez votre besoin</h2>
+          <p class="form-intro">Quelques informations pour vous orienter au mieux. Tous les champs marqués * sont obligatoires.</p>
 
           <form onsubmit="event.preventDefault(); alert('Ce formulaire est une démonstration. En production, il serait connecté à votre système de gestion des contacts.');">
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+
+            <!-- Guided selectors -->
+            <div class="form-row-3">
+              <div class="form-group">
+                <label for="besoin">Votre besoin *</label>
+                <select id="besoin" name="besoin" required>
+                  <option value="">Sélectionnez</option>
+                  <option value="diagnostic-rh">Diagnostic RH</option>
+                  <option value="drh-transition">DRH de transition</option>
+                  <option value="pass-rh">Pass RH</option>
+                  <option value="formation">Formation</option>
+                  <option value="rse-decarbonation">RSE &amp; Décarbonation</option>
+                  <option value="autre">Autre</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="region">Votre région *</label>
+                <select id="region" name="region" required>
+                  <option value="">Sélectionnez</option>
+                  <option value="isere">Isère</option>
+                  <option value="aura">Auvergne-Rhône-Alpes</option>
+                  <option value="autre-region">Autre région</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="thematique">Thématique</label>
+                <select id="thematique" name="thematique">
+                  <option value="">Sélectionnez</option>
+                  <option value="management">Management</option>
+                  <option value="droit-social">Droit social</option>
+                  <option value="recrutement">Recrutement</option>
+                  <option value="rse">RSE</option>
+                  <option value="coaching">Coaching</option>
+                  <option value="autre-theme">Autre</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Identity fields -->
+            <div class="form-row">
               <div class="form-group">
                 <label for="nom">Nom *</label>
                 <input type="text" id="nom" name="nom" required placeholder="Votre nom">
@@ -239,11 +637,13 @@
                 <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
               </div>
             </div>
+
             <div class="form-group">
-              <label for="email">Email *</label>
+              <label for="email">Email professionnel *</label>
               <input type="email" id="email" name="email" required placeholder="votre.email@entreprise.com">
             </div>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+
+            <div class="form-row">
               <div class="form-group">
                 <label for="telephone">Téléphone</label>
                 <input type="tel" id="telephone" name="telephone" placeholder="04 XX XX XX XX">
@@ -253,83 +653,180 @@
                 <input type="text" id="entreprise" name="entreprise" placeholder="Nom de votre entreprise">
               </div>
             </div>
+
             <div class="form-group">
-              <label for="sujet">Sujet *</label>
-              <select id="sujet" name="sujet" required>
-                <option value="">Sélectionnez un sujet</option>
-                <option value="formation">Demande de formation</option>
-                <option value="financement">Financement OPCO</option>
-                <option value="diagnostic">Diagnostic RH/RSE</option>
-                <option value="coaching">Coaching</option>
-                <option value="pcrh">Dispositif PCRH</option>
-                <option value="entrepreneuriat">Accompagnement entrepreneuriat</option>
-                <option value="autre">Autre demande</option>
-              </select>
+              <label for="message">Votre message *</label>
+              <textarea id="message" name="message" required placeholder="Décrivez votre situation, votre besoin ou posez-nous vos questions. Plus vous êtes précis, plus notre réponse sera adaptée."></textarea>
             </div>
-            <div class="form-group">
-              <label for="message">Message *</label>
-              <textarea id="message" name="message" required placeholder="Décrivez votre besoin ou posez-nous vos questions..."></textarea>
-            </div>
-            <button type="submit" class="btn btn--primary btn--lg" style="width:100%; justify-content:center;">Envoyer le message</button>
+
+            <button type="submit" class="btn btn--primary btn--lg" style="width:100%; justify-content:center;">
+              Envoyer ma demande
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </button>
           </form>
         </div>
 
-        <!-- INFO + MAP -->
-        <div>
-          <div style="text-align:center; margin-bottom:28px;">
-            <img src="https://cartesa-lyon.com/wp-content/uploads/2020/05/Co-construire-3.jpg" alt="Co-construire ensemble" class="illustration-img" style="max-width:180px; margin:0 auto;">
-          </div>
+        <!-- SIDEBAR -->
+        <div class="contact-sidebar">
 
-          <h2 style="font-size:1.3rem; margin-bottom:6px;">Nos coordonnées</h2>
-          <p style="color:var(--neutral-500); font-size:0.9rem; margin-bottom:28px;">N'hésitez pas à nous contacter directement.</p>
-
-          <div style="display:flex; flex-direction:column; gap:16px; margin-bottom:32px;">
-            <div style="display:flex; gap:14px; align-items:flex-start;">
+          <!-- Direct contact info -->
+          <div class="sidebar-card">
+            <h3>Nous contacter directement</h3>
+            <div class="sidebar-contact-row">
               <div class="contact-icon">
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" transform="scale(0.7)"/><circle cx="8.4" cy="7" r="2.1"/></svg>
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="12" height="9" rx="1.5"/><path d="M2 4l6 4.5L14 4"/></svg>
               </div>
               <div>
-                <div style="font-weight:600; font-size:0.85rem; margin-bottom:2px; color:var(--neutral-900);">Adresse</div>
-                <div style="color:var(--neutral-500); font-size:0.85rem;">36 avenue Alsace Lorraine<br>38110 La Tour-du-Pin</div>
+                <div class="label">Email</div>
+                <div class="value"><a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a></div>
               </div>
             </div>
-            <div style="display:flex; gap:14px; align-items:flex-start;">
+            <div class="sidebar-contact-row">
               <div class="contact-icon">
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="14" height="10" rx="1.5"/><path d="M2 4l7 5.5L16 4"/></svg>
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" transform="scale(0.7) translate(1,1)"/><circle cx="8.4" cy="7.7" r="2.1"/></svg>
               </div>
               <div>
-                <div style="font-weight:600; font-size:0.85rem; margin-bottom:2px; color:var(--neutral-900);">Email</div>
-                <a href="mailto:contact@cabinet-cartesa.com" style="font-size:0.85rem;">contact@cabinet-cartesa.com</a>
+                <div class="label">Adresse</div>
+                <div class="value">36 avenue Alsace Lorraine<br>38110 La Tour-du-Pin</div>
               </div>
+            </div>
+
+            <!-- Map -->
+            <div class="sidebar-map">
+              <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--neutral-500);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" transform="translate(7,4)"/><circle cx="19" cy="14" r="2.5"/></svg>
+              <p>La Tour-du-Pin</p>
+              <p class="map-city">Isère (38)</p>
             </div>
           </div>
 
-          <!-- MAP PLACEHOLDER -->
-          <div class="map-placeholder">
-            <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--neutral-500);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" transform="translate(11,7)"/><circle cx="22" cy="17" r="2.5"/></svg>
-            <p>36 avenue Alsace Lorraine</p>
-            <p class="address-text">38110 La Tour-du-Pin, Isère</p>
+          <!-- Quick info boxes -->
+          <div class="sidebar-info">
+            <h4>Découverte gratuite</h4>
+            <p>Vous avez un projet de création ou de reprise d'entreprise ? Bénéficiez d'un rendez-vous découverte gratuit de 30 minutes. Sélectionnez "Autre" dans le formulaire et précisez votre projet.</p>
           </div>
 
-          <!-- DECOUVERTE GRATUITE -->
-          <div class="info-box" style="margin-top:28px;">
-            <h3 style="font-size:0.9rem; margin-bottom:6px; font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; color:var(--teal-900);">Découverte gratuite — Entrepreneuriat</h3>
-            <p style="font-weight:400; color:var(--neutral-500);">Vous avez un projet de création ou de reprise d'entreprise ? Bénéficiez d'un rendez-vous découverte gratuit de 30 minutes pour échanger sur votre projet et identifier les accompagnements adaptés. Sélectionnez "Accompagnement entrepreneuriat" dans le formulaire ci-contre.</p>
+          <div class="sidebar-info">
+            <h4>Accessibilité</h4>
+            <p>Nos formations sont accessibles aux personnes en situation de handicap. Nous évaluons individuellement les besoins d'aménagement. N'hésitez pas à nous en faire part.</p>
           </div>
 
-          <!-- ACCESSIBILITE -->
-          <div class="info-box" style="margin-top:16px;">
-            <h3 style="font-size:0.9rem; margin-bottom:6px; font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; color:var(--teal-900);">Accessibilité</h3>
-            <p style="font-weight:400; color:var(--neutral-500);">Nos formations sont accessibles aux personnes en situation de handicap visible et invisible. Nous évaluons individuellement les besoins d'aménagement pour garantir des conditions d'apprentissage adaptées. N'hésitez pas à nous en faire part lors de votre prise de contact.</p>
+          <!-- Trust illustration -->
+          <div style="text-align:center; padding: 8px 0;">
+            <img src="https://cartesa-lyon.com/wp-content/uploads/2020/05/Co-construire-3.jpg" alt="Co-construire ensemble" class="illustration-img" style="max-width:160px; margin:0 auto;">
           </div>
+
         </div>
-
       </div>
     </div>
   </section>
 
+  <!-- TRUST CONTENT: Team + Partners (collapsible) -->
+  <section class="section section--alt" id="equipe">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Qui sommes-nous</span>
+        <h2 class="section-title">L'équipe et nos partenaires</h2>
+        <p class="section-subtitle">Des consultants expérimentés et des partenariats institutionnels solides depuis 2003.</p>
+      </div>
+
+      <!-- Team photo -->
+      <div style="text-align:center; margin-bottom:32px;" class="reveal">
+        <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/cartesa-team-1-800x702.png" alt="L'équipe CARTESA" class="team-group-photo" style="max-width:480px;">
+        <p style="font-size:0.82rem; color:var(--neutral-500); margin-top:10px;">L'équipe CARTESA — Compétences, Entreprises &amp; Territoires</p>
+      </div>
+
+      <!-- Team accordion -->
+      <details class="accordion-section reveal">
+        <summary>Les consultants CARTESA</summary>
+        <div class="accordion-body">
+          <p class="accordion-intro">Une équipe pluridisciplinaire au service de vos enjeux RH, management et RSE.</p>
+
+          <div class="team-grid-compact">
+            <div class="team-card-compact">
+              <img src="https://cartesa-lyon.com/wp-content/uploads/2021/10/photo-catherine.png" alt="Catherine Lenoir">
+              <h4>Catherine Lenoir</h4>
+              <div class="role">Consultante Associée</div>
+              <p>Pratiques managériales, formation de formateurs, coaching d'équipe dirigeante. Ingénierie pédagogique et AFEST. Plus de 20 ans d'expérience.</p>
+            </div>
+            <div class="team-card-compact">
+              <img src="https://cartesa-lyon.com/wp-content/uploads/2021/10/photo-philippe-1.png" alt="Philippe Lenoir">
+              <h4>Philippe Lenoir</h4>
+              <div class="role">Consultant Associé</div>
+              <p>Coaching de dirigeant, management RH, développement commercial. Certifié coach ICF, formateur en management depuis plus de 15 ans.</p>
+            </div>
+            <div class="team-card-compact">
+              <div class="avatar-sm">MC</div>
+              <h4>Maryline Chifflet-Saby</h4>
+              <div class="role">Assistante Admin. &amp; Commerciale</div>
+              <p>Suivi administratif et commercial, communication externe. Votre premier point de contact pour toute demande.</p>
+            </div>
+          </div>
+
+          <div class="associates-note">
+            <h4>Consultantes associées</h4>
+            <p>Élodie Chapelle, Claire Iffenecker et Christine Jalbart complètent l'équipe en tant que consultantes associées, apportant leurs expertises en droit social, accompagnement RH et ingénierie de formation.</p>
+          </div>
+        </div>
+      </details>
+
+      <!-- Partners accordion -->
+      <details class="accordion-section reveal">
+        <summary>Nos partenariats institutionnels</summary>
+        <div class="accordion-body">
+          <p class="accordion-intro">CARTESA est partenaire des principaux OPCO et institutions du développement des compétences.</p>
+
+          <div class="partners-grid-compact">
+            <div class="partner-card-compact">
+              <img src="https://cartesa-lyon.com/wp-content/uploads/2020/04/LOPCOMMERCE-Logo.jpg" alt="L'Opcommerce">
+              <div>
+                <h4>L'Opcommerce</h4>
+                <p>Partenaire depuis 2012, "Cabinet Partenaire" depuis 2018. Programme Cap Compétences Commerce pour les entreprises de moins de 250 salariés.</p>
+              </div>
+            </div>
+            <div class="partner-card-compact">
+              <img src="https://cartesa-lyon.com/wp-content/uploads/2020/09/OPCO-EP-Entreprise-de-Proximité.png" alt="OPCO EP">
+              <div>
+                <h4>OPCO EP</h4>
+                <p>Diagnostic de la fonction RH et accompagnement stratégique. Financement intégral des prestations PCRH pour les entreprises de proximité.</p>
+              </div>
+            </div>
+            <div class="partner-card-compact">
+              <img src="https://cartesa-lyon.com/wp-content/uploads/2020/04/5b22d28d3fef8_20170621uniformationlogo.png" alt="Uniformation">
+              <div>
+                <h4>Uniformation</h4>
+                <p>Programme ZOOM RH pour les entreprises de moins de 50 salariés. Secteurs sport, animation, tourisme social et familial.</p>
+              </div>
+            </div>
+            <div class="partner-card-compact">
+              <img src="https://cartesa-lyon.com/wp-content/uploads/2026/02/Logo_Auvergne-Rhone-Alpes.png" alt="Région AURA">
+              <div>
+                <h4>Région Auvergne-Rhône-Alpes</h4>
+                <p>Programme EXPERTISE RH (2016-2022). Plus de 80 entreprises accompagnées en Drôme et Ardèche.</p>
+              </div>
+            </div>
+            <div class="partner-card-compact">
+              <img src="https://cartesa-lyon.com/wp-content/uploads/2022/01/AKTO-LOGO.png" alt="AKTO">
+              <div>
+                <h4>AKTO</h4>
+                <p>Partenaire depuis 2020. Accompagnement des entreprises de l'éducation privée et de la sécurité. Programme PCRH et diagnostics sectoriels.</p>
+              </div>
+            </div>
+            <div class="partner-card-compact">
+              <img src="https://cartesa-lyon.com/wp-content/uploads/2020/04/OPCO2i-logo.png" alt="OPCO2i">
+              <div>
+                <h4>OPCO2i</h4>
+                <p>Programme Attractivité / Recrutement / Intégration et Performance RH. Accompagnement industriel Nord-Isère et Savoie.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
   <!-- CERTIFICATIONS BAND -->
-  <section class="section section--alt" style="padding:40px 0;">
+  <section class="section section--white" style="padding:40px 0;">
     <div class="container">
       <div class="partner-grid reveal">
         <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi" style="height:36px;">
@@ -358,7 +855,6 @@
             <li><a href="index.html">Accueil</a></li>
             <li><a href="formations.html">Formations 2026</a></li>
             <li><a href="temoignages.html">Témoignages</a></li>
-            <li><a href="contact.html#equipe">L'équipe</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
