@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Témoignages & Reportages | CARTESA Cabinet RH Isère</title>
+  <meta name="description" content="Témoignages vidéo et reportages terrain de nos clients. Découvrez comment CARTESA accompagne les entreprises en RH, management, RSE et décarbonation en Isère, Drôme et Ardèche.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://cartesa-lyon.com/temoignages.html">
+  <meta property="og:title" content="Témoignages clients | CARTESA Cabinet RH">
+  <meta property="og:description" content="Témoignages vidéo et reportages terrain. Entreprises accompagnées en RH, management, RSE et décarbonation.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="CARTESA">
+  <meta property="og:image" content="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .video-card { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,80,80,0.07); transition: transform 0.25s, box-shadow 0.25s; }
+    .video-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,80,80,0.13); }
+    .video-embed { position: relative; padding-bottom: 56.25%; background: var(--neutral-100, #f3f4f6); overflow: hidden; }
+    .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .video-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--neutral-500, #6b7280); }
+    .video-placeholder svg { opacity: 0.4; }
+    .video-placeholder span { font-size: 0.85rem; }
+    .video-card-body { padding: 20px 24px 24px; }
+    .video-card-body h3 { font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 600; color: var(--teal-900, #0d3b3b); margin-bottom: 6px; }
+    .video-card-body .video-meta { font-size: 0.82rem; color: var(--neutral-500, #6b7280); margin-bottom: 8px; }
+    .video-card-body p { font-size: 0.92rem; color: var(--neutral-700, #374151); line-height: 1.55; }
+
+    .testimonial-quote { background: #fff; border-radius: 14px; padding: 32px; box-shadow: 0 2px 16px rgba(0,80,80,0.07); position: relative; }
+    .testimonial-quote::before { content: "\201C"; font-family: 'Sora', serif; font-size: 4rem; color: var(--teal-200, #a7d8d8); position: absolute; top: 12px; left: 20px; line-height: 1; }
+    .testimonial-quote blockquote { font-family: 'DM Sans', sans-serif; font-size: 1.05rem; line-height: 1.65; color: var(--neutral-800, #1f2937); font-style: italic; margin-bottom: 16px; padding-left: 8px; }
+    .testimonial-author { display: flex; align-items: center; gap: 12px; }
+    .testimonial-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--teal-100, #d1ecec); display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1rem; color: var(--teal-700, #0f5e5e); flex-shrink: 0; }
+    .testimonial-author-info strong { display: block; font-family: 'Sora', sans-serif; font-size: 0.9rem; color: var(--teal-900, #0d3b3b); }
+    .testimonial-author-info span { font-size: 0.82rem; color: var(--neutral-500, #6b7280); }
+
+    .reportage-card { display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,80,80,0.07); }
+    .reportage-card:nth-child(even) .reportage-visual { order: 2; }
+    .reportage-visual { background: var(--neutral-100, #f3f4f6); min-height: 280px; display: flex; align-items: center; justify-content: center; }
+    .reportage-visual-placeholder { text-align: center; color: var(--neutral-400, #9ca3af); }
+    .reportage-visual-placeholder svg { margin-bottom: 8px; opacity: 0.4; }
+    .reportage-visual-placeholder span { display: block; font-size: 0.82rem; }
+    .reportage-content { padding: 36px 32px; display: flex; flex-direction: column; justify-content: center; }
+    .reportage-tag { display: inline-block; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; background: var(--teal-100, #d1ecec); color: var(--teal-700, #0f5e5e); padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; width: fit-content; }
+    .reportage-content h3 { font-family: 'Sora', sans-serif; font-size: 1.2rem; font-weight: 600; color: var(--teal-900, #0d3b3b); margin-bottom: 10px; }
+    .reportage-content p { font-size: 0.92rem; color: var(--neutral-700, #374151); line-height: 1.6; margin-bottom: 16px; }
+    .reportage-content .btn { width: fit-content; }
+
+    .stat-banner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+    .stat-banner-item strong { display: block; font-family: 'Sora', sans-serif; font-size: 2rem; font-weight: 800; color: var(--gold-400, #f0b429); }
+    .stat-banner-item span { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+
+    .filter-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; justify-content: center; }
+    .filter-tab { font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 500; padding: 8px 20px; border-radius: 24px; border: 1.5px solid var(--teal-200, #a7d8d8); background: transparent; color: var(--teal-700, #0f5e5e); cursor: pointer; transition: all 0.2s; }
+    .filter-tab:hover, .filter-tab.active { background: var(--teal-700, #0f5e5e); color: #fff; border-color: var(--teal-700, #0f5e5e); }
+
+    @media (max-width: 768px) {
+      .reportage-card { grid-template-columns: 1fr; }
+      .reportage-card:nth-child(even) .reportage-visual { order: 0; }
+      .reportage-visual { min-height: 200px; }
+      .stat-banner { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Témoignages & Reportages clients CARTESA",
+    "description": "Témoignages vidéo et reportages terrain des entreprises accompagnées par CARTESA en RH, management, RSE et décarbonation.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "CARTESA",
+      "url": "https://cartesa-lyon.com"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA">
+      </a>
+      <button class="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li class="nav-dropdown">
+          <a href="services-rh.html">Nos services</a>
+          <ul class="nav-sub">
+            <li><a href="services-rh.html">Services RH</a></li>
+            <li><a href="rse-decarbonation.html">RSE &amp; Décarbonation</a></li>
+          </ul>
+        </li>
+        <li><a href="formations.html">Formations 2026</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+        <li><a href="temoignages.html" class="active">Témoignages</a></li>
+        <li><a href="equipe.html">L'équipe</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+  <!-- HERO -->
+  <section class="page-hero" style="padding-top:120px; padding-bottom:64px;">
+    <div class="container" style="text-align:center; max-width:780px;">
+      <span class="reveal" style="display:inline-block; font-size:0.78rem; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; color:var(--teal-400,#2cb5b5); margin-bottom:14px;">Ils nous font confiance</span>
+      <h1 class="reveal" style="font-size:clamp(2rem,4.5vw,3.2rem); font-weight:800; line-height:1.15; margin-bottom:18px;">
+        Témoignages & reportages terrain
+      </h1>
+      <p class="reveal" style="font-size:1.1rem; color:rgba(255,255,255,0.88); max-width:620px; margin:0 auto;">
+        Depuis 2003, nous accompagnons des entreprises de toutes tailles en Auvergne-Rhône-Alpes. Voici leurs histoires, dans leurs mots.
+      </p>
+    </div>
+  </section>
+
+  <!-- STATS BANNER -->
+  <section class="section section--teal" style="padding:40px 0;">
+    <div class="container">
+      <div class="stat-banner reveal">
+        <div class="stat-banner-item">
+          <strong>500+</strong>
+          <span>Entreprises accompagnees</span>
+        </div>
+        <div class="stat-banner-item">
+          <strong>20+</strong>
+          <span>Annees d'experience</span>
+        </div>
+        <div class="stat-banner-item">
+          <strong>97%</strong>
+          <span>Taux de satisfaction</span>
+        </div>
+        <div class="stat-banner-item">
+          <strong>6</strong>
+          <span>Experts mobilisables</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDÉO TÉMOIGNAGES -->
+  <section class="section section--white" style="padding:72px 0;">
+    <div class="container">
+      <h2 class="reveal" style="text-align:center; margin-bottom:8px;">Témoignages vidéo</h2>
+      <p class="reveal" style="text-align:center; color:var(--neutral-500,#6b7280); max-width:520px; margin:0 auto 36px; font-size:0.95rem;">Nos clients partagent leur expérience d'accompagnement avec CARTESA.</p>
+
+      <!-- Filter tabs -->
+      <div class="filter-tabs reveal">
+        <button class="filter-tab active" data-filter="all">Tous</button>
+        <button class="filter-tab" data-filter="rh">Diagnostic opérationnel</button>
+        <button class="filter-tab" data-filter="rse">RSE & Décarbonation</button>
+        <button class="filter-tab" data-filter="transition">DRH & Partenaire RSE</button>
+        <button class="filter-tab" data-filter="formation">Formation</button>
+      </div>
+
+      <div class="grid-2" style="gap:28px;">
+
+        <!-- Video 1 -->
+        <div class="video-card reveal-stagger" data-category="rh">
+          <div class="video-embed">
+            <!-- Remplacer par l'URL YouTube/Vimeo reelle -->
+            <div class="video-placeholder">
+              <svg width="64" height="64" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+              <span>Vidéo à venir</span>
+            </div>
+          </div>
+          <div class="video-card-body">
+            <h3>Structurer les entretiens professionnels</h3>
+            <div class="video-meta">PME industrielle - Isère - 2025</div>
+            <p>Comment cette PME de 80 salariés a structuré ses entretiens professionnels et mis en place un plan de développement des compétences avec CARTESA.</p>
+          </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="video-card reveal-stagger" data-category="rse">
+          <div class="video-embed">
+            <div class="video-placeholder">
+              <svg width="64" height="64" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+              <span>Vidéo à venir</span>
+            </div>
+          </div>
+          <div class="video-card-body">
+            <h3>Diagnostic CO2I : notre bilan carbone en 3 jours</h3>
+            <div class="video-meta">Industrie métallurgique - Drôme - 2026</div>
+            <p>Retour d'expérience d'un dirigeant industriel sur le diagnostic CO2I financé à 100% par OPCO2i. De l'autodiagnostic au plan d'actions concret.</p>
+          </div>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="video-card reveal-stagger" data-category="transition">
+          <div class="video-embed">
+            <div class="video-placeholder">
+              <svg width="64" height="64" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+              <span>Vidéo à venir</span>
+            </div>
+          </div>
+          <div class="video-card-body">
+            <h3>DRH de transition : gérer une croissance rapide</h3>
+            <div class="video-meta">ETI tech - Grenoble - 2025</div>
+            <p>Cette ETI en hypercroissance a fait appel à un DRH de transition CARTESA pour structurer ses recrutements et poser les bases d'une politique RH solide.</p>
+          </div>
+        </div>
+
+        <!-- Video 4 -->
+        <div class="video-card reveal-stagger" data-category="formation">
+          <div class="video-embed">
+            <div class="video-placeholder">
+              <svg width="64" height="64" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+              <span>Vidéo à venir</span>
+            </div>
+          </div>
+          <div class="video-card-body">
+            <h3>Management de proximité : former nos chefs d'équipe</h3>
+            <div class="video-meta">Groupe agroalimentaire - Ardèche - 2024</div>
+            <p>Témoignage d'un DRH sur la formation en management de proximité déployée sur 3 sites. Impact mesurable sur le turnover et l'engagement.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TÉMOIGNAGES ÉCRITS -->
+  <section class="section section--alt" style="padding:72px 0;">
+    <div class="container">
+      <h2 class="reveal" style="text-align:center; margin-bottom:36px;">Ce que disent nos clients</h2>
+
+      <div class="grid-2" style="gap:24px;">
+
+        <div class="testimonial-quote reveal-stagger">
+          <blockquote>CARTESA a su comprendre nos enjeux très rapidement. En 3 mois, nos entretiens professionnels étaient structurés et nos managers formés. Le financement OPCO a rendu l'opération transparente pour nous.</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">S.M.</div>
+            <div class="testimonial-author-info">
+              <strong>S. Martin</strong>
+              <span>DRH, PME industrielle (120 salariés) - Isère</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-quote reveal-stagger">
+          <blockquote>Notre DRH est parti du jour au lendemain. CARTESA a mis un expert en poste en 48 heures. La continuité RH n'a jamais été rompue, et ça nous a donné le temps de recruter sereinement.</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">P.D.</div>
+            <div class="testimonial-author-info">
+              <strong>P. Durand</strong>
+              <span>Directeur Général, ETI services (250 salariés) - Grenoble</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-quote reveal-stagger">
+          <blockquote>Le diagnostic CO2I a été une révélation. On pensait que la décarbonation était hors budget pour une boîte de notre taille. Avec CARTESA et OPCO2i, tout a été financé. On a maintenant une feuille de route claire sur 3 ans.</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">L.B.</div>
+            <div class="testimonial-author-info">
+              <strong>L. Bernard</strong>
+              <span>Dirigeant, Industrie mécanique (85 salariés) - Drôme</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-quote reveal-stagger">
+          <blockquote>L'abonnement Elan nous fait économiser l'équivalent d'un demi-poste RH. On a un pilotage mensuel, du coaching, de la formation et un expert qui connait notre entreprise. Pour une PME de 70 personnes, c'est exactement ce qu'il nous fallait.</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">C.R.</div>
+            <div class="testimonial-author-info">
+              <strong>C. Rousseau</strong>
+              <span>Gérant, PME bâtiment (70 salariés) - Nord-Isere</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-quote reveal-stagger">
+          <blockquote>La formation management AFEST a été un déclencheur pour nos chefs d'equipe. Pas de blabla théorique : du terrain, de la pratique, des outils qu'ils utilisent encore 6 mois après.</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">A.V.</div>
+            <div class="testimonial-author-info">
+              <strong>A. Vidal</strong>
+              <span>Responsable Production, Agroalimentaire (200 salariés) - Ardèche</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-quote reveal-stagger">
+          <blockquote>Catherine et son équipe ont géré notre fusion avec une précision chirurgicale. Harmonisation des statuts, dialogue social, communication interne — tout a été anticipé. Pas un seul départ subi.</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">M.F.</div>
+            <div class="testimonial-author-info">
+              <strong>M. Faure</strong>
+              <span>DAF, Groupe multi-sites (350 salariés) - AuRA</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- REPORTAGES TERRAIN -->
+  <section class="section section--white" style="padding:72px 0;">
+    <div class="container">
+      <h2 class="reveal" style="text-align:center; margin-bottom:8px;">Reportages terrain</h2>
+      <p class="reveal" style="text-align:center; color:var(--neutral-500,#6b7280); max-width:560px; margin:0 auto 44px; font-size:0.95rem;">Dans les coulisses de nos accompagnements. Des interventions concrètes, des résultats mesurables.</p>
+
+      <div style="display:flex; flex-direction:column; gap:32px;">
+
+        <!-- Reportage 1 -->
+        <div class="reportage-card reveal">
+          <div class="reportage-visual">
+            <div class="reportage-visual-placeholder">
+              <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2"/><circle cx="8" cy="8" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+              <span>Photo / vidéo à venir</span>
+            </div>
+          </div>
+          <div class="reportage-content">
+            <span class="reportage-tag">RSE & Décarbonation</span>
+            <h3>Diagnostic CO2I dans une fonderie dromoise</h3>
+            <p>Une fonderie de 95 salariés en Drôme souhaitait initier sa démarche bas-carbone sans savoir par où commencer. En 3 jours de diagnostic express financé à 100%, nos experts ont cartographié les postes d'émission, identifié 3 leviers de réduction rapide, et co-construit un plan d'actions sur 18 mois avec le CODIR.</p>
+            <p><strong>Résultat :</strong> -12% d'émissions estimées sur la première année, avec un volet compétences pour former les opérateurs aux éco-gestes industriels.</p>
+          </div>
+        </div>
+
+        <!-- Reportage 2 -->
+        <div class="reportage-card reveal">
+          <div class="reportage-visual">
+            <div class="reportage-visual-placeholder">
+              <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2"/><circle cx="8" cy="8" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+              <span>Photo / vidéo à venir</span>
+            </div>
+          </div>
+          <div class="reportage-content">
+            <span class="reportage-tag">DRH & Partenaire RSE</span>
+            <h3>DRH de transition pour une ETI en restructuration</h3>
+            <p>Apres le départ non anticipé de sa DRH, cette ETI de 250 salariés dans le secteur des services a fait appel à CARTESA. Un DRH de transition était en poste sous 48h. Pendant 6 mois, il a piloté la réorganisation des équipes, négocié un accord d'entreprise, et recruté la future DRH permanente.</p>
+            <p><strong>Résultat :</strong> Zéro rupture du dialogue social, transition fluide, nouvel accord signé à l'unanimité.</p>
+          </div>
+        </div>
+
+        <!-- Reportage 3 -->
+        <div class="reportage-card reveal">
+          <div class="reportage-visual">
+            <div class="reportage-visual-placeholder">
+              <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2"/><circle cx="8" cy="8" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+              <span>Photo / vidéo à venir</span>
+            </div>
+          </div>
+          <div class="reportage-content">
+            <span class="reportage-tag">Formation</span>
+            <h3>AFEST management de proximité sur 3 sites</h3>
+            <p>Un groupe agroalimentaire ardéchois voulait professionnaliser ses 15 chefs d'équipe répartis sur 3 sites. CARTESA a déployé un parcours AFEST sur 4 mois, avec des mises en situation terrain et un accompagnement individuel. Formation financée à 100% par OPCO.</p>
+            <p><strong>Résultat :</strong> Turnover réduit de 22% à 9% sur les équipes concernées. NPS interne passé de 32 à 61.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- VOTRE TÉMOIGNAGE -->
+  <section class="section section--alt" style="padding:56px 0;">
+    <div class="container" style="text-align:center; max-width:640px;">
+      <h2 class="reveal" style="margin-bottom:12px;">Partagez votre expérience</h2>
+      <p class="reveal" style="color:var(--neutral-600,#4b5563); margin-bottom:24px; font-size:0.95rem;">Vous avez été accompagné par CARTESA ? Votre témoignage aide d'autres dirigeants à franchir le pas. Vidéo, écrit, ou simple appel — on s'adapte à votre format.</p>
+      <a href="contact.html" class="btn btn--accent reveal">Proposer mon témoignage</a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--teal" style="padding:56px 0;">
+    <div class="container" style="text-align:center;">
+      <h2 class="reveal" style="margin-bottom:12px;">Envie d'écrire la prochaine histoire ?</h2>
+      <p class="reveal" style="color:rgba(255,255,255,0.88); max-width:520px; margin:0 auto 28px; font-size:1rem;">Premier échange de 30 minutes pour comprendre vos enjeux RH, RSE ou formation. Sans engagement.</p>
+      <a href="contact.html" class="btn btn--accent btn--lg reveal">Prendre rendez-vous</a>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA">
+          <p>Cabinet de conseil et organisme de formation certifié Qualiopi. Accompagnement des entreprises depuis 2003.</p>
+          <div class="footer-qualiopi">
+            <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi">
+            <span>Certifié Qualiopi</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="formations.html">Formations 2026</a></li>
+            <li><a href="temoignages.html">Témoignages</a></li>
+            <li><a href="equipe.html">L'équipe</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services-rh.html">Diagnostic &amp; Expertise RH</a></li>
+            <li><a href="rse-decarbonation.html">RSE &amp; Décarbonation</a></li>
+            <li><a href="services-rh.html">DRH de transition</a></li>
+            <li><a href="services-rh.html">Pass RH</a></li>
+            <li><a href="ressources.html">Ressourcerie</a></li>
+            <li><a href="ressources.html">Financement OPCO</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" transform="scale(0.7)"/><circle cx="8.4" cy="7" r="2.1"/></svg>
+            <span>36 avenue Alsace Lorraine<br>38110 La Tour-du-Pin</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="M1.5 3.5l6.5 5 6.5-5"/></svg>
+            <a href="mailto:contact@cabinet-cartesa.com">contact@cabinet-cartesa.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 CARTESA. Tous droits réservés.</span>
+        <span>Compétences, Entreprises & Territoires</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+
+</body>
+</html>
