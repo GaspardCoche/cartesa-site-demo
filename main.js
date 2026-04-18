@@ -146,6 +146,19 @@
       }
     }
 
+    function goToVolet(targetIdx) {
+      if (targetIdx < 0 || targetIdx >= panelCount) return;
+      var total = wrap.offsetHeight - window.innerHeight;
+      var targetScroll = wrap.getBoundingClientRect().top + window.pageYOffset + (targetIdx / panelCount) * total + 10;
+      window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+    }
+
+    dots.forEach(function(dot, i) {
+      dot.addEventListener('click', function() {
+        goToVolet(i);
+      });
+    });
+
     window.addEventListener('scroll', function() {
       requestAnimationFrame(updateVolets);
     }, { passive: true });
