@@ -116,9 +116,9 @@
   <header class="site-header" id="siteHeader">
     <nav class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA">
+        <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA" width="120" height="40">
       </a>
-      <button class="nav-toggle" aria-label="Menu">
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links">
@@ -126,13 +126,23 @@
         <li class="nav-dropdown">
           <a href="services-rh.html">Nos services</a>
           <ul class="nav-sub">
-            <li><a href="services-rh.html">Services RH</a></li>
+            <li><a href="services-rh.html">Diagnostic &amp; Expertise RH</a></li>
             <li><a href="rse-decarbonation.html">RSE &amp; Décarbonation</a></li>
+            <li><a href="services-rh.html#tab-drh-transition">DRH de transition</a></li>
+            <li><a href="services-rh.html#tab-pass-rh">Pass RH</a></li>
           </ul>
         </li>
         <li><a href="formations.html">Formations 2026</a></li>
-        <li><a href="ressources.html">Ressources</a></li>
+        <li class="nav-dropdown">
+          <a href="ressources.html">Ressources</a>
+          <ul class="nav-sub">
+            <li><a href="ressources.html">Ressourcerie</a></li>
+            <li><a href="ressources.html#tab-entretien">Entretien de parcours</a></li>
+            <li><a href="ressources.html#tab-financement">Financement OPCO</a></li>
+          </ul>
+        </li>
         <li><a href="temoignages.html">Témoignages</a></li>
+        <li><a href="contact.html#equipe">L'équipe</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
@@ -217,10 +227,10 @@
         </div>
         <div class="proof-divider"></div>
         <div class="proof-item reveal" style="--delay: 0.3s;">
-          <svg width="28" height="28" fill="none" stroke="var(--teal-600)" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <svg width="28" height="28" fill="none" stroke="var(--teal-600)" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
           <div>
-            <strong>1 500+ entreprises</strong>
-            <span>Accompagnées depuis 2003</span>
+            <strong>Intervention sous 48h</strong>
+            <span>Experts locaux, zéro intermédiaire</span>
           </div>
         </div>
       </div>
@@ -601,7 +611,7 @@
   <!-- CERTIFICATIONS -->
   <section class="section section--teal" id="certifications">
     <div class="container">
-      <div class="section-header sq-header reveal">
+      <div class="section-header reveal">
         <span class="section-label">Nos certifications</span>
         <h2 class="section-title">Des garanties concrètes de qualité</h2>
         <p class="section-subtitle">Ces certifications ne sont pas des logos décoratifs. Elles conditionnent, pour certaines, l'accès aux cofinancements OPCO et attestent du sérieux de nos interventions.</p>
@@ -692,7 +702,7 @@
   <!-- ACTUALITÉS -->
   <section class="section section--white">
     <div class="container">
-      <div class="section-header sq-header reveal" style="padding-top:40px;">
+      <div class="section-header reveal" style="padding-top:40px;">
         <span class="section-label">Actualités</span>
         <h2 class="section-title">Les nouveautés CARTESA</h2>
         <p class="section-subtitle">Nos dernières programmations et nos avancées.</p>
@@ -713,11 +723,11 @@
           <a href="blog.html" class="news-link">En savoir plus</a>
         </article>
         <article class="news-item">
-          <span class="news-date">2026</span>
-          <span class="badge">Catalogue</span>
-          <h3>Catalogue de formations RH & Management</h3>
-          <p>En partenariat avec Solaris, CARTESA publie son catalogue de formations en RH et Management. Formations sur mesure (intra-entreprises) et catalogue inter-entreprises 2026.</p>
-          <a href="formations.html" class="news-link">Voir le catalogue</a>
+          <span class="news-date">Avril 2026</span>
+          <span class="badge">Obligation légale</span>
+          <h3>Entretien professionnel &amp; bilan 6 ans</h3>
+          <p>L'entretien professionnel est obligatoire tous les 2 ans. Le bilan à 6 ans doit prouver au moins une action de formation par salarié, sous peine d'un abondement correctif de 3 000 € par salarié.</p>
+          <a href="ressources.html#tab-entretien" class="news-link">En savoir plus</a>
         </article>
         <article class="news-item">
           <span class="news-date">2026</span>
@@ -781,7 +791,7 @@
   <!-- PARTNER LOGOS -->
   <section class="section section--white">
     <div class="container">
-      <div class="section-header sq-header reveal">
+      <div class="section-header reveal">
         <span class="section-label">Nos partenaires</span>
         <h2 class="section-title">Ils nous font confiance</h2>
         <p class="section-subtitle">OPCO partenaires sur les thématiques RH & RSE, partenariats institutionnels et réseaux.</p>
@@ -859,10 +869,10 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA">
+          <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA" loading="lazy">
           <p>Cabinet de conseil et organisme de formation certifié Qualiopi. Nous accompagnons les entreprises et les territoires dans le développement des compétences depuis 2003.</p>
           <div class="footer-qualiopi">
-            <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi">
+            <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Certification Qualiopi" loading="lazy">
             <span>Certifié Qualiopi au titre des actions de formation</span>
           </div>
         </div>
@@ -870,7 +880,9 @@
           <h4>Navigation</h4>
           <ul>
             <li><a href="index.html">Accueil</a></li>
+            <li><a href="services-rh.html">Nos services</a></li>
             <li><a href="formations.html">Formations 2026</a></li>
+            <li><a href="ressources.html">Ressources</a></li>
             <li><a href="temoignages.html">Témoignages</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -879,14 +891,20 @@
         <div class="footer-col">
           <h4>Services</h4>
           <ul>
-            <li><a href="services-rh.html">Services RH</a></li>
+            <li><a href="services-rh.html">Diagnostic &amp; Expertise RH</a></li>
             <li><a href="rse-decarbonation.html">RSE &amp; Décarbonation</a></li>
-            <li><a href="formations.html">Formations 2026</a></li>
-            <li><a href="ressources.html">Ressources &amp; Guides</a></li>
+            <li><a href="services-rh.html#tab-drh-transition">DRH de transition</a></li>
+            <li><a href="services-rh.html#tab-pass-rh">Pass RH</a></li>
+            <li><a href="ressources.html">Ressourcerie</a></li>
+            <li><a href="ressources.html#tab-financement">Financement OPCO</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:+33474972956">04 74 97 29 56</a>
+          </div>
           <div class="footer-contact-item">
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" transform="scale(0.7)"/><circle cx="8.4" cy="7" r="2.1"/></svg>
             <span>36 avenue Alsace Lorraine<br>38110 La Tour-du-Pin</span>
@@ -899,7 +917,7 @@
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 CARTESA. Tous droits réservés.</span>
-        <span>Compétences, Entreprises & Territoires</span>
+        <span>Compétences, Entreprises &amp; Territoires</span>
       </div>
     </div>
   </footer>

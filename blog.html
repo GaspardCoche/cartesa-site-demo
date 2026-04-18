@@ -288,9 +288,9 @@
   <header class="site-header" id="siteHeader">
     <nav class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA">
+        <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA" width="120" height="40">
       </a>
-      <button class="nav-toggle" aria-label="Menu">
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links">
@@ -298,13 +298,23 @@
         <li class="nav-dropdown">
           <a href="services-rh.html">Nos services</a>
           <ul class="nav-sub">
-            <li><a href="services-rh.html">Services RH</a></li>
+            <li><a href="services-rh.html">Diagnostic &amp; Expertise RH</a></li>
             <li><a href="rse-decarbonation.html">RSE &amp; Décarbonation</a></li>
+            <li><a href="services-rh.html#tab-drh-transition">DRH de transition</a></li>
+            <li><a href="services-rh.html#tab-pass-rh">Pass RH</a></li>
           </ul>
         </li>
         <li><a href="formations.html">Formations 2026</a></li>
-        <li><a href="ressources.html">Ressources</a></li>
+        <li class="nav-dropdown">
+          <a href="ressources.html">Ressources</a>
+          <ul class="nav-sub">
+            <li><a href="ressources.html">Ressourcerie</a></li>
+            <li><a href="ressources.html#tab-entretien">Entretien de parcours</a></li>
+            <li><a href="ressources.html#tab-financement">Financement OPCO</a></li>
+          </ul>
+        </li>
         <li><a href="temoignages.html">Témoignages</a></li>
+        <li><a href="contact.html#equipe">L'équipe</a></li>
         <li><a href="blog.html" class="active">Blog</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
@@ -351,7 +361,7 @@
             <span>Avril 2026</span>
             <span>Isère · Drôme · Ardèche</span>
           </div>
-          <a href="contact.html" class="blog-link">En savoir plus &rarr;</a>
+          <a href="rse-decarbonation.html" class="blog-link">En savoir plus &rarr;</a>
         </div>
       </article>
 
@@ -366,18 +376,18 @@
           <div class="blog-meta">
             <span>Mars 2026</span>
           </div>
-          <a href="#" class="blog-link">En savoir plus &rarr;</a>
+          <a href="blog.html" class="blog-link">En savoir plus &rarr;</a>
         </article>
 
-        <!-- ARTICLE — Actualité Catalogue -->
-        <article class="card blog-card blog-card--featured reveal" data-category="formation">
-          <span class="blog-category">Catalogue</span>
-          <h3>Catalogue de formations RH &amp; Management 2026</h3>
-          <p class="blog-excerpt">En partenariat avec Solaris, CARTESA publie son catalogue de formations en RH et Management. Formations sur mesure (intra-entreprises) et catalogue inter-entreprises 2026.</p>
+        <!-- ARTICLE — Entretien professionnel & bilan 6 ans -->
+        <article class="card blog-card blog-card--featured reveal" data-category="management">
+          <span class="blog-category">Obligation légale</span>
+          <h3>Entretien professionnel &amp; bilan 6 ans : ce que vous risquez vraiment</h3>
+          <p class="blog-excerpt">L'entretien professionnel est obligatoire tous les 2 ans. Le bilan à 6 ans doit prouver au moins une action de formation par salarié, sous peine d'un abondement correctif de 3 000 € sur le CPF. CARTESA vous accompagne pour structurer la démarche.</p>
           <div class="blog-meta">
-            <span>2026</span>
+            <span>Avril 2026</span>
           </div>
-          <a href="formations.html" class="blog-link">Voir le catalogue &rarr;</a>
+          <a href="ressources.html#tab-entretien" class="blog-link">En savoir plus &rarr;</a>
         </article>
 
         <!-- LUNCHBOX PROMO CARD -->
@@ -404,7 +414,7 @@
             <span>Mars 2026</span>
             <span>8 min de lecture</span>
           </div>
-          <a href="#" class="blog-link">Lire la suite &rarr;</a>
+          <a href="blog.html" class="blog-link">Lire la suite &rarr;</a>
         </article>
 
         <!-- ARTICLE 2 — PCRH -->
@@ -416,7 +426,7 @@
             <span>Février 2026</span>
             <span>6 min de lecture</span>
           </div>
-          <a href="#" class="blog-link">Lire la suite &rarr;</a>
+          <a href="blog.html" class="blog-link">Lire la suite &rarr;</a>
         </article>
 
         <!-- ARTICLE 3 — Entretien professionnel vs annuel -->
@@ -428,7 +438,7 @@
             <span>Janvier 2026</span>
             <span>7 min de lecture</span>
           </div>
-          <a href="#" class="blog-link">Lire la suite &rarr;</a>
+          <a href="blog.html" class="blog-link">Lire la suite &rarr;</a>
         </article>
 
         <!-- ARTICLE 4 — AFEST -->
@@ -440,7 +450,7 @@
             <span>Décembre 2025</span>
             <span>9 min de lecture</span>
           </div>
-          <a href="#" class="blog-link">Lire la suite &rarr;</a>
+          <a href="blog.html" class="blog-link">Lire la suite &rarr;</a>
         </article>
 
         <!-- ARTICLE 5 — 5 erreurs management -->
@@ -452,7 +462,7 @@
             <span>Novembre 2025</span>
             <span>6 min de lecture</span>
           </div>
-          <a href="#" class="blog-link">Lire la suite &rarr;</a>
+          <a href="blog.html" class="blog-link">Lire la suite &rarr;</a>
         </article>
 
         <!-- ARTICLE 6 — RSE en PME -->
@@ -464,7 +474,7 @@
             <span>Octobre 2025</span>
             <span>7 min de lecture</span>
           </div>
-          <a href="#" class="blog-link">Lire la suite &rarr;</a>
+          <a href="blog.html" class="blog-link">Lire la suite &rarr;</a>
         </article>
 
         <!-- ARTICLE 7 — Guide entretien professionnel -->
@@ -476,7 +486,7 @@
             <span>Septembre 2025</span>
             <span>8 min de lecture</span>
           </div>
-          <a href="#" class="blog-link">Lire la suite &rarr;</a>
+          <a href="blog.html" class="blog-link">Lire la suite &rarr;</a>
         </article>
 
         <!-- ARTICLE 8 — Structurer fonction RH -->
@@ -488,7 +498,7 @@
             <span>Août 2025</span>
             <span>7 min de lecture</span>
           </div>
-          <a href="#" class="blog-link">Lire la suite &rarr;</a>
+          <a href="blog.html" class="blog-link">Lire la suite &rarr;</a>
         </article>
 
       </div>
@@ -524,10 +534,10 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA">
+          <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA" loading="lazy">
           <p>Cabinet de conseil et organisme de formation certifié Qualiopi. Nous accompagnons les entreprises et les territoires dans le développement des compétences depuis 2003.</p>
           <div class="footer-qualiopi">
-            <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi">
+            <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Certification Qualiopi" loading="lazy">
             <span>Certifié Qualiopi au titre des actions de formation</span>
           </div>
         </div>
@@ -535,7 +545,9 @@
           <h4>Navigation</h4>
           <ul>
             <li><a href="index.html">Accueil</a></li>
+            <li><a href="services-rh.html">Nos services</a></li>
             <li><a href="formations.html">Formations 2026</a></li>
+            <li><a href="ressources.html">Ressources</a></li>
             <li><a href="temoignages.html">Témoignages</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -546,14 +558,18 @@
           <ul>
             <li><a href="services-rh.html">Diagnostic &amp; Expertise RH</a></li>
             <li><a href="rse-decarbonation.html">RSE &amp; Décarbonation</a></li>
-            <li><a href="services-rh.html">DRH de transition</a></li>
-            <li><a href="services-rh.html">Pass RH</a></li>
+            <li><a href="services-rh.html#tab-drh-transition">DRH de transition</a></li>
+            <li><a href="services-rh.html#tab-pass-rh">Pass RH</a></li>
             <li><a href="ressources.html">Ressourcerie</a></li>
-            <li><a href="ressources.html">Financement OPCO</a></li>
+            <li><a href="ressources.html#tab-financement">Financement OPCO</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:+33474972956">04 74 97 29 56</a>
+          </div>
           <div class="footer-contact-item">
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" transform="scale(0.7)"/><circle cx="8.4" cy="7" r="2.1"/></svg>
             <span>36 avenue Alsace Lorraine<br>38110 La Tour-du-Pin</span>

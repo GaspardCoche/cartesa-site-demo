@@ -2799,20 +2799,6 @@ img { max-width: 100%; height: auto; display: block; }
   z-index: 1;
 }
 
-.sq-header .section-label::after {
-  content: '';
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  background: var(--gold-500);
-  border-radius: 2px;
-  margin-left: 8px;
-  vertical-align: middle;
-}
-
-.section--teal .sq-header .section-label::after {
-  background: rgba(236,208,52,0.7);
-}
 
 /* --- Cert Card Square Accent (teal bg) --- */
 .cert-card {
@@ -3911,134 +3897,42 @@ img { max-width: 100%; height: auto; display: block; }
   }
 }
 
-/* ===== SERVICE REVEAL (vertical progressive sections) ===== */
-.service-reveal {
+/* ===== SERVICE INTRO CARDS (services-rh.html) ===== */
+.service-intro-card {
+  display: block;
+  text-decoration: none;
+  color: var(--neutral-800);
   position: relative;
-  padding: 80px 0;
-  overflow: hidden;
+  padding: 32px 28px 28px;
+  cursor: pointer;
+  border-left: 3px solid var(--teal-500);
 }
 
-.service-reveal__number {
-  position: absolute;
-  top: 50%;
-  right: 60px;
-  transform: translateY(-50%);
+.service-intro-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(9, 41, 51, 0.1);
+  border-color: var(--teal-600);
+}
+
+.services-intro__number {
   font-family: 'Sora', sans-serif;
-  font-size: clamp(7rem, 14vw, 12rem);
-  font-weight: 800;
-  color: rgba(255, 255, 255, 0.07);
-  line-height: 1;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.service-reveal__inner {
-  max-width: 960px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 56px;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-}
-
-.service-reveal__text {
-  color: var(--white);
-}
-
-.service-reveal__label {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.74rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--gold-400);
-  margin-bottom: 16px;
+  color: var(--teal-500);
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+  display: block;
 }
 
-.service-reveal__label::before {
-  content: '';
-  display: inline-block;
-  width: 28px;
-  height: 3px;
-  background: var(--gold-500);
-  border-radius: 2px;
+.service-intro-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+  color: var(--teal-900);
 }
 
-.service-reveal__text h2 {
-  color: var(--white);
-  font-size: clamp(1.7rem, 3.5vw, 2.6rem);
-  margin-bottom: 16px;
-  line-height: 1.18;
-}
-
-.service-reveal__text p {
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 1.02rem;
-  line-height: 1.7;
-  margin-bottom: 24px;
-}
-
-.service-reveal__text .btn {
-  margin-top: 8px;
-}
-
-.service-reveal__features {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.service-reveal__feature {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 18px 22px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-}
-
-.service-reveal__feature:hover {
-  background: rgba(255, 255, 255, 0.14);
-  border-color: rgba(255, 255, 255, 0.2);
-  transform: translateX(4px);
-}
-
-.service-reveal__feature svg {
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.service-reveal__feature h4 {
-  color: var(--white);
-  font-size: 0.95rem;
-  margin-bottom: 4px;
-}
-
-.service-reveal__feature p {
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 0.84rem;
-  line-height: 1.5;
+.service-intro-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--neutral-600);
   margin: 0;
-}
-
-@media (max-width: 768px) {
-  .service-reveal { padding: 60px 0; }
-  .service-reveal__inner {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  .service-reveal__number {
-    top: 24px;
-    right: 16px;
-    transform: none;
-    font-size: 5rem;
-  }
 }

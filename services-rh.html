@@ -345,9 +345,9 @@
   <header class="site-header" id="siteHeader">
     <nav class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA">
+        <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA" width="120" height="40">
       </a>
-      <button class="nav-toggle" aria-label="Menu">
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links">
@@ -355,13 +355,23 @@
         <li class="nav-dropdown">
           <a href="services-rh.html" class="active">Nos services</a>
           <ul class="nav-sub">
-            <li><a href="services-rh.html">Services RH</a></li>
+            <li><a href="services-rh.html">Diagnostic &amp; Expertise RH</a></li>
             <li><a href="rse-decarbonation.html">RSE &amp; Décarbonation</a></li>
+            <li><a href="services-rh.html#tab-drh-transition">DRH de transition</a></li>
+            <li><a href="services-rh.html#tab-pass-rh">Pass RH</a></li>
           </ul>
         </li>
         <li><a href="formations.html">Formations 2026</a></li>
-        <li><a href="ressources.html">Ressources</a></li>
+        <li class="nav-dropdown">
+          <a href="ressources.html">Ressources</a>
+          <ul class="nav-sub">
+            <li><a href="ressources.html">Ressourcerie</a></li>
+            <li><a href="ressources.html#tab-entretien">Entretien de parcours</a></li>
+            <li><a href="ressources.html#tab-financement">Financement OPCO</a></li>
+          </ul>
+        </li>
         <li><a href="temoignages.html">Témoignages</a></li>
+        <li><a href="contact.html#equipe">L'équipe</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
@@ -385,81 +395,30 @@
     </div>
   </section>
 
-  <!-- SERVICES RH — Vertical reveal -->
-  <section class="service-reveal" style="background: var(--teal-400);">
-    <span class="service-reveal__number">01</span>
-    <div class="service-reveal__inner reveal">
-      <div class="service-reveal__text">
-        <span class="service-reveal__label">Diagnostic &amp; Expertise</span>
-        <h2>Comprendre votre organisation pour mieux l'accompagner</h2>
-        <p>7 domaines d'expertise : diagnostic RH/RSE, formation, coaching, transformation, co-développement, ingénierie pédagogique, entrepreneuriat.</p>
-        <a href="#tab-diagnostic" class="btn btn--accent">Découvrir nos expertises</a>
+  <!-- SERVICES RH — Intro cards -->
+  <section class="section section--white" style="padding:48px 0 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Nos services RH</span>
+        <h2 class="section-title">Trois approches complémentaires</h2>
+        <p class="section-subtitle">Du diagnostic ponctuel à l'accompagnement dans la durée, choisissez le niveau d'engagement adapté à votre situation.</p>
       </div>
-      <div class="service-reveal__features">
-        <div class="service-reveal__feature">
-          <svg width="22" height="22" fill="none" stroke="var(--gold-400)" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
-          <div><h4>Audit terrain</h4><p>Diagnostic sur site, ancré dans votre contexte réel</p></div>
-        </div>
-        <div class="service-reveal__feature">
-          <svg width="22" height="22" fill="none" stroke="var(--gold-400)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <div><h4>7 expertises RH</h4><p>Du diagnostic à la transformation, une couverture complète</p></div>
-        </div>
-        <div class="service-reveal__feature">
-          <svg width="22" height="22" fill="none" stroke="var(--gold-400)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          <div><h4>PCRH financé à 100%</h4><p>Prise en charge intégrale par votre OPCO via le PCRH</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="service-reveal" style="background: var(--teal-600);">
-    <span class="service-reveal__number">02</span>
-    <div class="service-reveal__inner reveal">
-      <div class="service-reveal__text">
-        <span class="service-reveal__label">DRH de transition</span>
-        <h2>Un DRH opérationnel quand vous en avez besoin</h2>
-        <p>Mission de transition, temps partagé ou partenaire RSE. Intervention sous 48h, zéro intermédiaire.</p>
-        <a href="#tab-drh-transition" class="btn btn--accent">Voir les formats</a>
-      </div>
-      <div class="service-reveal__features">
-        <div class="service-reveal__feature">
-          <svg width="22" height="22" fill="none" stroke="var(--gold-400)" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-          <div><h4>3 formats flexibles</h4><p>Transition, temps partagé ou partenaire RSE selon votre besoin</p></div>
-        </div>
-        <div class="service-reveal__feature">
-          <svg width="22" height="22" fill="none" stroke="var(--gold-400)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          <div><h4>Intervention 48h</h4><p>Experts locaux disponibles rapidement, sans délai de placement</p></div>
-        </div>
-        <div class="service-reveal__feature">
-          <svg width="22" height="22" fill="none" stroke="var(--gold-400)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          <div><h4>Zéro commission</h4><p>Vous payez l'expert directement, sans marge intermédiaire</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="service-reveal" style="background: var(--teal-700);">
-    <span class="service-reveal__number">03</span>
-    <div class="service-reveal__inner reveal">
-      <div class="service-reveal__text">
-        <span class="service-reveal__label">Pass RH</span>
-        <h2>Un accompagnement RH dans la durée</h2>
-        <p>Conseil, coaching, formation et codéveloppement. 3 formules d'abonnement à partir de 790€/mois.</p>
-        <a href="#tab-pass-rh" class="btn btn--accent">Découvrir les formules</a>
-      </div>
-      <div class="service-reveal__features">
-        <div class="service-reveal__feature">
-          <svg width="22" height="22" fill="none" stroke="var(--gold-400)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <div><h4>4 leviers combinés</h4><p>Conseil, coaching, formation et codéveloppement en un seul abonnement</p></div>
-        </div>
-        <div class="service-reveal__feature">
-          <svg width="22" height="22" fill="none" stroke="var(--gold-400)" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          <div><h4>À partir de 790€/mois</h4><p>3 formules adaptées à votre taille et vos enjeux</p></div>
-        </div>
-        <div class="service-reveal__feature">
-          <svg width="22" height="22" fill="none" stroke="var(--gold-400)" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-          <div><h4>Certifié Qualiopi</h4><p>Formation finançable OPCO, abonnement éligible PCRH</p></div>
-        </div>
+      <div class="grid-3" style="gap:20px; margin-bottom:40px;">
+        <a href="#tab-diagnostic" class="card service-intro-card reveal" onclick="document.querySelector('.tab-btn[data-tab=tab-diagnostic]').click();">
+          <span class="services-intro__number">01</span>
+          <h3>Diagnostic &amp; Expertise</h3>
+          <p>7 expertises pour comprendre votre organisation et agir sur les bons leviers. Finançable PCRH à 100 %.</p>
+        </a>
+        <a href="#tab-drh-transition" class="card service-intro-card reveal" onclick="document.querySelector('.tab-btn[data-tab=tab-drh-transition]').click();">
+          <span class="services-intro__number">02</span>
+          <h3>DRH de transition</h3>
+          <p>Un DRH opérationnel sous 48 h : transition, temps partagé ou partenaire RSE. Zéro intermédiaire.</p>
+        </a>
+        <a href="#tab-pass-rh" class="card service-intro-card reveal" onclick="document.querySelector('.tab-btn[data-tab=tab-pass-rh]').click();">
+          <span class="services-intro__number">03</span>
+          <h3>Pass RH</h3>
+          <p>Conseil, coaching, formation et codéveloppement en abonnement. 3 formules à partir de 790 €/mois.</p>
+        </a>
       </div>
     </div>
   </section>
@@ -1106,10 +1065,10 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA">
+          <img src="https://cartesa-lyon.com/wp-content/uploads/2020/06/logo-cartesa-weblogo-bl-1.png" alt="CARTESA" loading="lazy">
           <p>Cabinet de conseil et organisme de formation certifié Qualiopi. Nous accompagnons les entreprises et les territoires dans le développement des compétences depuis 2003.</p>
           <div class="footer-qualiopi">
-            <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Qualiopi">
+            <img src="https://cartesa-lyon.com/wp-content/uploads/2023/09/Email-Signature-1.png" alt="Certification Qualiopi" loading="lazy">
             <span>Certifié Qualiopi au titre des actions de formation</span>
           </div>
         </div>
@@ -1117,7 +1076,9 @@
           <h4>Navigation</h4>
           <ul>
             <li><a href="index.html">Accueil</a></li>
+            <li><a href="services-rh.html">Nos services</a></li>
             <li><a href="formations.html">Formations 2026</a></li>
+            <li><a href="ressources.html">Ressources</a></li>
             <li><a href="temoignages.html">Témoignages</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -1126,14 +1087,20 @@
         <div class="footer-col">
           <h4>Services</h4>
           <ul>
-            <li><a href="services-rh.html">Services RH</a></li>
+            <li><a href="services-rh.html">Diagnostic &amp; Expertise RH</a></li>
             <li><a href="rse-decarbonation.html">RSE &amp; Décarbonation</a></li>
-            <li><a href="formations.html">Formations 2026</a></li>
-            <li><a href="ressources.html">Ressources &amp; Guides</a></li>
+            <li><a href="services-rh.html#tab-drh-transition">DRH de transition</a></li>
+            <li><a href="services-rh.html#tab-pass-rh">Pass RH</a></li>
+            <li><a href="ressources.html">Ressourcerie</a></li>
+            <li><a href="ressources.html#tab-financement">Financement OPCO</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:+33474972956">04 74 97 29 56</a>
+          </div>
           <div class="footer-contact-item">
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" transform="scale(0.7)"/><circle cx="8.4" cy="7" r="2.1"/></svg>
             <span>36 avenue Alsace Lorraine<br>38110 La Tour-du-Pin</span>
@@ -1145,8 +1112,8 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; 2026 CARTESA. Tous droits reserves.</span>
-        <span>Compétences, Entreprises & Territoires</span>
+        <span>&copy; 2026 CARTESA. Tous droits réservés.</span>
+        <span>Compétences, Entreprises &amp; Territoires</span>
       </div>
     </div>
   </footer>
